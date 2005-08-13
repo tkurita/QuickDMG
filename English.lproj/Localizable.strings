@@ -1,0 +1,17 @@
+"Can't progress jobs." ="Can't progress jobs.";
+"No enough free space to create a disk image." ="No enough free space to create a disk image.";
+
+"Error! Can't progress jobs." = "Error! Can't progress jobs.";
+"Creating a disk image file." = "Creating a disk image file.";
+"The file \n %@ could not be removed." = "The file \n %@ could not be removed.";
+"Copying source files." = "Copying source files.";
+"Detaching a disk image file." = "Detaching a disk image file.";
+"Attaching a disk image file." = "Attaching a disk image file.";
+
+//format descriptions
+"UDIF_Compressed" = "UDIF zlib-compressed";
+"SPARSE" = "SPARSE (growable with content)";
+"UDIF_R/W" = "UDIF read/write";
+"UDIF_R_Only" = "UDIF read only";
+"NDIF_Compressed" = "NDIF compressed";
+"NDIF_R_Only" = "NDIF read only";

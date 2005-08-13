@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'docbaseApp' target in the 'docbaseApp' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
