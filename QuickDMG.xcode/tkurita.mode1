@@ -265,6 +265,9 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>20</integer>
+									<integer>19</integer>
+									<integer>18</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -302,7 +305,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Info.plist</string>
+								<string>DiskImageMaker.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -310,9 +313,9 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Info.plist</string>
+										<string>DiskImageMaker.m</string>
 										<key>bookmark</key>
-										<string>2C13ED2F08AFCF970035C47A</string>
+										<string>2C13ED3C08AFD17E0035C47A</string>
 										<key>history</key>
 										<array>
 											<string>2C7FBE2C0819655F00340E25</string>
@@ -336,10 +339,10 @@
 											<string>2CA314B108AA354300ADA32C</string>
 											<string>2CA314BD08AA498F00ADA32C</string>
 											<string>2C13EC9708AF58470035C47A</string>
-											<string>2C13EC9908AF58470035C47A</string>
 											<string>2C13ECA508AF5AD00035C47A</string>
 											<string>2C13ED2C08AFCF970035C47A</string>
-											<string>2C13ED2D08AFCF970035C47A</string>
+											<string>2C13ED3308AFD1620035C47A</string>
+											<string>2C13ED3408AFD1620035C47A</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -368,6 +371,7 @@
 											<string>2C5030F708A83B6F0087C425</string>
 											<string>2C04E19D08A9101A00F3B297</string>
 											<string>2C13ED2E08AFCF970035C47A</string>
+											<string>2C13ED3508AFD1620035C47A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -404,7 +408,7 @@
 										<key>PBXProjectModuleLabel</key>
 										<string>Localizable.strings</string>
 										<key>bookmark</key>
-										<string>2C13ED3008AFCF970035C47A</string>
+										<string>2C13ED3E08AFD17E0035C47A</string>
 										<key>history</key>
 										<array>
 											<string>2C7FBE2C0819655F00340E25</string>
@@ -428,12 +432,12 @@
 											<string>2CA315CC08AB461B00ADA32C</string>
 											<string>2CA315CD08AB461B00ADA32C</string>
 											<string>2CA315CE08AB461B00ADA32C</string>
-											<string>2CA3160E08AB50B600ADA32C</string>
 											<string>2CA3160F08AB50B600ADA32C</string>
 											<string>2C34090908AC9DCB001F6FFA</string>
 											<string>2C13EC9F08AF58470035C47A</string>
 											<string>2C13ED1208AFCBBD0035C47A</string>
-											<string>2C13ED1E08AFCBE40035C47A</string>
+											<string>2C13ED3708AFD1620035C47A</string>
+											<string>2C13ED3D08AFD17E0035C47A</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -466,6 +470,8 @@
 											<string>2C13ED1508AFCBBD0035C47A</string>
 											<string>2C13ED1608AFCBBD0035C47A</string>
 											<string>2C13ED1808AFCBBD0035C47A</string>
+											<string>2C13ED3908AFD1620035C47A</string>
+											<string>2C13ED3A08AFD1620035C47A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
