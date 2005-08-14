@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
+	<string>Japanese</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -40,7 +40,13 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>2.0</string>
+	<key>CFBundleGetInfoString</key>
+	<string>2.0 copyright 2005, Tetsuro KURITA</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>QuickDMG Help</string>
+	<key>CFBundleHelpBookName</key>
+	<string>QuickDMG ヘルプ</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
