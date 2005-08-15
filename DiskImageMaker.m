@@ -10,7 +10,7 @@ void showTaskResult(NSTask *theTask)
 {
 	NSData * taskResult = [[[theTask standardOutput] fileHandleForReading] availableData];
 	NSString * resultString = [[NSString alloc] initWithData:taskResult encoding:NSUTF8StringEncoding];
-	NSLog(resultString);
+	//NSLog(resultString);
 	[resultString release];
 }
 
@@ -179,7 +179,7 @@ NSString *getTaskError(NSTask *theTask)
 
 - (void) copySourceItem:(NSNotification *) notification
 {
-	NSLog(@"start copySourceItem:");
+	//NSLog(@"start copySourceItem:");
 	if (![self checkPreviousTask:notification]) {
 		return;
 	}
@@ -188,7 +188,7 @@ NSString *getTaskError(NSTask *theTask)
 	NSTask* dmgTask = [notification object];
 	//showTaskResult(dmgTask);
 	NSDictionary * resultDict = getTaskResult(dmgTask);
-	NSLog([resultDict description]);
+	//NSLog([resultDict description]);
 	resultDict = [[resultDict objectForKey:@"system-entities"] objectAtIndex:0];
 	[self setDevEntry:[resultDict objectForKey:@"dev-entry"]];
 	[self setMountPoint:[resultDict objectForKey:@"mount-point"]];
@@ -207,7 +207,7 @@ NSString *getTaskError(NSTask *theTask)
 	
 	[self setCurrentTask:[dittoTask autorelease]];
 	[dittoTask launch];
-	NSLog(@"end copySourceItem:");
+	//NSLog(@"end copySourceItem:");
 }
 
 - (void)internetEnable:(NSNotification *)notification
@@ -226,7 +226,7 @@ NSString *getTaskError(NSTask *theTask)
 
 - (void) detachDiskImage:(NSNotification *)notification
 {
-	NSLog(@"start detachDiskImage");
+	//NSLog(@"start detachDiskImage");
 	if (![self checkPreviousTask:notification]) {
 		return;
 	}
@@ -346,20 +346,20 @@ NSString *getTaskError(NSTask *theTask)
 
 -(BOOL) checkPreviousTask:(NSNotification *)notification
 {
-	NSLog(@"start checkPreviousTask");
+	//NSLog(@"start checkPreviousTask");
 	
 	NSTask *dmgTask = [notification object];
-	NSLog(sourcePath);
+	//NSLog(sourcePath);
 	
 	if ([dmgTask terminationStatus] != 0) {
-		NSLog(@"termination status is not 0");
+		//NSLog(@"termination status is not 0");
 		[self setTerminationMessage:getTaskError(dmgTask)];
 		if ([terminationMessage endsWith:@".Trashes: Permission denied\n"]) {
-			NSLog(@"success to delete .DS_Store");
+			//NSLog(@"success to delete .DS_Store");
 			return YES;
 		}
 		else {
-			NSLog(@"error occur");
+			//NSLog(@"error occur");
 			if (isAttached) {
 				NSTask *detachTask = [self hdiUtilTask];
 				[detachTask setArguments:[NSArray arrayWithObjects:@"detach",devEntry,nil]];
@@ -370,7 +370,7 @@ NSString *getTaskError(NSTask *theTask)
 		}
 	}
 	
-	NSLog(@"termination status is 0");
+	//NSLog(@"termination status is 0");
 	NSString *firstArg = [[dmgTask arguments] objectAtIndex:0];
 	if ([firstArg isEqualToString:@"attach"]) {
 		self->isAttached = YES;
@@ -379,7 +379,7 @@ NSString *getTaskError(NSTask *theTask)
 		self->isAttached = NO;
 	}
 	
-	NSLog(@"end checkPreviousTask");
+	//NSLog(@"end checkPreviousTask");
 	return YES;
 }
 
@@ -445,11 +445,11 @@ NSString *getTaskError(NSTask *theTask)
 
 - (void) dmgTaskTerminate:(NSNotification *)notification
 {
-	NSLog(@"start dmgTaskTerminate");
+	//NSLog(@"start dmgTaskTerminate");
 	NSTask *dmgTask = [notification object];
 	self->terminationStatus = [dmgTask terminationStatus];
 	[myNotiCenter postNotificationName: @"DmgDidTerminationNotification" object:self];
-	NSLog(@"end dmgTaskTerminate");
+	//NSLog(@"end dmgTaskTerminate");
 }
 
 - (void)setCustomDmgName:(NSString *)theDmgName
