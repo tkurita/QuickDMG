@@ -97,11 +97,12 @@ NSString *getTaskError(NSTask *theTask)
 		[du waitUntilExit];
 		NSData * duData = [[duOutput fileHandleForReading] availableData];
 		sourceSize = [[[[NSString alloc] initWithData:duData encoding: NSUTF8StringEncoding] autorelease] intValue];
-		sourceSize = sourceSize * 1024 * 1.1;
+		//sourceSize = sourceSize * 1024 * 1.1;
+		sourceSize = (sourceSize * 1024)+200000;
 		[du release];
 	}
 	else {
-		sourceSize = [fileInfo fileSize] + 100000;
+		sourceSize = [fileInfo fileSize] + 200000;
 	}
 	
 	NSDictionary *infoWorkingDisk = [myFileManager fileSystemAttributesAtPath:workingLocation];
@@ -248,7 +249,7 @@ NSString *getTaskError(NSTask *theTask)
 	[self setCurrentTask:dmgTask];
 	[dmgTask launch];
 	//showTaskResult(dmgTask);
-	NSLog(@"end detachDiskImage");
+	//NSLog(@"end detachDiskImage");
 }
 
 - (void) attachDiskImage: (NSNotification *) notification
