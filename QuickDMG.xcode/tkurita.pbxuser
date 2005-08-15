@@ -362,6 +362,55 @@
 			2C13ED3C08AFD17E0035C47A = 2C13ED3C08AFD17E0035C47A;
 			2C13ED3D08AFD17E0035C47A = 2C13ED3D08AFD17E0035C47A;
 			2C13ED3E08AFD17E0035C47A = 2C13ED3E08AFD17E0035C47A;
+			2C13ED3F08B021FA0035C47A = 2C13ED3F08B021FA0035C47A;
+			2C13ED4008B021FA0035C47A = 2C13ED4008B021FA0035C47A;
+			2C13ED4108B021FA0035C47A = 2C13ED4108B021FA0035C47A;
+			2C13ED4208B021FA0035C47A = 2C13ED4208B021FA0035C47A;
+			2C13ED4308B021FA0035C47A = 2C13ED4308B021FA0035C47A;
+			2C13ED4408B021FA0035C47A = 2C13ED4408B021FA0035C47A;
+			2C13ED4508B021FA0035C47A = 2C13ED4508B021FA0035C47A;
+			2C13ED4608B023000035C47A = 2C13ED4608B023000035C47A;
+			2C13ED4708B023000035C47A = 2C13ED4708B023000035C47A;
+			2C13ED4808B023000035C47A = 2C13ED4808B023000035C47A;
+			2C13ED4908B023000035C47A = 2C13ED4908B023000035C47A;
+			2C13ED4A08B023000035C47A = 2C13ED4A08B023000035C47A;
+			2C13ED4B08B023C40035C47A = 2C13ED4B08B023C40035C47A;
+			2C13ED4C08B023C40035C47A = 2C13ED4C08B023C40035C47A;
+			2C13ED4D08B023C40035C47A = 2C13ED4D08B023C40035C47A;
+			2C13ED4E08B023C40035C47A = 2C13ED4E08B023C40035C47A;
+			2C13ED4F08B023C40035C47A = 2C13ED4F08B023C40035C47A;
+			2C13ED5008B023C40035C47A = 2C13ED5008B023C40035C47A;
+			2C13ED5108B024610035C47A = 2C13ED5108B024610035C47A;
+			2C13ED5208B024610035C47A = 2C13ED5208B024610035C47A;
+			2C13ED5308B024610035C47A = 2C13ED5308B024610035C47A;
+			2C13ED5408B024610035C47A = 2C13ED5408B024610035C47A;
+			2C13ED5508B024610035C47A = 2C13ED5508B024610035C47A;
+			2C13ED5608B024610035C47A = 2C13ED5608B024610035C47A;
+			2C13ED5708B024610035C47A = 2C13ED5708B024610035C47A;
+			2C13ED5808B024610035C47A = 2C13ED5808B024610035C47A;
+			2C13ED5B08B024650035C47A = 2C13ED5B08B024650035C47A;
+			2C13ED5C08B0247A0035C47A = 2C13ED5C08B0247A0035C47A;
+			2C13ED5D08B0247A0035C47A = 2C13ED5D08B0247A0035C47A;
+			2C13ED5E08B0247A0035C47A = 2C13ED5E08B0247A0035C47A;
+			2C13ED5F08B0247A0035C47A = 2C13ED5F08B0247A0035C47A;
+			2C13ED6008B0247A0035C47A = 2C13ED6008B0247A0035C47A;
+			2C13ED6308B0247E0035C47A = 2C13ED6308B0247E0035C47A;
+			2C13ED6408B0247E0035C47A = 2C13ED6408B0247E0035C47A;
+			2C13ED6508B0247E0035C47A = 2C13ED6508B0247E0035C47A;
+			2C13ED6608B0247E0035C47A = 2C13ED6608B0247E0035C47A;
+			2C13ED6708B0247E0035C47A = 2C13ED6708B0247E0035C47A;
+			2C13ED6808B024820035C47A = 2C13ED6808B024820035C47A;
+			2C13ED6908B024820035C47A = 2C13ED6908B024820035C47A;
+			2C13ED6A08B024820035C47A = 2C13ED6A08B024820035C47A;
+			2C13ED6B08B024820035C47A = 2C13ED6B08B024820035C47A;
+			2C13ED6C08B0249E0035C47A = 2C13ED6C08B0249E0035C47A;
+			2C13ED6D08B0249E0035C47A = 2C13ED6D08B0249E0035C47A;
+			2C13ED6E08B0249F0035C47A = 2C13ED6E08B0249F0035C47A;
+			2C13ED7108B0249F0035C47A = 2C13ED7108B0249F0035C47A;
+			2C13ED7208B024B00035C47A = 2C13ED7208B024B00035C47A;
+			2C13ED7308B024B00035C47A = 2C13ED7308B024B00035C47A;
+			2C13ED7408B024B00035C47A = 2C13ED7408B024B00035C47A;
+			2C13ED7508B024B00035C47A = 2C13ED7508B024B00035C47A;
 			2C34090908AC9DCB001F6FFA = 2C34090908AC9DCB001F6FFA;
 			2C3A0A27089B3403006D8D14 = 2C3A0A27089B3403006D8D14;
 			2C3A0A29089B3403006D8D14 = 2C3A0A29089B3403006D8D14;
@@ -439,9 +488,9 @@
 	};
 	2A37F4ACFDCFA73011CA2CEA = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {648, 2211}}";
-			sepNavSelRange = "{862, 90}";
-			sepNavVisRect = "{{0, 282}, {648, 323}}";
+			sepNavIntBoundsRect = "{{0, 0}, {405, 2589}}";
+			sepNavSelRange = "{2221, 0}";
+			sepNavVisRect = "{{0, 1302}, {405, 61}}";
 			sepNavWindowFrame = "{{15, 269}, {750, 558}}";
 		};
 	};
@@ -548,7 +597,7 @@
 		isa = PBXTextBookmark;
 		name = "DiskImageMaker.m: 533";
 		rLen = 0;
-		rLoc = 16118;
+		rLoc = 16177;
 		rType = 0;
 		vrLen = 329;
 		vrLoc = 16001;
@@ -578,7 +627,7 @@
 		isa = PBXTextBookmark;
 		name = "DiskImageMaker.m: 533";
 		rLen = 0;
-		rLoc = 16118;
+		rLoc = 16177;
 		rType = 0;
 		vrLen = 329;
 		vrLoc = 16001;
@@ -963,7 +1012,7 @@
 		isa = PBXTextBookmark;
 		name = "DiskImageMaker.m: 533";
 		rLen = 0;
-		rLoc = 16118;
+		rLoc = 16177;
 		rType = 0;
 		vrLen = 329;
 		vrLoc = 16001;
@@ -1068,12 +1117,499 @@
 		vrLen = 852;
 		vrLoc = 0;
 	};
+	2C13ED3F08B021FA0035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "Checking free space of disks.";
+		rLen = 29;
+		rLoc = 2179;
+		rType = 0;
+		vrLen = 638;
+		vrLoc = 1946;
+	};
+	2C13ED4008B021FA0035C47A = {
+		fRef = 2CF42620088EB8E6002BBE99;
+		isa = PBXTextBookmark;
+		name = "English: 5";
+		rLen = 0;
+		rLoc = 274;
+		rType = 0;
+		vrLen = 852;
+		vrLoc = 0;
+	};
+	2C13ED4108B021FA0035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "\tNSString * resultString = [[NSString alloc] initWithData:taskResult encoding:NSUTF8StringEncoding];\n\tNSLog(resultString);\n\t[resultString release];";
+		rLen = 147;
+		rLoc = 276;
+		rType = 0;
+		vrLen = 684;
+		vrLoc = 63;
+	};
+	2C13ED4208B021FA0035C47A = {
+		fRef = 2C896425081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = setTerminationMessage;
+		rLen = 21;
+		rLoc = 1832;
+		rType = 0;
+		vrLen = 476;
+		vrLoc = 1754;
+	};
+	2C13ED4308B021FA0035C47A = {
+		fRef = 2CF42620088EB8E6002BBE99;
+		isa = PBXTextBookmark;
+		name = "English: 5";
+		rLen = 0;
+		rLoc = 274;
+		rType = 0;
+		vrLen = 852;
+		vrLoc = 0;
+	};
+	2C13ED4408B021FA0035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "\tNSString * resultString = [[NSString alloc] initWithData:taskResult encoding:NSUTF8StringEncoding];\n\tNSLog(resultString);\n\t[resultString release];";
+		rLen = 147;
+		rLoc = 276;
+		rType = 0;
+		vrLen = 684;
+		vrLoc = 63;
+	};
+	2C13ED4508B021FA0035C47A = {
+		fRef = 2C896425081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = setTerminationMessage;
+		rLen = 21;
+		rLoc = 1832;
+		rType = 0;
+		vrLen = 557;
+		vrLoc = 944;
+	};
+	2C13ED4608B023000035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "Checking free space of disks.";
+		rLen = 29;
+		rLoc = 2179;
+		rType = 0;
+		vrLen = 638;
+		vrLoc = 1946;
+	};
+	2C13ED4708B023000035C47A = {
+		fRef = 2C896425081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = setTerminationMessage;
+		rLen = 21;
+		rLoc = 1832;
+		rType = 0;
+		vrLen = 515;
+		vrLoc = 1664;
+	};
+	2C13ED4808B023000035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "\tNSString * resultString = [[NSString alloc] initWithData:taskResult encoding:NSUTF8StringEncoding];\n\tNSLog(resultString);\n\t[resultString release];";
+		rLen = 147;
+		rLoc = 276;
+		rType = 0;
+		vrLen = 684;
+		vrLoc = 63;
+	};
+	2C13ED4908B023000035C47A = {
+		fRef = 2C896425081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = setTerminationMessage;
+		rLen = 21;
+		rLoc = 1832;
+		rType = 0;
+		vrLen = 515;
+		vrLoc = 1664;
+	};
+	2C13ED4A08B023000035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "DiskImageMaker.m: 104";
+		rLen = 0;
+		rLoc = 3026;
+		rType = 0;
+		vrLen = 782;
+		vrLoc = 2388;
+	};
+	2C13ED4B08B023C40035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "Checking free space of disks.";
+		rLen = 29;
+		rLoc = 2181;
+		rType = 0;
+		vrLen = 638;
+		vrLoc = 1946;
+	};
+	2C13ED4C08B023C40035C47A = {
+		fRef = 2C896425081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = setTerminationMessage;
+		rLen = 21;
+		rLoc = 1832;
+		rType = 0;
+		vrLen = 549;
+		vrLoc = 1629;
+	};
+	2C13ED4D08B023C40035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "DiskImageMaker.m: 101";
+		rLen = 0;
+		rLoc = 2934;
+		rType = 0;
+		vrLen = 692;
+		vrLoc = 2439;
+	};
+	2C13ED4E08B023C40035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "DiskImageMaker.m: 101";
+		rLen = 0;
+		rLoc = 2934;
+		rType = 0;
+		vrLen = 743;
+		vrLoc = 2388;
+	};
+	2C13ED4F08B023C40035C47A = {
+		fRef = 2C896425081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = setTerminationMessage;
+		rLen = 21;
+		rLoc = 1832;
+		rType = 0;
+		vrLen = 549;
+		vrLoc = 1629;
+	};
+	2C13ED5008B023C40035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "DiskImageMaker.m: 101";
+		rLen = 0;
+		rLoc = 2936;
+		rType = 0;
+		vrLen = 692;
+		vrLoc = 2439;
+	};
+	2C13ED5108B024610035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "Checking free space of disks.";
+		rLen = 29;
+		rLoc = 2181;
+		rType = 0;
+		vrLen = 638;
+		vrLoc = 1948;
+	};
+	2C13ED5208B024610035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "DiskImageMaker.m: 101";
+		rLen = 0;
+		rLoc = 2936;
+		rType = 0;
+		vrLen = 477;
+		vrLoc = 880;
+	};
+	2C13ED5308B024610035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "DiskImageMaker.m: 452";
+		rLen = 0;
+		rLoc = 14817;
+		rType = 0;
+		vrLen = 764;
+		vrLoc = 14196;
+	};
+	2C13ED5408B024610035C47A = {
+		fRef = 2C7FBE4508196D8300340E25;
+		isa = PBXTextBookmark;
+		name = "MyWindowController.m: 30";
+		rLen = 0;
+		rLoc = 652;
+		rType = 0;
+		vrLen = 624;
+		vrLoc = 396;
+	};
+	2C13ED5508B024610035C47A = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		rLen = 9;
+		rLoc = 2217;
+		rType = 0;
+	};
+	2C13ED5608B024610035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "DiskImageMaker.m: 452";
+		rLen = 0;
+		rLoc = 14817;
+		rType = 0;
+		vrLen = 764;
+		vrLoc = 14196;
+	};
+	2C13ED5708B024610035C47A = {
+		fRef = 2C7FBE4508196D8300340E25;
+		isa = PBXTextBookmark;
+		name = "MyWindowController.m: 30";
+		rLen = 0;
+		rLoc = 652;
+		rType = 0;
+		vrLen = 624;
+		vrLoc = 396;
+	};
+	2C13ED5808B024610035C47A = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = "MyDocument.m: 90";
+		rLen = 0;
+		rLoc = 2221;
+		rType = 0;
+		vrLen = 572;
+		vrLoc = 1800;
+	};
+	2C13ED5B08B024650035C47A = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = "MyDocument.m: 90";
+		rLen = 0;
+		rLoc = 2221;
+		rType = 0;
+		vrLen = 572;
+		vrLoc = 1800;
+	};
+	2C13ED5C08B0247A0035C47A = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = "MyDocument.m: 90";
+		rLen = 0;
+		rLoc = 2221;
+		rType = 0;
+		vrLen = 572;
+		vrLoc = 1800;
+	};
+	2C13ED5D08B0247A0035C47A = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = "MyDocument.m: 90";
+		rLen = 0;
+		rLoc = 2221;
+		rType = 0;
+		vrLen = 116;
+		vrLoc = 2004;
+	};
+	2C13ED5E08B0247A0035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "DiskImageMaker.m: 101";
+		rLen = 0;
+		rLoc = 2936;
+		rType = 0;
+		vrLen = 83;
+		vrLoc = 1108;
+	};
+	2C13ED5F08B0247A0035C47A = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = "MyDocument.m: 90";
+		rLen = 0;
+		rLoc = 2221;
+		rType = 0;
+		vrLen = 116;
+		vrLoc = 2004;
+	};
+	2C13ED6008B0247A0035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "DiskImageMaker.m: 101";
+		rLen = 0;
+		rLoc = 2936;
+		rType = 0;
+		vrLen = 83;
+		vrLoc = 1108;
+	};
+	2C13ED6308B0247E0035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "Checking free space of disks.";
+		rLen = 29;
+		rLoc = 2181;
+		rType = 0;
+		vrLen = 638;
+		vrLoc = 1948;
+	};
+	2C13ED6408B0247E0035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "DiskImageMaker.m: 101";
+		rLen = 0;
+		rLoc = 2936;
+		rType = 0;
+		vrLen = 477;
+		vrLoc = 880;
+	};
+	2C13ED6508B0247E0035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "DiskImageMaker.m: 101";
+		rLen = 0;
+		rLoc = 2936;
+		rType = 0;
+		vrLen = 477;
+		vrLoc = 880;
+	};
+	2C13ED6608B0247E0035C47A = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = "MyDocument.m: 90";
+		rLen = 0;
+		rLoc = 2221;
+		rType = 0;
+		vrLen = 572;
+		vrLoc = 1800;
+	};
+	2C13ED6708B0247E0035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "DiskImageMaker.m: 101";
+		rLen = 0;
+		rLoc = 2936;
+		rType = 0;
+		vrLen = 83;
+		vrLoc = 1108;
+	};
+	2C13ED6808B024820035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "Checking free space of disks.";
+		rLen = 29;
+		rLoc = 2181;
+		rType = 0;
+		vrLen = 638;
+		vrLoc = 1948;
+	};
+	2C13ED6908B024820035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "DiskImageMaker.m: 101";
+		rLen = 0;
+		rLoc = 2936;
+		rType = 0;
+		vrLen = 477;
+		vrLoc = 880;
+	};
+	2C13ED6A08B024820035C47A = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = "MyDocument.m: 90";
+		rLen = 0;
+		rLoc = 2221;
+		rType = 0;
+		vrLen = 572;
+		vrLoc = 1800;
+	};
+	2C13ED6B08B024820035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "DiskImageMaker.m: 101";
+		rLen = 0;
+		rLoc = 2936;
+		rType = 0;
+		vrLen = 83;
+		vrLoc = 1108;
+	};
+	2C13ED6C08B0249E0035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "Checking free space of disks.";
+		rLen = 29;
+		rLoc = 2181;
+		rType = 0;
+		vrLen = 638;
+		vrLoc = 1948;
+	};
+	2C13ED6D08B0249E0035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "DiskImageMaker.m: 101";
+		rLen = 0;
+		rLoc = 2936;
+		rType = 0;
+		vrLen = 477;
+		vrLoc = 880;
+	};
+	2C13ED6E08B0249F0035C47A = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = "MyDocument.m: 90";
+		rLen = 0;
+		rLoc = 2221;
+		rType = 0;
+		vrLen = 572;
+		vrLoc = 1800;
+	};
+	2C13ED7108B0249F0035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "DiskImageMaker.m: 101";
+		rLen = 0;
+		rLoc = 2936;
+		rType = 0;
+		vrLen = 83;
+		vrLoc = 1108;
+	};
+	2C13ED7208B024B00035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "Checking free space of disks.";
+		rLen = 29;
+		rLoc = 2181;
+		rType = 0;
+		vrLen = 638;
+		vrLoc = 1948;
+	};
+	2C13ED7308B024B00035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "DiskImageMaker.m: 101";
+		rLen = 0;
+		rLoc = 2936;
+		rType = 0;
+		vrLen = 477;
+		vrLoc = 880;
+	};
+	2C13ED7408B024B00035C47A = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = "MyDocument.m: 90";
+		rLen = 0;
+		rLoc = 2221;
+		rType = 0;
+		vrLen = 572;
+		vrLoc = 1800;
+	};
+	2C13ED7508B024B00035C47A = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = "DiskImageMaker.m: 101";
+		rLen = 0;
+		rLoc = 2936;
+		rType = 0;
+		vrLen = 83;
+		vrLoc = 1108;
+	};
 	2C34090908AC9DCB001F6FFA = {
 		fRef = 2C7FBE4508196D8300340E25;
 		isa = PBXTextBookmark;
 		name = "MyWindowController.m: sheetDidEnd:returnCode:contextInfo:";
 		rLen = 0;
-		rLoc = 1894;
+		rLoc = 1896;
 		rType = 0;
 		vrLen = 610;
 		vrLoc = 1551;
@@ -1120,7 +1656,7 @@
 		isa = PBXTextBookmark;
 		name = "MyWindowController.m: 158";
 		rLen = 0;
-		rLoc = 4845;
+		rLoc = 4847;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 4559;
@@ -1156,14 +1692,14 @@
 		fileReference = 2C896426081D105D00694C34;
 		functionName = "-deleteDSStore:";
 		isa = PBXFileBreakpoint;
-		lineNumber = 423;
+		lineNumber = 424;
 		state = 2;
 	};
 	2C5A33F20897BEC100F95662 = {
 		fileReference = 2C896426081D105D00694C34;
 		functionName = "-detachDiskImage:";
 		isa = PBXFileBreakpoint;
-		lineNumber = 231;
+		lineNumber = 232;
 		state = 2;
 	};
 	2C5A34300897C79500F95662 = {
@@ -1391,8 +1927,8 @@
 	2C7FBE4508196D8300340E25 = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {769, 3317}}";
-			sepNavSelRange = "{4581, 45}";
-			sepNavVisRect = "{{0, 2002}, {769, 298}}";
+			sepNavSelRange = "{652, 0}";
+			sepNavVisRect = "{{0, 264}, {769, 298}}";
 			sepNavWindowFrame = "{{15, 269}, {750, 558}}";
 		};
 	};
@@ -1492,17 +2028,17 @@
 	};
 	2C896425081D105D00694C34 = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {837, 1458}}";
-			sepNavSelRange = "{1754, 9}";
-			sepNavVisRect = "{{0, 815}, {837, 322}}";
+			sepNavIntBoundsRect = "{{0, 0}, {648, 1458}}";
+			sepNavSelRange = "{1832, 21}";
+			sepNavVisRect = "{{0, 921}, {648, 272}}";
 			sepNavWindowFrame = "{{490, 105}, {750, 694}}";
 		};
 	};
 	2C896426081D105D00694C34 = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {648, 8749}}";
-			sepNavSelRange = "{2179, 29}";
-			sepNavVisRect = "{{0, 1005}, {648, 272}}";
+			sepNavIntBoundsRect = "{{0, 0}, {648, 8763}}";
+			sepNavSelRange = "{2936, 0}";
+			sepNavVisRect = "{{0, 394}, {648, 272}}";
 			sepNavWindowFrame = "{{15, 269}, {750, 558}}";
 		};
 	};
@@ -1520,21 +2056,21 @@
 		fileReference = 2C896426081D105D00694C34;
 		functionName = "-createDiskImage";
 		isa = PBXFileBreakpoint;
-		lineNumber = 344;
+		lineNumber = 345;
 		state = 1;
 	};
 	2C8DC139089DAEA400EA1921 = {
 		fileReference = 2C896426081D105D00694C34;
 		functionName = "-createDiskImage";
 		isa = PBXFileBreakpoint;
-		lineNumber = 310;
+		lineNumber = 311;
 		state = 1;
 	};
 	2C8DC140089DAF1C00EA1921 = {
 		fileReference = 2C896426081D105D00694C34;
 		functionName = "-checkFreeSpace";
 		isa = PBXFileBreakpoint;
-		lineNumber = 116;
+		lineNumber = 117;
 		state = 1;
 	};
 	2C8DC14B089DB0B700EA1921 = {
@@ -1718,7 +2254,7 @@
 		isa = PBXTextBookmark;
 		name = "- (void)showAlertMessage:(NSString *)theMessageText withInformativeText:(NSString *)infoText\n";
 		rLen = 93;
-		rLoc = 5968;
+		rLoc = 5970;
 		rType = 0;
 		vrLen = 578;
 		vrLoc = 5967;
@@ -1995,7 +2531,7 @@
 		fileReference = 2C896426081D105D00694C34;
 		functionName = "-checkPreviousTask:";
 		isa = PBXFileBreakpoint;
-		lineNumber = 355;
+		lineNumber = 356;
 		state = 1;
 	};
 	2CF4276C08900509002BBE99 = {
@@ -2003,7 +2539,7 @@
 		isa = PBXTextBookmark;
 		name = "NSLocalizedString(@\"The file \\n %@ could not be removed.\", \"can not trash existing file\"),\n\t\t\t\t\t\t\ttargetPath];";
 		rLen = 110;
-		rLoc = 10571;
+		rLoc = 10618;
 		rType = 0;
 		vrLen = 771;
 		vrLoc = 8088;
@@ -2013,7 +2549,7 @@
 		isa = PBXTextBookmark;
 		name = "showAlertMessage:(NSString *)theMessageText informativeText:(NSString *)theInformativeText";
 		rLen = 90;
-		rLoc = 5834;
+		rLoc = 5836;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 5322;
@@ -2029,7 +2565,7 @@
 		fileReference = 2C896426081D105D00694C34;
 		functionName = "-checkFreeSpace";
 		isa = PBXFileBreakpoint;
-		lineNumber = 101;
+		lineNumber = 102;
 		state = 2;
 	};
 	2CF4B5C60848CCBB001812D4 = {
