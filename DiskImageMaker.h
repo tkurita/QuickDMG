@@ -29,6 +29,7 @@
 	NSString *mountPoint;
 	int terminationStatus;
 	NSString *tmpDir;
+	BOOL isSourceFolder;
 	
 	//show dask results
 	NSString *terminationMessage;

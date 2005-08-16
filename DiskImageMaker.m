@@ -85,8 +85,8 @@ NSString *getTaskError(NSTask *theTask)
 													"")];
 	NSFileManager *myFileManager = [NSFileManager defaultManager];
 	NSDictionary * fileInfo = [myFileManager fileAttributesAtPath:sourcePath traverseLink:NO];
-	
-	if ([fileInfo fileType] == NSFileTypeDirectory) {
+	isSourceFolder = ([fileInfo fileType] == NSFileTypeDirectory);
+	if (isSourceFolder) {
 		NSTask * du =[[NSTask alloc] init];
 		[du setLaunchPath:@"/usr/bin/du"];
 		[du setArguments:[NSArray arrayWithObjects:@"-sk",sourcePath,nil]];
@@ -98,7 +98,7 @@ NSString *getTaskError(NSTask *theTask)
 		NSData * duData = [[duOutput fileHandleForReading] availableData];
 		sourceSize = [[[[NSString alloc] initWithData:duData encoding: NSUTF8StringEncoding] autorelease] intValue];
 		//sourceSize = sourceSize * 1024 * 1.1;
-		sourceSize = (sourceSize * 1024)+200000;
+		sourceSize = (sourceSize * 1024 *1.1)+200000;
 		[du release];
 	}
 	else {
@@ -338,7 +338,16 @@ NSString *getTaskError(NSTask *theTask)
 		}
 	}
 	
+//	if (isSourceFolder) {
+//		[dmgTask setArguments:[NSArray arrayWithObjects:@"create",@"-fs",@"HFS+",@" -srcfolder",sourcePath,@"-layout",@"None",@"-type",dmgType,@"-volname",diskName,dmgTarget,@"-plist",nil]];
+//	}
+//	else {
+//		[dmgTask setArguments:[NSArray arrayWithObjects:@"create",@"-fs",@"HFS+",@"-size",imageSize,@"-layout",@"None",@"-type",dmgType,@"-volname",diskName,dmgTarget,@"-plist",nil]];
+//	}
+	
 	[dmgTask setArguments:[NSArray arrayWithObjects:@"create",@"-fs",@"HFS+",@"-size",imageSize,@"-layout",@"None",@"-type",dmgType,@"-volname",diskName,dmgTarget,@"-plist",nil]];
+
+	
 	[myNotiCenter addObserver:self selector:@selector(attachDiskImage:) name:NSTaskDidTerminateNotification object:dmgTask];
 	[self setCurrentTask:dmgTask];
 	[dmgTask launch];
@@ -393,7 +402,7 @@ NSString *getTaskError(NSTask *theTask)
 
 -(void) convertDiskImage
 {
-	[self postStatusNotification: NSLocalizedString(@"Converting a disk image file","")];
+	[self postStatusNotification: NSLocalizedString(@"Converting a disk image file.","")];
 	
 	NSTask * dmgTask = [self hdiUtilTask];
 	if (willBeConverted) 
