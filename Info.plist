@@ -40,9 +40,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.0</string>
+	<string>2.0.1</string>
 	<key>CFBundleGetInfoString</key>
-	<string>2.0 copyright 2005, Tetsuro KURITA</string>
+	<string>2.0.1 copyright 2005, Tetsuro KURITA</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>QuickDMG Help</string>
 	<key>CFBundleHelpBookName</key>
