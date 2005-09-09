@@ -79,15 +79,15 @@
 
 -(void) dmgDidTerminate:(NSNotification *) notification
 {
-	NSLog(@"start dmgDidTerminate in MyDocument");
+	//NSLog(@"start dmgDidTerminate in MyDocument");
 	DiskImageMaker* dmgObj = [notification object];
 	if ([dmgObj terminationStatus] == 0) {
 		[self close];
 	}
 	else {
-		NSLog(@"termination status is not 0");
+		//NSLog(@"termination status is not 0");
 		NSString *theMessage = [dmgObj terminationMessage];
-		NSLog(theMessage);
+		//NSLog(theMessage);
 		[targetWindowController showAlertMessage:NSLocalizedString(@"Error! Can't progress jobs.","") withInformativeText:theMessage];
 	}
 }
