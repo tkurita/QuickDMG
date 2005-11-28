@@ -102,17 +102,24 @@
 
 - (void)makeDmg
 {
-	NSNotificationCenter* notificationCenter = [NSNotificationCenter defaultCenter];
-	[notificationCenter addObserver:targetWindowController
-											 selector:@selector(showStatusMessage:)
-												name:@"DmgProgressNotification"
-												object:dmgMaker];
-	[notificationCenter addObserver:self
-						   selector:@selector(dmgDidTerminate:)
-							   name:@"DmgDidTerminationNotification"
-							 object:dmgMaker];
+	if (![dmgMaker checkWorkingLocationPermission]) {
+		NSString* detailMessage = [NSString stringWithFormat:NSLocalizedString(@"No write permission",""),
+			[dmgMaker workingLocation]];
+		[targetWindowController showAlertMessage:NSLocalizedString(@"Access right is insufficiency.","") withInformativeText:detailMessage];
+		return;
+	}
 	
 	if ([dmgMaker checkFreeSpace]) {
+		NSNotificationCenter* notificationCenter = [NSNotificationCenter defaultCenter];
+		[notificationCenter addObserver:targetWindowController
+							   selector:@selector(showStatusMessage:)
+								   name:@"DmgProgressNotification"
+								 object:dmgMaker];
+		[notificationCenter addObserver:self
+							   selector:@selector(dmgDidTerminate:)
+								   name:@"DmgDidTerminationNotification"
+								 object:dmgMaker];
+		
 		[dmgMaker createDiskImage];
 	}
 	else {

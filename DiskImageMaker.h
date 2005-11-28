@@ -49,6 +49,7 @@
 
 #pragma mark launching tasks
 //pubulic
+- (BOOL)checkWorkingLocationPermission;
 - (BOOL)checkFreeSpace;
 - (void)createDiskImage;
 
