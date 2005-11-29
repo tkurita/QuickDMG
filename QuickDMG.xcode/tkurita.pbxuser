@@ -125,7 +125,7 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 145871905;
+			PBXPerProjectTemplateStateSaveDate = 150737116;
 			PBXPrepackagedSmartGroups_v2 = (
 				{
 					PBXTransientLocationAtTop = bottom;
@@ -302,7 +302,7 @@
 					};
 				},
 			);
-			PBXWorkspaceStateSaveDate = 145871905;
+			PBXWorkspaceStateSaveDate = 150737116;
 		};
 		perUserProjectItems = {
 			2C03FBC2088A1378008B7312 = 2C03FBC2088A1378008B7312;
@@ -311,7 +311,6 @@
 			2C04E19D08A9101A00F3B297 = 2C04E19D08A9101A00F3B297;
 			2C04E1CB08A9A39200F3B297 = 2C04E1CB08A9A39200F3B297;
 			2C13EC9708AF58470035C47A = 2C13EC9708AF58470035C47A;
-			2C13EC9F08AF58470035C47A = 2C13EC9F08AF58470035C47A;
 			2C13ECA508AF5AD00035C47A = 2C13ECA508AF5AD00035C47A;
 			2C13ED1208AFCBBD0035C47A = 2C13ED1208AFCBBD0035C47A;
 			2C13ED1508AFCBBD0035C47A = 2C13ED1508AFCBBD0035C47A;
@@ -319,10 +318,7 @@
 			2C13ED2E08AFCF970035C47A = 2C13ED2E08AFCF970035C47A;
 			2C13ED3308AFD1620035C47A = 2C13ED3308AFD1620035C47A;
 			2C13EDB008B04A4F0035C47A = 2C13EDB008B04A4F0035C47A;
-			2C13EDDE08B05BFB0035C47A = 2C13EDDE08B05BFB0035C47A;
 			2C13EDE208B05BFB0035C47A = 2C13EDE208B05BFB0035C47A;
-			2C13EDE808B05F470035C47A = 2C13EDE808B05F470035C47A;
-			2C34090908AC9DCB001F6FFA = 2C34090908AC9DCB001F6FFA;
 			2C3A0A27089B3403006D8D14 = 2C3A0A27089B3403006D8D14;
 			2C3A0A29089B3403006D8D14 = 2C3A0A29089B3403006D8D14;
 			2C3A0A2E089B3403006D8D14 = 2C3A0A2E089B3403006D8D14;
@@ -358,13 +354,11 @@
 			2CA312A908A9B55F00ADA32C = 2CA312A908A9B55F00ADA32C;
 			2CA313AB08A9F1CD00ADA32C = 2CA313AB08A9F1CD00ADA32C;
 			2CA313E208A9F3FF00ADA32C = 2CA313E208A9F3FF00ADA32C;
-			2CA3141E08AA055D00ADA32C = 2CA3141E08AA055D00ADA32C;
 			2CA3143A08AA083E00ADA32C = 2CA3143A08AA083E00ADA32C;
 			2CA3144608AA08D400ADA32C = 2CA3144608AA08D400ADA32C;
 			2CA3148F08AA16D600ADA32C = 2CA3148F08AA16D600ADA32C;
 			2CA3149408AA16D600ADA32C = 2CA3149408AA16D600ADA32C;
 			2CA3149708AA16D600ADA32C = 2CA3149708AA16D600ADA32C;
-			2CA314A008AA342D00ADA32C = 2CA314A008AA342D00ADA32C;
 			2CA314B108AA354300ADA32C = 2CA314B108AA354300ADA32C;
 			2CA314BD08AA498F00ADA32C = 2CA314BD08AA498F00ADA32C;
 			2CA315BD08AB440B00ADA32C = 2CA315BD08AB440B00ADA32C;
@@ -372,31 +366,28 @@
 			2CA315CC08AB461B00ADA32C = 2CA315CC08AB461B00ADA32C;
 			2CA315CD08AB461B00ADA32C = 2CA315CD08AB461B00ADA32C;
 			2CA315CE08AB461B00ADA32C = 2CA315CE08AB461B00ADA32C;
-			2CA3160F08AB50B600ADA32C = 2CA3160F08AB50B600ADA32C;
 			2CA902C008A3A92F007D6A63 = 2CA902C008A3A92F007D6A63;
 			2CA902C308A3A92F007D6A63 = 2CA902C308A3A92F007D6A63;
+			2CAF6C3808CB446F00A7B222 = 2CAF6C3808CB446F00A7B222;
 			2CBCE59F08A8989C002EF3FD = 2CBCE59F08A8989C002EF3FD;
 			2CBCE5A108A8989C002EF3FD = 2CBCE5A108A8989C002EF3FD;
+			2CC158B208E974CC008860F4 = 2CC158B208E974CC008860F4;
+			2CC15B7608ECC2FF008860F4 = 2CC15B7608ECC2FF008860F4;
 			2CCC48E508A443C6008D0E16 = 2CCC48E508A443C6008D0E16;
 			2CCC48E808A443C6008D0E16 = 2CCC48E808A443C6008D0E16;
-			2CCE107308B0D0CF00CA5E6E = 2CCE107308B0D0CF00CA5E6E;
 			2CCE107408B0D0CF00CA5E6E = 2CCE107408B0D0CF00CA5E6E;
-			2CCE107508B0D0CF00CA5E6E = 2CCE107508B0D0CF00CA5E6E;
-			2CCE107608B0D0CF00CA5E6E = 2CCE107608B0D0CF00CA5E6E;
-			2CCE107708B0D0CF00CA5E6E = 2CCE107708B0D0CF00CA5E6E;
-			2CCE107808B0D0CF00CA5E6E = 2CCE107808B0D0CF00CA5E6E;
 			2CD4856B0818DDC400A7FDA9 = 2CD4856B0818DDC400A7FDA9;
-			2CDD5A9908B1D4B30092E5AD = 2CDD5A9908B1D4B30092E5AD;
-			2CDD5A9A08B1D4B30092E5AD = 2CDD5A9A08B1D4B30092E5AD;
-			2CDD5A9B08B1D4B30092E5AD = 2CDD5A9B08B1D4B30092E5AD;
-			2CDD5A9C08B1D4B30092E5AD = 2CDD5A9C08B1D4B30092E5AD;
-			2CDD5A9D08B1D4B30092E5AD = 2CDD5A9D08B1D4B30092E5AD;
-			2CDD5AA008B1D52D0092E5AD = 2CDD5AA008B1D52D0092E5AD;
-			2CDD5AA108B1D52D0092E5AD = 2CDD5AA108B1D52D0092E5AD;
-			2CDD5AA208B1D55B0092E5AD = 2CDD5AA208B1D55B0092E5AD;
-			2CDD5AA308B1D55B0092E5AD = 2CDD5AA308B1D55B0092E5AD;
-			2CDD5AA408B1D55B0092E5AD = 2CDD5AA408B1D55B0092E5AD;
+			2CE338B608FC133B000F406A = 2CE338B608FC133B000F406A;
+			2CE338B808FC133B000F406A = 2CE338B808FC133B000F406A;
+			2CE339D308FC99E1000F406A = 2CE339D308FC99E1000F406A;
+			2CE339D408FC99E1000F406A = 2CE339D408FC99E1000F406A;
+			2CE339D508FC99E1000F406A = 2CE339D508FC99E1000F406A;
+			2CE33A7B08FCB502000F406A = 2CE33A7B08FCB502000F406A;
+			2CE33A7D08FCB502000F406A = 2CE33A7D08FCB502000F406A;
 			2CEC3AE1088CE4E900F96C8A = 2CEC3AE1088CE4E900F96C8A;
+			2CEE033908E7EB21002A9CBE = 2CEE033908E7EB21002A9CBE;
+			2CEE033A08E7EB21002A9CBE = 2CEE033A08E7EB21002A9CBE;
+			2CEE035008E7EDDB002A9CBE = 2CEE035008E7EDDB002A9CBE;
 			2CF4276C08900509002BBE99 = 2CF4276C08900509002BBE99;
 			2CF4276E08900509002BBE99 = 2CF4276E08900509002BBE99;
 			2CF4B5C60848CCBB001812D4 = 2CF4B5C60848CCBB001812D4;
@@ -408,9 +399,9 @@
 	};
 	2A37F4ACFDCFA73011CA2CEA = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {405, 2589}}";
-			sepNavSelRange = "{2221, 0}";
-			sepNavVisRect = "{{0, 1302}, {405, 61}}";
+			sepNavIntBoundsRect = "{{0, 0}, {769, 2197}}";
+			sepNavSelRange = "{2270, 5}";
+			sepNavVisRect = "{{0, 1117}, {769, 329}}";
 			sepNavWindowFrame = "{{15, 269}, {750, 558}}";
 		};
 	};
@@ -512,16 +503,6 @@
 		vrLen = 366;
 		vrLoc = 0;
 	};
-	2C13EC9F08AF58470035C47A = {
-		fRef = 8D15AC360486D014006FF6A4;
-		isa = PBXTextBookmark;
-		name = "Info.plist: 49";
-		rLen = 0;
-		rLoc = 1354;
-		rType = 0;
-		vrLen = 599;
-		vrLoc = 818;
-	};
 	2C13ECA508AF5AD00035C47A = {
 		fRef = 2C7FBEA3081A6E9100340E25;
 		isa = PBXTextBookmark;
@@ -599,16 +580,6 @@
 		vrLen = 400;
 		vrLoc = 1896;
 	};
-	2C13EDDE08B05BFB0035C47A = {
-		fRef = 2C896426081D105D00694C34;
-		isa = PBXTextBookmark;
-		name = "DiskImageMaker.m: 99";
-		rLen = 0;
-		rLoc = 2890;
-		rType = 0;
-		vrLen = 911;
-		vrLoc = 2623;
-	};
 	2C13EDE208B05BFB0035C47A = {
 		fRef = 2C896425081D105D00694C34;
 		isa = PBXTextBookmark;
@@ -618,26 +589,6 @@
 		rType = 0;
 		vrLen = 419;
 		vrLoc = 134;
-	};
-	2C13EDE808B05F470035C47A = {
-		fRef = 2CF42620088EB8E6002BBE99;
-		isa = PBXTextBookmark;
-		name = "Converting a disk image file.";
-		rLen = 29;
-		rLoc = 601;
-		rType = 0;
-		vrLen = 919;
-		vrLoc = 0;
-	};
-	2C34090908AC9DCB001F6FFA = {
-		fRef = 2C7FBE4508196D8300340E25;
-		isa = PBXTextBookmark;
-		name = "MyWindowController.m: sheetDidEnd:returnCode:contextInfo:";
-		rLen = 0;
-		rLoc = 1896;
-		rType = 0;
-		vrLen = 610;
-		vrLoc = 1551;
 	};
 	2C3A0A27089B3403006D8D14 = {
 		fRef = 32DBCF750370BD2300C91783;
@@ -942,8 +893,8 @@
 	2C7FBE4508196D8300340E25 = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {769, 3317}}";
-			sepNavSelRange = "{652, 0}";
-			sepNavVisRect = "{{0, 264}, {769, 298}}";
+			sepNavSelRange = "{6289, 0}";
+			sepNavVisRect = "{{0, 2902}, {769, 329}}";
 			sepNavWindowFrame = "{{15, 269}, {750, 558}}";
 		};
 	};
@@ -1052,8 +1003,8 @@
 	2C896426081D105D00694C34 = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {648, 8945}}";
-			sepNavSelRange = "{33, 15}";
-			sepNavVisRect = "{{0, 0}, {648, 272}}";
+			sepNavSelRange = "{10910, 102}";
+			sepNavVisRect = "{{0, 4704}, {648, 272}}";
 			sepNavWindowFrame = "{{15, 269}, {750, 558}}";
 		};
 	};
@@ -1185,16 +1136,6 @@
 		refType = 4;
 		sourceTree = "<group>";
 	};
-	2CA3141E08AA055D00ADA32C = {
-		fRef = 2A37F4B0FDCFA73011CA2CEA;
-		isa = PBXTextBookmark;
-		name = "main.m: 4";
-		rLen = 0;
-		rLoc = 26;
-		rType = 0;
-		vrLen = 122;
-		vrLoc = 0;
-	};
 	2CA3143708AA083200ADA32C = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {648, 480}}";
@@ -1246,16 +1187,6 @@
 		rType = 0;
 		vrLen = 373;
 		vrLoc = 0;
-	};
-	2CA314A008AA342D00ADA32C = {
-		fRef = 2C7FBE4508196D8300340E25;
-		isa = PBXTextBookmark;
-		name = "- (void)showAlertMessage:(NSString *)theMessageText withInformativeText:(NSString *)infoText\n";
-		rLen = 93;
-		rLoc = 5970;
-		rType = 0;
-		vrLen = 578;
-		vrLoc = 5967;
 	};
 	2CA314B108AA354300ADA32C = {
 		fRef = 2A37F4B7FDCFA73011CA2CEA;
@@ -1321,16 +1252,6 @@
 		vrLen = 393;
 		vrLoc = 0;
 	};
-	2CA3160F08AB50B600ADA32C = {
-		fRef = 2A37F4ACFDCFA73011CA2CEA;
-		isa = PBXTextBookmark;
-		name = "targetWindowController = [[MyWindowController alloc] initWithWindowNibName:@\"MyDocument\"];";
-		rLen = 90;
-		rLoc = 862;
-		rType = 0;
-		vrLen = 690;
-		vrLoc = 539;
-	};
 	2CA902C008A3A92F007D6A63 = {
 		fRef = 2C5A35090897DCAB00F95662;
 		isa = PBXTextBookmark;
@@ -1350,6 +1271,16 @@
 		rType = 0;
 		vrLen = 273;
 		vrLoc = 0;
+	};
+	2CAF6C3808CB446F00A7B222 = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = initWithWindowNibName;
+		rLen = 21;
+		rLoc = 915;
+		rType = 0;
+		vrLen = 656;
+		vrLoc = 539;
 	};
 	2CBCE59D08A8989B002EF3FD = {
 		fileReference = 2C7FBEA3081A6E9100340E25;
@@ -1378,6 +1309,39 @@
 		vrLen = 559;
 		vrLoc = 259;
 	};
+	2CC158B208E974CC008860F4 = {
+		fRef = 2C7FBE4508196D8300340E25;
+		isa = PBXTextBookmark;
+		name = "MyWindowController.m: 66";
+		rLen = 0;
+		rLoc = 1745;
+		rType = 0;
+		vrLen = 451;
+		vrLoc = 154;
+	};
+	2CC15B7608ECC2FF008860F4 = {
+		fRef = 2CC15B7708ECC2FF008860F4;
+		isa = PBXTextBookmark;
+		name = "\"ディスクイメージファイルを変換しています。";
+		rLen = 22;
+		rLoc = 560;
+		rType = 0;
+		vrLen = 797;
+		vrLoc = 0;
+	};
+	2CC15B7708ECC2FF008860F4 = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.plist.strings;
+		name = Localizable.strings;
+		path = "/Users/tkurita/Documents/AppleGlot Environment/_NewLoc/QuickDMG.app/Contents/Resources/Japanese.lproj/Localizable.strings";
+		refType = 0;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {648, 282}}";
+			sepNavSelRange = "{560, 22}";
+			sepNavVisRect = "{{0, 0}, {648, 272}}";
+		};
+	};
 	2CCC48E508A443C6008D0E16 = {
 		fRef = 2C5A35090897DCAB00F95662;
 		isa = PBXTextBookmark;
@@ -1398,16 +1362,6 @@
 		vrLen = 271;
 		vrLoc = 0;
 	};
-	2CCE107308B0D0CF00CA5E6E = {
-		fRef = 2CF42620088EB8E6002BBE99;
-		isa = PBXTextBookmark;
-		name = "Converting a disk image file.";
-		rLen = 29;
-		rLoc = 601;
-		rType = 0;
-		vrLen = 919;
-		vrLoc = 0;
-	};
 	2CCE107408B0D0CF00CA5E6E = {
 		fRef = 2CF42620088EB8E6002BBE99;
 		isa = PBXTextBookmark;
@@ -1416,46 +1370,6 @@
 		rLoc = 274;
 		rType = 0;
 		vrLen = 919;
-		vrLoc = 0;
-	};
-	2CCE107508B0D0CF00CA5E6E = {
-		fRef = 2C896426081D105D00694C34;
-		isa = PBXTextBookmark;
-		name = "Converting a disk image file.";
-		rLen = 29;
-		rLoc = 13197;
-		rType = 0;
-		vrLen = 536;
-		vrLoc = 12966;
-	};
-	2CCE107608B0D0CF00CA5E6E = {
-		fRef = 2C896426081D105D00694C34;
-		isa = PBXTextBookmark;
-		name = "Converting a disk image file.";
-		rLen = 29;
-		rLoc = 13197;
-		rType = 0;
-		vrLen = 589;
-		vrLoc = 12966;
-	};
-	2CCE107708B0D0CF00CA5E6E = {
-		fRef = 2CF42620088EB8E6002BBE99;
-		isa = PBXTextBookmark;
-		name = "English: 5";
-		rLen = 0;
-		rLoc = 274;
-		rType = 0;
-		vrLen = 919;
-		vrLoc = 0;
-	};
-	2CCE107808B0D0CF00CA5E6E = {
-		fRef = 2C896426081D105D00694C34;
-		isa = PBXTextBookmark;
-		name = setOutputToPipe;
-		rLen = 15;
-		rLoc = 33;
-		rType = 0;
-		vrLen = 654;
 		vrLoc = 0;
 	};
 	2CD485610818DD9200A7FDA9 = {
@@ -1517,47 +1431,37 @@
 		wantsCodeCompletionTabCompletes = 1;
 		wantsIndex = 1;
 	};
-	2CDD5A9908B1D4B30092E5AD = {
-		fRef = 2CF42620088EB8E6002BBE99;
-		isa = PBXTextBookmark;
-		name = "Converting a disk image file.";
-		rLen = 29;
-		rLoc = 601;
-		rType = 0;
-		vrLen = 919;
-		vrLoc = 0;
-	};
-	2CDD5A9A08B1D4B30092E5AD = {
+	2CE338B608FC133B000F406A = {
 		fRef = 2C896426081D105D00694C34;
 		isa = PBXTextBookmark;
-		name = setOutputToPipe;
-		rLen = 15;
-		rLoc = 33;
+		name = "NSLocalizedString(@\"The file \\n %@ could not be removed.\", \n\t\t\t\t\t\t\t\t\t  \"can not trash existing file\"),";
+		rLen = 102;
+		rLoc = 10910;
 		rType = 0;
-		vrLen = 414;
-		vrLoc = 1034;
+		vrLen = 763;
+		vrLoc = 10440;
 	};
-	2CDD5A9B08B1D4B30092E5AD = {
-		fRef = 8D15AC360486D014006FF6A4;
-		isa = PBXTextBookmark;
-		name = "Info.plist: 49";
-		rLen = 0;
-		rLoc = 1354;
-		rType = 0;
-		vrLen = 599;
-		vrLoc = 818;
-	};
-	2CDD5A9C08B1D4B30092E5AD = {
+	2CE338B808FC133B000F406A = {
 		fRef = 2C896426081D105D00694C34;
 		isa = PBXTextBookmark;
-		name = setOutputToPipe;
-		rLen = 15;
-		rLoc = 33;
+		name = "NSLocalizedString(@\"The file \\n %@ could not be removed.\", \n\t\t\t\t\t\t\t\t\t  \"can not trash existing file\"),";
+		rLen = 102;
+		rLoc = 10910;
 		rType = 0;
-		vrLen = 414;
-		vrLoc = 1034;
+		vrLen = 763;
+		vrLoc = 10440;
 	};
-	2CDD5A9D08B1D4B30092E5AD = {
+	2CE339D308FC99E1000F406A = {
+		fRef = 2A37F4B0FDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = "#import <Cocoa/Cocoa.h>\n\nint main(int argc, char *argv[])\n{\n    return NSApplicationMain(argc, (const char **) argv);\n}\n";
+		rLen = 120;
+		rLoc = 2;
+		rType = 0;
+		vrLen = 122;
+		vrLoc = 0;
+	};
+	2CE339D408FC99E1000F406A = {
 		fRef = 8D15AC360486D014006FF6A4;
 		isa = PBXTextBookmark;
 		name = "Info.plist: 45";
@@ -1567,55 +1471,42 @@
 		vrLen = 541;
 		vrLoc = 0;
 	};
-	2CDD5AA008B1D52D0092E5AD = {
-		fRef = 2CF42620088EB8E6002BBE99;
+	2CE339D508FC99E1000F406A = {
+		fRef = 2A37F4B0FDCFA73011CA2CEA;
 		isa = PBXTextBookmark;
-		name = "Converting a disk image file.";
-		rLen = 29;
-		rLoc = 601;
+		name = "#import <Cocoa/Cocoa.h>\n\nint main(int argc, char *argv[])\n{\n    return NSApplicationMain(argc, (const char **) argv);\n}\n";
+		rLen = 120;
+		rLoc = 2;
 		rType = 0;
-		vrLen = 919;
+		vrLen = 122;
 		vrLoc = 0;
 	};
-	2CDD5AA108B1D52D0092E5AD = {
+	2CE33A7B08FCB502000F406A = {
+		fRef = 2CE33A7C08FCB502000F406A;
+		isa = PBXTextBookmark;
+		name = "\"ディスクイメージファイルを変換しています。";
+		rLen = 22;
+		rLoc = 560;
+		rType = 0;
+		vrLen = 797;
+		vrLoc = 0;
+	};
+	2CE33A7C08FCB502000F406A = {
+		isa = PBXFileReference;
+		name = Localizable.strings;
+		path = "/Users/tkurita/Documents/AppleGlot Environment/_NewLoc/QuickDMG.app/Contents/Resources/Japanese.lproj/Localizable.strings";
+		refType = 0;
+		sourceTree = "<absolute>";
+	};
+	2CE33A7D08FCB502000F406A = {
 		fRef = 8D15AC360486D014006FF6A4;
 		isa = PBXTextBookmark;
-		name = "Info.plist: 45";
-		rLen = 0;
-		rLoc = 1196;
+		name = "\t<key>NSPrincipalClass</key>\n\t<string>NSApplication</string>";
+		rLen = 60;
+		rLoc = 1421;
 		rType = 0;
-		vrLen = 541;
-		vrLoc = 0;
-	};
-	2CDD5AA208B1D55B0092E5AD = {
-		fRef = 2CF42620088EB8E6002BBE99;
-		isa = PBXTextBookmark;
-		name = "Converting a disk image file.";
-		rLen = 29;
-		rLoc = 601;
-		rType = 0;
-		vrLen = 919;
-		vrLoc = 0;
-	};
-	2CDD5AA308B1D55B0092E5AD = {
-		fRef = 8D15AC360486D014006FF6A4;
-		isa = PBXTextBookmark;
-		name = "Info.plist: 45";
-		rLen = 0;
-		rLoc = 1196;
-		rType = 0;
-		vrLen = 541;
-		vrLoc = 0;
-	};
-	2CDD5AA408B1D55B0092E5AD = {
-		fRef = 8D15AC360486D014006FF6A4;
-		isa = PBXTextBookmark;
-		name = "Info.plist: 45";
-		rLen = 0;
-		rLoc = 1196;
-		rType = 0;
-		vrLen = 541;
-		vrLoc = 0;
+		vrLen = 575;
+		vrLoc = 924;
 	};
 	2CEC3AE1088CE4E900F96C8A = {
 		fRef = 2C7FBE4408196D8300340E25;
@@ -1627,11 +1518,41 @@
 		vrLen = 686;
 		vrLoc = 25;
 	};
+	2CEE033908E7EB21002A9CBE = {
+		fRef = 2CF42620088EB8E6002BBE99;
+		isa = PBXTextBookmark;
+		name = "Error! Can't progress jobs.";
+		rLen = 27;
+		rLoc = 146;
+		rType = 0;
+		vrLen = 919;
+		vrLoc = 0;
+	};
+	2CEE033A08E7EB21002A9CBE = {
+		fRef = 2C7FBE4508196D8300340E25;
+		isa = PBXTextBookmark;
+		name = "- (void)showAlertMessage:(NSString *)theMessageText withInformativeText:(NSString *)infoText\n";
+		rLen = 93;
+		rLoc = 5970;
+		rType = 0;
+		vrLen = 940;
+		vrLoc = 5723;
+	};
+	2CEE035008E7EDDB002A9CBE = {
+		fRef = 2C896426081D105D00694C34;
+		isa = PBXTextBookmark;
+		name = detachDiskImage;
+		rLen = 15;
+		rLoc = 7455;
+		rType = 0;
+		vrLen = 850;
+		vrLoc = 7445;
+	};
 	2CF42620088EB8E6002BBE99 = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {648, 272}}";
-			sepNavSelRange = "{601, 29}";
-			sepNavVisRect = "{{0, 0}, {648, 272}}";
+			sepNavIntBoundsRect = "{{0, 0}, {648, 366}}";
+			sepNavSelRange = "{146, 27}";
+			sepNavVisRect = "{{0, 0}, {648, 366}}";
 			sepNavWindowFrame = "{{153, 143}, {750, 558}}";
 		};
 	};
@@ -1710,8 +1631,8 @@
 	8D15AC360486D014006FF6A4 = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {648, 798}}";
-			sepNavSelRange = "{1196, 0}";
-			sepNavVisRect = "{{0, 0}, {648, 272}}";
+			sepNavSelRange = "{1421, 60}";
+			sepNavVisRect = "{{0, 516}, {648, 272}}";
 		};
 	};
 }
