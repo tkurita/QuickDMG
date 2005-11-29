@@ -1,10 +1,13 @@
 #import "AppController.h"
+#define useLog 0
 
 @implementation AppController
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	//NSLog(@"start applicationDidFinishLaunching");
+#if useLog
+	NSLog(@"start applicationDidFinishLaunching");
+#endif
 	NSArray *docArray = [documentController documents];
 	if ([docArray count] != 0) {
 		NSEnumerator *docEnumerator = [docArray objectEnumerator];
@@ -20,9 +23,26 @@
 		];
 	//NSLog(scriptPath);
 	NSURL * scriptURL = [NSURL fileURLWithPath:scriptPath];
-	NSDictionary * errorDict;
+	NSDictionary * errorDict = nil;
 	NSAppleScript * getFinderSelection = [[NSAppleScript alloc] initWithContentsOfURL:scriptURL error:&errorDict];
 	NSAppleEventDescriptor * scriptResult = [getFinderSelection executeAndReturnError:&errorDict];
+	if (errorDict != nil) {
+#if useLog
+		NSLog([errorDict description]);
+#endif
+		NSAlert *alert = [[NSAlert alloc] init];
+		[alert addButtonWithTitle:@"OK"];
+		[alert setMessageText:
+			[NSString stringWithFormat:@"AppleScript Error : %@",[errorDict objectForKey:NSAppleScriptErrorNumber]]
+			];
+		[alert setInformativeText:[errorDict objectForKey:NSAppleScriptErrorMessage]];
+		[alert setAlertStyle:NSWarningAlertStyle];
+		if ([alert runModal] == NSAlertFirstButtonReturn) {
+		} 
+		[alert release];
+		return;
+	}
+	
 	[getFinderSelection release];
 	
 	if ([scriptResult descriptorType] == typeAEList) {

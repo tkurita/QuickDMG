@@ -79,15 +79,15 @@
 
 -(void) dmgDidTerminate:(NSNotification *) notification
 {
-	NSLog(@"start dmgDidTerminate in MyDocument");
+	//NSLog(@"start dmgDidTerminate in MyDocument");
 	DiskImageMaker* dmgObj = [notification object];
 	if ([dmgObj terminationStatus] == 0) {
 		[self close];
 	}
 	else {
-		NSLog(@"termination status is not 0");
+		//NSLog(@"termination status is not 0");
 		NSString *theMessage = [dmgObj terminationMessage];
-		NSLog(theMessage);
+		//NSLog(theMessage);
 		[targetWindowController showAlertMessage:NSLocalizedString(@"Error! Can't progress jobs.","") withInformativeText:theMessage];
 	}
 }
@@ -102,17 +102,24 @@
 
 - (void)makeDmg
 {
-	NSNotificationCenter* notificationCenter = [NSNotificationCenter defaultCenter];
-	[notificationCenter addObserver:targetWindowController
-											 selector:@selector(showStatusMessage:)
-												name:@"DmgProgressNotification"
-												object:dmgMaker];
-	[notificationCenter addObserver:self
-						   selector:@selector(dmgDidTerminate:)
-							   name:@"DmgDidTerminationNotification"
-							 object:dmgMaker];
+	if (![dmgMaker checkWorkingLocationPermission]) {
+		NSString* detailMessage = [NSString stringWithFormat:NSLocalizedString(@"No write permission",""),
+			[dmgMaker workingLocation]];
+		[targetWindowController showAlertMessage:NSLocalizedString(@"Access right is insufficiency.","") withInformativeText:detailMessage];
+		return;
+	}
 	
 	if ([dmgMaker checkFreeSpace]) {
+		NSNotificationCenter* notificationCenter = [NSNotificationCenter defaultCenter];
+		[notificationCenter addObserver:targetWindowController
+							   selector:@selector(showStatusMessage:)
+								   name:@"DmgProgressNotification"
+								 object:dmgMaker];
+		[notificationCenter addObserver:self
+							   selector:@selector(dmgDidTerminate:)
+								   name:@"DmgDidTerminationNotification"
+								 object:dmgMaker];
+		
 		[dmgMaker createDiskImage];
 	}
 	else {

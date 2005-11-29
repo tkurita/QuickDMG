@@ -29,6 +29,7 @@
 	NSString *mountPoint;
 	int terminationStatus;
 	NSString *tmpDir;
+	BOOL isSourceFolder;
 	
 	//show dask results
 	NSString *terminationMessage;
@@ -48,6 +49,7 @@
 
 #pragma mark launching tasks
 //pubulic
+- (BOOL)checkWorkingLocationPermission;
 - (BOOL)checkFreeSpace;
 - (void)createDiskImage;
 

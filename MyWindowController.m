@@ -27,7 +27,7 @@ static const int DIALOG_ABORT	= 129;
 {
 	if (returnCode == NSOKButton) {
 		NSString *resultPath = [sheet filename];
-		NSLog(resultPath);
+		//NSLog(resultPath);
 		id document = [self document];
 		[document setWorkingLocation:[resultPath stringByDeletingLastPathComponent]];
 		[document setCustomDmgName:[resultPath lastPathComponent]];
