@@ -4,7 +4,7 @@ on run
 	local thelist, theItem, nSelect
 	set thelist to getSelection()
 	set nSelect to length of thelist
-	
+	--log nSelect
 	if nSelect is 0 then
 		set thelist to missing value
 	else if nSelect is 1 then
@@ -44,7 +44,14 @@ on getSelection()
 end getSelection
 
 on checkIsSelectionMyself(theItem)
-	set myself to POSIX path of (path to me)
+	set myself to POSIX path of (path to current application)
+	--display dialog "hello"
+	(*
+	tell  application "Finder"
+		display dialog myself
+	end tell
+	*)
+	--log myself
 	if myself is theItem then
 		return missing value
 	else
