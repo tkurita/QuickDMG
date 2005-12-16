@@ -221,10 +221,19 @@ NSString *getTaskError(NSTask *theTask)
 	NSTask * dittoTask = [[NSTask alloc] init];
 	[dittoTask setLaunchPath:@"/usr/bin/ditto"];
 	setOutputToPipe(dittoTask);
-	[dittoTask setArguments:[NSArray arrayWithObjects:@"--rsrc",sourcePath,mountPoint,nil]];
+	
+	NSString *copyDestination = mountPoint;
+	
+	if (isSourceFolder) {
+		if ([[NSWorkspace sharedWorkspace] isFilePackageAtPath:sourcePath]) {
+			copyDestination = [mountPoint stringByAppendingPathComponent:sourceName];
+		}
+	}
+	
+	[dittoTask setArguments:[NSArray arrayWithObjects:@"--rsrc",sourcePath,copyDestination,nil]];
 	
 	if (deleteDSStoreFlag) {
-		[myNotiCenter addObserver:self selector:@selector(deleteDSStore:)				name:NSTaskDidTerminateNotification object:dittoTask];		
+		[myNotiCenter addObserver:self selector:@selector(deleteDSStore:) name:NSTaskDidTerminateNotification object:dittoTask];		
 	}
 	else {
 		[myNotiCenter addObserver:self selector:@selector(detachDiskImage:) name:NSTaskDidTerminateNotification object:dittoTask];
