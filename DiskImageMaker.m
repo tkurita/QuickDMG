@@ -231,7 +231,7 @@ NSString *getTaskError(NSTask *theTask)
 	}
 	
 	[dittoTask setArguments:[NSArray arrayWithObjects:@"--rsrc",sourcePath,copyDestination,nil]];
-	
+
 	if (deleteDSStoreFlag) {
 		[myNotiCenter addObserver:self selector:@selector(deleteDSStore:) name:NSTaskDidTerminateNotification object:dittoTask];		
 	}
@@ -255,6 +255,7 @@ NSString *getTaskError(NSTask *theTask)
 	[self postStatusNotification:NSLocalizedString(@"Setting internet-enable option.","")];
 	NSTask * dmgTask = [self hdiUtilTask];
 	[dmgTask setArguments:[NSArray arrayWithObjects:@"internet-enable",@"-yes", dmgName, nil]];
+
 	[myNotiCenter addObserver:self selector:@selector(dmgTaskTerminate:) name:NSTaskDidTerminateNotification object:dmgTask];
 	[self setCurrentTask:dmgTask];
 	[dmgTask launch];
@@ -272,7 +273,7 @@ NSString *getTaskError(NSTask *theTask)
 	[self postStatusNotification:NSLocalizedString(@"Detaching a disk image file.","")];
 	NSTask * dmgTask = [self hdiUtilTask];
 	[dmgTask setArguments:[NSArray arrayWithObjects:@"detach",devEntry,nil]];
-	
+
 	if (willBeConverted) {
 		[myNotiCenter addObserver:self selector:@selector(convertTmpDiskImage:) name:NSTaskDidTerminateNotification object:dmgTask];
 	}
@@ -310,7 +311,6 @@ NSString *getTaskError(NSTask *theTask)
 	
 	[dmgTask setArguments:[NSArray arrayWithObjects:@"attach",dmgPath,@"-noverify",@"-nobrowse",@"-plist",nil]];
 	
-	//[myNotiCenter removeObserver:self];
 	[myNotiCenter addObserver:self selector:@selector(copySourceItem:) name:NSTaskDidTerminateNotification object:dmgTask];
 
 	[self setCurrentTask:dmgTask];
@@ -396,7 +396,6 @@ NSString *getTaskError(NSTask *theTask)
 //	}
 	
 	[dmgTask setArguments:[NSArray arrayWithObjects:@"create",@"-fs",@"HFS+",@"-size",imageSize,@"-layout",@"None",@"-type",dmgType,@"-volname",diskName,dmgTarget,@"-plist",nil]];
-
 	
 	[myNotiCenter addObserver:self selector:@selector(attachDiskImage:) name:NSTaskDidTerminateNotification object:dmgTask];
 	[self setCurrentTask:dmgTask];
@@ -411,7 +410,9 @@ NSString *getTaskError(NSTask *theTask)
 #endif
 
 	NSTask *dmgTask = [notification object];
-
+	
+	[myNotiCenter removeObserver:self];
+	
 	if ([dmgTask terminationStatus] != 0) {
 #if useLog
 		NSLog(@"termination status is not 0");

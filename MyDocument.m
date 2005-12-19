@@ -90,6 +90,9 @@
 		//NSLog(theMessage);
 		[targetWindowController showAlertMessage:NSLocalizedString(@"Error! Can't progress jobs.","") withInformativeText:theMessage];
 	}
+	NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+	[notificationCenter removeObserver:self];
+	[notificationCenter removeObserver:targetWindowController];
 }
 
 - (NSString *)updateTargetPathByFormatDict:(NSDictionary *)dictionary
