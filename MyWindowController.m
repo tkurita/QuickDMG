@@ -228,7 +228,7 @@ static const int DIALOG_ABORT	= 129;
 
 - (void)dealloc
 {
-	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	//[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[super dealloc];
 }
 

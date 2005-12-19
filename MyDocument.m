@@ -1,6 +1,8 @@
 #import "MyDocument.h"
 #import "MyWindowController.h"
 
+#define useLog 0
+
 @implementation MyDocument
 
 - (id)init
@@ -27,7 +29,9 @@
 
 - (void)makeWindowControllers
 {
-    //NSLog(@"start makeWindowControlls");
+#if useLog
+	NSLog(@"start makeWindowControlls");
+#endif	
 	targetWindowController = [[MyWindowController alloc] initWithWindowNibName:@"MyDocument"];
     [self addWindowController:targetWindowController];
 }
@@ -52,7 +56,9 @@
 
 - (BOOL)readFromFile:(NSString *)filePath ofType:(NSString *)type
 {
-	//NSLog(@"start readFromFile");
+#if useLog
+	NSLog(@"start readFromFile");
+#endif
 	DiskImageMaker *dmgObj = [[DiskImageMaker alloc] initWithSourcePath:filePath];
 	[self setDmgMaker:[dmgObj autorelease]];
 	//NSLog(filePath);
@@ -62,7 +68,7 @@
 
 - (void)dealloc
 {
-	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	//[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[targetWindowController release];
 	[super dealloc];
 }
@@ -79,15 +85,18 @@
 
 -(void) dmgDidTerminate:(NSNotification *) notification
 {
-	//NSLog(@"start dmgDidTerminate in MyDocument");
+#if useLog
+	NSLog(@"start dmgDidTerminate in MyDocument");
+#endif	
 	DiskImageMaker* dmgObj = [notification object];
 	if ([dmgObj terminationStatus] == 0) {
 		[self close];
 	}
 	else {
-		//NSLog(@"termination status is not 0");
+#if useLog
+		NSLog(@"termination status is not 0");
+#endif		
 		NSString *theMessage = [dmgObj terminationMessage];
-		//NSLog(theMessage);
 		[targetWindowController showAlertMessage:NSLocalizedString(@"Error! Can't progress jobs.","") withInformativeText:theMessage];
 	}
 	NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];

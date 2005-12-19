@@ -72,7 +72,7 @@ NSString *getTaskError(NSTask *theTask)
 
 - (void)dealloc
 {
-	[myNotiCenter removeObserver:self];
+	//[myNotiCenter removeObserver:self];
 	[sourceDmgPath release];
 	[dmgFormat release];
 	[dmgSuffix release];
