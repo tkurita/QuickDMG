@@ -304,7 +304,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"$BUILD_STYLE\" = 'Deployment' ]; then\n#helpdir=\"$INSTALL_DIR/$TARGET_NAME.app/Contents/Resources/$TARGET_NAME Help\"\nhelpdir=\"$BUILT_PRODUCTS_DIR/$TARGET_NAME.app/Contents/Resources/$TARGET_NAME Help\"\nmkdir -p \"$helpdir\"\nsitetears_path='/Users/tkurita/Factories/Perl factory/ProjectsX/SiteTears/SiteTears.pl'\nmanual_folder='/Users/tkurita/Factories/Websites/scriptfactory folder/scriptfactory/ScriptGallery/TheOtherScripts/QuickDMG/manual'\nmanual_page=\"index.html\" \nmanual_path=\"$manual_folder/$manual_page\"\nexport PERL5LIB=\"$HOME/Library/Perl\"\nperl \"$sitetears_path\" \"$manual_path\" \"$helpdir/$manual_page\"\nopen -a 'Help Indexer' \"$helpdir\"\nfi";
+			shellScript = "if [ \"$BUILD_STYLE\" = 'Deployment' ]; then\n#helpdir=\"$INSTALL_DIR/$TARGET_NAME.app/Contents/Resources/$TARGET_NAME Help\"\nhelpdir=\"$BUILT_PRODUCTS_DIR/$TARGET_NAME.app/Contents/Resources/$TARGET_NAME Help\"\nmkdir -p \"$helpdir\"\nsitetears_path='/Users/tkurita/Factories/PerlDev/ProjectsX/SiteTear/SiteTear.pl'\nmanual_folder='/Users/tkurita/Factories/Websites/scriptfactory folder/scriptfactory/ScriptGallery/TheOtherScripts/QuickDMG/manual'\nmanual_page=\"index.html\" \nmanual_path=\"$manual_folder/$manual_page\"\nexport PERL5LIB=\"$HOME/Library/Perl\"\nperl \"$sitetears_path\" \"$manual_path\" \"$helpdir/$manual_page\"\nopen -a 'Help Indexer' \"$helpdir\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
