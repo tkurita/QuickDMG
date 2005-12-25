@@ -296,6 +296,19 @@
 			settings = {
 			};
 		};
+		2C13EC8308AF3B130035C47A = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			isa = PBXShellScriptBuildPhase;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"$BUILD_STYLE\" = 'Deployment' ]; then\nhelpdir=\"$OBJROOT/$TARGET_NAME.app/Contents/Resources/$TARGET_NAME Help/\"\nmkdir -p \"$helpdir\"\nsitetears_path='/Users/tkurita/Factories/Perl factory/ProjectsX/SiteTears/SiteTears.pl'\nmanual_path='/Users/tkurita/Factories/Websites/scriptfactory folder/scriptfactory/ScriptGallery/TheOtherScripts/QuickDMG/manual/index.html'\nperl \"$sitetears_path\" \"$manual_path\" \"$helpdir/index.html\"\nopen -a '/Developer/Applications/Utilities/Apple Help Indexing Tool.app' \"$helpdir\"\nfi\n";
+		};
 		2C5A35080897DCAB00F95662 = {
 			fileEncoding = 4;
 			isa = PBXFileReference;
@@ -523,9 +536,10 @@
 			};
 		};
 		2CF42620088EB8E6002BBE99 = {
-			fileEncoding = 4;
+			fileEncoding = 10;
 			isa = PBXFileReference;
 			lastKnownFileType = text.plist.strings;
+			lineEnding = 0;
 			name = English;
 			path = English.lproj/Localizable.strings;
 			refType = 4;
@@ -611,6 +625,7 @@
 				8D15AC300486D014006FF6A4,
 				8D15AC330486D014006FF6A4,
 				2C895FCB081CCD6700694C34,
+				2C13EC8308AF3B130035C47A,
 			);
 			buildRules = (
 			);
