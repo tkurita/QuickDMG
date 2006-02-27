@@ -1,0 +1,32 @@
+{
+    IBClasses = (
+        {CLASS = DmgDataSource; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = MyDocument; LANGUAGE = ObjC; SUPERCLASS = NSDocument; }, 
+        {
+            ACTIONS = {
+                abortAction = id; 
+                cancelAction = id; 
+                chooseTargetPath = id; 
+                internetEnableButton = id; 
+                okAction = id; 
+                zlibLevelButton = id; 
+            }; 
+            CLASS = MyWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                deleteDSStoreButton = id; 
+                dmgFormatTable = id; 
+                internetEnableButton = id; 
+                progressBar = id; 
+                progressSheet = id; 
+                progressText = id; 
+                sourcePathView = id; 
+                targetPathView = id; 
+                zlibLevelButton = id; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}
