@@ -37,6 +37,7 @@
 		2C896428081D105D00694C34 /* DiskImageMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */; };
 		2CA3143808AA083200ADA32C /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 2CA3143708AA083200ADA32C /* Credits.html */; };
 		2CF42623088EB8F1002BBE99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF42622088EB8F1002BBE99 /* Localizable.strings */; };
+		2CFCC30709B29D7A001C6704 /* setuphelp.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2CFCC30609B29D7A001C6704 /* setuphelp.sh */; };
 		8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */; };
 		8D15AC2E0486D014006FF6A4 /* MyDocument.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B4FDCFA73011CA2CEA /* MyDocument.nib */; };
 		8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
@@ -97,6 +98,7 @@
 		2C896426081D105D00694C34 /* DiskImageMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiskImageMaker.m; sourceTree = "<group>"; };
 		2CA3143708AA083200ADA32C /* Credits.html */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		2CF42620088EB8E6002BBE99 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2CFCC30609B29D7A001C6704 /* setuphelp.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setuphelp.sh; sourceTree = "<group>"; };
 		32DBCF750370BD2300C91783 /* QuickDMG_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickDMG_Prefix.pch; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.xml; fileEncoding = 4; lineEnding = 0; path = Info.plist; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* QuickDMG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickDMG.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +187,7 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CFCC30609B29D7A001C6704 /* setuphelp.sh */,
 				2CF42622088EB8F1002BBE99 /* Localizable.strings */,
 				2C03FBB3088A1353008B7312 /* UserDefaults.plist */,
 				2C03FA310889442E008B7312 /* DmgFormats.plist */,
@@ -226,7 +229,6 @@
 				8D15AC300486D014006FF6A4 /* Sources */,
 				8D15AC330486D014006FF6A4 /* Frameworks */,
 				2C895FCB081CCD6700694C34 /* AppleScript */,
-				2C13EC8308AF3B130035C47A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -287,26 +289,11 @@
 				2CF42623088EB8F1002BBE99 /* Localizable.strings in Resources */,
 				2C5A350B0897DCAB00F95662 /* stringExtra.h in Resources */,
 				2CA3143808AA083200ADA32C /* Credits.html in Resources */,
+				2CFCC30709B29D7A001C6704 /* setuphelp.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2C13EC8308AF3B130035C47A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ \"$BUILD_STYLE\" = 'Deployment' ]; then\n#helpdir=\"$INSTALL_DIR/$TARGET_NAME.app/Contents/Resources/$TARGET_NAME Help\"\nhelpdir=\"$BUILT_PRODUCTS_DIR/$TARGET_NAME.app/Contents/Resources/$TARGET_NAME Help\"\nmkdir -p \"$helpdir\"\nsitetears_path='/Users/tkurita/Factories/PerlDev/ProjectsX/SiteTear/SiteTear.pl'\nmanual_folder='/Users/tkurita/Factories/Websites/scriptfactory folder/scriptfactory/ScriptGallery/TheOtherScripts/QuickDMG/manual'\nmanual_page=\"index.html\" \nmanual_path=\"$manual_folder/$manual_page\"\nexport PERL5LIB=\"$HOME/Library/Perl\"\nperl \"$sitetears_path\" \"$manual_path\" \"$helpdir/$manual_page\"\nopen -a 'Help Indexer' \"$helpdir\"\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D15AC300486D014006FF6A4 /* Sources */ = {
@@ -362,7 +349,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2CC63DFE09377A2500503C26 /* Development */ = {
+		2CC63DFE09377A2500503C26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
@@ -379,9 +366,9 @@
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
-			name = Development;
+			name = Debug;
 		};
-		2CC63DFF09377A2500503C26 /* Deployment */ = {
+		2CC63DFF09377A2500503C26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
@@ -396,7 +383,7 @@
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
-			name = Deployment;
+			name = Release;
 		};
 		2CC63E0009377A2500503C26 /* Default */ = {
 			isa = XCBuildConfiguration;
@@ -412,27 +399,32 @@
 			};
 			name = Default;
 		};
-		2CC63E0209377A2500503C26 /* Development */ = {
+		2CC63E0209377A2500503C26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
-				SDKROOT = /Developer/SDKs/MacOSX10.3.9.sdk;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
-			name = Development;
+			name = Debug;
 		};
-		2CC63E0309377A2500503C26 /* Deployment */ = {
+		2CC63E0309377A2500503C26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
-				SDKROOT = /Developer/SDKs/MacOSX10.3.9.sdk;
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
-			name = Deployment;
+			name = Release;
 		};
 		2CC63E0409377A2500503C26 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				MACOSX_DEPLOYMENT_TARGET = 10.3;
-				SDKROOT = /Developer/SDKs/MacOSX10.3.9.sdk;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Default;
 		};
@@ -442,8 +434,8 @@
 		2CC63DFD09377A2500503C26 /* Build configuration list for PBXNativeTarget "QuickDMG" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2CC63DFE09377A2500503C26 /* Development */,
-				2CC63DFF09377A2500503C26 /* Deployment */,
+				2CC63DFE09377A2500503C26 /* Debug */,
+				2CC63DFF09377A2500503C26 /* Release */,
 				2CC63E0009377A2500503C26 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -452,8 +444,8 @@
 		2CC63E0109377A2500503C26 /* Build configuration list for PBXProject "QuickDMG" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2CC63E0209377A2500503C26 /* Development */,
-				2CC63E0309377A2500503C26 /* Deployment */,
+				2CC63E0209377A2500503C26 /* Debug */,
+				2CC63E0309377A2500503C26 /* Release */,
 				2CC63E0409377A2500503C26 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
