@@ -23,19 +23,21 @@
 		2C03FA320889442E008B7312 /* DmgFormats.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C03FA310889442E008B7312 /* DmgFormats.plist */; };
 		2C03FBB4088A1353008B7312 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C03FBB3088A1353008B7312 /* UserDefaults.plist */; };
 		2C5A350A0897DCAB00F95662 /* stringExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5A35080897DCAB00F95662 /* stringExtra.m */; };
-		2C5A350B0897DCAB00F95662 /* stringExtra.h in Resources */ = {isa = PBXBuildFile; fileRef = 2C5A35090897DCAB00F95662 /* stringExtra.h */; };
-		2C7FBDE308194C6D00340E25 /* MyDocumentController.h in Resources */ = {isa = PBXBuildFile; fileRef = 2C7FBDE108194C6D00340E25 /* MyDocumentController.h */; };
+		2C5A350B0897DCAB00F95662 /* stringExtra.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C5A35090897DCAB00F95662 /* stringExtra.h */; };
+		2C7FBDE308194C6D00340E25 /* MyDocumentController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7FBDE108194C6D00340E25 /* MyDocumentController.h */; };
 		2C7FBDE408194C6D00340E25 /* MyDocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7FBDE208194C6D00340E25 /* MyDocumentController.m */; };
-		2C7FBE4608196D8300340E25 /* MyWindowController.h in Resources */ = {isa = PBXBuildFile; fileRef = 2C7FBE4408196D8300340E25 /* MyWindowController.h */; };
+		2C7FBE4608196D8300340E25 /* MyWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7FBE4408196D8300340E25 /* MyWindowController.h */; };
 		2C7FBE4708196D8300340E25 /* MyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7FBE4508196D8300340E25 /* MyWindowController.m */; };
 		2C7FBEA5081A6E9100340E25 /* DmgDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7FBEA3081A6E9100340E25 /* DmgDataSource.m */; };
-		2C7FBEA6081A6E9100340E25 /* DmgDataSource.h in Resources */ = {isa = PBXBuildFile; fileRef = 2C7FBEA4081A6E9100340E25 /* DmgDataSource.h */; };
-		2C895FA7081C9D2900694C34 /* AppController.h in Resources */ = {isa = PBXBuildFile; fileRef = 2C895FA5081C9D2900694C34 /* AppController.h */; };
+		2C7FBEA6081A6E9100340E25 /* DmgDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7FBEA4081A6E9100340E25 /* DmgDataSource.h */; };
+		2C895FA7081C9D2900694C34 /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C895FA5081C9D2900694C34 /* AppController.h */; };
 		2C895FA8081C9D2900694C34 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C895FA6081C9D2900694C34 /* AppController.m */; };
 		2C895FB5081CCA5E00694C34 /* GetFinderSelection.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2C895FB4081CCA5E00694C34 /* GetFinderSelection.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
-		2C896427081D105D00694C34 /* DiskImageMaker.h in Resources */ = {isa = PBXBuildFile; fileRef = 2C896425081D105D00694C34 /* DiskImageMaker.h */; };
+		2C896427081D105D00694C34 /* DiskImageMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C896425081D105D00694C34 /* DiskImageMaker.h */; };
 		2C896428081D105D00694C34 /* DiskImageMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */; };
 		2CA3143808AA083200ADA32C /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 2CA3143708AA083200ADA32C /* Credits.html */; };
+		2CA4BEAA09E22BAF00D9C9D6 /* QuickDMG.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */; };
+		2CA4C01F09E22DBF00D9C9D6 /* MyDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A37F4AEFDCFA73011CA2CEA /* MyDocument.h */; };
 		2CF42623088EB8F1002BBE99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF42622088EB8F1002BBE99 /* Localizable.strings */; };
 		2CFCC30709B29D7A001C6704 /* setuphelp.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2CFCC30609B29D7A001C6704 /* setuphelp.sh */; };
 		8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */; };
@@ -97,6 +99,7 @@
 		2C896425081D105D00694C34 /* DiskImageMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiskImageMaker.h; sourceTree = "<group>"; };
 		2C896426081D105D00694C34 /* DiskImageMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiskImageMaker.m; sourceTree = "<group>"; };
 		2CA3143708AA083200ADA32C /* Credits.html */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = QuickDMG.icns; sourceTree = "<group>"; };
 		2CF42620088EB8E6002BBE99 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CFCC30609B29D7A001C6704 /* setuphelp.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setuphelp.sh; sourceTree = "<group>"; };
 		32DBCF750370BD2300C91783 /* QuickDMG_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickDMG_Prefix.pch; sourceTree = "<group>"; };
@@ -187,6 +190,7 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */,
 				2CFCC30609B29D7A001C6704 /* setuphelp.sh */,
 				2CF42622088EB8F1002BBE99 /* Localizable.strings */,
 				2C03FBB3088A1353008B7312 /* UserDefaults.plist */,
@@ -220,12 +224,30 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		2CA4C01D09E22D8400D9C9D6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C5A350B0897DCAB00F95662 /* stringExtra.h in Headers */,
+				2CA4C01F09E22DBF00D9C9D6 /* MyDocument.h in Headers */,
+				2C7FBDE308194C6D00340E25 /* MyDocumentController.h in Headers */,
+				2C7FBE4608196D8300340E25 /* MyWindowController.h in Headers */,
+				2C7FBEA6081A6E9100340E25 /* DmgDataSource.h in Headers */,
+				2C895FA7081C9D2900694C34 /* AppController.h in Headers */,
+				2C896427081D105D00694C34 /* DiskImageMaker.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		8D15AC270486D014006FF6A4 /* QuickDMG */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CC63DFD09377A2500503C26 /* Build configuration list for PBXNativeTarget "QuickDMG" */;
 			buildPhases = (
 				8D15AC2B0486D014006FF6A4 /* Resources */,
+				2CA4C01D09E22D8400D9C9D6 /* Headers */,
 				8D15AC300486D014006FF6A4 /* Sources */,
 				8D15AC330486D014006FF6A4 /* Frameworks */,
 				2C895FCB081CCD6700694C34 /* AppleScript */,
@@ -276,18 +298,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CA4BEAA09E22BAF00D9C9D6 /* QuickDMG.icns in Resources */,
 				8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */,
 				8D15AC2E0486D014006FF6A4 /* MyDocument.nib in Resources */,
 				8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */,
-				2C7FBDE308194C6D00340E25 /* MyDocumentController.h in Resources */,
-				2C7FBE4608196D8300340E25 /* MyWindowController.h in Resources */,
-				2C7FBEA6081A6E9100340E25 /* DmgDataSource.h in Resources */,
-				2C895FA7081C9D2900694C34 /* AppController.h in Resources */,
-				2C896427081D105D00694C34 /* DiskImageMaker.h in Resources */,
 				2C03FA320889442E008B7312 /* DmgFormats.plist in Resources */,
 				2C03FBB4088A1353008B7312 /* UserDefaults.plist in Resources */,
 				2CF42623088EB8F1002BBE99 /* Localizable.strings in Resources */,
-				2C5A350B0897DCAB00F95662 /* stringExtra.h in Resources */,
 				2CA3143808AA083200ADA32C /* Credits.html in Resources */,
 				2CFCC30709B29D7A001C6704 /* setuphelp.sh in Resources */,
 			);
