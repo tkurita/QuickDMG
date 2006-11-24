@@ -270,7 +270,7 @@ NSString *getTaskError(NSTask *theTask)
 		return;
 	}
 	
-	[self postStatusNotification:NSLocalizedString(@"Detaching a disk image file.","")];
+	[self postStatusNotification:NSLocalizedString(@"Detaching a disk image.","")];
 	NSTask * dmgTask = [self hdiUtilTask];
 	[dmgTask setArguments:[NSArray arrayWithObjects:@"detach",devEntry,nil]];
 
@@ -302,7 +302,7 @@ NSString *getTaskError(NSTask *theTask)
 		return;
 	}
 	
-	[self postStatusNotification: NSLocalizedString(@"Attaching a disk image file.","")];
+	[self postStatusNotification: NSLocalizedString(@"Attaching a disk image.","")];
 	NSTask* dmgTask = [notification object];
 	
 	NSArray * resultArray = getTaskResult(dmgTask);
@@ -338,7 +338,7 @@ NSString *getTaskError(NSTask *theTask)
 	else 
 		imageSize = [[NSNumber numberWithUnsignedLongLong:sourceSize] stringValue];
 	
-	[self postStatusNotification: NSLocalizedString(@"Creating a disk image file.",
+	[self postStatusNotification: NSLocalizedString(@"Detaching a disk image.",
 											"Status message of creating a disk image.")];
 	
 	NSTask * dmgTask = [self hdiUtilTask];
@@ -469,7 +469,7 @@ NSString *getTaskError(NSTask *theTask)
 #if useLog
 	NSLog(@"start convertDiskImage");
 #endif
-	[self postStatusNotification: NSLocalizedString(@"Converting a disk image file.","")];
+	[self postStatusNotification: NSLocalizedString(@"Converting a disk image.","")];
 	
 	NSTask * dmgTask = [self hdiUtilTask];
 	if (willBeConverted) 

@@ -117,7 +117,7 @@
 	if (![dmgMaker checkWorkingLocationPermission]) {
 		NSString* detailMessage = [NSString stringWithFormat:NSLocalizedString(@"No write permission",""),
 			[dmgMaker workingLocation]];
-		[targetWindowController showAlertMessage:NSLocalizedString(@"Access right is insufficiency.","") withInformativeText:detailMessage];
+		[targetWindowController showAlertMessage:NSLocalizedString(@"Insufficient access right.","") withInformativeText:detailMessage];
 		return;
 	}
 	
@@ -137,7 +137,7 @@
 	else {
 		[targetWindowController 
 			showAlertMessage:NSLocalizedString(@"Can't progress jobs.","")
-			withInformativeText:NSLocalizedString(@"No enough free space to create a disk image.", "")];
+			withInformativeText:NSLocalizedString(@"Not enough free space for creating a disk image.", "")];
 	}
 }
 
