@@ -38,6 +38,7 @@
 		2CA3143808AA083200ADA32C /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 2CA3143708AA083200ADA32C /* Credits.html */; };
 		2CA4BEAA09E22BAF00D9C9D6 /* QuickDMG.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */; };
 		2CA4C01F09E22DBF00D9C9D6 /* MyDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A37F4AEFDCFA73011CA2CEA /* MyDocument.h */; };
+		2CDD29E40B16DFCE000B3543 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */; };
 		2CF42623088EB8F1002BBE99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF42622088EB8F1002BBE99 /* Localizable.strings */; };
 		2CFCC30709B29D7A001C6704 /* setuphelp.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2CFCC30609B29D7A001C6704 /* setuphelp.sh */; };
 		8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */; };
@@ -76,6 +77,7 @@
 		2C896426081D105D00694C34 /* DiskImageMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiskImageMaker.m; sourceTree = "<group>"; };
 		2CA3143708AA083200ADA32C /* Credits.html */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = QuickDMG.icns; sourceTree = "<group>"; };
+		2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text.xml; path = HelpSetup.plist; sourceTree = "<group>"; };
 		2CF42620088EB8E6002BBE99 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CFCC30609B29D7A001C6704 /* setuphelp.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setuphelp.sh; sourceTree = "<group>"; };
 		32DBCF750370BD2300C91783 /* QuickDMG_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickDMG_Prefix.pch; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */,
 				2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */,
 				2CFCC30609B29D7A001C6704 /* setuphelp.sh */,
 				2CF42622088EB8F1002BBE99 /* Localizable.strings */,
@@ -267,6 +270,7 @@
 				2CF42623088EB8F1002BBE99 /* Localizable.strings in Resources */,
 				2CA3143808AA083200ADA32C /* Credits.html in Resources */,
 				2CFCC30709B29D7A001C6704 /* setuphelp.sh in Resources */,
+				2CDD29E40B16DFCE000B3543 /* HelpSetup.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

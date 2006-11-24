@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>AppleIcon</key>
-	<string>MergePDF16.png</string>
+	<string>QuickDMGIcon16.png</string>
 	<key>IsLocalized</key>
 	<true/>
 	<key>ManualFolder</key>
-	<string>/Users/tkurita/Factories/Websites/scriptfactory/scriptfactory/ScriptGallery/TheOtherScripts/MergePDF/manual</string>
+	<string>/Users/tkurita/Factories/Websites/scriptfactory/scriptfactory/ScriptGallery/TheOtherScripts/QuickDMG/manual</string>
 	<key>ManualPage</key>
 	<string>index.html</string>
 </dict>
