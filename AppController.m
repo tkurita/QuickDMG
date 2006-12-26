@@ -1,13 +1,18 @@
 #import "AppController.h"
+
+#import "DonationReminder/DonationReminder.h"
+
 #define useLog 0
 
 @implementation AppController
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+- (IBAction)makeDonation:(id)sender
 {
-#if useLog
-	NSLog(@"start applicationDidFinishLaunching");
-#endif
+	[DonationReminder goToDonation];
+}
+
+- (void)openFinderSelection
+{
 	NSArray *docArray = [documentController documents];
 	if ([docArray count] != 0) {
 		NSEnumerator *docEnumerator = [docArray objectEnumerator];
@@ -59,7 +64,25 @@
 		//document = [documentController openUntitledDocumentOfType:@"anything" display:YES];
 		[documentController setIsFirstDocument];
 		[documentController openDocument:self];
-	}	
+	}
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
+#if useLog
+	NSLog(@"start applicationDidFinishLaunching");
+#endif
+	NSString *defaultsPlistPath = [[NSBundle mainBundle] pathForResource:@"UserDefaults" ofType:@"plist"];
+	NSDictionary *defautlsDict = [NSDictionary dictionaryWithContentsOfFile:defaultsPlistPath];
+
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	
+	//format and suffix
+	[userDefaults registerDefaults:defautlsDict];
+
+	[self openFinderSelection];
+	[DonationReminder remindDonation];
 		
 }
+
 @end

@@ -6,5 +6,9 @@
 @interface AppController : NSObject
 {
     IBOutlet id documentController;
+
 }
+
+- (IBAction)makeDonation:(id)sender;
+
 @end

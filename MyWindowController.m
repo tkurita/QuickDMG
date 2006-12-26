@@ -145,13 +145,14 @@ static const int DIALOG_ABORT	= 129;
 {
 	//NSLog(@"awakeFromNib in MyWindowController");
 	
-	NSString *defaultsPlistPath = [[NSBundle mainBundle] pathForResource:@"UserDefaults" ofType:@"plist"];
-	NSDictionary *defautlsDict = [NSDictionary dictionaryWithContentsOfFile:defaultsPlistPath];
+//	NSString *defaultsPlistPath = [[NSBundle mainBundle] pathForResource:@"UserDefaults" ofType:@"plist"];
+//	NSDictionary *defautlsDict = [NSDictionary dictionaryWithContentsOfFile:defaultsPlistPath];
 
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	//[userDefaults registerDefaults:defautlsDict];
 	
 	//format and suffix
-	[userDefaults registerDefaults:defautlsDict];
+	
 	int formatIndex = [userDefaults integerForKey:@"formatIndex"];
 	[dmgFormatTable selectRowIndexes:[NSIndexSet indexSetWithIndex:formatIndex] byExtendingSelection:NO];
 	NSDictionary *formatDict = [self dmgFormatDict];

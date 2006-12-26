@@ -1,6 +1,7 @@
 {
     IBClasses = (
         {
+            ACTIONS = {makeDonation = id; }; 
             CLASS = AppController; 
             LANGUAGE = ObjC; 
             OUTLETS = {documentController = id; }; 
