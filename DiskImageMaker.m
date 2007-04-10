@@ -338,7 +338,7 @@ NSString *getTaskError(NSTask *theTask)
 	else 
 		imageSize = [[NSNumber numberWithUnsignedLongLong:sourceSize] stringValue];
 	
-	[self postStatusNotification: NSLocalizedString(@"Detaching a disk image.",
+	[self postStatusNotification: NSLocalizedString(@"Creating a disk image.",
 											"Status message of creating a disk image.")];
 	
 	NSTask * dmgTask = [self hdiUtilTask];

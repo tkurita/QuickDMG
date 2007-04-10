@@ -20,6 +20,18 @@
 			<key>canInternetEnable</key>
 			<true/>
 			<key>description</key>
+			<string>UDIF_bzip2</string>
+			<key>extension</key>
+			<string>dmg</string>
+			<key>formatID</key>
+			<string>UDBZ</string>
+			<key>needConversion</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>canInternetEnable</key>
+			<true/>
+			<key>description</key>
 			<string>SPARSE</string>
 			<key>extension</key>
 			<string>sparseimage</string>
