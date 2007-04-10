@@ -2,6 +2,81 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>DmgFormats</key>
+	<array>
+		<dict>
+			<key>canInternetEnable</key>
+			<true/>
+			<key>description</key>
+			<string>UDIF_Compressed</string>
+			<key>extension</key>
+			<string>dmg</string>
+			<key>formatID</key>
+			<string>UDZO</string>
+			<key>needConversion</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>canInternetEnable</key>
+			<true/>
+			<key>description</key>
+			<string>SPARSE</string>
+			<key>extension</key>
+			<string>sparseimage</string>
+			<key>formatID</key>
+			<string>UDSP</string>
+			<key>needConversion</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>canInternetEnable</key>
+			<true/>
+			<key>description</key>
+			<string>UDIF_R/W</string>
+			<key>extension</key>
+			<string>dmg</string>
+			<key>formatID</key>
+			<string>UDRW</string>
+			<key>needConversion</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>canInternetEnable</key>
+			<true/>
+			<key>description</key>
+			<string>UDIF_R_Only</string>
+			<key>extension</key>
+			<string>dmg</string>
+			<key>formatID</key>
+			<string>UDRO</string>
+			<key>needConversion</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>canInternetEnable</key>
+			<false/>
+			<key>description</key>
+			<string>NDIF_Compressed</string>
+			<key>extension</key>
+			<string>img</string>
+			<key>formatID</key>
+			<string>ROCo</string>
+			<key>needConversion</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>canInternetEnable</key>
+			<false/>
+			<key>description</key>
+			<string>NDIF_R_Only</string>
+			<key>extension</key>
+			<string>img</string>
+			<key>formatID</key>
+			<string>Rdxx</string>
+			<key>needConversion</key>
+			<true/>
+		</dict>
+	</array>
 	<key>DonationURL</key>
 	<string>http://homepage.mac.com/tkurita/scriptfactory/donationproxy.html</string>
 	<key>InternetEnable</key>
@@ -10,7 +85,5 @@
 	<integer>0</integer>
 	<key>deleteDSStore</key>
 	<true/>
-	<key>formatIndex</key>
-	<integer>0</integer>
 </dict>
 </plist>

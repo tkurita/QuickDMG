@@ -13,6 +13,7 @@
     IBOutlet id targetPathView;
 	IBOutlet id zlibLevelButton;
 	IBOutlet id deleteDSStoreButton;
+	IBOutlet id dmgFormatController;
 }
 
 - (IBAction)abortAction:(id)sender;
@@ -25,7 +26,7 @@
 - (void)setSourcePath:(NSString *)string;
 - (void)setTargetPath:(NSString *)string;
 - (void)showStatusMessage:(NSNotification *) notification;
-- (void)setTargetFormatFromIndex:(int)formatIndex;
+//- (void)setTargetFormatFromIndex:(int)formatIndex;
 - (NSDictionary *)dmgFormatDict;
 - (void)showAlertMessage:(NSString *)theMessageText withInformativeText:(NSString *)theInformativeText;
 

@@ -39,7 +39,7 @@
 - (void)setFormatDict:(NSDictionary *)dictionary
 {
 	[dmgMaker setDmgFormat:[dictionary objectForKey:@"formatID"]];
-	[dmgMaker setDmgSuffix:[dictionary objectForKey:@"formatSuffix"]];	
+	[dmgMaker setDmgSuffix:[dictionary objectForKey:@"extension"]];	
 }
 
 - (DiskImageMaker *)dmgMaker
@@ -107,7 +107,7 @@
 - (NSString *)updateTargetPathByFormatDict:(NSDictionary *)dictionary
 {
 	[dmgMaker setDmgFormat:[dictionary objectForKey:@"formatID"]];
-	[dmgMaker setDmgSuffix:[dictionary objectForKey:@"formatSuffix"]];
+	[dmgMaker setDmgSuffix:[dictionary objectForKey:@"extension"]];
 	
 	return [dmgMaker dmgPath];
 }

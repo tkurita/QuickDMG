@@ -1,11 +1,17 @@
 #import "MyWindowController.h"
 #import "MyDocument.h"
-#import "DmgDataSource.h"
+#import "LocalizedStringTransformer.h"
 
 static const int DIALOG_OK		= 128;
 static const int DIALOG_ABORT	= 129;
 
 @implementation MyWindowController
+
++ (void)initialize
+{	
+	NSValueTransformer *transformer = [[[LocalizedStringTransformer alloc] init] autorelease];
+	[NSValueTransformer setValueTransformer:transformer forName:@"LocalizedStringTransformer"];
+}
 
 - (IBAction)zlibLevelButton:(id)sender
 {
@@ -89,23 +95,18 @@ static const int DIALOG_ABORT	= 129;
 	
 	[theDocument makeDmg];
 }
-
+/*
 - (void)setTargetFormatFromIndex:(int)formatIndex
 {
 	[dmgFormatTable selectRow:formatIndex byExtendingSelection:NO];
 }
+*/
 
 - (NSDictionary *)dmgFormatDict
 {
 	//NSLog(@"start dmgFormartDict");
-	int selectedIndex = [dmgFormatTable selectedRow];
-	DmgDataSource *dataSource = [dmgFormatTable dataSource];
-	NSString *formatID = [dataSource formatIDFromIndex:selectedIndex];	
-	NSString *formatSuffix = [dataSource formatSuffixFromIndex:selectedIndex];
-	NSNumber *canInternetEnable = [dataSource canInternetEnableFromIndex:selectedIndex];
-	return [NSDictionary dictionaryWithObjectsAndKeys:formatID,@"formatID",
-			formatSuffix,@"formatSuffix",
-			canInternetEnable,@"canInternetEnable",nil];
+	NSArray *an_array = [dmgFormatController selectedObjects];
+	return [an_array lastObject];
 }
 
 - (void)setSourcePath:(NSString *)string
@@ -129,8 +130,10 @@ static const int DIALOG_ABORT	= 129;
 	//NSLog(@"start windowWillClose");
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	
+	/*
 	int selectedIndex = [dmgFormatTable selectedRow];
 	[userDefaults setInteger:selectedIndex forKey:@"formatIndex"];
+	*/
 	
 	BOOL internetEnableFlag = ([internetEnableButton state] == NSOnState);
 	[userDefaults setBool:internetEnableFlag forKey:@"InternetEnable"];
@@ -145,16 +148,11 @@ static const int DIALOG_ABORT	= 129;
 {
 	//NSLog(@"awakeFromNib in MyWindowController");
 	
-//	NSString *defaultsPlistPath = [[NSBundle mainBundle] pathForResource:@"UserDefaults" ofType:@"plist"];
-//	NSDictionary *defautlsDict = [NSDictionary dictionaryWithContentsOfFile:defaultsPlistPath];
-
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-	//[userDefaults registerDefaults:defautlsDict];
 	
-	//format and suffix
-	
-	int formatIndex = [userDefaults integerForKey:@"formatIndex"];
-	[dmgFormatTable selectRowIndexes:[NSIndexSet indexSetWithIndex:formatIndex] byExtendingSelection:NO];
+	//format and suffix	
+	//int formatIndex = [userDefaults integerForKey:@"formatIndex"];
+	//[dmgFormatTable selectRowIndexes:[NSIndexSet indexSetWithIndex:formatIndex] byExtendingSelection:NO];
 	NSDictionary *formatDict = [self dmgFormatDict];
 	
 	id theDocument = [self document];

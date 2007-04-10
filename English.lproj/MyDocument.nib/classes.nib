@@ -16,6 +16,7 @@
             LANGUAGE = ObjC; 
             OUTLETS = {
                 deleteDSStoreButton = id; 
+                dmgFormatController = id; 
                 dmgFormatTable = id; 
                 internetEnableButton = id; 
                 progressBar = id; 
