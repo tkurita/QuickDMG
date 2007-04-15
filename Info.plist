@@ -30,7 +30,7 @@
 	<key>CFBundleExecutable</key>
 	<string>QuickDMG</string>
 	<key>CFBundleGetInfoString</key>
-	<string>2.0.8 copyright 2005-2006, Tetsuro KURITA</string>
+	<string>2.0.8 copyright 2005-2007, Tetsuro KURITA</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>QuickDMGHelp</string>
 	<key>CFBundleIconFile</key>
