@@ -20,7 +20,6 @@
 /* End PBXAppleScriptBuildPhase section */
 
 /* Begin PBXBuildFile section */
-		2C03FA320889442E008B7312 /* DmgFormats.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C03FA310889442E008B7312 /* DmgFormats.plist */; };
 		2C03FBB4088A1353008B7312 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C03FBB3088A1353008B7312 /* UserDefaults.plist */; };
 		2C5A350A0897DCAB00F95662 /* stringExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5A35080897DCAB00F95662 /* stringExtra.m */; };
 		2C5A350B0897DCAB00F95662 /* stringExtra.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C5A35090897DCAB00F95662 /* stringExtra.h */; };
@@ -73,7 +72,6 @@
 		2A37F4B7FDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		2C03FA310889442E008B7312 /* DmgFormats.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = DmgFormats.plist; sourceTree = "<group>"; };
 		2C03FBB3088A1353008B7312 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = UserDefaults.plist; sourceTree = "<group>"; };
 		2C5A35080897DCAB00F95662 /* stringExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = stringExtra.m; sourceTree = "<group>"; };
 		2C5A35090897DCAB00F95662 /* stringExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringExtra.h; sourceTree = "<group>"; };
@@ -192,7 +190,6 @@
 				2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */,
 				2CF42622088EB8F1002BBE99 /* Localizable.strings */,
 				2C03FBB3088A1353008B7312 /* UserDefaults.plist */,
-				2C03FA310889442E008B7312 /* DmgFormats.plist */,
 				2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */,
 				2CA3143708AA083200ADA32C /* Credits.html */,
 				2A37F4B4FDCFA73011CA2CEA /* MyDocument.nib */,
@@ -293,7 +290,6 @@
 				8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */,
 				8D15AC2E0486D014006FF6A4 /* MyDocument.nib in Resources */,
 				8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */,
-				2C03FA320889442E008B7312 /* DmgFormats.plist in Resources */,
 				2C03FBB4088A1353008B7312 /* UserDefaults.plist in Resources */,
 				2CF42623088EB8F1002BBE99 /* Localizable.strings in Resources */,
 				2CA3143808AA083200ADA32C /* Credits.html in Resources */,
