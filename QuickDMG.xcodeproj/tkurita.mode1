@@ -265,6 +265,8 @@
 								<string>2A37F4AFFDCFA73011CA2CEA</string>
 								<string>2CB60FAF0BCBA15F009F39D7</string>
 								<string>2A37F4B8FDCFA73011CA2CEA</string>
+								<string>2A37F4B6FDCFA73011CA2CEA</string>
+								<string>2A37F4B4FDCFA73011CA2CEA</string>
 								<string>089C165FFE840EACC02AAC07</string>
 								<string>2A37F4C3FDCFA73011CA2CEA</string>
 								<string>1058C7A6FEA54F5311CA2CBB</string>
@@ -276,14 +278,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>39</integer>
-									<integer>37</integer>
-									<integer>36</integer>
+									<integer>31</integer>
+									<integer>30</integer>
+									<integer>25</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 114}, {261, 621}}</string>
+							<string>{{0, 199}, {261, 621}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -320,7 +322,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Localizable.strings</string>
+								<string>Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -328,11 +330,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Localizable.strings</string>
+										<string>Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2CFF0B380BD2715700374FBA</string>
+										<string>2CFF0B980BD284DB00374FBA</string>
 										<key>history</key>
 										<array>
 											<string>2C9B82580A1413A800A872A9</string>
@@ -358,8 +360,8 @@
 											<string>2CB610350BCBBD30009F39D7</string>
 											<string>2CE568920BCBE23A004C6F9B</string>
 											<string>2CE568930BCBE23A004C6F9B</string>
-											<string>2CE568940BCBE23A004C6F9B</string>
-											<string>2CE5689C0BCC56D2004C6F9B</string>
+											<string>2CFF0B410BD272E800374FBA</string>
+											<string>2CFF0B970BD284DB00374FBA</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -445,9 +447,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>2CFF0B390BD2715700374FBA</string>
+				<string>2CFF0B8A0BD2731A00374FBA</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>2CFF0B3A0BD2715700374FBA</string>
+				<string>2CFF0B8B0BD2731A00374FBA</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -581,6 +583,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>2CC63E190938BA0E00503C26</string>
 		<string>1C0AD2B3069F1EA900FABCE6</string>
 		<string>/Users/tkurita/Dev/Projects/QuickDMG/trunk/QuickDMG.xcodeproj</string>
 	</array>
@@ -626,7 +629,7 @@
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXBuildLogShowsTranscriptDefaultKey</key>
-								<string>{{0, 160}, {991, 194}}</string>
+								<string>{{0, 98}, {991, 256}}</string>
 								<key>PBXProjectModuleGUID</key>
 								<string>XCMainBuildResultsModuleGUID</string>
 								<key>PBXProjectModuleLabel</key>
@@ -664,7 +667,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>2CC63E190938BA0E00503C26</string>
-				<string>2CE5689D0BCC56D2004C6F9B</string>
+				<string>2CFF0B8C0BD2731A00374FBA</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -1028,9 +1031,9 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C0AD2B3069F1EA900FABCE6</string>
-				<string>2CFF0B3B0BD2715700374FBA</string>
+				<string>2CFF0B8D0BD2731A00374FBA</string>
 				<string>1CD0528B0623707200166675</string>
-				<string>2CFF0B3C0BD2715700374FBA</string>
+				<string>2CFF0B8E0BD2731A00374FBA</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.run</string>
@@ -1039,7 +1042,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C0AD2B3069F1EA900FABCE6</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
