@@ -74,10 +74,7 @@
 #endif
 	NSString *defaultsPlistPath = [[NSBundle mainBundle] pathForResource:@"UserDefaults" ofType:@"plist"];
 	NSDictionary *defautlsDict = [NSDictionary dictionaryWithContentsOfFile:defaultsPlistPath];
-
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-	
-	//format and suffix
 	[userDefaults registerDefaults:defautlsDict];
 
 	[self openFinderSelection];
