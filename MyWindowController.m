@@ -2,6 +2,8 @@
 #import "MyDocument.h"
 #import "LocalizedStringTransformer.h"
 
+#define useLog 0
+
 static const int DIALOG_OK		= 128;
 static const int DIALOG_ABORT	= 129;
 
