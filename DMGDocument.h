@@ -6,14 +6,11 @@
 @interface DMGDocument : NSDocument <DMGDocument>
 {
 	BOOL isMultiSourceMember;
-	//BOOL isFirstDocument;
 	
 	NSImage *iconImg;
 	NSDictionary *fileInfo;
 }
 
-//- (void)setIsFirstDocument;
-//- (BOOL)isFirstDocument;
 - (NSString *)itemName;
 
 @end

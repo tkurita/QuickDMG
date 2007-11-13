@@ -22,5 +22,6 @@
 #pragma mark accessors
 - (NSIndexSet *)selectedFormatIndexes;
 - (id)dmgFormatController;
+- (NSTableView *)tableView;
 
 @end

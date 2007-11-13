@@ -76,11 +76,15 @@
 }
 
 #pragma mark accessors
+- (NSTableView *)tableView
+{
+	return dmgFormatTable;
+}
+
 - (NSView *)view
 {
 	return dmgOptionsView;
 }
-
 
 - (void)setInternetEnable:(BOOL)aFlag
 {

@@ -116,6 +116,7 @@
 	[dmgOptionsBox setContentView:[dmgOptionsViewController view]];
 	[okButton bind:@"enabled" toObject:[dmgOptionsViewController dmgFormatController] 
 								withKeyPath:@"selectedObjects.@count" options:nil];
+	[[dmgOptionsViewController tableView] setDoubleAction:@selector(okAction:)];
 }
 
 #pragma mark communicate with DiskImageMaker
@@ -146,9 +147,16 @@
 }
 
 -(void) dmgDidTerminate:(NSNotification *) notification //common
-{
+{	
 	DiskImageMaker* dmg_maker = [notification object];
+
 	if ([dmg_maker terminationStatus] == 0) {
+		NSWindow *window = [self window];
+		NSWindow *sheet = [window attachedSheet];
+
+		if (sheet != nil) {
+			[[NSApplication sharedApplication] endSheet:sheet returnCode:DIALOG_OK];
+		}
 		[self close];
 	}
 	else {
@@ -167,7 +175,6 @@
 #pragma mark delegate of NSWindow
 - (void)windowWillClose:(NSNotification *)aNotification
 {
-	NSLog([NSString stringWithFormat:@"windowWillClose %i", [[NSApp windows] count]]);
 	[[dmgOptionsViewController dmgFormatController] removeObserver:self 
 													forKeyPath:@"selectedObjects"];
 
@@ -227,7 +234,6 @@
 	[targetPathView setStringValue:[dmgMaker dmgPath]];
 	
 	[[self window] center];
-	NSLog([NSString stringWithFormat:@"%i", [[NSApp windows] count]]);
 }
 
 @end

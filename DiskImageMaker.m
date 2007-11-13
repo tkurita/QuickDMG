@@ -240,9 +240,6 @@ NSString *getTaskError(NSTask *theTask)
 		return YES;
 	else
 		return NO;
-	
-
-	
 }
 
 #pragma mark disk image task

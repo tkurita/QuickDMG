@@ -2,6 +2,8 @@
 #import "DMGDocumentProtocol.h"
 #import "MDMGWindowController.h"
 
+#define useLog 0
+
 @implementation DMGDocumentController
 
 - (id) init
@@ -54,8 +56,9 @@
 		isFirstDocument = NO;
 	}
 	[super addDocument:document];
+#if useLog
 	NSLog([NSString stringWithFormat:@"in DMGDocumentController %i", [[NSApp windows] count]]);
-
+#endif
 }
 
 - (int)runModalOpenPanel:(NSOpenPanel*)openPanel forTypes:(NSArray*)extensions

@@ -22,17 +22,17 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 		[iconImage setScalesWhenResized:NO];
 		new_image = [iconImage copy];
 		[new_image setSize:targetSize];
-		#if useLog
+#if useLog
 		NSLog(@"have target size %i", imgSize);
-		#endif
+#endif
 	}
 	else {
 		[iconImage setScalesWhenResized:YES];
 		new_image = [iconImage copy];
 		[new_image setSize:targetSize];
-		#if useLog
+#if useLog
 		NSLog(@"not have target size %i", imgSize);
-		#endif
+#endif
 	}
 	
 	return [new_image autorelease];
@@ -48,7 +48,6 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 		NSFileManager *file_manager = [NSFileManager defaultManager];
 		fileInfo = [[file_manager fileAttributesAtPath:[self fileName] traverseLink:NO] retain];
 	}
-	NSLog([fileInfo description]);
 	return fileInfo;
 }
 
@@ -108,12 +107,7 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 	}
 	return convertImageSize(iconImg, 16);
 }
-/*
-- (void)setIsFirstDocument
-{
-	isFirstDocument = YES;
-}
-*/
+
 - (BOOL)isMultiSourceMember
 {
 	return isMultiSourceMember;
@@ -123,16 +117,13 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 {
 	isMultiSourceMember = aBool;
 }
-/*
-- (BOOL)isFirstDocument
-{
-	return isFirstDocument;
-}
-*/
+
 #pragma mark init and dealloc
 - (void)dealloc
 {
+#if useLog
 	NSLog(@"dealloc DMGDocument");
+#endif
 	[iconImg release];
 	[fileInfo release];
 	[super dealloc];
@@ -142,7 +133,6 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 {
 	[super init];
 	isMultiSourceMember = NO;
-	//isFirstDocument = NO;
 	return self;
 }
 
@@ -181,8 +171,6 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 #if useLog
 	NSLog(@"start readFromFile");
 #endif
-	//DiskImageMaker *dmgObj = [[DiskImageMaker alloc] initWithSourceItem:self];
-	//[self setDmgMaker:[dmgObj autorelease]];
     return YES;
 }
 
