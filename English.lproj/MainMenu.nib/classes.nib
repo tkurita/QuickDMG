@@ -7,12 +7,12 @@
             OUTLETS = {documentController = id; }; 
             SUPERCLASS = NSObject; 
         }, 
-        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
-            CLASS = MyDocumentController; 
+            CLASS = DMGDocumentController; 
             LANGUAGE = ObjC; 
             SUPERCLASS = NSDocumentController; 
-        }
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
     ); 
     IBVersion = 1; 
 }

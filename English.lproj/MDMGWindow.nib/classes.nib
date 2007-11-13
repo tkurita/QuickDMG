@@ -1,0 +1,37 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {cancelAction = id; chooseTargetPath = id; okAction = id; }; 
+            CLASS = DMGWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                dmgOptionsBox = id; 
+                dmgOptionsViewController = id; 
+                okButton = id; 
+                sourcePathView = id; 
+                targetPathView = id; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {
+            CLASS = FileTableController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {fileListController = id; fileTableView = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = KXTableView; LANGUAGE = ObjC; SUPERCLASS = NSTableView; }, 
+        {
+            CLASS = MDMGWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                fileListController = id; 
+                fileTable = id; 
+                fileTableController = id; 
+                splitSubview = id; 
+            }; 
+            SUPERCLASS = DMGWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

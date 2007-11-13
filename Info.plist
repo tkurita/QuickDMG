@@ -24,13 +24,13 @@
 			<key>LSTypeIsPackage</key>
 			<false/>
 			<key>NSDocumentClass</key>
-			<string>MyDocument</string>
+			<string>DMGDocument</string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>QuickDMG</string>
 	<key>CFBundleGetInfoString</key>
-	<string>2.0.8 copyright 2005-2007, Tetsuro KURITA</string>
+	<string>2.1b copyright 2005-2007, Tetsuro KURITA</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>QuickDMGHelp</string>
 	<key>CFBundleIconFile</key>
@@ -46,7 +46,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.0.8</string>
+	<string>2.1b</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>

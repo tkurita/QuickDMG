@@ -1,12 +1,13 @@
 /* AppController */
 
 #import <Cocoa/Cocoa.h>
-#import "MyDocument.h"
+#import "DMGDocument.h"
 
 @interface AppController : NSObject
 {
     IBOutlet id documentController;
-
+	
+	BOOL isFirstOpen;
 }
 
 - (IBAction)makeDonation:(id)sender;

@@ -5,3 +5,6 @@
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
 #endif
+
+static const int DIALOG_OK		= 128;
+static const int DIALOG_ABORT	= 129;

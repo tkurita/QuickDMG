@@ -21,12 +21,21 @@
 
 /* Begin PBXBuildFile section */
 		2C03FBB4088A1353008B7312 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C03FBB3088A1353008B7312 /* UserDefaults.plist */; };
+		2C24C8450CA0C91600E01AC0 /* RBSplitView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C24C8440CA0C91600E01AC0 /* RBSplitView.framework */; };
+		2C24C8480CA0C92B00E01AC0 /* RBSplitView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C24C8440CA0C91600E01AC0 /* RBSplitView.framework */; };
+		2C24C8680CA0E60400E01AC0 /* DMGOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */; };
+		2C24C8690CA0E60400E01AC0 /* DMGOptionsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C24C8670CA0E60400E01AC0 /* DMGOptionsViewController.h */; };
+		2C24C8780CA0EBFD00E01AC0 /* MDMGWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C24C8760CA0EBFD00E01AC0 /* MDMGWindowController.h */; };
+		2C24C8790CA0EBFD00E01AC0 /* MDMGWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C24C8770CA0EBFD00E01AC0 /* MDMGWindowController.m */; };
+		2C4DACF80CE29AFA009240B6 /* DMGProgressWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4DACF60CE29AFA009240B6 /* DMGProgressWindow.nib */; };
+		2C4DACFC0CE29B0D009240B6 /* DMGOptionsView.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4DACFB0CE29B0D009240B6 /* DMGOptionsView.nib */; };
+		2C4DAD040CE29DD3009240B6 /* DMGProgressWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4DAD020CE29DD3009240B6 /* DMGProgressWindowController.m */; };
+		2C4DAD050CE29DD3009240B6 /* DMGProgressWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C4DAD030CE29DD3009240B6 /* DMGProgressWindowController.h */; };
 		2C5A350A0897DCAB00F95662 /* stringExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5A35080897DCAB00F95662 /* stringExtra.m */; };
 		2C5A350B0897DCAB00F95662 /* stringExtra.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C5A35090897DCAB00F95662 /* stringExtra.h */; };
-		2C7FBDE308194C6D00340E25 /* MyDocumentController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7FBDE108194C6D00340E25 /* MyDocumentController.h */; };
-		2C7FBDE408194C6D00340E25 /* MyDocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7FBDE208194C6D00340E25 /* MyDocumentController.m */; };
-		2C7FBE4608196D8300340E25 /* MyWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7FBE4408196D8300340E25 /* MyWindowController.h */; };
-		2C7FBE4708196D8300340E25 /* MyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7FBE4508196D8300340E25 /* MyWindowController.m */; };
+		2C7FBDE308194C6D00340E25 /* DMGDocumentController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7FBDE108194C6D00340E25 /* DMGDocumentController.h */; };
+		2C7FBE4608196D8300340E25 /* DMGWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7FBE4408196D8300340E25 /* DMGWindowController.h */; };
+		2C7FBE4708196D8300340E25 /* DMGWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7FBE4508196D8300340E25 /* DMGWindowController.m */; };
 		2C895FA7081C9D2900694C34 /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C895FA5081C9D2900694C34 /* AppController.h */; };
 		2C895FA8081C9D2900694C34 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C895FA6081C9D2900694C34 /* AppController.m */; };
 		2C895FB5081CCA5E00694C34 /* GetFinderSelection.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2C895FB4081CCA5E00694C34 /* GetFinderSelection.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
@@ -34,17 +43,28 @@
 		2C896428081D105D00694C34 /* DiskImageMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */; };
 		2CA3143808AA083200ADA32C /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 2CA3143708AA083200ADA32C /* Credits.html */; };
 		2CA4BEAA09E22BAF00D9C9D6 /* QuickDMG.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */; };
-		2CA4C01F09E22DBF00D9C9D6 /* MyDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A37F4AEFDCFA73011CA2CEA /* MyDocument.h */; };
+		2CA4C01F09E22DBF00D9C9D6 /* DMGDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A37F4AEFDCFA73011CA2CEA /* DMGDocument.h */; };
 		2CB60F700BCB9D56009F39D7 /* LocalizedStringTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB60F6E0BCB9D56009F39D7 /* LocalizedStringTransformer.h */; };
 		2CB60F710BCB9D56009F39D7 /* LocalizedStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB60F6F0BCB9D56009F39D7 /* LocalizedStringTransformer.m */; };
+		2CC2DB5B0CABC1BF006E7800 /* DMGDocumentProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC2DB5A0CABC1BF006E7800 /* DMGDocumentProtocol.h */; };
+		2CC2DBB00CABC56C006E7800 /* DMGOptionsProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC2DBAF0CABC56C006E7800 /* DMGOptionsProtocol.h */; };
+		2CC2DC300CABCEA5006E7800 /* DMGWindowControllerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC2DC2F0CABCEA5006E7800 /* DMGWindowControllerProtocol.h */; };
+		2CC2DCFD0CABE945006E7800 /* DMGDocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2DBCD0CABC876006E7800 /* DMGDocumentController.m */; };
+		2CC2E7A80CE7E9A300653E25 /* MDMGWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC2E7A70CE7E9A300653E25 /* MDMGWindow.nib */; };
+		2CC2E7AC0CE7EB6400653E25 /* KXTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC2E7AA0CE7EB6400653E25 /* KXTableView.h */; };
+		2CC2E7AD0CE7EB6400653E25 /* KXTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E7AB0CE7EB6400653E25 /* KXTableView.m */; };
+		2CC904140CE877830016E8D7 /* UtilityFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC904120CE877830016E8D7 /* UtilityFunctions.h */; };
+		2CC904150CE877830016E8D7 /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC904130CE877830016E8D7 /* UtilityFunctions.m */; };
 		2CDD29E40B16DFCE000B3543 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */; };
 		2CF1C0A30B413A9800EAB8DD /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF1C09E0B413A9800EAB8DD /* DonationReminder.framework */; };
 		2CF1C0A80B413AB200EAB8DD /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CF1C09E0B413A9800EAB8DD /* DonationReminder.framework */; };
 		2CF42623088EB8F1002BBE99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF42622088EB8F1002BBE99 /* Localizable.strings */; };
+		2CFAE2570CE848E70070AEF4 /* FileTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CFAE2550CE848E70070AEF4 /* FileTableController.h */; };
+		2CFAE2580CE848E70070AEF4 /* FileTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFAE2560CE848E70070AEF4 /* FileTableController.m */; };
 		8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */; };
-		8D15AC2E0486D014006FF6A4 /* MyDocument.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B4FDCFA73011CA2CEA /* MyDocument.nib */; };
+		8D15AC2E0486D014006FF6A4 /* DMGDocument.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B4FDCFA73011CA2CEA /* DMGDocument.nib */; };
 		8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
-		8D15AC310486D014006FF6A4 /* MyDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* MyDocument.m */; settings = {ATTRIBUTES = (); }; };
+		8D15AC310486D014006FF6A4 /* DMGDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* DMGDocument.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +76,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2C24C8480CA0C92B00E01AC0 /* RBSplitView.framework in CopyFiles */,
 				2CF1C0A80B413AB200EAB8DD /* DonationReminder.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,20 +86,29 @@
 /* Begin PBXFileReference section */
 		089C1660FE840EACC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		2A37F4ACFDCFA73011CA2CEA /* MyDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDocument.m; sourceTree = "<group>"; };
-		2A37F4AEFDCFA73011CA2CEA /* MyDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDocument.h; sourceTree = "<group>"; };
+		2A37F4ACFDCFA73011CA2CEA /* DMGDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGDocument.m; sourceTree = "<group>"; };
+		2A37F4AEFDCFA73011CA2CEA /* DMGDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGDocument.h; sourceTree = "<group>"; };
 		2A37F4B0FDCFA73011CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2A37F4B5FDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MyDocument.nib; sourceTree = "<group>"; };
+		2A37F4B5FDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/DMGDocument.nib; sourceTree = "<group>"; };
 		2A37F4B7FDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2C03FBB3088A1353008B7312 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = UserDefaults.plist; sourceTree = "<group>"; };
+		2C24C8060CA0AACA00E01AC0 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MDMGWindow.nib; sourceTree = "<group>"; };
+		2C24C8310CA0AB9E00E01AC0 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/DMGOptionsView.nib; sourceTree = "<group>"; };
+		2C24C8440CA0C91600E01AC0 /* RBSplitView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RBSplitView.framework; path = ../../QuickFileType/RBSplitView/build/Release/RBSplitView.framework; sourceTree = SOURCE_ROOT; };
+		2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = DMGOptionsViewController.m; sourceTree = "<group>"; };
+		2C24C8670CA0E60400E01AC0 /* DMGOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = DMGOptionsViewController.h; sourceTree = "<group>"; };
+		2C24C8760CA0EBFD00E01AC0 /* MDMGWindowController.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = MDMGWindowController.h; sourceTree = "<group>"; };
+		2C24C8770CA0EBFD00E01AC0 /* MDMGWindowController.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = MDMGWindowController.m; sourceTree = "<group>"; };
+		2C4DACF70CE29AFA009240B6 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/DMGProgressWindow.nib; sourceTree = "<group>"; };
+		2C4DAD020CE29DD3009240B6 /* DMGProgressWindowController.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = DMGProgressWindowController.m; sourceTree = "<group>"; };
+		2C4DAD030CE29DD3009240B6 /* DMGProgressWindowController.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = DMGProgressWindowController.h; sourceTree = "<group>"; };
 		2C5A35080897DCAB00F95662 /* stringExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = stringExtra.m; sourceTree = "<group>"; };
 		2C5A35090897DCAB00F95662 /* stringExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringExtra.h; sourceTree = "<group>"; };
-		2C7FBDE108194C6D00340E25 /* MyDocumentController.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = MyDocumentController.h; sourceTree = "<group>"; };
-		2C7FBDE208194C6D00340E25 /* MyDocumentController.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = MyDocumentController.m; sourceTree = "<group>"; };
-		2C7FBE4408196D8300340E25 /* MyWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWindowController.h; sourceTree = "<group>"; };
-		2C7FBE4508196D8300340E25 /* MyWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWindowController.m; sourceTree = "<group>"; };
+		2C7FBDE108194C6D00340E25 /* DMGDocumentController.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = DMGDocumentController.h; sourceTree = "<group>"; };
+		2C7FBE4408196D8300340E25 /* DMGWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGWindowController.h; sourceTree = "<group>"; };
+		2C7FBE4508196D8300340E25 /* DMGWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGWindowController.m; sourceTree = "<group>"; };
 		2C7FBEA3081A6E9100340E25 /* DmgDataSource.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = DmgDataSource.m; sourceTree = "<group>"; };
 		2C7FBEA4081A6E9100340E25 /* DmgDataSource.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = DmgDataSource.h; sourceTree = "<group>"; };
 		2C7FBFD2081BAAAC00340E25 /* History.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = History.rtf; sourceTree = "<group>"; };
@@ -91,9 +121,19 @@
 		2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = QuickDMG.icns; sourceTree = "<group>"; };
 		2CB60F6E0BCB9D56009F39D7 /* LocalizedStringTransformer.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = LocalizedStringTransformer.h; sourceTree = "<group>"; };
 		2CB60F6F0BCB9D56009F39D7 /* LocalizedStringTransformer.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = LocalizedStringTransformer.m; sourceTree = "<group>"; };
+		2CC2DB5A0CABC1BF006E7800 /* DMGDocumentProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGDocumentProtocol.h; sourceTree = "<group>"; };
+		2CC2DBAF0CABC56C006E7800 /* DMGOptionsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGOptionsProtocol.h; sourceTree = "<group>"; };
+		2CC2DBCD0CABC876006E7800 /* DMGDocumentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGDocumentController.m; sourceTree = "<group>"; };
+		2CC2DC2F0CABCEA5006E7800 /* DMGWindowControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGWindowControllerProtocol.h; sourceTree = "<group>"; };
+		2CC2E7AA0CE7EB6400653E25 /* KXTableView.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = KXTableView.h; sourceTree = "<group>"; };
+		2CC2E7AB0CE7EB6400653E25 /* KXTableView.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = KXTableView.m; sourceTree = "<group>"; };
+		2CC904120CE877830016E8D7 /* UtilityFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityFunctions.h; sourceTree = "<group>"; };
+		2CC904130CE877830016E8D7 /* UtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityFunctions.m; sourceTree = "<group>"; };
 		2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = HelpSetup.plist; sourceTree = "<group>"; };
 		2CF1C09E0B413A9800EAB8DD /* DonationReminder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DonationReminder.framework; path = ../DonationReminder.framework; sourceTree = SOURCE_ROOT; };
 		2CF42620088EB8E6002BBE99 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2CFAE2550CE848E70070AEF4 /* FileTableController.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = FileTableController.h; sourceTree = "<group>"; };
+		2CFAE2560CE848E70070AEF4 /* FileTableController.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = FileTableController.m; sourceTree = "<group>"; };
 		32DBCF750370BD2300C91783 /* QuickDMG_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickDMG_Prefix.pch; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; lineEnding = 0; path = Info.plist; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* QuickDMG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickDMG.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +146,7 @@
 			files = (
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
 				2CF1C0A30B413A9800EAB8DD /* DonationReminder.framework in Frameworks */,
+				2C24C8450CA0C91600E01AC0 /* RBSplitView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,16 +201,31 @@
 				2CB60F6F0BCB9D56009F39D7 /* LocalizedStringTransformer.m */,
 				2C896425081D105D00694C34 /* DiskImageMaker.h */,
 				2C896426081D105D00694C34 /* DiskImageMaker.m */,
-				2C7FBE4408196D8300340E25 /* MyWindowController.h */,
-				2C7FBE4508196D8300340E25 /* MyWindowController.m */,
-				2A37F4AEFDCFA73011CA2CEA /* MyDocument.h */,
-				2A37F4ACFDCFA73011CA2CEA /* MyDocument.m */,
-				2C7FBDE108194C6D00340E25 /* MyDocumentController.h */,
-				2C7FBDE208194C6D00340E25 /* MyDocumentController.m */,
+				2CC2DC2F0CABCEA5006E7800 /* DMGWindowControllerProtocol.h */,
+				2C7FBE4408196D8300340E25 /* DMGWindowController.h */,
+				2C7FBE4508196D8300340E25 /* DMGWindowController.m */,
+				2CC2DB5A0CABC1BF006E7800 /* DMGDocumentProtocol.h */,
+				2A37F4AEFDCFA73011CA2CEA /* DMGDocument.h */,
+				2A37F4ACFDCFA73011CA2CEA /* DMGDocument.m */,
+				2C7FBDE108194C6D00340E25 /* DMGDocumentController.h */,
+				2CC2DBCD0CABC876006E7800 /* DMGDocumentController.m */,
 				2C895FA5081C9D2900694C34 /* AppController.h */,
 				2C895FA6081C9D2900694C34 /* AppController.m */,
 				2C5A35080897DCAB00F95662 /* stringExtra.m */,
 				2C5A35090897DCAB00F95662 /* stringExtra.h */,
+				2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */,
+				2C24C8670CA0E60400E01AC0 /* DMGOptionsViewController.h */,
+				2C24C8760CA0EBFD00E01AC0 /* MDMGWindowController.h */,
+				2C24C8770CA0EBFD00E01AC0 /* MDMGWindowController.m */,
+				2CC2DBAF0CABC56C006E7800 /* DMGOptionsProtocol.h */,
+				2C4DAD020CE29DD3009240B6 /* DMGProgressWindowController.m */,
+				2C4DAD030CE29DD3009240B6 /* DMGProgressWindowController.h */,
+				2CC2E7AA0CE7EB6400653E25 /* KXTableView.h */,
+				2CC2E7AB0CE7EB6400653E25 /* KXTableView.m */,
+				2CFAE2550CE848E70070AEF4 /* FileTableController.h */,
+				2CFAE2560CE848E70070AEF4 /* FileTableController.m */,
+				2CC904120CE877830016E8D7 /* UtilityFunctions.h */,
+				2CC904130CE877830016E8D7 /* UtilityFunctions.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -190,11 +246,14 @@
 				2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */,
 				2CF42622088EB8F1002BBE99 /* Localizable.strings */,
 				2C03FBB3088A1353008B7312 /* UserDefaults.plist */,
-				2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */,
 				2CA3143708AA083200ADA32C /* Credits.html */,
-				2A37F4B4FDCFA73011CA2CEA /* MyDocument.nib */,
 				8D15AC360486D014006FF6A4 /* Info.plist */,
 				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
+				2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */,
+				2CC2E7A70CE7E9A300653E25 /* MDMGWindow.nib */,
+				2A37F4B4FDCFA73011CA2CEA /* DMGDocument.nib */,
+				2C4DACFB0CE29B0D009240B6 /* DMGOptionsView.nib */,
+				2C4DACF60CE29AFA009240B6 /* DMGProgressWindow.nib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -202,6 +261,7 @@
 		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C24C8440CA0C91600E01AC0 /* RBSplitView.framework */,
 				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
 				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
 			);
@@ -233,12 +293,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C5A350B0897DCAB00F95662 /* stringExtra.h in Headers */,
-				2CA4C01F09E22DBF00D9C9D6 /* MyDocument.h in Headers */,
-				2C7FBDE308194C6D00340E25 /* MyDocumentController.h in Headers */,
-				2C7FBE4608196D8300340E25 /* MyWindowController.h in Headers */,
+				2CA4C01F09E22DBF00D9C9D6 /* DMGDocument.h in Headers */,
+				2C7FBDE308194C6D00340E25 /* DMGDocumentController.h in Headers */,
+				2C7FBE4608196D8300340E25 /* DMGWindowController.h in Headers */,
 				2C895FA7081C9D2900694C34 /* AppController.h in Headers */,
 				2C896427081D105D00694C34 /* DiskImageMaker.h in Headers */,
 				2CB60F700BCB9D56009F39D7 /* LocalizedStringTransformer.h in Headers */,
+				2C24C8690CA0E60400E01AC0 /* DMGOptionsViewController.h in Headers */,
+				2C24C8780CA0EBFD00E01AC0 /* MDMGWindowController.h in Headers */,
+				2CC2DB5B0CABC1BF006E7800 /* DMGDocumentProtocol.h in Headers */,
+				2CC2DBB00CABC56C006E7800 /* DMGOptionsProtocol.h in Headers */,
+				2CC2DC300CABCEA5006E7800 /* DMGWindowControllerProtocol.h in Headers */,
+				2C4DAD050CE29DD3009240B6 /* DMGProgressWindowController.h in Headers */,
+				2CC2E7AC0CE7EB6400653E25 /* KXTableView.h in Headers */,
+				2CFAE2570CE848E70070AEF4 /* FileTableController.h in Headers */,
+				2CC904140CE877830016E8D7 /* UtilityFunctions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,12 +357,15 @@
 			files = (
 				2CA4BEAA09E22BAF00D9C9D6 /* QuickDMG.icns in Resources */,
 				8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */,
-				8D15AC2E0486D014006FF6A4 /* MyDocument.nib in Resources */,
+				8D15AC2E0486D014006FF6A4 /* DMGDocument.nib in Resources */,
 				8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */,
 				2C03FBB4088A1353008B7312 /* UserDefaults.plist in Resources */,
 				2CF42623088EB8F1002BBE99 /* Localizable.strings in Resources */,
 				2CA3143808AA083200ADA32C /* Credits.html in Resources */,
 				2CDD29E40B16DFCE000B3543 /* HelpSetup.plist in Resources */,
+				2CC2E7A80CE7E9A300653E25 /* MDMGWindow.nib in Resources */,
+				2C4DACFC0CE29B0D009240B6 /* DMGOptionsView.nib in Resources */,
+				2C4DACF80CE29AFA009240B6 /* DMGProgressWindow.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,14 +376,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D15AC310486D014006FF6A4 /* MyDocument.m in Sources */,
+				2CC2DCFD0CABE945006E7800 /* DMGDocumentController.m in Sources */,
+				8D15AC310486D014006FF6A4 /* DMGDocument.m in Sources */,
 				8D15AC320486D014006FF6A4 /* main.m in Sources */,
-				2C7FBDE408194C6D00340E25 /* MyDocumentController.m in Sources */,
-				2C7FBE4708196D8300340E25 /* MyWindowController.m in Sources */,
+				2C7FBE4708196D8300340E25 /* DMGWindowController.m in Sources */,
 				2C895FA8081C9D2900694C34 /* AppController.m in Sources */,
 				2C896428081D105D00694C34 /* DiskImageMaker.m in Sources */,
 				2C5A350A0897DCAB00F95662 /* stringExtra.m in Sources */,
 				2CB60F710BCB9D56009F39D7 /* LocalizedStringTransformer.m in Sources */,
+				2C24C8680CA0E60400E01AC0 /* DMGOptionsViewController.m in Sources */,
+				2C24C8790CA0EBFD00E01AC0 /* MDMGWindowController.m in Sources */,
+				2C4DAD040CE29DD3009240B6 /* DMGProgressWindowController.m in Sources */,
+				2CC2E7AD0CE7EB6400653E25 /* KXTableView.m in Sources */,
+				2CFAE2580CE848E70070AEF4 /* FileTableController.m in Sources */,
+				2CC904150CE877830016E8D7 /* UtilityFunctions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,12 +404,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		2A37F4B4FDCFA73011CA2CEA /* MyDocument.nib */ = {
+		2A37F4B4FDCFA73011CA2CEA /* DMGDocument.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2A37F4B5FDCFA73011CA2CEA /* English */,
 			);
-			name = MyDocument.nib;
+			name = DMGDocument.nib;
 			sourceTree = "<group>";
 		};
 		2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */ = {
@@ -340,6 +418,30 @@
 				2A37F4B7FDCFA73011CA2CEA /* English */,
 			);
 			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		2C4DACF60CE29AFA009240B6 /* DMGProgressWindow.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C4DACF70CE29AFA009240B6 /* English */,
+			);
+			name = DMGProgressWindow.nib;
+			sourceTree = "<group>";
+		};
+		2C4DACFB0CE29B0D009240B6 /* DMGOptionsView.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C24C8310CA0AB9E00E01AC0 /* English */,
+			);
+			name = DMGOptionsView.nib;
+			sourceTree = "<group>";
+		};
+		2CC2E7A70CE7E9A300653E25 /* MDMGWindow.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C24C8060CA0AACA00E01AC0 /* English */,
+			);
+			name = MDMGWindow.nib;
 			sourceTree = "<group>";
 		};
 		2CF42622088EB8F1002BBE99 /* Localizable.strings */ = {
@@ -360,8 +462,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_2)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/..\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)/../../QuickFileType/RBSplitView/build/Release\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -384,8 +488,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_2)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/..\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)/../../QuickFileType/RBSplitView/build/Release\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -405,8 +511,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_2)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/..\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)/../../QuickFileType/RBSplitView/build/Release\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

@@ -1,11 +1,14 @@
 #import <Cocoa/Cocoa.h>
+#import "DMGDocumentProtocol.h"
 #import "stringExtra.h"
+#import "DMGOptionsProtocol.h"
+#import "DMGWindowControllerProtocol.h"
 
 @interface DiskImageMaker : NSObject {
 	//related source item
-	NSString *sourcePath;
-	NSString *sourceName;
+	NSArray *sourceItems;
 	unsigned long long sourceSize;
+	NSEnumerator *sourceEnumerator;
 	
 	//related disk image file
 	NSString *workingLocation;
@@ -13,23 +16,19 @@
 	float requireSpaceRatio;
 	float expectedCompressRatio;
 	NSString *sourceDmgPath; //target path to convert dmg file
-	NSString *dmgSuffix; 
 	NSString *dmgName;
-	NSString *dmgFormat;
+	id<DMGOptions> dmgOptions;
 	
 	//parameters of setup status
 	BOOL isDmgNameDefined;
 	BOOL willBeConverted;
-	BOOL internetEnableFlag;
-	NSString *zlibLevel;
-	BOOL deleteDSStoreFlag;
 	
 	//parameters of mid-flow
 	NSString *devEntry;
 	NSString *mountPoint;
 	int terminationStatus;
 	NSString *tmpDir;
-	BOOL isSourceFolder;
+	BOOL isOnlyFolder;
 	
 	//show dask results
 	NSString *terminationMessage;
@@ -45,15 +44,18 @@
 - (NSString *)dmgPath;
 
 #pragma mark initilize
-- (id)initWithSourcePath:(NSString *) sourcePath;
+- (id)initWithSourceItem:(NSDocument<DMGDocument> *)anItem;
+- (id)initWithSourceItems:(NSArray *)array;
 
 #pragma mark launching tasks
 //pubulic
-- (BOOL)checkWorkingLocationPermission;
-- (BOOL)checkFreeSpace;
+- (BOOL)checkCondition:(NSWindowController<DMGWindowController> *)aWindowController;
 - (void)createDiskImage;
+- (void)aboartTask;
 
 //private
+- (BOOL)checkWorkingLocationPermission;
+- (BOOL)checkFreeSpace;
 - (void)convertDiskImage;
 - (void)internetEnable:(NSNotification *)notification;
 - (void)convertTmpDiskImage:(NSNotification *)notification;
@@ -63,9 +65,10 @@
 - (void) dmgTaskTerminate:(NSNotification *)notification;
 - (void) postStatusNotification:(NSString *) message;
 
-#pragma mark private use
-- (NSString *) uniqueName:(NSString *)baseName location:(NSString*)dirPath; //baseName に dmgSuffix を付けて、workingLocation で unique な名前を求める
-- (BOOL) checkPreviousTask:(NSNotification *)notification;
+#pragma mark setup methods
+- (void)setDMGOptions:(id<DMGOptions>)anObject;
+- (void)setDestination:(NSString *)aPath;
+- (NSString *)resolveDmgName;
 
 #pragma mark accessor methods
 //public
@@ -73,32 +76,23 @@
 
 - (NSString *)terminationMessage;
 - (void)setTerminationMessage:(NSString *)theString;
-
-- (void)setDmgFormat:(NSString *)formatID;
-
-- (NSString *)dmgSuffix;
-- (void)setDmgSuffix:(NSString *)formatSuffix;
-
-- (void)setInternetEnable:(BOOL)yesOrNo;
-- (void)setCompressionLevel:(NSString *)zlibLevel;
-
 - (NSString *)workingLocation;
 - (void)setWorkingLocation:(NSString *)theWorkingLocation;
 
-- (void)setDeleteDSStore:(BOOL)yesOrNo;
 
 //private
-- (void)setSourceName:(NSString *)theSourceName;
 - (void)setTmpDir:(NSString *)path;
 - (void)setDiskName:(NSString *)theDiskName;
 
 - (NSString *)dmgName;
 - (void)setDmgName:(NSString *)theDmgName;
 
-- (NSString *)sourcePath;
-- (void)setSourcePath:(NSString *)theSourcePath;
-
 - (void)setDevEntry:(NSString *)theDevEntry;
 - (void)setCurrentTask:(NSTask *)aTask;
 - (void)setMountPoint:(NSString *)theMountPoint;
+
+#pragma mark private use
+//- (NSString *) uniqueName:(NSString *)baseName location:(NSString*)dirPath; //baseName に dmgSuffix を付けて、workingLocation で unique な名前を求める
+- (BOOL) checkPreviousTask:(NSNotification *)notification;
+
 @end

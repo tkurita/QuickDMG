@@ -1,10 +1,39 @@
 #import "AppController.h"
-
+#import "MDMGWindowController.h"
 #import "DonationReminder/DonationReminder.h"
+#import "UtilityFunctions.h"
+#import "DMGDocumentController.h"
 
 #define useLog 0
 
+
 @implementation AppController
+
+- (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
+{
+#if useLog
+	NSLog([NSString stringWithFormat:@"start openFiles for :%@",[filenames description]]);
+#endif	
+	NSError *error = nil;
+	
+	if ([filenames count] > 1) {
+		id mdmg_window = [[MDMGWindowController alloc] initWithWindowNibName:@"MDMGWindow"];
+		[mdmg_window loadWindow];
+		[mdmg_window setupFileTable:URLsFromPaths(filenames)];
+		[mdmg_window showWindow:self];
+	}
+	else {
+		[documentController openDocumentWithContentsOfURL:[URLsFromPaths(filenames) lastObject] 
+				display:YES error:&error];
+	}
+	
+	isFirstOpen = NO;
+}
+
+- (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender
+{
+	return NO;
+}
 
 - (IBAction)makeDonation:(id)sender
 {
@@ -15,11 +44,13 @@
 {
 	NSArray *docArray = [documentController documents];
 	if ([docArray count] != 0) {
+		/*
 		NSEnumerator *docEnumerator = [docArray objectEnumerator];
 		id firstDoc;
 		while (firstDoc = [docEnumerator nextObject]){
 			[firstDoc setIsFirstDocument];
 		}
+		*/
 		return;
 	}
 	
@@ -51,18 +82,28 @@
 	[getFinderSelection release];
 	
 	if ([scriptResult descriptorType] == typeAEList) {
+		NSMutableArray *filenames = [NSMutableArray array];
 		for (unsigned int i=1; i <= [scriptResult numberOfItems]; i++) {
-			unsigned int nItem = [scriptResult numberOfItems];
-			NSString *resultString = [[scriptResult descriptorAtIndex:i] stringValue];
-			MyDocument *theDocument = [documentController openDocumentWithContentsOfFile:resultString display:YES];
-			[theDocument setIsFirstDocument];
-			//[theDocument makeDmg];
+			NSString *a_selection = [[scriptResult descriptorAtIndex:i] stringValue];
+			[filenames addObject:a_selection];
 		}
-		
+		if ([filenames count] > 1) {
+			MDMGWindowController* mdmg_window = [[MDMGWindowController alloc] 
+												initWithWindowNibName:@"MDMGWindow"];
+			[mdmg_window loadWindow];
+			[mdmg_window setupFileTable:URLsFromPaths(filenames)];
+			[mdmg_window showWindow:self];
+			[mdmg_window setIsFirstWindow];
+		} else {
+			DMGDocument *a_doc = [documentController 
+					openDocumentWithContentsOfFile:[filenames lastObject] display:YES];
+			//[theDocument setIsFirstDocument];
+			[[[a_doc windowControllers] lastObject] setIsFirstWindow];
+		}
 	}
 	else {
 		//document = [documentController openUntitledDocumentOfType:@"anything" display:YES];
-		[documentController setIsFirstDocument];
+		[documentController setIsFirstDocument:YES];
 		[documentController openDocument:self];
 	}
 }
@@ -72,14 +113,19 @@
 #if useLog
 	NSLog(@"start applicationDidFinishLaunching");
 #endif
-	NSString *defaultsPlistPath = [[NSBundle mainBundle] pathForResource:@"UserDefaults" ofType:@"plist"];
+	[self openFinderSelection];
+	[DonationReminder remindDonation];		
+	[documentController setIsFirstDocument:NO];
+}
+
+- (void)awakeFromNib
+{
+	NSString *defaultsPlistPath = [[NSBundle mainBundle] 
+									pathForResource:@"UserDefaults" ofType:@"plist"];
 	NSDictionary *defautlsDict = [NSDictionary dictionaryWithContentsOfFile:defaultsPlistPath];
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	[userDefaults registerDefaults:defautlsDict];
 
-	[self openFinderSelection];
-	[DonationReminder remindDonation];
-		
 }
 
 @end

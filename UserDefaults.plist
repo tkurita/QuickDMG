@@ -13,6 +13,8 @@
 			<string>dmg</string>
 			<key>formatID</key>
 			<string>UDZO</string>
+			<key>hasCompressionLevel</key>
+			<true/>
 			<key>needConversion</key>
 			<true/>
 		</dict>
@@ -25,6 +27,8 @@
 			<string>dmg</string>
 			<key>formatID</key>
 			<string>UDBZ</string>
+			<key>hasCompressionLevel</key>
+			<false/>
 			<key>needConversion</key>
 			<true/>
 		</dict>
@@ -37,6 +41,8 @@
 			<string>sparseimage</string>
 			<key>formatID</key>
 			<string>UDSP</string>
+			<key>hasCompressionLevel</key>
+			<false/>
 			<key>needConversion</key>
 			<false/>
 		</dict>
@@ -49,6 +55,8 @@
 			<string>dmg</string>
 			<key>formatID</key>
 			<string>UDRW</string>
+			<key>hasCompressionLevel</key>
+			<false/>
 			<key>needConversion</key>
 			<false/>
 		</dict>
@@ -61,6 +69,8 @@
 			<string>dmg</string>
 			<key>formatID</key>
 			<string>UDRO</string>
+			<key>hasCompressionLevel</key>
+			<false/>
 			<key>needConversion</key>
 			<false/>
 		</dict>
@@ -73,6 +83,8 @@
 			<string>img</string>
 			<key>formatID</key>
 			<string>ROCo</string>
+			<key>hasCompressionLevel</key>
+			<false/>
 			<key>needConversion</key>
 			<true/>
 		</dict>
@@ -85,6 +97,8 @@
 			<string>img</string>
 			<key>formatID</key>
 			<string>Rdxx</string>
+			<key>hasCompressionLevel</key>
+			<false/>
 			<key>needConversion</key>
 			<true/>
 		</dict>
