@@ -23,8 +23,18 @@
 		[mdmg_window showWindow:self];
 	}
 	else {
-		[documentController openDocumentWithContentsOfURL:[URLsFromPaths(filenames) lastObject] 
-				display:YES error:&error];
+		NSDocument *a_doc = [documentController
+						openDocumentWithContentsOfURL:[URLsFromPaths(filenames) lastObject] 
+							display:YES error:&error];
+		if (a_doc) {
+			if (![[a_doc windowControllers] count]) {
+				[a_doc makeWindowControllers];
+			}
+			[a_doc showWindows];
+
+		} else {
+			NSLog([error localizedDescription]);
+		}
 	}
 	
 	isFirstOpen = NO;
@@ -44,20 +54,12 @@
 {
 	NSArray *docArray = [documentController documents];
 	if ([docArray count] != 0) {
-		/*
-		NSEnumerator *docEnumerator = [docArray objectEnumerator];
-		id firstDoc;
-		while (firstDoc = [docEnumerator nextObject]){
-			[firstDoc setIsFirstDocument];
-		}
-		*/
 		return;
 	}
 	
 	NSBundle * bundle = [NSBundle mainBundle];
 	NSString * scriptPath = [bundle pathForResource:@"GetFinderSelection" ofType:@"scpt" inDirectory:@"Scripts"
 		];
-	//NSLog(scriptPath);
 	NSURL * scriptURL = [NSURL fileURLWithPath:scriptPath];
 	NSDictionary * errorDict = nil;
 	NSAppleScript * getFinderSelection = [[NSAppleScript alloc] initWithContentsOfURL:scriptURL error:&errorDict];
@@ -97,12 +99,10 @@
 		} else {
 			DMGDocument *a_doc = [documentController 
 					openDocumentWithContentsOfFile:[filenames lastObject] display:YES];
-			//[theDocument setIsFirstDocument];
 			[[[a_doc windowControllers] lastObject] setIsFirstWindow];
 		}
 	}
 	else {
-		//document = [documentController openUntitledDocumentOfType:@"anything" display:YES];
 		[documentController setIsFirstDocument:YES];
 		[documentController openDocument:self];
 	}

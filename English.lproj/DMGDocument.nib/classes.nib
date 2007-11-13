@@ -1,0 +1,20 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {cancelAction = id; chooseTargetPath = id; okAction = id; }; 
+            CLASS = DMGWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                dmgOptionsBox = id; 
+                dmgOptionsViewController = id; 
+                okButton = id; 
+                sourcePathView = id; 
+                targetPathView = id; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = MyDocument; LANGUAGE = ObjC; SUPERCLASS = NSDocument; }
+    ); 
+    IBVersion = 1; 
+}
