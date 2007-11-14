@@ -5,6 +5,7 @@
 #import "FileTableController.h"
 #import "RBSplitView/RBSplitView.h"
 #import "RBSplitView/RBSplitSubview.h"
+#import "UtilityFunctions.h"
 
 #define useLog 0
 
@@ -27,7 +28,30 @@
 					  contextInfo:nil];
 
 }
+
+- (IBAction)addToFileTable:(id)sender
+{
+	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+	[openPanel setCanChooseDirectories:YES];
+	[openPanel setAllowsMultipleSelection:YES];
+	[openPanel beginSheetForDirectory:nil 
+								 file:nil
+								types:nil
+					   modalForWindow:[sender window]
+						modalDelegate:self
+					   didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:)
+						  contextInfo:nil];
+}
+
+
 #pragma mark delegate sheet
+- (void)openPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode  contextInfo:(void  *)contextInfo
+{
+	if (returnCode == NSOKButton) {
+		[fileTableController addFileURLs:[panel URLs]];
+	}
+}
+
 - (void)savePanelDidEnd:(NSSavePanel *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
 {
 	if (returnCode == NSOKButton) {
@@ -53,20 +77,22 @@
 #endif
 	[fileTableController addFileURLs:files];
 	
+	float current_dimension = [splitSubview dimension];
 	float row_height = [fileTable rowHeight];
 	int nrows = [fileTable numberOfRows];
 	NSSize spacing = [fileTable intercellSpacing];
 	NSRect hframe =	[[fileTable headerView] frame];
+	float scroll_height = [[[fileTable superview] superview] frame].size.height;
+	float button_height = current_dimension - scroll_height;
 	float table_height = hframe.size.height + ((row_height + spacing.height)*(nrows)) +5;
-
-	float current_dimension = [splitSubview dimension];
-	if (table_height > current_dimension) table_height = current_dimension;
-	[splitSubview setDimension:table_height ];
+	float suggested_dimension = table_height + button_height;
+	if (suggested_dimension > current_dimension) suggested_dimension = current_dimension;
+	[splitSubview setDimension:suggested_dimension ];
 }
 
 #pragma mark delegate of KXTabelView
 
-- (void)deleteTabelSelection:(id)sender
+- (IBAction)deleteTabelSelection:(id)sender
 {
 	NSArray *selected_items = [fileListController selectedObjects];
 	//[fileListController remove:self];

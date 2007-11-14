@@ -21,6 +21,8 @@
 
 /* Begin PBXBuildFile section */
 		2C03FBB4088A1353008B7312 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C03FBB3088A1353008B7312 /* UserDefaults.plist */; };
+		2C1D0A450CEAC5AF00B59A0E /* plus.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D0A430CEAC5AF00B59A0E /* plus.tiff */; };
+		2C1D0A460CEAC5AF00B59A0E /* minus.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D0A440CEAC5AF00B59A0E /* minus.tiff */; };
 		2C24C8450CA0C91600E01AC0 /* RBSplitView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C24C8440CA0C91600E01AC0 /* RBSplitView.framework */; };
 		2C24C8480CA0C92B00E01AC0 /* RBSplitView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C24C8440CA0C91600E01AC0 /* RBSplitView.framework */; };
 		2C24C8680CA0E60400E01AC0 /* DMGOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */; };
@@ -94,6 +96,8 @@
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2C03FBB3088A1353008B7312 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = UserDefaults.plist; sourceTree = "<group>"; };
+		2C1D0A430CEAC5AF00B59A0E /* plus.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = plus.tiff; sourceTree = "<group>"; };
+		2C1D0A440CEAC5AF00B59A0E /* minus.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = minus.tiff; sourceTree = "<group>"; };
 		2C24C8060CA0AACA00E01AC0 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MDMGWindow.nib; sourceTree = "<group>"; };
 		2C24C8310CA0AB9E00E01AC0 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/DMGOptionsView.nib; sourceTree = "<group>"; };
 		2C24C8440CA0C91600E01AC0 /* RBSplitView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RBSplitView.framework; path = ../../QuickFileType/RBSplitView/build/Release/RBSplitView.framework; sourceTree = SOURCE_ROOT; };
@@ -242,6 +246,8 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2C1D0A430CEAC5AF00B59A0E /* plus.tiff */,
+				2C1D0A440CEAC5AF00B59A0E /* minus.tiff */,
 				2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */,
 				2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */,
 				2CF42622088EB8F1002BBE99 /* Localizable.strings */,
@@ -366,6 +372,8 @@
 				2CC2E7A80CE7E9A300653E25 /* MDMGWindow.nib in Resources */,
 				2C4DACFC0CE29B0D009240B6 /* DMGOptionsView.nib in Resources */,
 				2C4DACF80CE29AFA009240B6 /* DMGProgressWindow.nib in Resources */,
+				2C1D0A450CEAC5AF00B59A0E /* plus.tiff in Resources */,
+				2C1D0A460CEAC5AF00B59A0E /* minus.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
