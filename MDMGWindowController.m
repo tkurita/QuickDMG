@@ -89,12 +89,12 @@
 	[self showWindow:sender];
 }
 
-- (void)setupFileTable:(NSArray *)files
+- (void)setupFileTable
 {
 #if useLog	
 	NSLog(@"setupFileTable in MDMGWindowController");
 #endif
-	[fileTableController addFileURLs:files];
+	[fileTableController addFileURLs:initialItems];
 	
 	float current_dimension = [splitSubview dimension];
 	float row_height = [fileTable rowHeight];
@@ -142,7 +142,7 @@
 {
 	[fileTable setDeleteAction:@selector(deleteTabelSelection:)];
 	[fileTable setDoubleAction:@selector(openTableSelection:)];
-	[self setupFileTable:initialItems];
+	[self setupFileTable];
 }
 
 - (void)awakeFromNib

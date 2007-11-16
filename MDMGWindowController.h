@@ -16,7 +16,6 @@
 - (IBAction)deleteTabelSelection:(id)sender;
 - (IBAction)addToFileTable:(id)sender;
 
-- (void)setupFileTable:(NSArray *)files;
 - (void)setInitialItems:(NSArray *)files;
 - (void)showWindow:(id)sender withFiles:(NSArray *)files;
 @end
