@@ -9,7 +9,17 @@
 
 @implementation AppController
 
-- (IBAction)newDiskImage:sender
+- (BOOL)isFirstOpen
+{
+	return isFirstOpen;
+}
+
+- (void)setFirstOpen:(BOOL)aFlag
+{
+	isFirstOpen = aFlag;
+}
+
+- (IBAction)newDiskImage:(id)sender
 {
 	id mdmg_window = [[MDMGWindowController alloc] initWithWindowNibName:@"MDMGWindow"];
 	[mdmg_window showWindow:self];
@@ -24,9 +34,7 @@
 	
 	if ([filenames count] > 1) {
 		id mdmg_window = [[MDMGWindowController alloc] initWithWindowNibName:@"MDMGWindow"];
-		[mdmg_window loadWindow];
-		[mdmg_window setupFileTable:URLsFromPaths(filenames)];
-		[mdmg_window showWindow:self];
+		[mdmg_window showWindow:self withFiles:URLsFromPaths(filenames)];
 	}
 	else {
 		NSDocument *a_doc = [documentController
@@ -43,7 +51,7 @@
 		}
 	}
 	
-	isFirstOpen = NO;
+	//isFirstOpen = NO;
 }
 
 - (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender
@@ -98,18 +106,13 @@
 		if ([filenames count] > 1) {
 			MDMGWindowController* mdmg_window = [[MDMGWindowController alloc] 
 												initWithWindowNibName:@"MDMGWindow"];
-			[mdmg_window loadWindow];
-			[mdmg_window setupFileTable:URLsFromPaths(filenames)];
-			[mdmg_window showWindow:self];
-			[mdmg_window setIsFirstWindow];
+			[mdmg_window showWindow:self withFiles:URLsFromPaths(filenames)];
 		} else {
 			DMGDocument *a_doc = [documentController 
 					openDocumentWithContentsOfFile:[filenames lastObject] display:YES];
-			[[[a_doc windowControllers] lastObject] setIsFirstWindow];
 		}
 	}
 	else {
-		[documentController setIsFirstDocument:YES];
 		[documentController openDocument:self];
 	}
 }
@@ -121,11 +124,12 @@
 #endif
 	[self openFinderSelection];
 	[DonationReminder remindDonation];		
-	[documentController setIsFirstDocument:NO];
+	isFirstOpen = NO;
 }
 
 - (void)awakeFromNib
 {
+	isFirstOpen = YES;
 	NSString *defaultsPlistPath = [[NSBundle mainBundle] 
 									pathForResource:@"UserDefaults" ofType:@"plist"];
 	NSDictionary *defautlsDict = [NSDictionary dictionaryWithContentsOfFile:defaultsPlistPath];

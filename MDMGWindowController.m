@@ -12,6 +12,7 @@
 @implementation MDMGWindowController
 
 - (void) dealloc {
+	[initialItems release];
 	[super dealloc];
 }
 
@@ -75,6 +76,18 @@
 }
 
 #pragma mark setup contents
+- (void)setInitialItems:(NSArray *)files
+{
+	[files retain];
+	initialItems = files;
+	[initialItems release];
+}
+
+- (void)showWindow:(id)sender withFiles:(NSArray *)files
+{
+	[self setInitialItems:files];
+	[self showWindow:sender];
+}
 
 - (void)setupFileTable:(NSArray *)files
 {
@@ -127,14 +140,9 @@
 #pragma mark override NSWindowController
 - (void)windowDidLoad
 {
-	#if useLog
-	NSLog(@"windowDidLoad in MDMGWindowController");
-	#endif
-}
-
-NSValue *lefttop_of_frame(NSRect aRect)
-{
-	return [NSValue valueWithPoint:NSMakePoint(NSMinX(aRect), NSMaxY(aRect))];
+	[fileTable setDeleteAction:@selector(deleteTabelSelection:)];
+	[fileTable setDoubleAction:@selector(openTableSelection:)];
+	[self setupFileTable:initialItems];
 }
 
 - (void)awakeFromNib
@@ -142,50 +150,13 @@ NSValue *lefttop_of_frame(NSRect aRect)
 	#if useLog
 	NSLog(@"awakeFromNib in MDMGWindowController");
 	#endif
-	[self setupDMGOptionsView];
-	[fileTable setDeleteAction:@selector(deleteTabelSelection:)];
-	[fileTable setDoubleAction:@selector(openTableSelection:)];
-	isFirstWindow = NO;
-	[[self window] center];
-	NSValue *current_lt = lefttop_of_frame([[self window] frame]);
-	
-	NSMutableArray *left_tops = [NSMutableArray array];
-	NSEnumerator *enumerator = [[NSApp windows] objectEnumerator];
-	NSWindow *a_window;
-	NSRect a_frame;
-	while(a_window = [enumerator nextObject]) {
-		if ([a_window isVisible]) {
-			a_frame = [a_window frame];
-			[left_tops addObject:lefttop_of_frame(a_frame)];
-		}	
-	}
-	
-	if ([left_tops count]) {
-		while(1) {		
-			if ([left_tops containsObject:current_lt]) {
-				current_lt = [NSValue valueWithPoint:
-								[[self window] cascadeTopLeftFromPoint:[current_lt pointValue]]];
-			} else {
-				break;
-			}
-		}
-		[[self window] setFrameTopLeftPoint:[current_lt pointValue]];
-	}
-	
+	[super awakeFromNib];
 }
 
 #pragma mark delegate of NSWindow
 - (void)windowWillClose:(NSNotification *)aNotification
 {
 	[fileTableController disposeDocuments];
-	/*
-	[dmgOptionsViewController saveSettings];
-	if (isFirstWindow) {
-		if ([[[NSDocumentController sharedDocumentController] documents] count] == 0) {
-			//[NSApp terminate:self];
-			[NSApp performSelectorOnMainThread:@selector(terminate:) withObject:self waitUntilDone:NO];
-		}
-	}*/
 	[super windowWillClose:aNotification];
 }
 

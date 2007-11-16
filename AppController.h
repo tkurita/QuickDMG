@@ -1,16 +1,17 @@
 /* AppController */
 
 #import <Cocoa/Cocoa.h>
-#import "DMGDocument.h"
 
 @interface AppController : NSObject
 {
     IBOutlet id documentController;
-	
 	BOOL isFirstOpen;
 }
 
 - (IBAction)makeDonation:(id)sender;
-- (IBAction)newDiskImage:sender;
+- (IBAction)newDiskImage:(id)sender;
+
+- (BOOL)isFirstOpen;
+- (void)setFirstOpen:(BOOL)aFlag;
 
 @end

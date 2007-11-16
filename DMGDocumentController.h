@@ -3,9 +3,6 @@
 
 @interface DMGDocumentController : NSDocumentController
 {
-	BOOL isFirstDocument;
 }
-
-- (void)setIsFirstDocument:(BOOL)aFlag;
 
 @end

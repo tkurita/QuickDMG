@@ -1,6 +1,7 @@
 #import "DMGWindowController.h"
 #import "DMGDocument.h"
 #import "DMGOptionsViewController.h"
+#import "AppController.h"
 
 #define useLog 0
 
@@ -215,11 +216,8 @@
 	[super dealloc];
 }
 
-- (void)awakeFromNib
+- (void)windowDidLoad
 {
-	//NSLog(@"awakeFromNib in DMGWindowController");
-	[self setupDMGOptionsView];
-	
 	[[dmgOptionsViewController dmgFormatController] addObserver:self
 							 forKeyPath:@"selectedObjects"
 								 options:(NSKeyValueObservingOptionNew)
@@ -232,8 +230,45 @@
 	dmgMaker = [[DiskImageMaker alloc] initWithSourceItem:theDocument];
 	[dmgMaker setDMGOptions:dmgOptionsViewController];
 	[targetPathView setStringValue:[dmgMaker dmgPath]];
+}
+
+NSValue *lefttop_of_frame(NSRect aRect)
+{
+	return [NSValue valueWithPoint:NSMakePoint(NSMinX(aRect), NSMaxY(aRect))];
+}
+
+- (void)awakeFromNib
+{
+	//NSLog(@"awakeFromNib in DMGWindowController");
+	isFirstWindow = [[NSApp delegate] isFirstOpen];
+	[[NSApp delegate] setFirstOpen:NO];
+	[self setupDMGOptionsView];
 	
 	[[self window] center];
+	NSValue *current_lt = lefttop_of_frame([[self window] frame]);
+	
+	NSMutableArray *left_tops = [NSMutableArray array];
+	NSEnumerator *enumerator = [[NSApp windows] objectEnumerator];
+	NSWindow *a_window;
+	NSRect a_frame;
+	while(a_window = [enumerator nextObject]) {
+		if ([a_window isVisible]) {
+			a_frame = [a_window frame];
+			[left_tops addObject:lefttop_of_frame(a_frame)];
+		}	
+	}
+	
+	if ([left_tops count]) {
+		while(1) {		
+			if ([left_tops containsObject:current_lt]) {
+				current_lt = [NSValue valueWithPoint:
+								[[self window] cascadeTopLeftFromPoint:[current_lt pointValue]]];
+			} else {
+				break;
+			}
+		}
+		[[self window] setFrameTopLeftPoint:[current_lt pointValue]];
+	}
 }
 
 @end
