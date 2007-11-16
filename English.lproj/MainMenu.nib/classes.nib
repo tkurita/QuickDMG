@@ -1,7 +1,7 @@
 {
     IBClasses = (
         {
-            ACTIONS = {makeDonation = id; }; 
+            ACTIONS = {makeDonation = id; newDiskImage = id; }; 
             CLASS = AppController; 
             LANGUAGE = ObjC; 
             OUTLETS = {documentController = id; }; 

@@ -164,7 +164,8 @@ NSString *getTaskError(NSTask *theTask)
 	if (![self checkWorkingLocationPermission]) {
 		NSString* detailMessage = [NSString stringWithFormat:NSLocalizedString(@"No write permission",""),
 			[self workingLocation]];
-		[aWindowController showAlertMessage:NSLocalizedString(@"Insufficient access right.","") withInformativeText:detailMessage];
+		[aWindowController showAlertMessage:NSLocalizedString(@"Insufficient access right.","") 
+											withInformativeText:detailMessage];
 		return NO;
 	}
 	

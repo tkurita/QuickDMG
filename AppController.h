@@ -11,5 +11,6 @@
 }
 
 - (IBAction)makeDonation:(id)sender;
+- (IBAction)newDiskImage:sender;
 
 @end

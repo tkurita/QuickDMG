@@ -18,6 +18,12 @@
 #pragma mark actions
 - (IBAction)okAction:(id)sender
 {
+	if (![[fileListController arrangedObjects] count]) {
+		[self showAlertMessage:NSLocalizedString(@"No source items.","") 
+				withInformativeText:NSLocalizedString(@"Add some items into the source table.","")];
+		return;
+	}
+	
 	NSSavePanel *save_panel = [NSSavePanel savePanel];
 	[save_panel setRequiredFileType:[dmgOptionsViewController dmgSuffix]];
 	[save_panel setCanSelectHiddenExtension:YES];

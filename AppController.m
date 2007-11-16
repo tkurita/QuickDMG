@@ -9,6 +9,12 @@
 
 @implementation AppController
 
+- (IBAction)newDiskImage:sender
+{
+	id mdmg_window = [[MDMGWindowController alloc] initWithWindowNibName:@"MDMGWindow"];
+	[mdmg_window showWindow:self];
+}
+
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
 {
 #if useLog
