@@ -87,7 +87,7 @@ NSString *getTaskError(NSTask *theTask)
 	[super init];
 	requireSpaceRatio = 1.0;
 	myNotiCenter = [NSNotificationCenter defaultCenter];
-	isDmgNameDefined = NO;
+	isReplacing = NO;
 	expectedCompressRatio = 0.7;
 	isAttached = NO;
 	return self;
@@ -131,11 +131,16 @@ NSString *getTaskError(NSTask *theTask)
 	dmgOptions = anObject;
 }
 
-- (void)setDestination:(NSString *)aPath
+- (void)setDestination:(NSString *)aPath replacing:(BOOL)aFlag;
 {
 	[self setWorkingLocation:[aPath stringByDeletingLastPathComponent]];
 	[self setDiskName:[[aPath lastPathComponent] stringByDeletingPathExtension]];
-	[self setDmgName:[self uniqueName:diskName location:workingLocation]];
+	isReplacing = aFlag;
+	if (isReplacing) {
+		[self setDmgName:[aPath lastPathComponent]];
+	} else {
+		[self setDmgName:[self uniqueName:diskName location:workingLocation]];
+	}
 }
 
 - (NSString *)resolveDmgName
@@ -147,7 +152,7 @@ NSString *getTaskError(NSTask *theTask)
 - (void)setCustomDmgName:(NSString *)theDmgName
 {
 	
-	isDmgNameDefined = YES;
+	isReplacing = YES;
 	[self setDmgName:theDmgName];
 	[self setDiskName:[theDmgName stringByDeletingPathExtension]];
 }
@@ -367,6 +372,9 @@ NSString *getTaskError(NSTask *theTask)
 
 - (void)internetEnable:(NSNotification *)notification
 {
+#if useLog
+	NSLog(@"start internetEnable");
+#endif	
 	if (![self checkPreviousTask:notification]) {
 		return;
 	}
@@ -375,9 +383,13 @@ NSString *getTaskError(NSTask *theTask)
 	NSTask * dmgTask = [self hdiUtilTask];
 	[dmgTask setArguments:[NSArray arrayWithObjects:@"internet-enable",@"-yes", dmgName, nil]];
 
-	[myNotiCenter addObserver:self selector:@selector(dmgTaskTerminate:) name:NSTaskDidTerminateNotification object:dmgTask];
+	[myNotiCenter addObserver:self selector:@selector(dmgTaskTerminate:) 
+					name:NSTaskDidTerminateNotification object:dmgTask];
 	[self setCurrentTask:dmgTask];
 	[dmgTask launch];
+#if useLog
+	NSLog(@"end internetEnable");
+#endif	
 }
 
 - (void) attachDiskImage: (NSNotification *) notification
@@ -452,7 +464,7 @@ NSString *getTaskError(NSTask *theTask)
 		dmg_target = dmgName;
 	}
 	
-	if (isDmgNameDefined) {
+	if (isReplacing) {
 		NSString *target_path = [workingLocation stringByAppendingPathComponent:dmgName];
 		NSFileManager *file_manager = [NSFileManager defaultManager];
 		if ([file_manager fileExistsAtPath:target_path]) {
@@ -593,7 +605,7 @@ NSString *getTaskError(NSTask *theTask)
 		if ([dmgOptions internetEnable]) 
 			[self internetEnable:notification];
 		else
-			[self dmgTaskTerminate: notification];
+			[self dmgTaskTerminate:notification];
 	}
 
 #if useLog
@@ -608,6 +620,12 @@ NSString *getTaskError(NSTask *theTask)
 #endif
 	NSTask *dmgTask = [notification object];
 	self->terminationStatus = [dmgTask terminationStatus];
+	if (terminationStatus) {
+		[self setTerminationMessage:getTaskError(dmgTask)];
+	}
+#if useLog
+	NSLog([[dmgTask arguments] description]);
+#endif
 	[myNotiCenter postNotificationName: @"DmgDidTerminationNotification" object:self];
 #if useLog
 	NSLog(@"end dmgTaskTerminate");
@@ -713,6 +731,9 @@ NSString *getTaskError(NSTask *theTask)
 	return self->workingLocation;
 }
 
-
+- (void)setReplacing:(BOOL)aFlag
+{
+	isReplacing = aFlag;
+}
 @end
 

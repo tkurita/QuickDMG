@@ -20,8 +20,8 @@
 	id<DMGOptions> dmgOptions;
 	
 	//parameters of setup status
-	BOOL isDmgNameDefined;
 	BOOL willBeConverted;
+	BOOL isReplacing;
 	
 	//parameters of mid-flow
 	NSString *devEntry;
@@ -67,7 +67,7 @@
 
 #pragma mark setup methods
 - (void)setDMGOptions:(id<DMGOptions>)anObject;
-- (void)setDestination:(NSString *)aPath;
+- (void)setDestination:(NSString *)aPath replacing:(BOOL)aFlag;
 - (NSString *)resolveDmgName;
 
 #pragma mark accessor methods
@@ -78,7 +78,7 @@
 - (void)setTerminationMessage:(NSString *)theString;
 - (NSString *)workingLocation;
 - (void)setWorkingLocation:(NSString *)theWorkingLocation;
-
+- (void)setReplacing:(BOOL)aFlag;
 
 //private
 - (void)setTmpDir:(NSString *)path;

@@ -18,14 +18,14 @@
 	[alert release];
 }
 
-- (void)savePanelDidEnd:(NSSavePanel *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo // not common
+- (void)savePanelDidEnd:(NSSavePanel *)sheet returnCode:(int)returnCode 
+												contextInfo:(void *)contextInfo // not common
 {
 	if (returnCode == NSOKButton) {
 		NSString *resultPath = [sheet filename];
-		id document = [self document];
-		[document setWorkingLocation:[resultPath stringByDeletingLastPathComponent]];
-		[document setCustomDmgName:[resultPath lastPathComponent]];
-		[self setTargetPath:[document dmgPath]];
+		[dmgMaker setWorkingLocation:[resultPath stringByDeletingLastPathComponent]];
+		[dmgMaker setCustomDmgName:[resultPath lastPathComponent]];
+		[self setTargetPath:[dmgMaker dmgPath]];
 	}
 }
 
@@ -51,10 +51,10 @@
 {
 	NSSavePanel *savePanel = [NSSavePanel savePanel];
 	id document = [self document];
-	[savePanel setRequiredFileType:[document dmgSuffix]];
+	[savePanel setRequiredFileType:[dmgOptionsViewController dmgSuffix]];
 	[savePanel setCanSelectHiddenExtension:YES];
 	//[savePanel setExtensionHidden:YES];
-	[savePanel beginSheetForDirectory:[document workingLocation] file:[document dmgName]
+	[savePanel beginSheetForDirectory:[dmgMaker workingLocation] file:[dmgMaker dmgName]
 				   modalForWindow:[self window]
 					modalDelegate:self
 				   didEndSelector:@selector(savePanelDidEnd:returnCode:contextInfo:)

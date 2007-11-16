@@ -68,7 +68,7 @@
 		}
 		dmgMaker = [[DiskImageMaker alloc] initWithSourceItems:[fileListController arrangedObjects]];
 		[dmgMaker setDMGOptions:dmgOptionsViewController];
-		[dmgMaker setDestination:result_path];
+		[dmgMaker setDestination:result_path replacing:YES];
 		[sheet orderOut:self];
 		[self makeDiskImage];
 	}
