@@ -94,6 +94,10 @@
 #if useLog	
 	NSLog(@"setupFileTable in MDMGWindowController");
 #endif
+	if (!initialItems) {
+		return;
+	}
+	
 	[fileTableController addFileURLs:initialItems];
 	
 	float current_dimension = [splitSubview dimension];
