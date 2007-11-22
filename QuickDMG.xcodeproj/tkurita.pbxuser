@@ -18,11 +18,11 @@
 			2CF4B62D084A22E2001812D4 /* DMGWindowController.m:8 */,
 			2C5A345A0897CAAB00F95662 /* DMGWindowController.m:68 */,
 			2C3A0AD1089BD103006D8D14 /* DMGWindowController.m:27 */,
-			2CC63E500938C90B00503C26 /* DiskImageMaker.m:581 */,
-			2CC63E5D0938C99400503C26 /* DiskImageMaker.m:601 */,
+			2CC63E500938C90B00503C26 /* DiskImageMaker.m:586 */,
+			2CC63E5D0938C99400503C26 /* DiskImageMaker.m:606 */,
 			2CB60DD50BCB6E81009F39D7 /* DMGWindowController.m:96 */,
 			2CC2D8E60CAB5816006E7800 /* DMGOptionsViewController.m:91 */,
-			2CC2E9660CE80E7900653E25 /* DiskImageMaker.m:358 */,
+			2CC2E9660CE80E7900653E25 /* DiskImageMaker.m:363 */,
 			2CC9034D0CE86DD10016E8D7 /* KXTableView.m:9 */,
 			2CE7CF5C0CE95981007B5EC2 /* DMGController.m:8 */,
 			2C29F0990CEA090400CE881C /* AppController.m:40 */,
@@ -95,8 +95,8 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					22,
-					455.7974,
-					239.5835,
+					455,
+					112,
 				);
 				PBXFileTableDataSourceColumnsKey = (
 					PBXExecutablesDataSource_ActiveFlagID,
@@ -109,7 +109,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					324,
+					338,
 					20,
 					79,
 					43,
@@ -202,7 +202,7 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 217386050;
+			PBXPerProjectTemplateStateSaveDate = 217392573;
 			PBXPrepackagedSmartGroups_v2 = (
 				{
 					PBXTransientLocationAtTop = bottom;
@@ -379,7 +379,19 @@
 					};
 				},
 			);
-			PBXWorkspaceStateSaveDate = 217386050;
+			PBXWorkspaceStateSaveDate = 217392573;
+		};
+		perUserProjectItems = {
+			2C84363C0CF524B100B167F8 = 2C84363C0CF524B100B167F8 /* PBXBookmark */;
+			2C8436430CF525B500B167F8 = 2C8436430CF525B500B167F8 /* PBXTextBookmark */;
+			2C8436A70CF525D900B167F8 /* PBXBookmark */ = 2C8436A70CF525D900B167F8 /* PBXBookmark */;
+			2C8436A80CF5267F00B167F8 /* PBXBookmark */ = 2C8436A80CF5267F00B167F8 /* PBXBookmark */;
+			2C8436AF0CF526E500B167F8 /* PBXTextBookmark */ = 2C8436AF0CF526E500B167F8 /* PBXTextBookmark */;
+			2C8436B20CF526E500B167F8 /* PBXTextBookmark */ = 2C8436B20CF526E500B167F8 /* PBXTextBookmark */;
+			2C8436BC0CF527E500B167F8 /* PBXTextBookmark */ = 2C8436BC0CF527E500B167F8 /* PBXTextBookmark */;
+			2C8436BD0CF527E500B167F8 /* PBXTextBookmark */ = 2C8436BD0CF527E500B167F8 /* PBXTextBookmark */;
+			2C8436C20CF527E600B167F8 /* PBXTextBookmark */ = 2C8436C20CF527E600B167F8 /* PBXTextBookmark */;
+			2C8436C50CF527E700B167F8 /* PBXTextBookmark */ = 2C8436C50CF527E700B167F8 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 2CD4856F0818DDC400A7FDA9 /* Source Control */;
 		userBookmarkGroup = 2C7F5059089BDE19008C1816 /* PBXBookmarkGroup */;
@@ -677,11 +689,90 @@
 	};
 	2C7FBFD2081BAAAC00340E25 /* History.rtf */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {718, 4946}}";
-			sepNavSelRange = "{622, 0}";
-			sepNavVisRect = "{{0, 203}, {718, 539}}";
+			sepNavIntBoundsRect = "{{0, 0}, {718, 2481}}";
+			sepNavSelRange = "{602, 0}";
+			sepNavVisRect = "{{0, 221}, {718, 539}}";
 			sepNavWindowFrame = "{{346, 177}, {757, 653}}";
 		};
+	};
+	2C84363C0CF524B100B167F8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 2C7FBFD2081BAAAC00340E25 /* History.rtf */;
+	};
+	2C8436430CF525B500B167F8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C7FBFD2081BAAAC00340E25 /* History.rtf */;
+		name = "History.rtf: 28";
+		rLen = 0;
+		rLoc = 602;
+		rType = 0;
+		vrLen = 746;
+		vrLoc = 252;
+	};
+	2C8436A70CF525D900B167F8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
+	};
+	2C8436A80CF5267F00B167F8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 2CC2DB5A0CABC1BF006E7800 /* DMGDocumentProtocol.h */;
+	};
+	2C8436AF0CF526E500B167F8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2CC2DB5A0CABC1BF006E7800 /* DMGDocumentProtocol.h */;
+		name = isFolder;
+		rLen = 8;
+		rLoc = 62;
+		rType = 0;
+		vrLen = 197;
+		vrLoc = 0;
+	};
+	2C8436B20CF526E500B167F8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
+		name = setDiskName;
+		rLen = 11;
+		rLoc = 19716;
+		rType = 0;
+		vrLen = 678;
+		vrLoc = 19310;
+	};
+	2C8436BC0CF527E500B167F8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
+		rLen = 11;
+		rLoc = 3302;
+		rType = 0;
+	};
+	2C8436BD0CF527E500B167F8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
+		name = "DiskImageMaker.m: 107";
+		rLen = 0;
+		rLoc = 3406;
+		rType = 0;
+		vrLen = 616;
+		vrLoc = 2867;
+	};
+	2C8436C20CF527E600B167F8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
+		name = "DiskImageMaker.m: 107";
+		rLen = 0;
+		rLoc = 3406;
+		rType = 0;
+		vrLen = 616;
+		vrLoc = 2867;
+	};
+	2C8436C50CF527E700B167F8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
+		name = "DiskImageMaker.m: 107";
+		rLen = 0;
+		rLoc = 3406;
+		rType = 0;
+		vrLen = 616;
+		vrLoc = 2867;
 	};
 	2C895FA5081C9D2900694C34 /* AppController.h */ = {
 		uiCtxt = {
@@ -717,9 +808,9 @@
 	};
 	2C896426081D105D00694C34 /* DiskImageMaker.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1357, 11840}}";
-			sepNavSelRange = "{15128, 57}";
-			sepNavVisRect = "{{0, 545}, {997, 712}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1357, 11920}}";
+			sepNavSelRange = "{19716, 11}";
+			sepNavVisRect = "{{0, 10612}, {997, 712}}";
 			sepNavWindowFrame = "{{194, 75}, {1036, 841}}";
 		};
 	};
@@ -830,7 +921,7 @@
 			sepNavWindowFrame = "{{368, 123}, {927, 761}}";
 		};
 	};
-	2CC2E9660CE80E7900653E25 /* DiskImageMaker.m:358 */ = {
+	2CC2E9660CE80E7900653E25 /* DiskImageMaker.m:363 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -840,7 +931,7 @@
 		fileReference = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
 		functionName = "-copySourceItems:";
 		hitCount = 1;
-		lineNumber = 358;
+		lineNumber = 363;
 		location = DiskImageMaker.ob;
 		modificationTime = 216881950.161754;
 		state = 1;
@@ -852,11 +943,11 @@
 			2CF4B62D084A22E2001812D4 /* DMGWindowController.m:8 */,
 			2C5A345A0897CAAB00F95662 /* DMGWindowController.m:68 */,
 			2C3A0AD1089BD103006D8D14 /* DMGWindowController.m:27 */,
-			2CC63E500938C90B00503C26 /* DiskImageMaker.m:581 */,
-			2CC63E5D0938C99400503C26 /* DiskImageMaker.m:601 */,
+			2CC63E500938C90B00503C26 /* DiskImageMaker.m:586 */,
+			2CC63E5D0938C99400503C26 /* DiskImageMaker.m:606 */,
 			2CB60DD50BCB6E81009F39D7 /* DMGWindowController.m:96 */,
 			2CC2D8E60CAB5816006E7800 /* DMGOptionsViewController.m:91 */,
-			2CC2E9660CE80E7900653E25 /* DiskImageMaker.m:358 */,
+			2CC2E9660CE80E7900653E25 /* DiskImageMaker.m:363 */,
 			2CC9034D0CE86DD10016E8D7 /* KXTableView.m:9 */,
 			2CE7CF5C0CE95981007B5EC2 /* DMGController.m:8 */,
 			2C29F0990CEA090400CE881C /* AppController.m:40 */,
@@ -869,7 +960,7 @@
 			2C3A36590CED5A3A00B5CE38 /* MDMGWindowController.m:146 */,
 		);
 	};
-	2CC63E500938C90B00503C26 /* DiskImageMaker.m:581 */ = {
+	2CC63E500938C90B00503C26 /* DiskImageMaker.m:586 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -879,12 +970,12 @@
 		fileReference = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
 		functionName = "-convertDiskImage";
 		hitCount = 1;
-		lineNumber = 581;
+		lineNumber = 586;
 		location = DiskImageMaker.ob;
 		modificationTime = 216881950.161713;
 		state = 1;
 	};
-	2CC63E5D0938C99400503C26 /* DiskImageMaker.m:601 */ = {
+	2CC63E5D0938C99400503C26 /* DiskImageMaker.m:606 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -894,7 +985,7 @@
 		fileReference = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
 		functionName = "-deleteSourceDmg:";
 		hitCount = 1;
-		lineNumber = 601;
+		lineNumber = 606;
 		location = DiskImageMaker.ob;
 		modificationTime = 216881950.161741;
 		state = 1;

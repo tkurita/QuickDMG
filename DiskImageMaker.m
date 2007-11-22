@@ -99,7 +99,12 @@ NSString *getTaskError(NSTask *theTask)
 	sourceItems = [[NSArray arrayWithObject:anItem] retain];
 	NSString *source_path = [anItem fileName];
 	[self setWorkingLocation:[source_path stringByDeletingLastPathComponent]];
-	[self setDiskName:[[source_path lastPathComponent] stringByDeletingPathExtension]];
+	NSString *source_name = [source_path lastPathComponent];
+	if ((![anItem isFolder]) || [anItem isPackage]) {
+		[self setDiskName:[source_name stringByDeletingPathExtension]];
+	} else {
+		[self setDiskName:source_name];
+	}
 	return self;
 }
 
