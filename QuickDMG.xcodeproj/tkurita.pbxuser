@@ -202,7 +202,7 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 217156051;
+			PBXPerProjectTemplateStateSaveDate = 217386050;
 			PBXPrepackagedSmartGroups_v2 = (
 				{
 					PBXTransientLocationAtTop = bottom;
@@ -379,13 +379,7 @@
 					};
 				},
 			);
-			PBXWorkspaceStateSaveDate = 217156051;
-		};
-		perUserProjectItems = {
-			2C9697EE0CF18AA600FE9514 /* PBXTextBookmark */ = 2C9697EE0CF18AA600FE9514 /* PBXTextBookmark */;
-			2C9697EF0CF18AA600FE9514 /* PBXTextBookmark */ = 2C9697EF0CF18AA600FE9514 /* PBXTextBookmark */;
-			2C9697FB0CF18AC600FE9514 /* PBXBookmark */ = 2C9697FB0CF18AC600FE9514 /* PBXBookmark */;
-			2C9697FC0CF18AC600FE9514 /* PBXTextBookmark */ = 2C9697FC0CF18AC600FE9514 /* PBXTextBookmark */;
+			PBXWorkspaceStateSaveDate = 217386050;
 		};
 		sourceControlManager = 2CD4856F0818DDC400A7FDA9 /* Source Control */;
 		userBookmarkGroup = 2C7F5059089BDE19008C1816 /* PBXBookmarkGroup */;
@@ -728,38 +722,6 @@
 			sepNavVisRect = "{{0, 545}, {997, 712}}";
 			sepNavWindowFrame = "{{194, 75}, {1036, 841}}";
 		};
-	};
-	2C9697EE0CF18AA600FE9514 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		comments = "error: parse error before ‘}’ token";
-		fRef = 2C24C8770CA0EBFD00E01AC0 /* MDMGWindowController.m */;
-		rLen = 0;
-		rLoc = 97;
-		rType = 1;
-	};
-	2C9697EF0CF18AA600FE9514 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C24C8770CA0EBFD00E01AC0 /* MDMGWindowController.m */;
-		name = "}";
-		rLen = 2;
-		rLoc = 2583;
-		rType = 0;
-		vrLen = 698;
-		vrLoc = 2394;
-	};
-	2C9697FB0CF18AC600FE9514 /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 2C24C8770CA0EBFD00E01AC0 /* MDMGWindowController.m */;
-	};
-	2C9697FC0CF18AC600FE9514 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C24C8770CA0EBFD00E01AC0 /* MDMGWindowController.m */;
-		name = "MDMGWindowController.m: 99";
-		rLen = 0;
-		rLoc = 2583;
-		rType = 0;
-		vrLen = 1182;
-		vrLoc = 2195;
 	};
 	2CA3143708AA083200ADA32C /* Credits.html */ = {
 		uiCtxt = {

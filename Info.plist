@@ -30,7 +30,7 @@
 	<key>CFBundleExecutable</key>
 	<string>QuickDMG</string>
 	<key>CFBundleGetInfoString</key>
-	<string>2.1b copyright 2005-2007, Tetsuro KURITA</string>
+	<string>2.1 copyright 2005-2007, Tetsuro KURITA</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>QuickDMGHelp</string>
 	<key>CFBundleIconFile</key>
@@ -46,7 +46,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.1b</string>
+	<string>2.1</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
