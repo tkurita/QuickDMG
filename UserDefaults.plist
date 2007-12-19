@@ -108,8 +108,10 @@
 	<key>InternetEnable</key>
 	<false/>
 	<key>compressionLevel</key>
-	<integer>0</integer>
+	<integer>5</integer>
 	<key>deleteDSStore</key>
 	<true/>
+	<key>formatIndex</key>
+	<integer>0</integer>
 </dict>
 </plist>

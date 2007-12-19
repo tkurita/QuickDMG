@@ -14,8 +14,12 @@
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
 	internetEnable = [user_defaults boolForKey:@"InternetEnable"];
 	isDeleteDSStore = [user_defaults boolForKey:@"deleteDSStore"];
+	selectedFormatIndexes = [[NSIndexSet indexSetWithIndex:
+									[user_defaults integerForKey:@"formatIndex"]] retain];
+	/*
 	selectedFormatIndexes = [[NSUnarchiver unarchiveObjectWithData:
 						[user_defaults dataForKey:@"SelectedFormatIndexes"]] retain];
+	*/
 	compressionLevel = [user_defaults integerForKey:@"compressionLevel"];
 	[NSBundle loadNibNamed:nibName owner:self];
 	return self;
@@ -42,8 +46,12 @@
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
 	[user_defaults setBool:internetEnable forKey:@"InternetEnable"];
 	[user_defaults setBool:isDeleteDSStore forKey:@"deleteDSStore"];
+	/*
 	[user_defaults setObject:[NSArchiver archivedDataWithRootObject:selectedFormatIndexes]
 					forKey:@"SelectedFormatIndexes"];
+	*/
+	[user_defaults setObject:[NSNumber numberWithInt:[selectedFormatIndexes firstIndex]]
+					forKey:@"formatIndex"];
 	[user_defaults setInteger:compressionLevel forKey:@"compressionLevel"];
 }
 
