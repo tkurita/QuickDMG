@@ -43,6 +43,7 @@
 		2C895FB5081CCA5E00694C34 /* GetFinderSelection.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2C895FB4081CCA5E00694C34 /* GetFinderSelection.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		2C896427081D105D00694C34 /* DiskImageMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C896425081D105D00694C34 /* DiskImageMaker.h */; };
 		2C896428081D105D00694C34 /* DiskImageMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */; };
+		2C97F33A0D34E39F008813CF /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C97F3390D34E39F008813CF /* ServicesMenu.strings */; };
 		2CA3143808AA083200ADA32C /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 2CA3143708AA083200ADA32C /* Credits.html */; };
 		2CA4BEAA09E22BAF00D9C9D6 /* QuickDMG.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */; };
 		2CA4C01F09E22DBF00D9C9D6 /* DMGDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A37F4AEFDCFA73011CA2CEA /* DMGDocument.h */; };
@@ -119,6 +120,7 @@
 		2C895FB4081CCA5E00694C34 /* GetFinderSelection.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = GetFinderSelection.applescript; sourceTree = "<group>"; };
 		2C896425081D105D00694C34 /* DiskImageMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiskImageMaker.h; sourceTree = "<group>"; };
 		2C896426081D105D00694C34 /* DiskImageMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiskImageMaker.m; sourceTree = "<group>"; };
+		2C97F3330D34E38F008813CF /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		2CA3143708AA083200ADA32C /* Credits.html */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = QuickDMG.icns; sourceTree = "<group>"; };
 		2CB60F6E0BCB9D56009F39D7 /* LocalizedStringTransformer.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = LocalizedStringTransformer.h; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				2A37F4B4FDCFA73011CA2CEA /* DMGDocument.nib */,
 				2C4DACFB0CE29B0D009240B6 /* DMGOptionsView.nib */,
 				2C4DACF60CE29AFA009240B6 /* DMGProgressWindow.nib */,
+				2C97F3390D34E39F008813CF /* ServicesMenu.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				2C4DACF80CE29AFA009240B6 /* DMGProgressWindow.nib in Resources */,
 				2C1D0A450CEAC5AF00B59A0E /* plus.tiff in Resources */,
 				2C1D0A460CEAC5AF00B59A0E /* minus.tiff in Resources */,
+				2C97F33A0D34E39F008813CF /* ServicesMenu.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +434,14 @@
 				2C24C8310CA0AB9E00E01AC0 /* English */,
 			);
 			name = DMGOptionsView.nib;
+			sourceTree = "<group>";
+		};
+		2C97F3390D34E39F008813CF /* ServicesMenu.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C97F3330D34E38F008813CF /* English */,
+			);
+			name = ServicesMenu.strings;
 			sourceTree = "<group>";
 		};
 		2CC2E7A70CE7E9A300653E25 /* MDMGWindow.nib */ = {
