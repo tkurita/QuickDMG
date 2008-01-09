@@ -134,6 +134,7 @@
 							   selector:@selector(dmgDidTerminate:)
 								   name:@"DmgDidTerminationNotification"
 								 object:dmgMaker];
+
 		[dmgMaker createDiskImage];
 	}
 }
@@ -147,9 +148,14 @@
     }
 }
 
+-(void) dmgErrorTermiante:(NSNotification *) notification
+{
+	DiskImageMaker *dmg_maker = [notification object];
+}
+
 -(void) dmgDidTerminate:(NSNotification *) notification //common
 {	
-	DiskImageMaker* dmg_maker = [notification object];
+	DiskImageMaker *dmg_maker = [notification object];
 
 	if ([dmg_maker terminationStatus] == 0) {
 		NSWindow *window = [self window];

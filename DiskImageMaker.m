@@ -215,7 +215,7 @@ NSString *getTaskError(NSTask *theTask)
 	while (anItem = [enumerator nextObject]) {
 		sourceSize += [anItem fileSize];
 	}
-	sourceSize += 200000;
+	sourceSize += 500000;
 	
 	NSFileManager *myFileManager = [NSFileManager defaultManager];
 	
@@ -539,7 +539,9 @@ NSString *getTaskError(NSTask *theTask)
 				[detachTask setArguments:[NSArray arrayWithObjects:@"detach",devEntry,nil]];
 				[detachTask launch];
 			}
-			[self dmgTaskTerminate: notification];
+			//[self dmgTaskTerminate: notification];
+			terminationStatus = [dmgTask terminationStatus];
+			[myNotiCenter postNotificationName: @"DmgDidTerminationNotification" object:self];
 			return NO;
 		}
 	}
@@ -624,13 +626,10 @@ NSString *getTaskError(NSTask *theTask)
 	NSLog(@"start dmgTaskTerminate");
 #endif
 	NSTask *dmgTask = [notification object];
-	self->terminationStatus = [dmgTask terminationStatus];
+	terminationStatus = [dmgTask terminationStatus];
 	if (terminationStatus) {
 		[self setTerminationMessage:getTaskError(dmgTask)];
 	}
-#if useLog
-	NSLog([[dmgTask arguments] description]);
-#endif
 	[myNotiCenter postNotificationName: @"DmgDidTerminationNotification" object:self];
 #if useLog
 	NSLog(@"end dmgTaskTerminate");
