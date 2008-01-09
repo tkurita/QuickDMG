@@ -25,11 +25,8 @@
 	[mdmg_window showWindow:self];
 }
 
-- (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
+- (void)processFiles:(NSArray *)filenames
 {
-#if useLog
-	NSLog([NSString stringWithFormat:@"start openFiles for :%@",[filenames description]]);
-#endif	
 	NSError *error = nil;
 	
 	if ([filenames count] > 1) {
@@ -50,8 +47,14 @@
 			NSLog([error localizedDescription]);
 		}
 	}
-	
-	//isFirstOpen = NO;
+}
+
+- (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
+{
+#if useLog
+	NSLog([NSString stringWithFormat:@"start openFiles for :%@",[filenames description]]);
+#endif		
+	[self processFiles:filenames];
 }
 
 - (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender
@@ -62,6 +65,21 @@
 - (IBAction)makeDonation:(id)sender
 {
 	[DonationReminder goToDonation];
+}
+
+- (void)createDmgFromPasteboard:(NSPasteboard *)pboard userData:(NSString *)data error:(NSString **)error
+{
+	NSArray *types = [pboard types];
+	NSArray *filenames;
+	if (![types containsObject:NSFilenamesPboardType] 
+			|| !(filenames = [pboard propertyListForType:NSFilenamesPboardType])) {
+        *error = NSLocalizedString(@"Error: Pasteboard doesn't contain file paths.",
+								   @"Pasteboard couldn't give string.");
+        return;
+    }
+	
+	[self processFiles:filenames];
+	[NSApp activateIgnoringOtherApps:YES];
 }
 
 - (void)openFinderSelection
