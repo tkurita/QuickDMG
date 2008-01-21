@@ -69,6 +69,9 @@
 
 - (void)createDmgFromPasteboard:(NSPasteboard *)pboard userData:(NSString *)data error:(NSString **)error
 {
+#if useLog
+	NSLog(@"start createDmgFromPasteboard");
+#endif
 	NSArray *types = [pboard types];
 	NSArray *filenames;
 	if (![types containsObject:NSFilenamesPboardType] 
@@ -86,6 +89,9 @@
 {
 	NSArray *docArray = [documentController documents];
 	if ([docArray count] != 0) {
+#if useLog
+		NSLog(@"Already window is opened. Dont't obtain Finder's selection.");
+#endif
 		return;
 	}
 	
@@ -135,14 +141,32 @@
 	}
 }
 
+- (void)applicationWillFinishLaunching:(NSNotification *)aNotification
+{
+	[NSApp setServicesProvider:self];
+}
+
+- (void)delayedOpenFinderSelection
+{
+#if useLog
+	NSLog(@"delayedOpenFinderSelection");
+#endif	
+	[self openFinderSelection];
+	isFirstOpen = NO;
+}
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 #if useLog
 	NSLog(@"start applicationDidFinishLaunching");
 #endif
-	[self openFinderSelection];
-	[DonationReminder remindDonation];		
-	isFirstOpen = NO;
+	
+	[DonationReminder remindDonation];
+	// try to obtain Finder's selection after system serviece call.
+	[self performSelector:@selector(delayedOpenFinderSelection)
+											withObject:nil afterDelay:0.1];
+#if useLog
+	NSLog(@"end applicationDidFinishLaunching");
+#endif
 }
 
 - (void)awakeFromNib
