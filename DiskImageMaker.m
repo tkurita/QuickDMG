@@ -215,7 +215,8 @@ NSString *getTaskError(NSTask *theTask)
 	while (anItem = [enumerator nextObject]) {
 		sourceSize += [anItem fileSize];
 	}
-	sourceSize += 500000;
+	//sourceSize += 500000;
+	sourceSize += [[NSUserDefaults standardUserDefaults] integerForKey:@"additionalSize"];
 	
 	NSFileManager *myFileManager = [NSFileManager defaultManager];
 	

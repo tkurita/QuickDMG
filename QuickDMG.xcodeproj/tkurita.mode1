@@ -196,6 +196,8 @@
 		<dict>
 			<key>ChosenToolbarItems</key>
 			<array>
+				<string>XCToolbarPerspectiveControl</string>
+				<string>NSToolbarSeparatorItem</string>
 				<string>active-target-popup</string>
 				<string>active-buildstyle-popup</string>
 				<string>action</string>
@@ -220,8 +222,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -260,19 +260,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>2A37F4AAFDCFA73011CA2CEA</string>
-								<string>2A37F4B8FDCFA73011CA2CEA</string>
-								<string>089C165FFE840EACC02AAC07</string>
-								<string>2C97F3390D34E39F008813CF</string>
-								<string>19C28FB0FE9D524F11CA2CBB</string>
-								<string>8D15AC370486D014006FF6A4</string>
-								<string>2C0BB9250D44D52D00A8B952</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FAAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>1</integer>
+									<integer>5</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -298,7 +292,7 @@
 							<real>240</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>106 255 916 613 0 0 1440 938 </string>
+						<string>106 256 916 613 0 0 1440 938 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -326,10 +320,10 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2C0BB96D0D44E4C500A8B952</string>
+										<string>2C5B7CC70D46FBD400F42C6F</string>
 										<key>history</key>
 										<array>
-											<string>2C0BB73B0D44A1CE00A8B952</string>
+											<string>2C0BB9790D44E60700A8B952</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -343,7 +337,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {632, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>106 255 916 613 0 0 1440 938 </string>
+								<string>106 256 916 613 0 0 1440 938 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -351,6 +345,8 @@
 							<string>0pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -363,7 +359,7 @@
 								<key>Frame</key>
 								<string>{{0, 5}, {632, 567}}</string>
 								<key>RubberWindowFrame</key>
-								<string>106 255 916 613 0 0 1440 938 </string>
+								<string>106 256 916 613 0 0 1440 938 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -387,9 +383,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>2C0BB6D50D449E5A00A8B952</string>
+				<string>2C5B7CC80D46FBD400F42C6F</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>2C0BB6D60D449E5A00A8B952</string>
+				<string>2C5B7CC90D46FBD400F42C6F</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -545,12 +541,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>2CC63E190938BA0E00503C26</string>
 		<string>1C0AD2B3069F1EA900FABCE6</string>
 		<string>/Users/tkurita/Dev/Projects/QuickDMG/trunk/QuickDMG.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>106 255 916 613 0 0 1440 938 </string>
+	<string>106 256 916 613 0 0 1440 938 </string>
 	<key>WindowTools</key>
 	<array>
 		<dict>
@@ -993,9 +988,9 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C0AD2B3069F1EA900FABCE6</string>
-				<string>2C0BB8FA0D44B5B500A8B952</string>
+				<string>2C5B7CCA0D46FBD400F42C6F</string>
 				<string>1CD0528B0623707200166675</string>
-				<string>2C0BB8FB0D44B5B500A8B952</string>
+				<string>2C5B7CCB0D46FBD400F42C6F</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.run</string>

@@ -107,6 +107,8 @@
 	<string>http://homepage.mac.com/tkurita/scriptfactory/donationproxy.html</string>
 	<key>InternetEnable</key>
 	<false/>
+	<key>additionalSize</key>
+	<integer>500000</integer>
 	<key>compressionLevel</key>
 	<integer>5</integer>
 	<key>deleteDSStore</key>
