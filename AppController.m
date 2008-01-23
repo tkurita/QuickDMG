@@ -163,7 +163,8 @@
 	[DonationReminder remindDonation];
 	// try to obtain Finder's selection after system serviece call.
 	[self performSelector:@selector(delayedOpenFinderSelection)
-											withObject:nil afterDelay:0.1];
+			withObject:nil 
+			afterDelay:[[NSUserDefaults standardUserDefaults] floatForKey:@"openFinderSelectionDelay"]];
 #if useLog
 	NSLog(@"end applicationDidFinishLaunching");
 #endif

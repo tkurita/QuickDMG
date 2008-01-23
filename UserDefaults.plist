@@ -115,5 +115,7 @@
 	<true/>
 	<key>formatIndex</key>
 	<integer>0</integer>
+	<key>openFinderSelectionDelay</key>
+	<real>0.29999999999999999</real>
 </dict>
 </plist>
