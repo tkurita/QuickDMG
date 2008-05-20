@@ -499,8 +499,8 @@ NSString *getTaskError(NSTask *theTask)
 //	else {
 //		[dmgTask setArguments:[NSArray arrayWithObjects:@"create",@"-fs",@"HFS+",@"-size",imageSize,@"-layout",@"None",@"-type",dmg_type,@"-volname",diskName,dmgTarget,@"-plist",nil]];
 //	}
-	
-	[dmgTask setArguments:[NSArray arrayWithObjects:@"create",@"-fs",@"HFS+",@"-size",imageSize,
+	NSString *fs = [dmgOptions filesystem];
+	[dmgTask setArguments:[NSArray arrayWithObjects:@"create",@"-fs", fs,@"-size",imageSize,
 									@"-layout",@"None",@"-type",dmg_type,@"-volname",diskName,
 									dmg_target,@"-plist",nil]];
 	

@@ -68,6 +68,12 @@
 	return [[an_array lastObject] objectForKey:@"extension"];
 }
 
+- (NSString *)filesystem
+{
+	NSArray *an_array = [dmgFormatController selectedObjects];
+	return [[an_array lastObject] objectForKey:@"filesystem"];
+}
+
 - (BOOL)internetEnable
 {
 	return internetEnable;

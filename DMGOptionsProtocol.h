@@ -4,4 +4,5 @@
 - (int)compressionLevel;
 - (NSString *)dmgFormat;
 - (NSString *)dmgSuffix;
+- (NSString *)filesystem;
 @end

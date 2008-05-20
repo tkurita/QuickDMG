@@ -11,6 +11,8 @@
 			<string>UDIF_Compressed</string>
 			<key>extension</key>
 			<string>dmg</string>
+			<key>filesystem</key>
+			<string>HFS+</string>
 			<key>formatID</key>
 			<string>UDZO</string>
 			<key>hasCompressionLevel</key>
@@ -25,6 +27,8 @@
 			<string>UDIF_bzip2</string>
 			<key>extension</key>
 			<string>dmg</string>
+			<key>filesystem</key>
+			<string>HFS+</string>
 			<key>formatID</key>
 			<string>UDBZ</string>
 			<key>hasCompressionLevel</key>
@@ -39,6 +43,8 @@
 			<string>SPARSE</string>
 			<key>extension</key>
 			<string>sparseimage</string>
+			<key>filesystem</key>
+			<string>HFS+</string>
 			<key>formatID</key>
 			<string>UDSP</string>
 			<key>hasCompressionLevel</key>
@@ -53,6 +59,8 @@
 			<string>UDIF_R/W</string>
 			<key>extension</key>
 			<string>dmg</string>
+			<key>filesystem</key>
+			<string>HFS+</string>
 			<key>formatID</key>
 			<string>UDRW</string>
 			<key>hasCompressionLevel</key>
@@ -67,6 +75,8 @@
 			<string>UDIF_R_Only</string>
 			<key>extension</key>
 			<string>dmg</string>
+			<key>filesystem</key>
+			<string>HFS+</string>
 			<key>formatID</key>
 			<string>UDRO</string>
 			<key>hasCompressionLevel</key>
@@ -81,6 +91,8 @@
 			<string>NDIF_Compressed</string>
 			<key>extension</key>
 			<string>img</string>
+			<key>filesystem</key>
+			<string>HFS</string>
 			<key>formatID</key>
 			<string>ROCo</string>
 			<key>hasCompressionLevel</key>
@@ -95,6 +107,8 @@
 			<string>NDIF_R_Only</string>
 			<key>extension</key>
 			<string>img</string>
+			<key>filesystem</key>
+			<string>HFS</string>
 			<key>formatID</key>
 			<string>Rdxx</string>
 			<key>hasCompressionLevel</key>
