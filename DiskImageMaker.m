@@ -1,4 +1,5 @@
 #import "DiskImageMaker.h"
+#import "PipeReader.h"
 #include <unistd.h>
 
 #define useLog 0
@@ -98,7 +99,13 @@ NSString *getTaskError(NSTask *theTask)
 	[self init];
 	sourceItems = [[NSArray arrayWithObject:anItem] retain];
 	NSString *source_path = [anItem fileName];
-	[self setWorkingLocation:[source_path stringByDeletingLastPathComponent]];
+	if ([[NSWorkspace sharedWorkspace] getFileSystemInfoForPath:source_path
+							isRemovable:nil isWritable:nil isUnmountable:nil description:nil type:nil]) {
+		[self setWorkingLocation:[NSSearchPathForDirectoriesInDomains(NSDesktopDirectory, NSUserDomainMask, YES) lastObject]];
+	} else {				
+		[self setWorkingLocation:[source_path stringByDeletingLastPathComponent]];
+	}
+	
 	NSString *source_name = [source_path lastPathComponent];
 	if ((![anItem isFolder]) || [anItem isPackage]) {
 		[self setDiskName:[source_name stringByDeletingPathExtension]];
@@ -352,6 +359,42 @@ NSString *getTaskError(NSTask *theTask)
 		}
 		
 		return;
+	}
+
+	if ([[dmgOptions filesystem] isEqualToString:@"HFS"]) {
+		CFStringEncoding sysenc = CFStringGetSystemEncoding();
+		NSTask *dt_task = [NSTask launchedTaskWithLaunchPath:@"/usr/sbin/disktool"
+									arguments:[NSArray arrayWithObjects:@"-s",devEntry,
+									[NSString stringWithFormat:@"%d",sysenc],  nil]];
+		[dt_task waitUntilExit];
+		// Fix volume name is not reflected if diskName have multi byte characters, 
+		dt_task = [NSTask launchedTaskWithLaunchPath:@"/usr/sbin/diskutil"
+									arguments:[NSArray arrayWithObjects:@"rename",devEntry, 
+									diskName, nil]];
+		[dt_task waitUntilExit];
+		if ([dt_task terminationStatus] !=0) {
+			NSLog(getTaskError(dt_task));
+		}
+		
+		NSTask *hdiutil_info = [self hdiUtilTask];
+		[hdiutil_info setArguments:[NSArray arrayWithObjects:@"info",@"-plist",nil]];
+		PipeReader *reader = [PipeReader readerWithTask:hdiutil_info];
+		[hdiutil_info launch];
+		[hdiutil_info waitUntilExit];
+		NSDictionary *mounted_dmgs = [[reader stdoutString] propertyList];
+		NSEnumerator *enumerator = [[mounted_dmgs objectForKey:@"images"] objectEnumerator];
+		NSDictionary *dmg_info;
+		while (dmg_info = [enumerator nextObject]) {
+			NSEnumerator *entities_enumerator = [[dmg_info objectForKey:@"system-entities"] objectEnumerator];
+			NSDictionary *system_entity;
+			while (system_entity = [entities_enumerator nextObject]) {
+				if ([[system_entity objectForKey:@"dev-entry"] isEqualToString:devEntry]) {
+					[self setMountPoint:[system_entity objectForKey:@"mount-point"]];
+					break;
+				}
+			}
+		}
+		
 	}
 	
 	NSTask * dittoTask = [[NSTask alloc] init];
