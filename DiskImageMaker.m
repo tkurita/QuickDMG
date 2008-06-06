@@ -1,7 +1,10 @@
 #import "DiskImageMaker.h"
 #import "PipeReader.h"
 #include <unistd.h>
-
+#include <sys/param.h>
+#include <sys/ucred.h>
+#include <sys/mount.h>
+	 
 #define useLog 0
 
 void setOutputToPipe(NSTask *task)
@@ -99,8 +102,8 @@ NSString *getTaskError(NSTask *theTask)
 	[self init];
 	sourceItems = [[NSArray arrayWithObject:anItem] retain];
 	NSString *source_path = [anItem fileName];
-	if ([[NSWorkspace sharedWorkspace] getFileSystemInfoForPath:source_path
-							isRemovable:nil isWritable:nil isUnmountable:nil description:nil type:nil]) {
+	
+	if ([[[NSWorkspace sharedWorkspace] mountedLocalVolumePaths] containsObject:source_path]) {
 		[self setWorkingLocation:[NSSearchPathForDirectoriesInDomains(NSDesktopDirectory, NSUserDomainMask, YES) lastObject]];
 	} else {				
 		[self setWorkingLocation:[source_path stringByDeletingLastPathComponent]];
@@ -326,6 +329,21 @@ NSString *getTaskError(NSTask *theTask)
 	[task launch];
 }
 
+NSString *mountPointForDevEntry(NSString *devEntry)
+{
+	struct statfs *buf;
+	int i, count;
+	const char *dev = [devEntry UTF8String];
+	
+	count = getmntinfo(&buf, 0);
+	for (i=0; i<count; i++)
+	{
+		if (strcmp(buf[i].f_mntfromname, dev) == 0)
+			return [NSString stringWithUTF8String:buf[i].f_mntonname];
+	}
+	return nil;
+}
+
 - (void) copySourceItems:(NSNotification *) notification
 {
 #if useLog
@@ -376,7 +394,18 @@ NSString *getTaskError(NSTask *theTask)
 			NSLog(getTaskError(dt_task));
 		}
 		
-		NSTask *hdiutil_info = [self hdiUtilTask];
+		NSString *bufmp = mountPointForDevEntry(devEntry);
+		if (bufmp) {
+			[self setMountPoint:bufmp];
+		} else {
+			//NSLog([NSString stringWithFormat:@"Can't find the mount point for %@", devEntry]);
+			terminationStatus = 1;
+			[self setTerminationMessage:[NSString stringWithFormat:@"Can't find the mount point for %@", devEntry]];		
+			[myNotiCenter postNotificationName: @"DmgDidTerminationNotification" object:self];
+			return;
+		}
+		
+		/*NSTask *hdiutil_info = [self hdiUtilTask];
 		[hdiutil_info setArguments:[NSArray arrayWithObjects:@"info",@"-plist",nil]];
 		PipeReader *reader = [PipeReader readerWithTask:hdiutil_info];
 		[hdiutil_info launch];
@@ -394,7 +423,7 @@ NSString *getTaskError(NSTask *theTask)
 				}
 			}
 		}
-		
+		*/
 	}
 	
 	NSTask * dittoTask = [[NSTask alloc] init];

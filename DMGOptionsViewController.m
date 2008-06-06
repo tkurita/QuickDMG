@@ -16,10 +16,6 @@
 	isDeleteDSStore = [user_defaults boolForKey:@"deleteDSStore"];
 	selectedFormatIndexes = [[NSIndexSet indexSetWithIndex:
 									[user_defaults integerForKey:@"formatIndex"]] retain];
-	/*
-	selectedFormatIndexes = [[NSUnarchiver unarchiveObjectWithData:
-						[user_defaults dataForKey:@"SelectedFormatIndexes"]] retain];
-	*/
 	compressionLevel = [user_defaults integerForKey:@"compressionLevel"];
 	[NSBundle loadNibNamed:nibName owner:self];
 	return self;
@@ -33,6 +29,7 @@
 
 - (void)awakeFromNib
 {
+	//[dmgFormatTable scrollRowToVisible:[selectedFormatIndexes firstIndex]];
 	/*
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
 	internetEnable = [user_defaults boolForKey:@"InternetEnable"];
