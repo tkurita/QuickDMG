@@ -21,6 +21,8 @@
 
 /* Begin PBXBuildFile section */
 		2C03FBB4088A1353008B7312 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C03FBB3088A1353008B7312 /* UserDefaults.plist */; };
+		2C0F78700E13E88200BDD9E3 /* KXTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C0F786E0E13E88200BDD9E3 /* KXTask.h */; };
+		2C0F78710E13E88200BDD9E3 /* KXTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F786F0E13E88200BDD9E3 /* KXTask.m */; };
 		2C1D0A450CEAC5AF00B59A0E /* plus.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D0A430CEAC5AF00B59A0E /* plus.tiff */; };
 		2C1D0A460CEAC5AF00B59A0E /* minus.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D0A440CEAC5AF00B59A0E /* minus.tiff */; };
 		2C24C8450CA0C91600E01AC0 /* RBSplitView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C24C8440CA0C91600E01AC0 /* RBSplitView.framework */; };
@@ -99,6 +101,8 @@
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2C03FBB3088A1353008B7312 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = UserDefaults.plist; sourceTree = "<group>"; };
+		2C0F786E0E13E88200BDD9E3 /* KXTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXTask.h; sourceTree = "<group>"; };
+		2C0F786F0E13E88200BDD9E3 /* KXTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXTask.m; sourceTree = "<group>"; };
 		2C1D0A430CEAC5AF00B59A0E /* plus.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = plus.tiff; sourceTree = "<group>"; };
 		2C1D0A440CEAC5AF00B59A0E /* minus.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = minus.tiff; sourceTree = "<group>"; };
 		2C24C8060CA0AACA00E01AC0 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MDMGWindow.nib; sourceTree = "<group>"; };
@@ -234,6 +238,8 @@
 				2CC904130CE877830016E8D7 /* UtilityFunctions.m */,
 				2C7B2EAA0DF6C17A00F6159D /* PipeReader.h */,
 				2C7B2EAB0DF6C17A00F6159D /* PipeReader.m */,
+				2C0F786E0E13E88200BDD9E3 /* KXTask.h */,
+				2C0F786F0E13E88200BDD9E3 /* KXTask.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 				2CFAE2570CE848E70070AEF4 /* FileTableController.h in Headers */,
 				2CC904140CE877830016E8D7 /* UtilityFunctions.h in Headers */,
 				2C7B2EAC0DF6C17A00F6159D /* PipeReader.h in Headers */,
+				2C0F78700E13E88200BDD9E3 /* KXTask.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +405,7 @@
 				2CFAE2580CE848E70070AEF4 /* FileTableController.m in Sources */,
 				2CC904150CE877830016E8D7 /* UtilityFunctions.m in Sources */,
 				2C7B2EAD0DF6C17B00F6159D /* PipeReader.m in Sources */,
+				2C0F78710E13E88200BDD9E3 /* KXTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
