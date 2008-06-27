@@ -1,7 +1,7 @@
-#import "KXTask.h"
+#import "PipingTask.h"
 
 
-@implementation KXTask
+@implementation PipingTask
 
 - (void)dealloc
 {
@@ -16,6 +16,8 @@
 	stdoutData = [[NSMutableData alloc] init];
 	[stderrData release];
 	stderrData = [[NSMutableData alloc] init];
+	[task setStandardOutput:[NSPipe pipe]];
+	[task setStandardError:[NSPipe pipe]];
 	[super launch];
 	[NSThread detachNewThreadSelector:@selector(readStdOut:)
 							 toTarget:self withObject:nil];

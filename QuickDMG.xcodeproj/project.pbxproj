@@ -21,8 +21,7 @@
 
 /* Begin PBXBuildFile section */
 		2C03FBB4088A1353008B7312 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C03FBB3088A1353008B7312 /* UserDefaults.plist */; };
-		2C0F78700E13E88200BDD9E3 /* KXTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C0F786E0E13E88200BDD9E3 /* KXTask.h */; };
-		2C0F78710E13E88200BDD9E3 /* KXTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F786F0E13E88200BDD9E3 /* KXTask.m */; };
+		2C0F78700E13E88200BDD9E3 /* PipingTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C0F786E0E13E88200BDD9E3 /* PipingTask.h */; };
 		2C1D0A450CEAC5AF00B59A0E /* plus.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D0A430CEAC5AF00B59A0E /* plus.tiff */; };
 		2C1D0A460CEAC5AF00B59A0E /* minus.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D0A440CEAC5AF00B59A0E /* minus.tiff */; };
 		2C24C8450CA0C91600E01AC0 /* RBSplitView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C24C8440CA0C91600E01AC0 /* RBSplitView.framework */; };
@@ -51,7 +50,7 @@
 		2CA3143808AA083200ADA32C /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 2CA3143708AA083200ADA32C /* Credits.html */; };
 		2CA4BEAA09E22BAF00D9C9D6 /* QuickDMG.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */; };
 		2CA4C01F09E22DBF00D9C9D6 /* DMGDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A37F4AEFDCFA73011CA2CEA /* DMGDocument.h */; };
-		2CB60F700BCB9D56009F39D7 /* LocalizedStringTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB60F6E0BCB9D56009F39D7 /* LocalizedStringTransformer.h */; };
+		2CB60F700BCB9D56009F39D7 /* PipingTask.m in Headers */ = {isa = PBXBuildFile; fileRef = 2CB60F6E0BCB9D56009F39D7 /* PipingTask.m */; };
 		2CB60F710BCB9D56009F39D7 /* LocalizedStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB60F6F0BCB9D56009F39D7 /* LocalizedStringTransformer.m */; };
 		2CC2DB5B0CABC1BF006E7800 /* DMGDocumentProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC2DB5A0CABC1BF006E7800 /* DMGDocumentProtocol.h */; };
 		2CC2DBB00CABC56C006E7800 /* DMGOptionsProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC2DBAF0CABC56C006E7800 /* DMGOptionsProtocol.h */; };
@@ -101,8 +100,10 @@
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2C03FBB3088A1353008B7312 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = UserDefaults.plist; sourceTree = "<group>"; };
-		2C0F786E0E13E88200BDD9E3 /* KXTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXTask.h; sourceTree = "<group>"; };
-		2C0F786F0E13E88200BDD9E3 /* KXTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXTask.m; sourceTree = "<group>"; };
+		2C0F786E0E13E88200BDD9E3 /* PipingTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PipingTask.h; sourceTree = "<group>"; };
+		2C0F78C00E14E6A600BDD9E3 /* PipingTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PipingTask.m; sourceTree = "<group>"; };
+		2C0F78C10E14E6A900BDD9E3 /* LocalizedStringTransformer.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = LocalizedStringTransformer.h; sourceTree = "<group>"; };
+		2C0F78C20E14E6CB00BDD9E3 /* KXTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXTask.h; sourceTree = "<group>"; };
 		2C1D0A430CEAC5AF00B59A0E /* plus.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = plus.tiff; sourceTree = "<group>"; };
 		2C1D0A440CEAC5AF00B59A0E /* minus.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = minus.tiff; sourceTree = "<group>"; };
 		2C24C8060CA0AACA00E01AC0 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MDMGWindow.nib; sourceTree = "<group>"; };
@@ -131,7 +132,7 @@
 		2C97F3330D34E38F008813CF /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		2CA3143708AA083200ADA32C /* Credits.html */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = QuickDMG.icns; sourceTree = "<group>"; };
-		2CB60F6E0BCB9D56009F39D7 /* LocalizedStringTransformer.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = LocalizedStringTransformer.h; sourceTree = "<group>"; };
+		2CB60F6E0BCB9D56009F39D7 /* PipingTask.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = PipingTask.m; sourceTree = "<group>"; };
 		2CB60F6F0BCB9D56009F39D7 /* LocalizedStringTransformer.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = LocalizedStringTransformer.m; sourceTree = "<group>"; };
 		2CC2DB5A0CABC1BF006E7800 /* DMGDocumentProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGDocumentProtocol.h; sourceTree = "<group>"; };
 		2CC2DBAF0CABC56C006E7800 /* DMGOptionsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGOptionsProtocol.h; sourceTree = "<group>"; };
@@ -207,7 +208,8 @@
 		2A37F4ABFDCFA73011CA2CEA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2CB60F6E0BCB9D56009F39D7 /* LocalizedStringTransformer.h */,
+				2C0F78C10E14E6A900BDD9E3 /* LocalizedStringTransformer.h */,
+				2CB60F6E0BCB9D56009F39D7 /* PipingTask.m */,
 				2CB60F6F0BCB9D56009F39D7 /* LocalizedStringTransformer.m */,
 				2C896425081D105D00694C34 /* DiskImageMaker.h */,
 				2C896426081D105D00694C34 /* DiskImageMaker.m */,
@@ -238,8 +240,9 @@
 				2CC904130CE877830016E8D7 /* UtilityFunctions.m */,
 				2C7B2EAA0DF6C17A00F6159D /* PipeReader.h */,
 				2C7B2EAB0DF6C17A00F6159D /* PipeReader.m */,
-				2C0F786E0E13E88200BDD9E3 /* KXTask.h */,
-				2C0F786F0E13E88200BDD9E3 /* KXTask.m */,
+				2C0F78C20E14E6CB00BDD9E3 /* KXTask.h */,
+				2C0F786E0E13E88200BDD9E3 /* PipingTask.h */,
+				2C0F78C00E14E6A600BDD9E3 /* PipingTask.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -307,7 +310,7 @@
 				2C7FBE4608196D8300340E25 /* DMGWindowController.h in Headers */,
 				2C895FA7081C9D2900694C34 /* AppController.h in Headers */,
 				2C896427081D105D00694C34 /* DiskImageMaker.h in Headers */,
-				2CB60F700BCB9D56009F39D7 /* LocalizedStringTransformer.h in Headers */,
+				2CB60F700BCB9D56009F39D7 /* PipingTask.m in Headers */,
 				2C24C8690CA0E60400E01AC0 /* DMGOptionsViewController.h in Headers */,
 				2C24C8780CA0EBFD00E01AC0 /* MDMGWindowController.h in Headers */,
 				2CC2DB5B0CABC1BF006E7800 /* DMGDocumentProtocol.h in Headers */,
@@ -318,7 +321,7 @@
 				2CFAE2570CE848E70070AEF4 /* FileTableController.h in Headers */,
 				2CC904140CE877830016E8D7 /* UtilityFunctions.h in Headers */,
 				2C7B2EAC0DF6C17A00F6159D /* PipeReader.h in Headers */,
-				2C0F78700E13E88200BDD9E3 /* KXTask.h in Headers */,
+				2C0F78700E13E88200BDD9E3 /* PipingTask.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,7 +408,6 @@
 				2CFAE2580CE848E70070AEF4 /* FileTableController.m in Sources */,
 				2CC904150CE877830016E8D7 /* UtilityFunctions.m in Sources */,
 				2C7B2EAD0DF6C17B00F6159D /* PipeReader.m in Sources */,
-				2C0F78710E13E88200BDD9E3 /* KXTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

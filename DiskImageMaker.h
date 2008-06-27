@@ -3,6 +3,7 @@
 #import "stringExtra.h"
 #import "DMGOptionsProtocol.h"
 #import "DMGWindowControllerProtocol.h"
+#import "KXTask.h"
 
 @interface DiskImageMaker : NSObject {
 	//related source item
