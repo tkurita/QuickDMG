@@ -1,7 +1,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface KXTask : NSTask {
+@interface PipingTask : NSTask {
 	NSMutableData *stdoutData;
 	NSMutableData *stderrData;
 }

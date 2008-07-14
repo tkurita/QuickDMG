@@ -103,7 +103,6 @@
 		2C0F786E0E13E88200BDD9E3 /* PipingTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PipingTask.h; sourceTree = "<group>"; };
 		2C0F78C00E14E6A600BDD9E3 /* PipingTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PipingTask.m; sourceTree = "<group>"; };
 		2C0F78C10E14E6A900BDD9E3 /* LocalizedStringTransformer.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = LocalizedStringTransformer.h; sourceTree = "<group>"; };
-		2C0F78C20E14E6CB00BDD9E3 /* KXTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXTask.h; sourceTree = "<group>"; };
 		2C1D0A430CEAC5AF00B59A0E /* plus.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = plus.tiff; sourceTree = "<group>"; };
 		2C1D0A440CEAC5AF00B59A0E /* minus.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = minus.tiff; sourceTree = "<group>"; };
 		2C24C8060CA0AACA00E01AC0 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MDMGWindow.nib; sourceTree = "<group>"; };
@@ -240,7 +239,6 @@
 				2CC904130CE877830016E8D7 /* UtilityFunctions.m */,
 				2C7B2EAA0DF6C17A00F6159D /* PipeReader.h */,
 				2C7B2EAB0DF6C17A00F6159D /* PipeReader.m */,
-				2C0F78C20E14E6CB00BDD9E3 /* KXTask.h */,
 				2C0F786E0E13E88200BDD9E3 /* PipingTask.h */,
 				2C0F78C00E14E6A600BDD9E3 /* PipingTask.m */,
 			);

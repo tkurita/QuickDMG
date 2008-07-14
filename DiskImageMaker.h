@@ -3,7 +3,7 @@
 #import "stringExtra.h"
 #import "DMGOptionsProtocol.h"
 #import "DMGWindowControllerProtocol.h"
-#import "KXTask.h"
+#import "PipingTask.h"
 
 @interface DiskImageMaker : NSObject {
 	//related source item
@@ -37,7 +37,7 @@
 	//temporary stocked parameters for internal use
 	NSNotificationCenter *myNotiCenter;
 	BOOL isAttached; // disk image file が attach されている状態のはずなら YES
-	NSTask *currentTask;
+	PipingTask *currentTask;
 }
 
 //public use
@@ -89,7 +89,7 @@
 - (void)setDmgName:(NSString *)theDmgName;
 
 - (void)setDevEntry:(NSString *)theDevEntry;
-- (void)setCurrentTask:(NSTask *)aTask;
+- (void)setCurrentTask:(PipingTask *)aTask;
 - (void)setMountPoint:(NSString *)theMountPoint;
 
 #pragma mark private use

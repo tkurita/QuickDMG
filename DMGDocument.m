@@ -1,5 +1,6 @@
 #import "DMGDocument.h"
 #import "DMGWindowController.h"
+#import "PipingTask.h"
 
 #define useLog 0
 
@@ -67,6 +68,7 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 	unsigned long long result;
 	
 	if ([self isFolder]) {
+		/*
 		NSTask * du =[[NSTask alloc] init];
 		[du setLaunchPath:@"/usr/bin/du"];
 		[du setArguments:[NSArray arrayWithObjects:@"-sk",[self fileName],nil]];
@@ -77,6 +79,13 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 		[du waitUntilExit];
 		NSData * du_data = [[du_out fileHandleForReading] availableData];
 		result = [[[[NSString alloc] initWithData:du_data encoding: NSUTF8StringEncoding] autorelease] intValue];
+		*/
+		PipingTask *du = [[PipingTask alloc] init];
+		[du setLaunchPath:@"/usr/bin/du"];
+		[du setArguments:[NSArray arrayWithObjects:@"-sk",[self fileName],nil]];
+		[du launch];
+		[du waitUntilExit];
+		result = [[du stdoutString] intValue];
 		result = (result * 1024 *1.1);
 		[du release];
 	}

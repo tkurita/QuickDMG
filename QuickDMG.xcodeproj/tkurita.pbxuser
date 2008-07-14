@@ -9,7 +9,7 @@
 		};
 	};
 	2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Release;
+		activeBuildConfigurationName = Debug;
 		activeExecutable = 2CD485610818DD9200A7FDA9 /* QuickDMG */;
 		activeTarget = 8D15AC270486D014006FF6A4 /* QuickDMG */;
 		addToTargets = (
@@ -19,18 +19,21 @@
 			2CF4B62D084A22E2001812D4 /* DMGWindowController.m:8 */,
 			2C5A345A0897CAAB00F95662 /* DMGWindowController.m:68 */,
 			2C3A0AD1089BD103006D8D14 /* DMGWindowController.m:27 */,
-			2CC63E500938C90B00503C26 /* DiskImageMaker.m:661 */,
-			2CC63E5D0938C99400503C26 /* DiskImageMaker.m:681 */,
+			2CC63E500938C90B00503C26 /* DiskImageMaker.m:648 */,
+			2CC63E5D0938C99400503C26 /* DiskImageMaker.m:668 */,
 			2CC9034D0CE86DD10016E8D7 /* KXTableView.m:9 */,
 			2CE7CF5C0CE95981007B5EC2 /* DMGController.m:8 */,
 			2C29F1190CEA61E300CE881C /* DMGWindowController.m:197 */,
 			2C3A36590CED5A3A00B5CE38 /* MDMGWindowController.m:146 */,
-			2C97F1BD0D34C5CA008813CF /* DiskImageMaker.m:701 */,
-			2CE3A0CC0DF5AB3F00358F26 /* DiskImageMaker.m:382 */,
-			2C7B2D9F0DF6A18700F6159D /* DiskImageMaker.m:411 */,
-			2C7B2DD70DF6A45800F6159D /* DiskImageMaker.m:429 */,
-			2C7B2DF70DF6A89700F6159D /* DiskImageMaker.m:415 */,
+			2C97F1BD0D34C5CA008813CF /* DiskImageMaker.m:688 */,
+			2CE3A0CC0DF5AB3F00358F26 /* DiskImageMaker.m:388 */,
+			2C7B2DD70DF6A45800F6159D /* DiskImageMaker.m:413 */,
 			2CB60DD50BCB6E81009F39D7 /* DMGWindowController.m:96 */,
+			2C0F792F0E14FB2B00BDD9E3 /* DiskImageMaker.m:567 */,
+			2C0F79310E14FB4A00BDD9E3 /* DiskImageMaker.m:462 */,
+			2C0F79450E14FEBF00BDD9E3 /* PipingTask.m:15 */,
+			2C0F79620E14FF7E00BDD9E3 /* DiskImageMaker.m:506 */,
+			2C0F79640E14FF9700BDD9E3 /* DiskImageMaker.m:272 */,
 		);
 		breakpointsGroup = 2CC63E3A0938C0F900503C26 /* XCBreakpointsBucket */;
 		codeSenseManager = 2CD485700818DDC400A7FDA9 /* Code sense */;
@@ -200,7 +203,7 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 236185667;
+			PBXPerProjectTemplateStateSaveDate = 237729615;
 			PBXPrepackagedSmartGroups_v2 = (
 				{
 					PBXTransientLocationAtTop = bottom;
@@ -377,29 +380,19 @@
 					};
 				},
 			);
-			PBXWorkspaceStateSaveDate = 236185667;
+			PBXWorkspaceStateSaveDate = 237729615;
 		};
 		perUserProjectItems = {
-			2C0F78750E13E8CA00BDD9E3 /* PBXBookmark */ = 2C0F78750E13E8CA00BDD9E3 /* PBXBookmark */;
-			2C0F78850E14E17D00BDD9E3 /* PBXBookmark */ = 2C0F78850E14E17D00BDD9E3 /* PBXBookmark */;
-			2C0F78940E14E5CD00BDD9E3 /* PBXTextBookmark */ = 2C0F78940E14E5CD00BDD9E3 /* PBXTextBookmark */;
-			2C0F78950E14E5CD00BDD9E3 /* PBXTextBookmark */ = 2C0F78950E14E5CD00BDD9E3 /* PBXTextBookmark */;
-			2C0F789F0E14E62900BDD9E3 /* PBXTextBookmark */ = 2C0F789F0E14E62900BDD9E3 /* PBXTextBookmark */;
-			2C0F78A20E14E62900BDD9E3 /* PBXTextBookmark */ = 2C0F78A20E14E62900BDD9E3 /* PBXTextBookmark */;
-			2C0F78A30E14E62900BDD9E3 /* PBXTextBookmark */ = 2C0F78A30E14E62900BDD9E3 /* PBXTextBookmark */;
-			2C0F78A60E14E62900BDD9E3 /* PBXBookmark */ = 2C0F78A60E14E62900BDD9E3 /* PBXBookmark */;
-			2C0F78A70E14E62900BDD9E3 /* PBXTextBookmark */ = 2C0F78A70E14E62900BDD9E3 /* PBXTextBookmark */;
-			2C0F78AA0E14E62900BDD9E3 /* PBXTextBookmark */ = 2C0F78AA0E14E62900BDD9E3 /* PBXTextBookmark */;
-			2C0F78AD0E14E62900BDD9E3 /* PBXTextBookmark */ = 2C0F78AD0E14E62900BDD9E3 /* PBXTextBookmark */;
-			2C0F78AE0E14E62900BDD9E3 /* PBXTextBookmark */ = 2C0F78AE0E14E62900BDD9E3 /* PBXTextBookmark */;
-			2C0F78C30E14E6DB00BDD9E3 /* PBXTextBookmark */ = 2C0F78C30E14E6DB00BDD9E3 /* PBXTextBookmark */;
-			2C0F78C40E14E6DB00BDD9E3 /* PBXTextBookmark */ = 2C0F78C40E14E6DB00BDD9E3 /* PBXTextBookmark */;
-			2C0F78C50E14E6DB00BDD9E3 /* PBXTextBookmark */ = 2C0F78C50E14E6DB00BDD9E3 /* PBXTextBookmark */;
-			2C0F78C60E14E6DB00BDD9E3 /* PBXTextBookmark */ = 2C0F78C60E14E6DB00BDD9E3 /* PBXTextBookmark */;
-			2C5BF2540DFF4CCB0076253B = 2C5BF2540DFF4CCB0076253B /* PBXTextBookmark */;
-			2C5BF2560DFF4CCB0076253B = 2C5BF2560DFF4CCB0076253B /* PBXTextBookmark */;
-			2C8C2EFC0E0A47C200972782 = 2C8C2EFC0E0A47C200972782 /* PBXTextBookmark */;
-			2C8C2EFF0E0A47C400972782 = 2C8C2EFF0E0A47C400972782 /* PBXTextBookmark */;
+			2C0F78A20E14E62900BDD9E3 = 2C0F78A20E14E62900BDD9E3 /* PBXTextBookmark */;
+			2C0F78AD0E14E62900BDD9E3 = 2C0F78AD0E14E62900BDD9E3 /* PBXTextBookmark */;
+			2C0F79100E14F45500BDD9E3 = 2C0F79100E14F45500BDD9E3 /* PBXTextBookmark */;
+			2C0F79480E14FEC800BDD9E3 = 2C0F79480E14FEC800BDD9E3 /* PBXTextBookmark */;
+			2C0F796C0E1506C700BDD9E3 = 2C0F796C0E1506C700BDD9E3 /* PBXTextBookmark */;
+			2C0F79720E150A3000BDD9E3 = 2C0F79720E150A3000BDD9E3 /* PBXTextBookmark */;
+			2C0F79730E150A3000BDD9E3 = 2C0F79730E150A3000BDD9E3 /* PBXTextBookmark */;
+			2C0F79740E150A3000BDD9E3 = 2C0F79740E150A3000BDD9E3 /* PBXTextBookmark */;
+			2C0F79750E150A3000BDD9E3 = 2C0F79750E150A3000BDD9E3 /* PBXTextBookmark */;
+			2C0F79760E150A3000BDD9E3 = 2C0F79760E150A3000BDD9E3 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 2CD4856F0818DDC400A7FDA9 /* Source Control */;
 		userBookmarkGroup = 2C7F5059089BDE19008C1816 /* PBXBookmarkGroup */;
@@ -408,9 +401,9 @@
 	};
 	2A37F4ACFDCFA73011CA2CEA /* DMGDocument.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1189, 2992}}";
-			sepNavSelRange = "{3879, 30}";
-			sepNavVisRect = "{{0, 2334}, {776, 658}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1189, 3136}}";
+			sepNavSelRange = "{2231, 0}";
+			sepNavVisRect = "{{0, 1178}, {898, 426}}";
 			sepNavWindowFrame = "{{532, 127}, {815, 787}}";
 		};
 	};
@@ -439,102 +432,18 @@
 	};
 	2C0F786E0E13E88200BDD9E3 /* PipingTask.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {628, 247}}";
-			sepNavSelRange = "{175, 0}";
-			sepNavVisRect = "{{0, 0}, {628, 247}}";
-			sepNavWindowFrame = "{{15, 130}, {874, 803}}";
+			sepNavIntBoundsRect = "{{0, 0}, {502, 380}}";
+			sepNavSelRange = "{160, 12}";
+			sepNavVisRect = "{{0, 0}, {502, 380}}";
+			sepNavWindowFrame = "{{15, 480}, {541, 453}}";
 		};
-	};
-	2C0F786F0E13E88200BDD9E3 /* KXTask.m */ = {
-		isa = PBXFileReference;
-		fileEncoding = 4;
-		lastKnownFileType = file;
-		name = KXTask.m;
-		path = /Users/tkurita/Dev/Projects/QuickDMG/trunk/KXTask.m;
-		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {706, 1312}}";
-			sepNavSelRange = "{19, 0}";
-			sepNavVisRect = "{{0, 0}, {652, 681}}";
-			sepNavWindowFrame = "{{40, 147}, {691, 754}}";
-		};
-	};
-	2C0F78750E13E8CA00BDD9E3 /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 2C0F786E0E13E88200BDD9E3 /* PipingTask.h */;
-	};
-	2C0F78850E14E17D00BDD9E3 /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 2C0F786F0E13E88200BDD9E3 /* KXTask.m */;
-	};
-	2C0F78940E14E5CD00BDD9E3 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		comments = "error: ‘targetTask’ undeclared (first use in this function)";
-		fRef = 2C0F786F0E13E88200BDD9E3 /* KXTask.m */;
-		rLen = 0;
-		rLoc = 8;
-		rType = 1;
-	};
-	2C0F78950E14E5CD00BDD9E3 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C0F786F0E13E88200BDD9E3 /* KXTask.m */;
-		name = "KXTask.m: 9";
-		rLen = 0;
-		rLoc = 116;
-		rType = 0;
-		vrLen = 502;
-		vrLoc = 21;
-	};
-	2C0F789F0E14E62900BDD9E3 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C0F786F0E13E88200BDD9E3 /* KXTask.m */;
-		name = "KXTask.m: 19";
-		rLen = 0;
-		rLoc = 290;
-		rType = 0;
-		vrLen = 951;
-		vrLoc = 0;
 	};
 	2C0F78A20E14E62900BDD9E3 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
 		rLen = 0;
-		rLoc = 2147483647;
+		rLoc = 22892;
 		rType = 0;
-	};
-	2C0F78A30E14E62900BDD9E3 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
-		name = "DiskImageMaker.m: 273";
-		rLen = 80;
-		rLoc = 7888;
-		rType = 0;
-		vrLen = 1125;
-		vrLoc = 7406;
-	};
-	2C0F78A60E14E62900BDD9E3 /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 2C896425081D105D00694C34 /* DiskImageMaker.h */;
-	};
-	2C0F78A70E14E62900BDD9E3 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C896425081D105D00694C34 /* DiskImageMaker.h */;
-		name = "DiskImageMaker.h: 7";
-		rLen = 0;
-		rLoc = 170;
-		rType = 0;
-		vrLen = 976;
-		vrLoc = 0;
-	};
-	2C0F78AA0E14E62900BDD9E3 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C0F786E0E13E88200BDD9E3 /* PipingTask.h */;
-		name = "KXTask.h: 12";
-		rLen = 0;
-		rLoc = 175;
-		rType = 0;
-		vrLen = 176;
-		vrLoc = 0;
 	};
 	2C0F78AD0E14E62900BDD9E3 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -542,16 +451,6 @@
 		rLen = 0;
 		rLoc = 2147483647;
 		rType = 0;
-	};
-	2C0F78AE0E14E62900BDD9E3 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C7B2EAA0DF6C17A00F6159D /* PipeReader.h */;
-		name = "PipeReader.h: stdoutData";
-		rLen = 55;
-		rLoc = 61;
-		rType = 0;
-		vrLen = 290;
-		vrLoc = 0;
 	};
 	2C0F78C00E14E6A600BDD9E3 /* PipingTask.m */ = {
 		uiCtxt = {
@@ -569,45 +468,109 @@
 			sepNavWindowFrame = "{{38, 193}, {899, 719}}";
 		};
 	};
-	2C0F78C20E14E6CB00BDD9E3 /* KXTask.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {628, 247}}";
-			sepNavSelRange = "{175, 0}";
-			sepNavVisRect = "{{0, 0}, {628, 247}}";
-			sepNavWindowFrame = "{{15, 130}, {874, 803}}";
-		};
-	};
-	2C0F78C30E14E6DB00BDD9E3 /* PBXTextBookmark */ = {
+	2C0F79100E14F45500BDD9E3 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
-		name = "DiskImageMaker.m: 273";
-		rLen = 80;
-		rLoc = 7888;
-		rType = 0;
-		vrLen = 1125;
-		vrLoc = 7406;
-	};
-	2C0F78C40E14E6DB00BDD9E3 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C896425081D105D00694C34 /* DiskImageMaker.h */;
-		name = "DiskImageMaker.h: 7";
+		name = "DiskImageMaker.m: 469";
 		rLen = 0;
-		rLoc = 170;
+		rLoc = 14093;
 		rType = 0;
-		vrLen = 976;
+		vrLen = 545;
+		vrLoc = 13529;
+	};
+	2C0F792F0E14FB2B00BDD9E3 /* DiskImageMaker.m:567 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
+		functionName = "-createDiskImage";
+		hitCount = 1;
+		lineNumber = 567;
+		location = DiskImageMaker.ob;
+		modificationTime = 236257202.903972;
+		state = 1;
+	};
+	2C0F79310E14FB4A00BDD9E3 /* DiskImageMaker.m:462 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
+		functionName = "-attachDiskImage:";
+		hitCount = 1;
+		lineNumber = 462;
+		location = DiskImageMaker.ob;
+		modificationTime = 236257203.009416;
+		state = 1;
+	};
+	2C0F79450E14FEBF00BDD9E3 /* PipingTask.m:15 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 2CB60F6E0BCB9D56009F39D7 /* PipingTask.m */;
+		functionName = "-launch";
+		hitCount = 1;
+		lineNumber = 15;
+		location = PipingTask.ob;
+		modificationTime = 236259015.101512;
+		state = 1;
+	};
+	2C0F79480E14FEC800BDD9E3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2CB60F6E0BCB9D56009F39D7 /* PipingTask.m */;
+		rLen = 0;
+		rLoc = 2147483647;
+		rType = 0;
+	};
+	2C0F79620E14FF7E00BDD9E3 /* DiskImageMaker.m:506 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
+		functionName = "-createDiskImage";
+		hitCount = 1;
+		lineNumber = 506;
+		location = DiskImageMaker.ob;
+		modificationTime = 236257212.673295;
+		state = 1;
+	};
+	2C0F79640E14FF9700BDD9E3 /* DiskImageMaker.m:272 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
+		functionName = "-hdiUtilTask";
+		hitCount = 1;
+		lineNumber = 272;
+		location = DiskImageMaker.ob;
+		modificationTime = 236257203.218207;
+		state = 1;
+	};
+	2C0F796C0E1506C700BDD9E3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C0F786E0E13E88200BDD9E3 /* PipingTask.h */;
+		name = stderrString;
+		rLen = 12;
+		rLoc = 160;
+		rType = 0;
+		vrLen = 180;
 		vrLoc = 0;
 	};
-	2C0F78C50E14E6DB00BDD9E3 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C0F78C20E14E6CB00BDD9E3 /* KXTask.h */;
-		name = "KXTask.h: 12";
-		rLen = 0;
-		rLoc = 175;
-		rType = 0;
-		vrLen = 176;
-		vrLoc = 0;
-	};
-	2C0F78C60E14E6DB00BDD9E3 /* PBXTextBookmark */ = {
+	2C0F79720E150A3000BDD9E3 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 2C7B2EAA0DF6C17A00F6159D /* PipeReader.h */;
 		name = "PipeReader.h: stdoutData";
@@ -615,6 +578,46 @@
 		rLoc = 61;
 		rType = 0;
 		vrLen = 290;
+		vrLoc = 0;
+	};
+	2C0F79730E150A3000BDD9E3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
+		name = stderrString;
+		rLen = 12;
+		rLoc = 1358;
+		rType = 0;
+		vrLen = 508;
+		vrLoc = 920;
+	};
+	2C0F79740E150A3000BDD9E3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
+		name = setOutputToPipe;
+		rLen = 15;
+		rLoc = 9588;
+		rType = 0;
+		vrLen = 784;
+		vrLoc = 9188;
+	};
+	2C0F79750E150A3000BDD9E3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C0F786E0E13E88200BDD9E3 /* PipingTask.h */;
+		name = stderrString;
+		rLen = 12;
+		rLoc = 160;
+		rType = 0;
+		vrLen = 180;
+		vrLoc = 0;
+	};
+	2C0F79760E150A3000BDD9E3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2CB60F6E0BCB9D56009F39D7 /* PipingTask.m */;
+		name = "outData release];";
+		rLen = 18;
+		rLoc = 76;
+		rType = 0;
+		vrLen = 959;
 		vrLoc = 0;
 	};
 	2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */ = {
@@ -661,7 +664,7 @@
 		hitCount = 1;
 		lineNumber = 197;
 		location = DMGWindowController.ob;
-		modificationTime = 234282290.698802;
+		modificationTime = 236257201.591523;
 		state = 1;
 	};
 	2C3A0AD1089BD103006D8D14 /* DMGWindowController.m:27 */ = {
@@ -676,7 +679,7 @@
 		hitCount = 1;
 		lineNumber = 27;
 		location = DMGWindowController.ob;
-		modificationTime = 234282290.089562;
+		modificationTime = 236257201.491022;
 		state = 1;
 	};
 	2C3A36590CED5A3A00B5CE38 /* MDMGWindowController.m:146 */ = {
@@ -691,7 +694,7 @@
 		hitCount = 1;
 		lineNumber = 146;
 		location = MDMGWindowController.ob;
-		modificationTime = 234282365.497729;
+		modificationTime = 236259015.101487;
 		state = 1;
 	};
 	2C4DAD020CE29DD3009240B6 /* DMGProgressWindowController.m */ = {
@@ -722,7 +725,7 @@
 		hitCount = 1;
 		lineNumber = 68;
 		location = DMGWindowController.ob;
-		modificationTime = 234282289.484775;
+		modificationTime = 236257201.391532;
 		state = 1;
 	};
 	2C5A35080897DCAB00F95662 /* stringExtra.m */ = {
@@ -740,27 +743,7 @@
 			sepNavVisRect = "{{0, 0}, {745, 502}}";
 		};
 	};
-	2C5BF2540DFF4CCB0076253B /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 8D15AC360486D014006FF6A4 /* Info.plist */;
-		name = "Info.plist: 74";
-		rLen = 0;
-		rLoc = 1926;
-		rType = 0;
-		vrLen = 0;
-		vrLoc = 0;
-	};
-	2C5BF2560DFF4CCB0076253B /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C7B2EAA0DF6C17A00F6159D /* PipeReader.h */;
-		name = "PipeReader.h: 14";
-		rLen = 0;
-		rLoc = 284;
-		rType = 0;
-		vrLen = 290;
-		vrLoc = 0;
-	};
-	2C7B2D9F0DF6A18700F6159D /* DiskImageMaker.m:411 */ = {
+	2C7B2DD70DF6A45800F6159D /* DiskImageMaker.m:413 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -770,39 +753,9 @@
 		fileReference = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
 		functionName = "-copySourceItems:";
 		hitCount = 1;
-		lineNumber = 411;
+		lineNumber = 413;
 		location = DiskImageMaker.ob;
-		modificationTime = 234282308.132331;
-		state = 1;
-	};
-	2C7B2DD70DF6A45800F6159D /* DiskImageMaker.m:429 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		delayBeforeContinue = 0;
-		fileReference = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
-		functionName = "-copySourceItems:";
-		hitCount = 1;
-		lineNumber = 429;
-		location = DiskImageMaker.ob;
-		modificationTime = 234282331.274891;
-		state = 1;
-	};
-	2C7B2DF70DF6A89700F6159D /* DiskImageMaker.m:415 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		delayBeforeContinue = 0;
-		fileReference = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
-		functionName = "-copySourceItems:";
-		hitCount = 1;
-		lineNumber = 415;
-		location = DiskImageMaker.ob;
-		modificationTime = 234282311.631357;
+		modificationTime = 236257202.797106;
 		state = 1;
 	};
 	2C7B2EAA0DF6C17A00F6159D /* PipeReader.h */ = {
@@ -861,9 +814,9 @@
 	};
 	2C7FBE4508196D8300340E25 /* DMGWindowController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {898, 4496}}";
-			sepNavSelRange = "{4379, 65}";
-			sepNavVisRect = "{{0, 2412}, {898, 504}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1083, 4496}}";
+			sepNavSelRange = "{3944, 0}";
+			sepNavVisRect = "{{0, 2029}, {1083, 343}}";
 			sepNavWindowFrame = "{{507, 167}, {786, 743}}";
 		};
 	};
@@ -902,40 +855,20 @@
 	2C896425081D105D00694C34 /* DiskImageMaker.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1056, 1600}}";
-			sepNavSelRange = "{170, 0}";
+			sepNavSelRange = "{680, 8}";
 			sepNavVisRect = "{{0, 0}, {711, 621}}";
-			sepNavWindowFrame = "{{717, 203}, {750, 694}}";
+			sepNavWindowFrame = "{{617, 182}, {750, 694}}";
 		};
 	};
 	2C896426081D105D00694C34 /* DiskImageMaker.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1357, 13072}}";
-			sepNavSelRange = "{7888, 80}";
-			sepNavVisRect = "{{0, 3963}, {835, 730}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1357, 12880}}";
+			sepNavSelRange = "{1358, 12}";
+			sepNavVisRect = "{{0, 307}, {835, 730}}";
 			sepNavWindowFrame = "{{196, 135}, {874, 803}}";
 		};
 	};
-	2C8C2EFC0E0A47C200972782 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 8D15AC360486D014006FF6A4 /* Info.plist */;
-		name = "Info.plist: 74";
-		rLen = 0;
-		rLoc = 1926;
-		rType = 0;
-		vrLen = 0;
-		vrLoc = 0;
-	};
-	2C8C2EFF0E0A47C400972782 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C7B2EAA0DF6C17A00F6159D /* PipeReader.h */;
-		name = "PipeReader.h: 14";
-		rLen = 0;
-		rLoc = 284;
-		rType = 0;
-		vrLen = 290;
-		vrLoc = 0;
-	};
-	2C97F1BD0D34C5CA008813CF /* DiskImageMaker.m:701 */ = {
+	2C97F1BD0D34C5CA008813CF /* DiskImageMaker.m:688 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -945,9 +878,9 @@
 		fileReference = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
 		functionName = "-dmgTaskTerminate:";
 		hitCount = 1;
-		lineNumber = 701;
+		lineNumber = 688;
 		location = DiskImageMaker.ob;
-		modificationTime = 234282292.705521;
+		modificationTime = 236257202.562015;
 		state = 1;
 	};
 	2C97F3330D34E38F008813CF /* English */ = {
@@ -983,15 +916,15 @@
 		hitCount = 1;
 		lineNumber = 96;
 		location = DMGWindowController.ob;
-		modificationTime = 234326092.44822;
+		modificationTime = 236257201.698998;
 		state = 1;
 	};
 	2CB60F6E0BCB9D56009F39D7 /* PipingTask.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {860, 590}}";
+			sepNavIntBoundsRect = "{{0, 0}, {706, 1312}}";
 			sepNavSelRange = "{76, 18}";
-			sepNavVisRect = "{{0, 0}, {860, 590}}";
-			sepNavWindowFrame = "{{38, 193}, {899, 719}}";
+			sepNavVisRect = "{{0, 0}, {652, 681}}";
+			sepNavWindowFrame = "{{40, 147}, {691, 754}}";
 		};
 	};
 	2CB60F6F0BCB9D56009F39D7 /* LocalizedStringTransformer.m */ = {
@@ -1057,21 +990,24 @@
 			2CF4B62D084A22E2001812D4 /* DMGWindowController.m:8 */,
 			2C5A345A0897CAAB00F95662 /* DMGWindowController.m:68 */,
 			2C3A0AD1089BD103006D8D14 /* DMGWindowController.m:27 */,
-			2CC63E500938C90B00503C26 /* DiskImageMaker.m:661 */,
-			2CC63E5D0938C99400503C26 /* DiskImageMaker.m:681 */,
+			2CC63E500938C90B00503C26 /* DiskImageMaker.m:648 */,
+			2CC63E5D0938C99400503C26 /* DiskImageMaker.m:668 */,
 			2CB60DD50BCB6E81009F39D7 /* DMGWindowController.m:96 */,
 			2CC9034D0CE86DD10016E8D7 /* KXTableView.m:9 */,
 			2CE7CF5C0CE95981007B5EC2 /* DMGController.m:8 */,
 			2C29F1190CEA61E300CE881C /* DMGWindowController.m:197 */,
 			2C3A36590CED5A3A00B5CE38 /* MDMGWindowController.m:146 */,
-			2C97F1BD0D34C5CA008813CF /* DiskImageMaker.m:701 */,
-			2CE3A0CC0DF5AB3F00358F26 /* DiskImageMaker.m:382 */,
-			2C7B2D9F0DF6A18700F6159D /* DiskImageMaker.m:411 */,
-			2C7B2DD70DF6A45800F6159D /* DiskImageMaker.m:429 */,
-			2C7B2DF70DF6A89700F6159D /* DiskImageMaker.m:415 */,
+			2C97F1BD0D34C5CA008813CF /* DiskImageMaker.m:688 */,
+			2CE3A0CC0DF5AB3F00358F26 /* DiskImageMaker.m:388 */,
+			2C7B2DD70DF6A45800F6159D /* DiskImageMaker.m:413 */,
+			2C0F792F0E14FB2B00BDD9E3 /* DiskImageMaker.m:567 */,
+			2C0F79310E14FB4A00BDD9E3 /* DiskImageMaker.m:462 */,
+			2C0F79450E14FEBF00BDD9E3 /* PipingTask.m:15 */,
+			2C0F79620E14FF7E00BDD9E3 /* DiskImageMaker.m:506 */,
+			2C0F79640E14FF9700BDD9E3 /* DiskImageMaker.m:272 */,
 		);
 	};
-	2CC63E500938C90B00503C26 /* DiskImageMaker.m:661 */ = {
+	2CC63E500938C90B00503C26 /* DiskImageMaker.m:648 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1081,12 +1017,12 @@
 		fileReference = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
 		functionName = "-convertDiskImage";
 		hitCount = 1;
-		lineNumber = 661;
+		lineNumber = 648;
 		location = DiskImageMaker.ob;
-		modificationTime = 234282291.564046;
+		modificationTime = 236257202.099242;
 		state = 1;
 	};
-	2CC63E5D0938C99400503C26 /* DiskImageMaker.m:681 */ = {
+	2CC63E5D0938C99400503C26 /* DiskImageMaker.m:668 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1096,9 +1032,9 @@
 		fileReference = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
 		functionName = "-deleteSourceDmg:";
 		hitCount = 1;
-		lineNumber = 681;
+		lineNumber = 668;
 		location = DiskImageMaker.ob;
-		modificationTime = 234282292.013803;
+		modificationTime = 236257202.461425;
 		state = 1;
 	};
 	2CC9034D0CE86DD10016E8D7 /* KXTableView.m:9 */ = {
@@ -1113,7 +1049,7 @@
 		hitCount = 1;
 		lineNumber = 9;
 		location = KXTableView.ob;
-		modificationTime = 234282365.467533;
+		modificationTime = 236259015.101501;
 		state = 1;
 	};
 	2CC904120CE877830016E8D7 /* UtilityFunctions.h */ = {
@@ -1217,7 +1153,7 @@
 			sepNavWindowFrame = "{{84, 168}, {888, 702}}";
 		};
 	};
-	2CE3A0CC0DF5AB3F00358F26 /* DiskImageMaker.m:382 */ = {
+	2CE3A0CC0DF5AB3F00358F26 /* DiskImageMaker.m:388 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1227,9 +1163,9 @@
 		fileReference = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
 		functionName = "-copySourceItems:";
 		hitCount = 1;
-		lineNumber = 382;
+		lineNumber = 388;
 		location = DiskImageMaker.ob;
-		modificationTime = 234282301.091313;
+		modificationTime = 236257202.672891;
 		state = 1;
 	};
 	2CE7CF300CE95669007B5EC2 /* DMGController.m */ = {
@@ -1251,7 +1187,7 @@
 		functionName = "-awakeFromNib";
 		hitCount = 1;
 		lineNumber = 8;
-		modificationTime = 234282365.472832;
+		modificationTime = 236259015.101407;
 		state = 1;
 	};
 	2CF42620088EB8E6002BBE99 /* English */ = {
@@ -1273,7 +1209,7 @@
 		functionName = "-abortAction:";
 		hitCount = 1;
 		lineNumber = 8;
-		modificationTime = 234282257.99046;
+		modificationTime = 236257185.084355;
 		state = 2;
 	};
 	2CFAE2550CE848E70070AEF4 /* FileTableController.h */ = {
