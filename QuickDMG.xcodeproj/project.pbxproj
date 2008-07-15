@@ -34,6 +34,7 @@
 		2C4DACFC0CE29B0D009240B6 /* DMGOptionsView.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4DACFB0CE29B0D009240B6 /* DMGOptionsView.nib */; };
 		2C4DAD040CE29DD3009240B6 /* DMGProgressWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4DAD020CE29DD3009240B6 /* DMGProgressWindowController.m */; };
 		2C4DAD050CE29DD3009240B6 /* DMGProgressWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C4DAD030CE29DD3009240B6 /* DMGProgressWindowController.h */; };
+		2C59F41D0E2C5F4400261662 /* PipingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F78C00E14E6A600BDD9E3 /* PipingTask.m */; };
 		2C5A350A0897DCAB00F95662 /* stringExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5A35080897DCAB00F95662 /* stringExtra.m */; };
 		2C5A350B0897DCAB00F95662 /* stringExtra.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C5A35090897DCAB00F95662 /* stringExtra.h */; };
 		2C7B2EAC0DF6C17A00F6159D /* PipeReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7B2EAA0DF6C17A00F6159D /* PipeReader.h */; };
@@ -406,6 +407,7 @@
 				2CFAE2580CE848E70070AEF4 /* FileTableController.m in Sources */,
 				2CC904150CE877830016E8D7 /* UtilityFunctions.m in Sources */,
 				2C7B2EAD0DF6C17B00F6159D /* PipeReader.m in Sources */,
+				2C59F41D0E2C5F4400261662 /* PipingTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

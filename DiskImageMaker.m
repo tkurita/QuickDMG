@@ -1,5 +1,4 @@
 #import "DiskImageMaker.h"
-#import "PipeReader.h"
 #include <unistd.h>
 #include <sys/param.h>
 #include <sys/ucred.h>
@@ -7,30 +6,11 @@
 	 
 #define useLog 1
 
-// will be deprecated
-//void setOutputToPipe(NSTask *task)
-//{
-//	[task setStandardOutput:[NSPipe pipe]];
-//	[task setStandardError:[NSPipe pipe]];
-//}
-
-//void showTaskResult(NSTask *theTask)
-//{
-//	NSData * taskResult = [[[theTask standardOutput] fileHandleForReading] availableData];
-//	NSString * resultString = [[NSString alloc] initWithData:taskResult encoding:NSUTF8StringEncoding];
-//#if useLog
-//	NSLog(resultString);
-//#endif
-//	[resultString release];
-//}
-
 id getTaskResult(PipingTask *aTask)
 {
 #if useLog
 	NSLog(@"start getTaskResult");
 #endif
-	//NSData * taskResult = [[[aTask standardOutput] fileHandleForReading] availableData];
-	//NSString * resultString = [[[NSString alloc] initWithData:taskResult encoding:NSUTF8StringEncoding] autorelease];
 	NSString *result = [aTask stdoutString];
 #if useLog
 	NSLog(result);
@@ -38,15 +18,6 @@ id getTaskResult(PipingTask *aTask)
 	id resultProp = [result propertyList];
 	return resultProp;
 }
-
-// will be deprecated
-//NSString *getTaskError(PipingTask *aTask)
-//{
-//	//NSData *taskResult = [[[aTask standardError] fileHandleForReading] availableData];
-//	//NSString *result = [[[NSString alloc] initWithData:taskResult encoding:NSUTF8StringEncoding] autorelease];
-//	NSString *result = [aTask stderrString];
-//	return result;
-//}
 
 @implementation DiskImageMaker
 
@@ -272,8 +243,6 @@ id getTaskResult(PipingTask *aTask)
 	PipingTask *task = [[PipingTask alloc] init];
 	[task setLaunchPath:@"/usr/bin/hdiutil"];
 	[task setCurrentDirectoryPath:workingLocation];
-//	[task setStandardOutput:[NSPipe pipe]];
-//	[task setStandardError:[NSPipe pipe]];
 	return [task autorelease];
 }
 
@@ -307,7 +276,7 @@ id getTaskResult(PipingTask *aTask)
 	[self setCurrentTask:dmg_task];
 	[dmg_task launch];
 #if useLog
-	showTaskResult(dmg_task);
+	//showTaskResult(dmg_task);
 	NSLog(@"end detachDiskImage");
 #endif
 }
@@ -322,11 +291,8 @@ id getTaskResult(PipingTask *aTask)
 	}
 	
 	[self postStatusNotification:NSLocalizedString(@"Deleting .DS_Store files.","")];
-	//NSTask *task = [[[NSTask alloc] init] autorelease];
 	PipingTask *task = [[[PipingTask alloc] init] autorelease];
 	[task setLaunchPath:@"/usr/bin/find"];
-	//[task setCurrentDirectoryPath:mountPoint];
-	//setOutputToPipe(task);
 	[task setArguments:[NSArray arrayWithObjects:mountPoint, @"-name", @".DS_Store", @"-delete", nil]];
 	
 	[myNotiCenter addObserver:self selector:@selector(detachDiskImage:) name:NSTaskDidTerminateNotification object:task];
@@ -597,7 +563,6 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 				[detachTask setArguments:[NSArray arrayWithObjects:@"detach",devEntry,nil]];
 				[detachTask launch];
 			}
-			//[self dmgTaskTerminate: notification];
 			terminationStatus = [dmg_task terminationStatus];
 			[myNotiCenter postNotificationName: @"DmgDidTerminationNotification" object:self];
 			return NO;
