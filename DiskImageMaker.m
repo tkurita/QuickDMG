@@ -4,7 +4,7 @@
 #include <sys/ucred.h>
 #include <sys/mount.h>
 	 
-#define useLog 1
+#define useLog 0
 
 id getTaskResult(PipingTask *aTask)
 {
@@ -276,7 +276,6 @@ id getTaskResult(PipingTask *aTask)
 	[self setCurrentTask:dmg_task];
 	[dmg_task launch];
 #if useLog
-	//showTaskResult(dmg_task);
 	NSLog(@"end detachDiskImage");
 #endif
 }
@@ -378,7 +377,6 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	
 	PipingTask * dittoTask = [[[PipingTask alloc] init] autorelease];
 	[dittoTask setLaunchPath:@"/usr/bin/ditto"];
-	//setOutputToPipe(dittoTask);
 	
 	NSString *copy_destination = mountPoint;
 	

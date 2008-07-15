@@ -37,8 +37,6 @@
 		2C59F41D0E2C5F4400261662 /* PipingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F78C00E14E6A600BDD9E3 /* PipingTask.m */; };
 		2C5A350A0897DCAB00F95662 /* stringExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5A35080897DCAB00F95662 /* stringExtra.m */; };
 		2C5A350B0897DCAB00F95662 /* stringExtra.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C5A35090897DCAB00F95662 /* stringExtra.h */; };
-		2C7B2EAC0DF6C17A00F6159D /* PipeReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7B2EAA0DF6C17A00F6159D /* PipeReader.h */; };
-		2C7B2EAD0DF6C17B00F6159D /* PipeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B2EAB0DF6C17A00F6159D /* PipeReader.m */; };
 		2C7FBDE308194C6D00340E25 /* DMGDocumentController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7FBDE108194C6D00340E25 /* DMGDocumentController.h */; };
 		2C7FBE4608196D8300340E25 /* DMGWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7FBE4408196D8300340E25 /* DMGWindowController.h */; };
 		2C7FBE4708196D8300340E25 /* DMGWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7FBE4508196D8300340E25 /* DMGWindowController.m */; };
@@ -118,8 +116,6 @@
 		2C4DAD030CE29DD3009240B6 /* DMGProgressWindowController.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = DMGProgressWindowController.h; sourceTree = "<group>"; };
 		2C5A35080897DCAB00F95662 /* stringExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = stringExtra.m; sourceTree = "<group>"; };
 		2C5A35090897DCAB00F95662 /* stringExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringExtra.h; sourceTree = "<group>"; };
-		2C7B2EAA0DF6C17A00F6159D /* PipeReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PipeReader.h; sourceTree = "<group>"; };
-		2C7B2EAB0DF6C17A00F6159D /* PipeReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PipeReader.m; sourceTree = "<group>"; };
 		2C7FBDE108194C6D00340E25 /* DMGDocumentController.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = DMGDocumentController.h; sourceTree = "<group>"; };
 		2C7FBE4408196D8300340E25 /* DMGWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGWindowController.h; sourceTree = "<group>"; };
 		2C7FBE4508196D8300340E25 /* DMGWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGWindowController.m; sourceTree = "<group>"; };
@@ -238,8 +234,6 @@
 				2CFAE2560CE848E70070AEF4 /* FileTableController.m */,
 				2CC904120CE877830016E8D7 /* UtilityFunctions.h */,
 				2CC904130CE877830016E8D7 /* UtilityFunctions.m */,
-				2C7B2EAA0DF6C17A00F6159D /* PipeReader.h */,
-				2C7B2EAB0DF6C17A00F6159D /* PipeReader.m */,
 				2C0F786E0E13E88200BDD9E3 /* PipingTask.h */,
 				2C0F78C00E14E6A600BDD9E3 /* PipingTask.m */,
 			);
@@ -319,7 +313,6 @@
 				2CC2E7AC0CE7EB6400653E25 /* KXTableView.h in Headers */,
 				2CFAE2570CE848E70070AEF4 /* FileTableController.h in Headers */,
 				2CC904140CE877830016E8D7 /* UtilityFunctions.h in Headers */,
-				2C7B2EAC0DF6C17A00F6159D /* PipeReader.h in Headers */,
 				2C0F78700E13E88200BDD9E3 /* PipingTask.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,7 +399,6 @@
 				2CC2E7AD0CE7EB6400653E25 /* KXTableView.m in Sources */,
 				2CFAE2580CE848E70070AEF4 /* FileTableController.m in Sources */,
 				2CC904150CE877830016E8D7 /* UtilityFunctions.m in Sources */,
-				2C7B2EAD0DF6C17B00F6159D /* PipeReader.m in Sources */,
 				2C59F41D0E2C5F4400261662 /* PipingTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

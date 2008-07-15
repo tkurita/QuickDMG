@@ -73,7 +73,8 @@
 
 - (BOOL)internetEnable
 {
-	return internetEnable;
+	return [[[[dmgFormatController selectedObjects] lastObject] objectForKey:@"canInternetEnable"] boolValue]
+			&& internetEnable;
 }
 
 - (BOOL)isDeleteDSStore

@@ -195,7 +195,6 @@
 		}
 		
 		if (visible_windows == 1) {
-			//[NSApp terminate:self];
 			[NSApp performSelectorOnMainThread:@selector(terminate:) withObject:self waitUntilDone:NO];
 		}
 	}
