@@ -1,5 +1,6 @@
 #import "PipingTask.h"
 
+#define useLog 0
 
 @implementation PipingTask
 
@@ -23,6 +24,11 @@
 
 - (void)dealloc
 {
+#if useLog
+	NSLog(@"will dealloc PipingTask");
+#endif
+	[errHandle closeFile];
+	[errHandle release];
 	[task release];
 	[stdoutData release];
 	[stderrData release];
@@ -31,6 +37,7 @@
 
 - (void)waitUntilExit
 {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[task waitUntilExit];
 }
 
@@ -42,20 +49,43 @@
 	stderrData = [[NSMutableData alloc] init];
 	[task setStandardOutput:[NSPipe pipe]];
 	[task setStandardError:[NSPipe pipe]];
-	[[NSNotificationCenter defaultCenter]
-		addObserver:self selector:@selector(forwardNotification:)
-		name:nil object:task];
+	NSNotificationCenter *notification_center = [NSNotificationCenter defaultCenter];
+	[notification_center
+		addObserver : self 
+		   selector : @selector(forwardNotification:)
+			   name : nil 
+			 object : task];
+	
+	errHandle = [[[task standardError] fileHandleForReading] retain];
+    [notification_center
+        addObserver : self 
+           selector : @selector(readStdErr:) 
+               name : NSFileHandleReadCompletionNotification 
+             object : errHandle]; 
+
+	[errHandle readInBackgroundAndNotify];
 		
 	[task launch];
+
 	[NSThread detachNewThreadSelector:@selector(readStdOut:)
 							 toTarget:self withObject:nil];
 
+/*
 	[NSThread detachNewThreadSelector:@selector(readStdErr:)
 							 toTarget:self withObject:nil];
+*/
 }
 
 - (void)forwardNotification:(NSNotification *)notification
 {
+#if useLog
+	NSLog(@"will forwardNotification PipingTask");
+#endif
+	/*
+	if (![task isRunning]) {
+		[errHandle closeFile];
+		[errHandle release];
+	}*/
 	NSNotificationCenter *n_center = [NSNotificationCenter defaultCenter];
 	[n_center removeObserver:self];
 	[n_center postNotification:
@@ -82,10 +112,38 @@
 	
 	[out_h closeFile];
 	[pool release];
+#if useLog
+	NSLog(@"end readStdOut PipingTask");
+#endif
+	[NSThread exit];
 }
 
+
+- (void)readStdErr:(NSNotification *)notification
+{
+#if useLog
+	NSLog(@"start readStdErr PipingTask");
+#endif
+	[stderrData appendData:
+		[[notification userInfo] objectForKey:NSFileHandleNotificationDataItem]]; 
+		
+     
+    if (task && [task isRunning]) {
+        [[notification object] readInBackgroundAndNotify]; 
+    } 
+
+#if useLog
+	NSLog(@"end readStdErr PipingTask");
+#endif
+}
+
+
+/*
 - (void)readStdErr:(id)arg
 {
+#if useLog
+	NSLog(@"start readStdErr PipingTask");
+#endif
 	NSAutoreleasePool *pool=[[NSAutoreleasePool alloc] init];
 	NSPipe *standardError = [task standardError];
 	
@@ -103,15 +161,22 @@
 	
 	[err_h closeFile];
 	[pool release];
+#if useLog
+	NSLog(@"end readStdErr PipingTask");
+#endif
+	[NSThread exit];
 }
-
+*/
 - (NSString *)stdoutString
 {
 	return [[[NSString alloc] initWithData:stdoutData encoding:NSUTF8StringEncoding] autorelease];
 }
 
 - (NSString *)stderrString
-{
+{	
+	if (!stderrData) {
+	  [stderrData appendData:[errHandle availableData]];
+	}
 	return [[[NSString alloc] initWithData:stderrData encoding:NSUTF8StringEncoding] autorelease];
 }
 

@@ -65,21 +65,12 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 
 - (unsigned long long)fileSize
 {
+#if useLog
+	NSLog(@"start fileSize");
+#endif
 	unsigned long long result;
 	
 	if ([self isFolder]) {
-		/*
-		NSTask * du =[[NSTask alloc] init];
-		[du setLaunchPath:@"/usr/bin/du"];
-		[du setArguments:[NSArray arrayWithObjects:@"-sk",[self fileName],nil]];
-		
-		NSPipe * du_out = [NSPipe pipe];
-		[du setStandardOutput:du_out];
-		[du launch];
-		[du waitUntilExit];
-		NSData * du_data = [[du_out fileHandleForReading] availableData];
-		result = [[[[NSString alloc] initWithData:du_data encoding: NSUTF8StringEncoding] autorelease] intValue];
-		*/
 		PipingTask *du = [[PipingTask alloc] init];
 		[du setLaunchPath:@"/usr/bin/du"];
 		[du setArguments:[NSArray arrayWithObjects:@"-sk",[self fileName],nil]];
@@ -92,6 +83,9 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 	else {
 		result = [[self fileInfo] fileSize];
 	}
+#if useLog
+	NSLog(@"end fileSize");
+#endif
 	return result;
 }
 

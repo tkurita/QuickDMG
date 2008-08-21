@@ -27,8 +27,8 @@ id getTaskResult(PipingTask *aTask)
 	NSString *newName = [baseName stringByAppendingPathExtension:theSuffix];
 	NSString *checkPath = [dirPath stringByAppendingPathComponent:newName];
 	short i = 1;
-	NSFileManager *myFileManager = [NSFileManager defaultManager];
-	while ([myFileManager fileExistsAtPath:checkPath]){
+	NSFileManager *file_manager = [NSFileManager defaultManager];
+	while ([file_manager fileExistsAtPath:checkPath]){
 		NSNumber *numberSuffix = [NSNumber numberWithShort:i++];
 		newName = [[baseName stringByAppendingPathExtension:[numberSuffix stringValue]] stringByAppendingPathExtension:theSuffix];
 		checkPath = [dirPath stringByAppendingPathComponent:newName];
@@ -40,9 +40,9 @@ id getTaskResult(PipingTask *aTask)
 {
 	NSString * newName = [baseName stringByAppendingPathExtension:[dmgOptions dmgSuffix]];
 	NSString * checkPath = [dirPath stringByAppendingPathComponent:newName];
-	NSFileManager *myFileManager = [NSFileManager defaultManager];
+	NSFileManager *file_manager = [NSFileManager defaultManager];
 	short i = 1;
-	while ([myFileManager fileExistsAtPath:checkPath]){
+	while ([file_manager fileExistsAtPath:checkPath]){
 		NSNumber * numberSuffix = [NSNumber numberWithShort:i++];
 		newName = [[baseName stringByAppendingPathExtension:[numberSuffix stringValue]] 
 									stringByAppendingPathExtension:[dmgOptions dmgSuffix]];
@@ -189,28 +189,31 @@ id getTaskResult(PipingTask *aTask)
 
 - (BOOL) checkFreeSpace
 {
+#if useLog
+	NSLog(@"start checkFreeSpace");
+#endif
 	[self postStatusNotification: 
 		NSLocalizedString(@"Checking free space of disks.","")];
 		
 	NSEnumerator *enumerator = [sourceItems objectEnumerator];
 	sourceSize = 0;
-	id <DMGDocument> anItem;
-	while (anItem = [enumerator nextObject]) {
-		sourceSize += [anItem fileSize];
+	id <DMGDocument>an_item;
+	while (an_item = [enumerator nextObject]) {
+		sourceSize += [an_item fileSize];
 	}
 	//sourceSize += 500000;
 	sourceSize += [[NSUserDefaults standardUserDefaults] integerForKey:@"additionalSize"];
 	
-	NSFileManager *myFileManager = [NSFileManager defaultManager];
+	NSFileManager *file_manager = [NSFileManager defaultManager];
 	
-	NSDictionary *infoWorkingDisk = [myFileManager fileSystemAttributesAtPath:workingLocation];
+	NSDictionary *infoWorkingDisk = [file_manager fileSystemAttributesAtPath:workingLocation];
 	unsigned long long freeSize = [[infoWorkingDisk objectForKey:NSFileSystemFreeSize] unsignedLongLongValue];
 	NSString *dmg_format = [dmgOptions dmgFormat];
 	self->willBeConverted = !([dmg_format isEqualToString:@"UDRW"]||[dmg_format isEqualToString:@"UDSP"]);
 	
 	if (willBeConverted) {
 		[self setTmpDir:NSTemporaryDirectory()];
-		NSDictionary *infoTmpDisk = [myFileManager fileSystemAttributesAtPath:tmpDir];
+		NSDictionary *infoTmpDisk = [file_manager fileSystemAttributesAtPath:tmpDir];
 		
 		if ([[infoTmpDisk objectForKey:NSFileSystemNumber] isEqualToNumber:[infoWorkingDisk objectForKey:NSFileSystemNumber]]) {
 			requireSpaceRatio = 1 + expectedCompressRatio;
@@ -235,6 +238,12 @@ id getTaskResult(PipingTask *aTask)
 		return YES;
 	else
 		return NO;
+}
+
+-(void) launchAsCurrentTask:(PipingTask *)aTask
+{
+	[self setCurrentTask:aTask];
+	[aTask launch];
 }
 
 #pragma mark disk image task
@@ -273,8 +282,7 @@ id getTaskResult(PipingTask *aTask)
 				name:NSTaskDidTerminateNotification object:dmg_task];
 		}
 	}
-	[self setCurrentTask:dmg_task];
-	[dmg_task launch];
+	[self launchAsCurrentTask:dmg_task];
 #if useLog
 	NSLog(@"end detachDiskImage");
 #endif
@@ -296,8 +304,7 @@ id getTaskResult(PipingTask *aTask)
 	
 	[myNotiCenter addObserver:self selector:@selector(detachDiskImage:) name:NSTaskDidTerminateNotification object:task];
 
-	[self setCurrentTask:task];
-	[task launch];
+	[self launchAsCurrentTask:task];
 }
 
 NSString *mountPointForDevEntry(NSString *devEntry)
@@ -389,8 +396,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	[dittoTask setArguments:[NSArray arrayWithObjects:@"--rsrc",[source_item fileName],copy_destination,nil]];
 	[myNotiCenter addObserver:self selector:@selector(copySourceItems:) name:NSTaskDidTerminateNotification object:dittoTask];		
 	
-	[self setCurrentTask:dittoTask];
-	[dittoTask launch];
+	[self launchAsCurrentTask:dittoTask];
 #if useLog
 	NSLog(@"end copySourceItems:");
 #endif
@@ -411,8 +417,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 
 	[myNotiCenter addObserver:self selector:@selector(dmgTaskTerminate:) 
 					name:NSTaskDidTerminateNotification object:dmg_task];
-	[self setCurrentTask:dmg_task];
-	[dmg_task launch];
+	[self launchAsCurrentTask:dmg_task];
 #if useLog
 	NSLog(@"end internetEnable");
 #endif	
@@ -439,8 +444,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	[myNotiCenter addObserver:self selector:@selector(copySourceItems:) 
 					name:NSTaskDidTerminateNotification object:dmg_task];
 
-	[self setCurrentTask:dmg_task];
-	[dmg_task launch];
+	[self launchAsCurrentTask:dmg_task];
 #if useLog
 	NSLog(@"end attachDiskImage");
 #endif
@@ -527,8 +531,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	
 	[myNotiCenter addObserver:self selector:@selector(attachDiskImage:) 
 									name:NSTaskDidTerminateNotification object:dmg_task];
-	[self setCurrentTask:dmg_task];
-	[dmg_task launch];
+	[self launchAsCurrentTask:dmg_task];
 }
 
 -(BOOL) checkPreviousTask:(NSNotification *)notification
@@ -616,8 +619,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 		[arguments addObjectsFromArray:[NSArray arrayWithObjects:@"-imagekey" ,zlibLevelString ,nil]];
 	}
 	[dmg_task setArguments:arguments];
-	[self setCurrentTask:dmg_task];
-	[dmg_task launch];
+	[self launchAsCurrentTask:dmg_task];
 #if useLog
 	NSLog(@"end convertDiskImage");
 #endif
@@ -628,8 +630,8 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 #if useLog
 	NSLog(@"start deleteSourceDmg");
 #endif
-	NSFileManager *myFileManager = [NSFileManager defaultManager];
-	[myFileManager removeFileAtPath:sourceDmgPath handler:nil];
+	NSFileManager *file_manager = [NSFileManager defaultManager];
+	[file_manager removeFileAtPath:sourceDmgPath handler:nil];
 
 	if ([self checkPreviousTask:notification]) {
 		if ([dmgOptions internetEnable]) 
@@ -666,7 +668,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	if (isAttached) {
 		PipingTask *dmg_task = [self hdiUtilTask];
 		[dmg_task setArguments:[NSArray arrayWithObjects:@"detach",devEntry,nil]];
-		[dmg_task launch];
+		[self launchAsCurrentTask:dmg_task];
 	}
 	
 	NSString *dmg_path = [workingLocation stringByAppendingPathComponent:dmgName];

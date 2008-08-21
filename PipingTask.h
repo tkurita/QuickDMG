@@ -5,6 +5,7 @@
 	NSMutableData *stdoutData;
 	NSMutableData *stderrData;
 	NSTask *task;
+	NSFileHandle *errHandle;
 }
 
 + (PipingTask *)launchedTaskWithLaunchPath:path arguments:arguments;
