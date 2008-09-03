@@ -549,6 +549,9 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 		NSLog(@"termination status is not 0");
 #endif
 		[self setTerminationMessage:[dmg_task stderrString]];
+#if useLog
+		NSLog(terminationMessage);
+#endif
 		if ([terminationMessage endsWith:@".Trashes: Permission denied\n"]) {
 #if useLog
 			NSLog(@"success to delete .DS_Store");
@@ -568,6 +571,8 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 			[myNotiCenter postNotificationName: @"DmgDidTerminationNotification" object:self];
 			return NO;
 		}
+	} else {
+		[self setTerminationMessage:nil];
 	}
 #if useLog	
 	NSLog(@"termination status is 0");
