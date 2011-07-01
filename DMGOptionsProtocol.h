@@ -5,4 +5,6 @@
 - (NSString *)dmgFormat;
 - (NSString *)dmgSuffix;
 - (NSString *)filesystem;
+- (BOOL)needConversion;
+- (NSString *)command;
 @end

@@ -260,21 +260,23 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>2A37F4AAFDCFA73011CA2CEA</string>
-								<string>2A37F4ABFDCFA73011CA2CEA</string>
 								<string>2A37F4B8FDCFA73011CA2CEA</string>
+								<string>089C165FFE840EACC02AAC07</string>
+								<string>2A37F4B6FDCFA73011CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FAAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
-									<integer>2</integer>
+									<integer>15</integer>
+									<integer>14</integer>
+									<integer>5</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 95}, {262, 554}}</string>
+							<string>{{0, 0}, {262, 554}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -378,9 +380,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>2C9C2D040E6EA40000A6BED8</string>
+				<string>2C5453D40ED959370098D94A</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>2C9C2D050E6EA40000A6BED8</string>
+				<string>2C5453D50ED959370098D94A</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -536,15 +538,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>2C9C2D620E6EAA6F00A6BED8</string>
-		<string>2C9C2D150E6EA49800A6BED8</string>
-		<string>2C9C2D160E6EA49800A6BED8</string>
-		<string>2CC63E340938C03C00503C26</string>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>2C9C2D120E6EA49400A6BED8</string>
-		<string>2CC63E190938BA0E00503C26</string>
 		<string>/Users/tkurita/Dev/Projects/QuickDMG/trunk/QuickDMG.xcodeproj</string>
-		<string>1C0AD2B3069F1EA900FABCE6</string>
 	</array>
 	<key>WindowString</key>
 	<string>328 325 916 613 0 0 1440 938 </string>
@@ -999,7 +993,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C0AD2B3069F1EA900FABCE6</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

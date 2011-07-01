@@ -77,6 +77,18 @@
 			&& internetEnable;
 }
 
+- (BOOL)needConversion
+{
+	NSArray *array = [dmgFormatController selectedObjects];
+	return [[[array lastObject] objectForKey:@"needConversion"] boolValue];
+}
+
+- (NSString *)command
+{
+	NSArray *array = [dmgFormatController selectedObjects];
+	return [[array lastObject] objectForKey:@"command"];
+}
+
 - (BOOL)isDeleteDSStore
 {
 	return isDeleteDSStore;

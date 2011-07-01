@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>DmgFormats</key>
@@ -13,6 +13,8 @@
 			<string>dmg</string>
 			<key>filesystem</key>
 			<string>HFS+</string>
+			<key>command</key>
+			<string>create</string>
 			<key>formatID</key>
 			<string>UDZO</string>
 			<key>hasCompressionLevel</key>
@@ -27,6 +29,8 @@
 			<string>UDIF_bzip2</string>
 			<key>extension</key>
 			<string>dmg</string>
+			<key>command</key>
+			<string>create</string>
 			<key>filesystem</key>
 			<string>HFS+</string>
 			<key>formatID</key>
@@ -47,6 +51,24 @@
 			<string>HFS+</string>
 			<key>formatID</key>
 			<string>UDSP</string>
+			<key>command</key>
+			<string>create</string>
+			<key>hasCompressionLevel</key>
+			<false/>
+			<key>needConversion</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>canInternetEnable</key>
+			<false/>
+			<key>description</key>
+			<string>UDF/ISO</string>
+			<key>extension</key>
+			<string>iso</string>
+			<key>filesystem</key>
+			<string>UDF</string>
+			<key>command</key>
+			<string>makehybrid</string>
 			<key>hasCompressionLevel</key>
 			<false/>
 			<key>needConversion</key>
@@ -63,6 +85,8 @@
 			<string>HFS+</string>
 			<key>formatID</key>
 			<string>UDRW</string>
+			<key>command</key>
+			<string>create</string>
 			<key>hasCompressionLevel</key>
 			<false/>
 			<key>needConversion</key>
@@ -79,6 +103,8 @@
 			<string>HFS+</string>
 			<key>formatID</key>
 			<string>UDRO</string>
+			<key>command</key>
+			<string>create</string>
 			<key>hasCompressionLevel</key>
 			<false/>
 			<key>needConversion</key>
@@ -95,6 +121,8 @@
 			<string>HFS</string>
 			<key>formatID</key>
 			<string>ROCo</string>
+			<key>command</key>
+			<string>create</string>
 			<key>hasCompressionLevel</key>
 			<false/>
 			<key>needConversion</key>
@@ -113,6 +141,8 @@
 			<string>Rdxx</string>
 			<key>hasCompressionLevel</key>
 			<false/>
+			<key>command</key>
+			<string>create</string>
 			<key>needConversion</key>
 			<true/>
 		</dict>
@@ -130,6 +160,6 @@
 	<key>formatIndex</key>
 	<integer>0</integer>
 	<key>openFinderSelectionDelay</key>
-	<real>0.29999999999999999</real>
+	<real>0.3</real>
 </dict>
 </plist>

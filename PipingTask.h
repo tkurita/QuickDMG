@@ -6,6 +6,7 @@
 	NSMutableData *stderrData;
 	NSTask *task;
 	NSFileHandle *errHandle;
+	NSDictionary *userInfo;
 }
 
 + (PipingTask *)launchedTaskWithLaunchPath:path arguments:arguments;
@@ -15,6 +16,9 @@
 
 - (void)waitUntilExit;
 - (void)launch;
+
+- (NSDictionary *)userInfo;
+- (void)setUserInfo:(NSDictionary *)info;
 
 #pragma mark bridges to NSTask
 - (void)terminate;

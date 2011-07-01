@@ -32,7 +32,20 @@
 	[task release];
 	[stdoutData release];
 	[stderrData release];
+	[userInfo release];
 	[super dealloc];
+}
+
+- (void)setUserInfo:(NSDictionary *)info
+{
+	[info retain];
+	[userInfo autorelease];
+	userInfo = info;
+}
+
+- (NSDictionary *)userInfo
+{
+	return userInfo;
 }
 
 - (void)waitUntilExit
@@ -82,7 +95,7 @@
 	[n_center removeObserver:self];
 	[n_center postNotification:
 		[NSNotification notificationWithName:[notification name]
-						object:self]];
+									  object:self userInfo:userInfo]];
 }
 
 - (void)readStdOut:(id)arg
