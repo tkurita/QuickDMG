@@ -21,7 +21,11 @@
 
 #pragma mark accessors
 - (NSIndexSet *)selectedFormatIndexes;
+- (void)setSelectedFormatIndexes:(NSIndexSet *)indexSet;
 - (id)dmgFormatController;
 - (NSTableView *)tableView;
+- (void)setCompressionLevel:(int)aValue;
+- (void)setDeleteDSStore:(BOOL)aFlag;
+- (void)setInternetEnable:(BOOL)aFlag;
 
 @end

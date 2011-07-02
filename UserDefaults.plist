@@ -62,7 +62,7 @@
 			<key>canInternetEnable</key>
 			<false/>
 			<key>description</key>
-			<string>UDF/ISO</string>
+			<string>UDF_ISO</string>
 			<key>extension</key>
 			<string>iso</string>
 			<key>filesystem</key>
