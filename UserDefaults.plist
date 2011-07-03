@@ -11,6 +11,8 @@
 			<string>UDIF_Compressed</string>
 			<key>extension</key>
 			<string>dmg</string>
+			<key>canDeleteDSStore</key>
+			<true/>
 			<key>filesystem</key>
 			<string>HFS+</string>
 			<key>command</key>
@@ -27,6 +29,8 @@
 			<true/>
 			<key>description</key>
 			<string>UDIF_bzip2</string>
+			<key>canDeleteDSStore</key>
+			<true/>
 			<key>extension</key>
 			<string>dmg</string>
 			<key>command</key>
@@ -42,11 +46,13 @@
 		</dict>
 		<dict>
 			<key>canInternetEnable</key>
-			<true/>
+			<false/>
 			<key>description</key>
 			<string>SPARSE</string>
 			<key>extension</key>
 			<string>sparseimage</string>
+			<key>canDeleteDSStore</key>
+			<true/>
 			<key>filesystem</key>
 			<string>HFS+</string>
 			<key>formatID</key>
@@ -65,6 +71,8 @@
 			<string>UDF_ISO</string>
 			<key>extension</key>
 			<string>iso</string>
+			<key>canDeleteDSStore</key>
+			<false/>
 			<key>filesystem</key>
 			<string>UDF</string>
 			<key>command</key>
@@ -81,6 +89,8 @@
 			<string>UDIF_R/W</string>
 			<key>extension</key>
 			<string>dmg</string>
+			<key>canDeleteDSStore</key>
+			<true/>
 			<key>filesystem</key>
 			<string>HFS+</string>
 			<key>formatID</key>
@@ -99,6 +109,8 @@
 			<string>UDIF_R_Only</string>
 			<key>extension</key>
 			<string>dmg</string>
+			<key>canDeleteDSStore</key>
+			<true/>
 			<key>filesystem</key>
 			<string>HFS+</string>
 			<key>formatID</key>
@@ -117,6 +129,8 @@
 			<string>NDIF_Compressed</string>
 			<key>extension</key>
 			<string>img</string>
+			<key>canDeleteDSStore</key>
+			<true/>
 			<key>filesystem</key>
 			<string>HFS</string>
 			<key>formatID</key>
@@ -137,6 +151,8 @@
 			<string>img</string>
 			<key>filesystem</key>
 			<string>HFS</string>
+			<key>canDeleteDSStore</key>
+			<true/>
 			<key>formatID</key>
 			<string>Rdxx</string>
 			<key>hasCompressionLevel</key>

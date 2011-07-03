@@ -8,9 +8,9 @@
 @interface DiskImageMaker : NSObject {
 	//related source item
 	NSArray *sourceItems;
-	unsigned long long sourceSize;
 	NSEnumerator *sourceEnumerator;
-	
+	unsigned long long sourceSize;
+
 	//related disk image file
 	NSString *workingLocation;
 	NSString *diskName;

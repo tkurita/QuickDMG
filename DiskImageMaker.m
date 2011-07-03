@@ -171,7 +171,8 @@ id getTaskResult(PipingTask *aTask)
 	
 	isOnlyFolder = NO;
 	if ([sourceItems count] == 1) {
-		isOnlyFolder = [[sourceItems lastObject] isFolder];
+		id <DMGDocument>item = [sourceItems lastObject];
+		isOnlyFolder = ([item isFolder] && ![item isPackage]);
 	}
 	
 	return YES;
@@ -213,26 +214,39 @@ id getTaskResult(PipingTask *aTask)
 	willBeConverted = [dmgOptions needConversion];
 	
 	[self setTmpDir:NSTemporaryDirectory()];
-	if (willBeConverted) {
-			NSDictionary *infoTmpDisk = [file_manager fileSystemAttributesAtPath:tmpDir];
-		
-		if ([[infoTmpDisk objectForKey:NSFileSystemNumber] isEqualToNumber:[infoWorkingDisk objectForKey:NSFileSystemNumber]]) {
-			requireSpaceRatio = 1 + expectedCompressRatio;
+	requireSpaceRatio = 0;
+	if ([[dmgOptions command] isEqualToString:@"makehybrid"]) {
+		if (isOnlyFolder) {
+			requireSpaceRatio = 1;
+		} else {
+			willBeConverted = YES;
+			expectedCompressRatio = 1;
 		}
-		else {
-			unsigned long long freeSizeTmpDir = [[infoTmpDisk objectForKey:@"NSFileSystemFreeSize"] unsignedLongLongValue];
+		
+	}
+	
+	if (!requireSpaceRatio) {
+		if (willBeConverted) {
+			NSDictionary *infoTmpDisk = [file_manager fileSystemAttributesAtPath:tmpDir];
 			
-			if (freeSizeTmpDir > sourceSize) {
-				if ([dmg_format isEqualToString:@"UDZO"])
-					requireSpaceRatio = expectedCompressRatio;
+			if ([[infoTmpDisk objectForKey:NSFileSystemNumber] isEqualToNumber:[infoWorkingDisk objectForKey:NSFileSystemNumber]]) {
+				requireSpaceRatio = 1 + expectedCompressRatio;
 			}
 			else {
-				return NO;
+				unsigned long long freeSizeTmpDir = [[infoTmpDisk objectForKey:@"NSFileSystemFreeSize"] unsignedLongLongValue];
+				
+				if (freeSizeTmpDir > sourceSize) {
+					if ([dmg_format isEqualToString:@"UDZO"] || [dmg_format isEqualToString:@"UDBZ"])
+						requireSpaceRatio = expectedCompressRatio;
+				}
+				else {
+					return NO;
+				}
 			}
 		}
-	}
-	else {
-		requireSpaceRatio = 1;
+		else {
+			requireSpaceRatio = 1;
+		}
 	}
 		
 	if ( freeSize > requireSpaceRatio*sourceSize)
@@ -394,10 +408,8 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	
 	NSString *destination = [[notification userInfo] objectForKey:@"copyDestination"];
 	
-	if ([source_item isFolder]) {
-		if ([source_item isPackage] || (!isOnlyFolder)) {
-			destination = [destination stringByAppendingPathComponent:[[source_item fileName] lastPathComponent]];
-		}
+	if (!isOnlyFolder && [source_item isFolder]) {
+		destination = [destination stringByAppendingPathComponent:[[source_item fileName] lastPathComponent]];
 	}
 	
 	[task setArguments:[NSArray arrayWithObjects:@"--rsrc",[source_item fileName],destination,nil]];
@@ -604,15 +616,11 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	if ([command isEqualToString:@"makehybrid"]) {
 		if (isOnlyFolder) {
 			NSDocument<DMGDocument>* source_item = [sourceItems lastObject];
-			if (![source_item isPackage]) {
-				task = [self makeHybridTask:[[source_item fileURL] path] destination:dmg_target];
-				[myNotiCenter addObserver:self selector:@selector(dmgTaskTerminate:)
-									 name:NSTaskDidTerminateNotification object:task];
-				[self postStatusNotification:NSLocalizedString(@"Creating a hybrid disk image.","")];
-			}
-		}
-		
-		if (!task) {
+			task = [self makeHybridTask:[[source_item fileURL] path] destination:dmg_target];
+			[myNotiCenter addObserver:self selector:@selector(dmgTaskTerminate:)
+								 name:NSTaskDidTerminateNotification object:task];
+			[self postStatusNotification:NSLocalizedString(@"Creating a hybrid disk image.","")];
+		} else {
 			NSString *tmp_name = [self uniqueName:diskName suffix:@"" location:tmpDir];
 			NSString *tmp_path = [tmpDir stringByAppendingPathComponent:tmp_name];
 			if ([[NSFileManager defaultManager] createDirectoryAtPath:tmp_path attributes:nil]) {
