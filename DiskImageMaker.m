@@ -495,7 +495,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 		return;
 	}
 
-	[self postStatusNotification:NSLocalizedString(@"Cleaning Temporary files.","")];
+	[self postStatusNotification:NSLocalizedString(@"Cleaning temporary files.","")];
 	[[NSFileManager defaultManager] removeFileAtPath:[[notification userInfo] objectForKey:@"dmgSource"]
 											 handler:nil];
 	
