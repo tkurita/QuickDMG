@@ -21,7 +21,7 @@
 			2CCB745713BC7F8F00C77039 /* DiskImageMaker.m:462 */,
 			2CCB749E13BDBFCE00C77039 /* DiskImageMaker.m:580 */,
 			2CCB750113BDE06C00C77039 /* DMGOptionsViewController.m:17 */,
-			2C0D4CD913BE1E4C006CD60D /* DMGOptionsViewController.m:137 */,
+			2C0D4CD913BE1E4C006CD60D /* DMGOptionsViewController.m:122 */,
 		);
 		codeSenseManager = 2CD485700818DDC400A7FDA9 /* Code sense */;
 		executables = (
@@ -486,6 +486,13 @@
 			2C0D4DBE13C1CB22006CD60D /* PlistBookmark */ = 2C0D4DBE13C1CB22006CD60D /* PlistBookmark */;
 			2C0D4DBF13C1CB22006CD60D /* PBXTextBookmark */ = 2C0D4DBF13C1CB22006CD60D /* PBXTextBookmark */;
 			2C0D4DC013C1CB22006CD60D /* PBXTextBookmark */ = 2C0D4DC013C1CB22006CD60D /* PBXTextBookmark */;
+			2C0D4DC513C1CB57006CD60D /* PlistBookmark */ = 2C0D4DC513C1CB57006CD60D /* PlistBookmark */;
+			2C0D4DC613C1CB57006CD60D /* PBXTextBookmark */ = 2C0D4DC613C1CB57006CD60D /* PBXTextBookmark */;
+			2C0D4DC713C1CB57006CD60D /* PBXTextBookmark */ = 2C0D4DC713C1CB57006CD60D /* PBXTextBookmark */;
+			2C0D4DC813C1CB57006CD60D /* PBXTextBookmark */ = 2C0D4DC813C1CB57006CD60D /* PBXTextBookmark */;
+			2C0D4DC913C1CB57006CD60D /* PBXTextBookmark */ = 2C0D4DC913C1CB57006CD60D /* PBXTextBookmark */;
+			2C0D4DCA13C1CB57006CD60D /* PBXTextBookmark */ = 2C0D4DCA13C1CB57006CD60D /* PBXTextBookmark */;
+			2C0D4DCB13C1CB57006CD60D /* PBXTextBookmark */ = 2C0D4DCB13C1CB57006CD60D /* PBXTextBookmark */;
 			2C537C01131C817600B18FD3 = 2C537C01131C817600B18FD3 /* PBXTextBookmark */;
 			2C537C03131C817600B18FD3 = 2C537C03131C817600B18FD3 /* PBXTextBookmark */;
 			2C537C08131C817600B18FD3 = 2C537C08131C817600B18FD3 /* PBXTextBookmark */;
@@ -587,7 +594,7 @@
 			sepNavWindowFrame = "{{107, 185}, {750, 558}}";
 		};
 	};
-	2C0D4CD913BE1E4C006CD60D /* DMGOptionsViewController.m:137 */ = {
+	2C0D4CD913BE1E4C006CD60D /* DMGOptionsViewController.m:122 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -599,7 +606,7 @@
 		functionName = "-setSelectedFormatIndexes:";
 		hitCount = 1;
 		ignoreCount = 0;
-		lineNumber = 137;
+		lineNumber = 122;
 		location = QuickDMG;
 		modificationTime = 331266001.233764;
 		state = 1;
@@ -619,7 +626,7 @@
 		fRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */;
 		name = "DMGOptionsViewController.m: 128";
 		rLen = 55;
-		rLoc = 3416;
+		rLoc = 2971;
 		rType = 0;
 		vrLen = 803;
 		vrLoc = 2994;
@@ -659,7 +666,7 @@
 		fRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */;
 		name = "DMGOptionsViewController.m: 128";
 		rLen = 55;
-		rLoc = 3416;
+		rLoc = 2971;
 		rType = 0;
 		vrLen = 800;
 		vrLoc = 2994;
@@ -716,7 +723,7 @@
 		fRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */;
 		name = "DMGOptionsViewController.m: 128";
 		rLen = 55;
-		rLoc = 3416;
+		rLoc = 2971;
 		rType = 0;
 		vrLen = 607;
 		vrLoc = 2991;
@@ -746,7 +753,7 @@
 		fRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */;
 		name = "DMGOptionsViewController.m: 128";
 		rLen = 55;
-		rLoc = 3416;
+		rLoc = 2971;
 		rType = 0;
 		vrLen = 662;
 		vrLoc = 3013;
@@ -776,7 +783,7 @@
 		fRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */;
 		name = "DMGOptionsViewController.m: 128";
 		rLen = 55;
-		rLoc = 3416;
+		rLoc = 2971;
 		rType = 0;
 		vrLen = 662;
 		vrLoc = 3013;
@@ -826,7 +833,7 @@
 		fRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */;
 		name = "DMGOptionsViewController.m: 32";
 		rLen = 0;
-		rLoc = 1100;
+		rLoc = 1028;
 		rType = 0;
 		vrLen = 918;
 		vrLoc = 1970;
@@ -836,7 +843,7 @@
 		fRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */;
 		name = "DMGOptionsViewController.m: 32";
 		rLen = 0;
-		rLoc = 1100;
+		rLoc = 1028;
 		rType = 0;
 		vrLen = 918;
 		vrLoc = 1970;
@@ -1396,7 +1403,7 @@
 		fRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */;
 		name = "DMGOptionsViewController.m: 33";
 		rLen = 0;
-		rLoc = 1100;
+		rLoc = 1028;
 		rType = 0;
 		vrLen = 601;
 		vrLoc = 2316;
@@ -1426,7 +1433,7 @@
 		fRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */;
 		name = "DMGOptionsViewController.m: 33";
 		rLen = 0;
-		rLoc = 1100;
+		rLoc = 1028;
 		rType = 0;
 		vrLen = 601;
 		vrLoc = 2316;
@@ -1477,7 +1484,7 @@
 		fRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */;
 		name = "DMGOptionsViewController.m: 33";
 		rLen = 0;
-		rLoc = 1100;
+		rLoc = 1028;
 		rType = 0;
 		vrLen = 601;
 		vrLoc = 2316;
@@ -1497,7 +1504,7 @@
 		fRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */;
 		name = "DMGOptionsViewController.m: 33";
 		rLen = 0;
-		rLoc = 1100;
+		rLoc = 1028;
 		rType = 0;
 		vrLen = 601;
 		vrLoc = 2316;
@@ -1582,7 +1589,7 @@
 		comments = "warning: incomplete implementation of class ‘DMGOptionsViewController’";
 		fRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */;
 		rLen = 1;
-		rLoc = 166;
+		rLoc = 142;
 		rType = 1;
 	};
 	2C0D4DA213C1CA0C006CD60D /* PBXTextBookmark */ = {
@@ -1600,7 +1607,7 @@
 		fRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */;
 		name = "DMGOptionsViewController.m: 155";
 		rLen = 0;
-		rLoc = 3766;
+		rLoc = 3321;
 		rType = 0;
 		vrLen = 740;
 		vrLoc = 3339;
@@ -1757,6 +1764,80 @@
 		vrLen = 516;
 		vrLoc = 25116;
 	};
+	2C0D4DC513C1CB57006CD60D /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 2C03FBB3088A1353008B7312 /* UserDefaults.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			DmgFormats,
+			1,
+			hasCompressionLevel,
+		);
+		name = /Users/tkurita/Dev/Projects/QuickDMG/QuickDMG/trunk/UserDefaults.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	2C0D4DC613C1CB57006CD60D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
+		name = "DiskImageMaker.m: 474";
+		rLen = 0;
+		rLoc = 14091;
+		rType = 0;
+		vrLen = 516;
+		vrLoc = 25116;
+	};
+	2C0D4DC713C1CB57006CD60D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */;
+		name = "DMGOptionsViewController.m: 141";
+		rLen = 0;
+		rLoc = 3322;
+		rType = 0;
+		vrLen = 500;
+		vrLoc = 2829;
+	};
+	2C0D4DC813C1CB57006CD60D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C24C8670CA0E60400E01AC0 /* DMGOptionsViewController.h */;
+		name = "DMGOptionsViewController.h: 25";
+		rLen = 0;
+		rLoc = 649;
+		rType = 0;
+		vrLen = 867;
+		vrLoc = 0;
+	};
+	2C0D4DC913C1CB57006CD60D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
+		name = "DiskImageMaker.m: 474";
+		rLen = 0;
+		rLoc = 14091;
+		rType = 0;
+		vrLen = 516;
+		vrLoc = 25116;
+	};
+	2C0D4DCA13C1CB57006CD60D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */;
+		name = "DMGOptionsViewController.m: 141";
+		rLen = 0;
+		rLoc = 3322;
+		rType = 0;
+		vrLen = 500;
+		vrLoc = 2829;
+	};
+	2C0D4DCB13C1CB57006CD60D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C24C8670CA0E60400E01AC0 /* DMGOptionsViewController.h */;
+		name = "DMGOptionsViewController.h: 25";
+		rLen = 0;
+		rLoc = 649;
+		rType = 0;
+		vrLen = 867;
+		vrLoc = 0;
+	};
 	2C0F786E0E13E88200BDD9E3 /* PipingTask.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {767, 559}}";
@@ -1785,17 +1866,17 @@
 	};
 	2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {930, 2352}}";
-			sepNavSelRange = "{3766, 0}";
-			sepNavVisRange = "{3339, 740}";
+			sepNavIntBoundsRect = "{{0, 0}, {767, 2016}}";
+			sepNavSelRange = "{3322, 0}";
+			sepNavVisRange = "{2829, 500}";
 			sepNavVisRect = "{{0, 1003}, {842, 611}}";
 			sepNavWindowFrame = "{{581, 237}, {807, 641}}";
 		};
 	};
 	2C24C8670CA0E60400E01AC0 /* DMGOptionsViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1063, 529}}";
-			sepNavSelRange = "{861, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {767, 484}}";
+			sepNavSelRange = "{649, 0}";
 			sepNavVisRange = "{0, 867}";
 			sepNavVisRect = "{{0, 0}, {768, 568}}";
 			sepNavWindowFrame = "{{581, 264}, {807, 641}}";
@@ -2585,8 +2666,8 @@
 	2CCB751613BDE31C00C77039 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */;
-		rLen = 14;
-		rLoc = 1058;
+		rLen = 0;
+		rLoc = 1028;
 		rType = 0;
 	};
 	2CCB751713BDE31C00C77039 /* PBXTextBookmark */ = {
@@ -2603,8 +2684,8 @@
 		isa = PBXTextBookmark;
 		fRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */;
 		name = "DMGOptionsViewController.m: 32";
-		rLen = 14;
-		rLoc = 1058;
+		rLen = 0;
+		rLoc = 1028;
 		rType = 0;
 		vrLen = 1277;
 		vrLoc = 0;
