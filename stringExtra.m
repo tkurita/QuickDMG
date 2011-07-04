@@ -4,7 +4,7 @@
 -(BOOL) startWith:(NSString *)beginningText
 {
 	NSRange begginningRange = NSMakeRange(0,[beginningText length]);
-	if ([self compare:beginningText options:nil range:begginningRange] == NSOrderedSame) {
+	if ([self compare:beginningText options:0 range:begginningRange] == NSOrderedSame) {
 		return YES;
 	}
 	else{
@@ -21,7 +21,7 @@
 -(BOOL) endsWith:(NSString *)enddingText
 {
 	NSRange endingRange = NSMakeRange([self length]-[enddingText length],[enddingText length]);
-	return ([self compare:enddingText options:nil range:endingRange] == NSOrderedSame);
+	return ([self compare:enddingText options:0 range:endingRange] == NSOrderedSame);
 }
 
 -(NSMutableArray *) splitWithCharacterSet:(NSCharacterSet *)delimiters
