@@ -52,13 +52,6 @@ id getTaskResult(PipingTask *aTask)
 	return newName;
 }
 
-- (void)setSourceEnumerator:(NSEnumerator *)enumerator
-{
-	[enumerator retain];
-	[sourceEnumerator release];
-	sourceEnumerator = enumerator;
-}
-
 #pragma mark init and dealloc
 - (id) init
 {
