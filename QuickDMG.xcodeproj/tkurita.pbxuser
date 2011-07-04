@@ -478,6 +478,11 @@
 			2C0D4DA713C1CA0E006CD60D /* PBXTextBookmark */ = 2C0D4DA713C1CA0E006CD60D /* PBXTextBookmark */;
 			2C0D4DA813C1CA0E006CD60D /* PBXTextBookmark */ = 2C0D4DA813C1CA0E006CD60D /* PBXTextBookmark */;
 			2C0D4DA913C1CA0E006CD60D /* PBXTextBookmark */ = 2C0D4DA913C1CA0E006CD60D /* PBXTextBookmark */;
+			2C0D4DB013C1CAA8006CD60D /* PlistBookmark */ = 2C0D4DB013C1CAA8006CD60D /* PlistBookmark */;
+			2C0D4DB113C1CAA8006CD60D /* PBXTextBookmark */ = 2C0D4DB113C1CAA8006CD60D /* PBXTextBookmark */;
+			2C0D4DB213C1CAA8006CD60D /* PBXTextBookmark */ = 2C0D4DB213C1CAA8006CD60D /* PBXTextBookmark */;
+			2C0D4DB313C1CAA8006CD60D /* PBXTextBookmark */ = 2C0D4DB313C1CAA8006CD60D /* PBXTextBookmark */;
+			2C0D4DB413C1CAA8006CD60D /* PBXTextBookmark */ = 2C0D4DB413C1CAA8006CD60D /* PBXTextBookmark */;
 			2C537C01131C817600B18FD3 = 2C537C01131C817600B18FD3 /* PBXTextBookmark */;
 			2C537C03131C817600B18FD3 = 2C537C03131C817600B18FD3 /* PBXTextBookmark */;
 			2C537C08131C817600B18FD3 = 2C537C08131C817600B18FD3 /* PBXTextBookmark */;
@@ -1498,8 +1503,8 @@
 		isa = PBXTextBookmark;
 		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
 		name = "DiskImageMaker.m: 803";
-		rLen = 20;
-		rLoc = 25249;
+		rLen = 0;
+		rLoc = 24838;
 		rType = 0;
 		vrLen = 763;
 		vrLoc = 24652;
@@ -1508,16 +1513,16 @@
 		isa = PBXTextBookmark;
 		comments = "error: cannot find protocol declaration for ‘DMGDocumentProtocol’";
 		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
-		rLen = 1;
-		rLoc = 797;
+		rLen = 0;
+		rLoc = 794;
 		rType = 1;
 	};
 	2C0D4D9613C1C985006CD60D /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
 		name = "DiskImageMaker.m: 798";
-		rLen = 33;
-		rLoc = 24993;
+		rLen = 0;
+		rLoc = 24838;
 		rType = 0;
 		vrLen = 1069;
 		vrLoc = 24376;
@@ -1564,7 +1569,7 @@
 		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
 		name = "DiskImageMaker.m: 801";
 		rLen = 0;
-		rLoc = 25122;
+		rLoc = 24838;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 24672;
@@ -1582,7 +1587,7 @@
 		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
 		name = "DiskImageMaker.m: 801";
 		rLen = 0;
-		rLoc = 25122;
+		rLoc = 24838;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 24672;
@@ -1660,6 +1665,60 @@
 		rType = 0;
 		vrLen = 197;
 		vrLoc = 0;
+	};
+	2C0D4DB013C1CAA8006CD60D /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 2C03FBB3088A1353008B7312 /* UserDefaults.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			DmgFormats,
+			1,
+			hasCompressionLevel,
+		);
+		name = /Users/tkurita/Dev/Projects/QuickDMG/QuickDMG/trunk/UserDefaults.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	2C0D4DB113C1CAA8006CD60D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2CC2DB5A0CABC1BF006E7800 /* DMGDocumentProtocol.h */;
+		name = "DMGDocumentProtocol.h: 1";
+		rLen = 11;
+		rLoc = 10;
+		rType = 0;
+		vrLen = 197;
+		vrLoc = 0;
+	};
+	2C0D4DB213C1CAA8006CD60D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
+		name = "DiskImageMaker.m: 213";
+		rLen = 1;
+		rLoc = 6068;
+		rType = 0;
+		vrLen = 900;
+		vrLoc = 23424;
+	};
+	2C0D4DB313C1CAA8006CD60D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2CC2DB5A0CABC1BF006E7800 /* DMGDocumentProtocol.h */;
+		name = "DMGDocumentProtocol.h: 1";
+		rLen = 11;
+		rLoc = 10;
+		rType = 0;
+		vrLen = 197;
+		vrLoc = 0;
+	};
+	2C0D4DB413C1CAA8006CD60D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */;
+		name = "DiskImageMaker.m: 802";
+		rLen = 0;
+		rLoc = 25064;
+		rType = 0;
+		vrLen = 1032;
+		vrLoc = 24723;
 	};
 	2C0F786E0E13E88200BDD9E3 /* PipingTask.h */ = {
 		uiCtxt = {
@@ -1905,9 +1964,9 @@
 	};
 	2C896426081D105D00694C34 /* DiskImageMaker.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {930, 12894}}";
-			sepNavSelRange = "{25122, 0}";
-			sepNavVisRange = "{24672, 1073}";
+			sepNavIntBoundsRect = "{{0, 0}, {767, 13104}}";
+			sepNavSelRange = "{25064, 0}";
+			sepNavVisRange = "{24723, 1032}";
 			sepNavVisRect = "{{0, 8683}, {781, 730}}";
 			sepNavWindowFrame = "{{378, 86}, {820, 792}}";
 		};

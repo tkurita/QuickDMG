@@ -792,7 +792,13 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 #if useLog
 	NSLog(@"start dmgTaskTerminate");
 #endif
-	if ([dmgOptions putawaySources]) {
+
+	
+	PipingTask *dmg_task = [notification object];
+	terminationStatus = [dmg_task terminationStatus];
+	if (terminationStatus) {
+		[self setTerminationMessage:[dmg_task stderrString]];
+	} else if ([dmgOptions putawaySources]) {
 		NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
 		NSEnumerator *enumerator = [sourceItems objectEnumerator];
 		NSDocument<DMGDocument> *item;
@@ -802,16 +808,11 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 			NSString *dir = [path stringByDeletingLastPathComponent];
 			NSString *itemname = [path lastPathComponent];
 			[workspace performFileOperation:NSWorkspaceRecycleOperation
-							source:dir destination:@"" files:[NSArray arrayWithObject:itemname]
+									 source:dir destination:@"" files:[NSArray arrayWithObject:itemname]
 										tag:&tag];
 		}
 	}
 	
-	PipingTask *dmg_task = [notification object];
-	terminationStatus = [dmg_task terminationStatus];
-	if (terminationStatus) {
-		[self setTerminationMessage:[dmg_task stderrString]];
-	}
 	[myNotiCenter postNotificationName: @"DmgDidTerminationNotification" object:self];
 #if useLog
 	NSLog(@"end dmgTaskTerminate");
