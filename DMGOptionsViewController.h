@@ -14,6 +14,7 @@
 	BOOL isDeleteDSStore;
 	NSIndexSet *selectedFormatIndexes;
 	int compressionLevel;
+	BOOL putawaySources;
 }
 
 - (id)initWithNibName:(NSString *)nibName owner:(id)owner;
@@ -27,5 +28,6 @@
 - (void)setCompressionLevel:(int)aValue;
 - (void)setDeleteDSStore:(BOOL)aFlag;
 - (void)setInternetEnable:(BOOL)aFlag;
+- (void)setPutawaySources:(BOOL)flag;
 
 @end

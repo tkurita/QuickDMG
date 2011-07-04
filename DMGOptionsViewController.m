@@ -17,6 +17,7 @@
 	[self setSelectedFormatIndexes:[NSIndexSet indexSetWithIndex:
 									[user_defaults integerForKey:@"formatIndex"]]];
 	[self setCompressionLevel:[user_defaults integerForKey:@"compressionLevel"]];
+	[self setPutawaySources:[user_defaults boolForKey:@"putawaySources"]];
 	[NSBundle loadNibNamed:nibName owner:self];
 	return self;
 }
@@ -50,6 +51,7 @@
 	[user_defaults setObject:[NSNumber numberWithInt:[selectedFormatIndexes firstIndex]]
 					forKey:@"formatIndex"];
 	[user_defaults setInteger:compressionLevel forKey:@"compressionLevel"];
+	[user_defaults setBool:putawaySources forKey:@"putawaySources"];
 }
 
 #pragma mark DMGOptions Protocol
@@ -99,6 +101,11 @@
 	return compressionLevel;
 }
 
+- (BOOL)putawaySources
+{
+	return putawaySources;
+}
+
 #pragma mark accessors
 - (NSTableView *)tableView
 {
@@ -140,6 +147,11 @@
 - (id)dmgFormatController
 {
 	return dmgFormatController;
+}
+
+-(void)setPutawaySources:(BOOL)flag
+{
+	putawaySources = flag;
 }
 
 #pragma mark delegate for TableView

@@ -7,4 +7,5 @@
 - (NSString *)filesystem;
 - (BOOL)needConversion;
 - (NSString *)command;
+- (BOOL)putawaySources;
 @end

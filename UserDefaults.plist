@@ -177,5 +177,7 @@
 	<integer>0</integer>
 	<key>openFinderSelectionDelay</key>
 	<real>0.3</real>
+	<key>putawaySources</key>
+	<false/>
 </dict>
 </plist>

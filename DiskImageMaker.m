@@ -1,4 +1,5 @@
 #import "DiskImageMaker.h"
+#import "DMGDocumentProtocol.h"
 #include <unistd.h>
 #include <sys/param.h>
 #include <sys/ucred.h>
@@ -791,6 +792,21 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 #if useLog
 	NSLog(@"start dmgTaskTerminate");
 #endif
+	if ([dmgOptions putawaySources]) {
+		NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
+		NSEnumerator *enumerator = [sourceItems objectEnumerator];
+		NSDocument<DMGDocument> *item;
+		while (item = [enumerator nextObject]) {
+			int tag;
+			NSString *path = [[item fileURL] path];
+			NSString *dir = [path stringByDeletingLastPathComponent];
+			NSString *itemname = [path lastPathComponent];
+			[workspace performFileOperation:NSWorkspaceRecycleOperation
+							source:dir destination:@"" files:[NSArray arrayWithObject:itemname]
+										tag:&tag];
+		}
+	}
+	
 	PipingTask *dmg_task = [notification object];
 	terminationStatus = [dmg_task terminationStatus];
 	if (terminationStatus) {
