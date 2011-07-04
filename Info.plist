@@ -30,7 +30,13 @@
 	<key>CFBundleExecutable</key>
 	<string>QuickDMG</string>
 	<key>CFBundleGetInfoString</key>
-	<string>2.1.7 copyright 2005-2009, Tetsuro KURITA</string>
+	<string>2.2 copyright 2005-2010, Tetsuro KURITA</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>copyright 2005-2010, Tetsuro KURITA</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.2b</string>
+	<key>CFBundleVersion</key>
+	<string>5</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>QuickDMGHelp</string>
 	<key>CFBundleIconFile</key>
@@ -45,8 +51,6 @@
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>2.1.7</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>

@@ -54,7 +54,6 @@
 	id document = [self document];
 	[savePanel setRequiredFileType:[dmgOptionsViewController dmgSuffix]];
 	[savePanel setCanSelectHiddenExtension:YES];
-	//[savePanel setExtensionHidden:YES];
 	[savePanel beginSheetForDirectory:[dmgMaker workingLocation] file:[dmgMaker dmgName]
 				   modalForWindow:[self window]
 					modalDelegate:self
@@ -80,11 +79,6 @@
 }
 
 #pragma mark methods for setup
-- (void)setIsFirstWindow
-{
-	isFirstWindow = YES;
-}
-
 - (void)setupProgressWindow //common
 {
 	if (!progressWindowController) {
@@ -92,16 +86,6 @@
 	}
 	[progressWindowController beginSheetWith:self];
 }
-
-/*
-- (void)setSourcePath:(NSString *)string
-{
-    //NSLog(@"setSroucePath");
-	if (string) {
-        [sourcePathView setStringValue:string];
-    }
-}
-*/
 
 - (void)setTargetPath:(NSString *)string // not common
 {
@@ -186,18 +170,6 @@
 													forKeyPath:@"selectedObjects"];
 
 	[dmgOptionsViewController saveSettings];
-	if (isFirstWindow) {
-		int visible_windows = 0;
-		NSEnumerator *enumerator = [[NSApp windows] objectEnumerator];
-		NSWindow *a_window;
-		while (a_window = [enumerator nextObject]) {
-			visible_windows += [a_window isVisible];
-		}
-		
-		if (visible_windows == 1) {
-			[NSApp performSelectorOnMainThread:@selector(terminate:) withObject:self waitUntilDone:NO];
-		}
-	}
 }
 
 #pragma mark action
@@ -245,8 +217,8 @@ NSValue *lefttop_of_frame(NSRect aRect)
 - (void)awakeFromNib
 {
 	//NSLog(@"awakeFromNib in DMGWindowController");
-	isFirstWindow = [[NSApp delegate] isFirstOpen];
-	[[NSApp delegate] setFirstOpen:NO];
+//	isFirstWindow = [[NSApp delegate] isFirstOpen];
+//	[[NSApp delegate] setFirstOpen:NO];
 	[self setupDMGOptionsView];
 	
 	[[self window] center];

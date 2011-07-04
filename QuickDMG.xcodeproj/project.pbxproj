@@ -165,6 +165,8 @@
 		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2CF1C09E0B413A9800EAB8DD /* DonationReminder.framework */,
+				2C24C8440CA0C91600E01AC0 /* RBSplitView.framework */,
 				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -274,8 +276,6 @@
 		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2CF1C09E0B413A9800EAB8DD /* DonationReminder.framework */,
-				2C24C8440CA0C91600E01AC0 /* RBSplitView.framework */,
 				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
 				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
 			);
@@ -479,6 +479,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
@@ -496,6 +497,8 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				PRODUCT_NAME = QuickDMG;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				VERSIONING_SYSTEM = "apple generic";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
@@ -505,6 +508,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
@@ -517,7 +521,10 @@
 				GCC_PREFIX_HEADER = QuickDMG_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				PRODUCT_NAME = QuickDMG;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				VERSIONING_SYSTEM = "apple generic";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -526,6 +533,7 @@
 		2CC63E0009377A2500503C26 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
@@ -539,7 +547,10 @@
 				GCC_PREFIX_HEADER = QuickDMG_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				PRODUCT_NAME = QuickDMG;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				VERSIONING_SYSTEM = "apple generic";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Default;

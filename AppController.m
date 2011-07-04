@@ -1,3 +1,4 @@
+#import <Cocoa/Cocoa.h>
 #import "AppController.h"
 #import "MDMGWindowController.h"
 #import "DonationReminder/DonationReminder.h"
@@ -9,15 +10,7 @@
 
 @implementation AppController
 
-- (BOOL)isFirstOpen
-{
-	return isFirstOpen;
-}
-
-- (void)setFirstOpen:(BOOL)aFlag
-{
-	isFirstOpen = aFlag;
-}
+static BOOL AUTO_QUIT = YES;
 
 - (IBAction)newDiskImage:(id)sender
 {
@@ -59,7 +52,16 @@
 
 - (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender
 {
-	return NO;
+	return YES;
+}
+
+- (BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication
+{
+#if useLog
+	NSLog(@"applicationOpenUntitledFile");
+#endif	
+	[self openFinderSelection];
+	return YES;
 }
 
 - (IBAction)makeDonation:(id)sender
@@ -146,25 +148,48 @@
 	[NSApp setServicesProvider:self];
 }
 
-- (void)delayedOpenFinderSelection
-{
-#if useLog
-	NSLog(@"delayedOpenFinderSelection");
-#endif	
-	[self openFinderSelection];
-	isFirstOpen = NO;
-}
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 #if useLog
 	NSLog(@"start applicationDidFinishLaunching");
 #endif
 	
+	NSAppleEventDescriptor *ev = [[NSAppleEventManager sharedAppleEventManager] currentAppleEvent];
+#if useLog
+	NSLog([ev description]);
+#endif
+	AEEventID evid = [ev eventID];
+	BOOL should_process = NO;
+	NSAppleEventDescriptor *propData;
+	switch (evid) {
+		case kAEOpenDocuments:
+#if useLog			
+			NSLog(@"kAEOpenDocuments");
+#endif
+			break;
+		case kAEOpenApplication:
+#if useLog			
+			NSLog(@"kAEOpenApplication");
+#endif
+			propData = [ev paramDescriptorForKeyword: keyAEPropData];
+			DescType type = propData ? [propData descriptorType] : typeNull;
+			OSType value = 0;
+			if(type == typeType) {
+				value = [propData typeCodeValue];
+				switch (value) {
+					case keyAELaunchedAsLogInItem:
+						AUTO_QUIT = NO;
+						break;
+					case keyAELaunchedAsServiceItem:
+						break;
+				}
+			} else {
+				should_process = YES;
+			}
+			break;
+	}
+	
 	[DonationReminder remindDonation];
-	// try to obtain Finder's selection after system serviece call.
-	[self performSelector:@selector(delayedOpenFinderSelection)
-			withObject:nil 
-			afterDelay:[[NSUserDefaults standardUserDefaults] floatForKey:@"openFinderSelectionDelay"]];
 #if useLog
 	NSLog(@"end applicationDidFinishLaunching");
 #endif
@@ -172,13 +197,17 @@
 
 - (void)awakeFromNib
 {
-	isFirstOpen = YES;
 	NSString *defaultsPlistPath = [[NSBundle mainBundle] 
 									pathForResource:@"UserDefaults" ofType:@"plist"];
 	NSDictionary *defautlsDict = [NSDictionary dictionaryWithContentsOfFile:defaultsPlistPath];
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	[userDefaults registerDefaults:defautlsDict];
 
+}
+
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
+{
+	return AUTO_QUIT;
 }
 
 @end

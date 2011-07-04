@@ -13,7 +13,6 @@
 	id dmgOptionsViewController;
 	DMGProgressWindowController *progressWindowController;
 	DiskImageMaker *dmgMaker;
-	BOOL isFirstWindow;
 }
 
 - (IBAction)cancelAction:(id)sender;
@@ -24,7 +23,6 @@
 #pragma mark common method
 - (void)setupProgressWindow;
 - (void)setupDMGOptionsView;
-- (void)setIsFirstWindow;
 
 //DMGWindowControllery Only
 - (void)setTargetPath:(NSString *)string;
