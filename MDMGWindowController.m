@@ -1,3 +1,4 @@
+#import <Cocoa/Cocoa.h>
 #import "MDMGWindowController.h"
 #import "DMGOptionsViewController.h"
 #import "DMGDocument.h"
@@ -161,7 +162,7 @@
 - (void)windowWillClose:(NSNotification *)aNotification
 {
 	[fileTableController disposeDocuments];
-	[super windowWillClose:aNotification];
+	[[self dmgOptionsViewController] saveSettings];
 }
 
 @end

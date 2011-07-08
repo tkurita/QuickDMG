@@ -1,5 +1,4 @@
 /* DMGOptionsViewController */
-#import <Cocoa/Cocoa.h>
 #import "DMGOptionsProtocol.h"
 
 @interface DMGOptionsViewController : NSObject <DMGOptions>

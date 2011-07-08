@@ -1,4 +1,3 @@
-#import <Cocoa/Cocoa.h>
 #import "DMGWindowController.h"
 #import "DiskImageMaker.h"
 //#import "DMGProgressWindowController.h"

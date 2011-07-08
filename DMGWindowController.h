@@ -19,6 +19,7 @@
 - (IBAction)okAction:(id)sender;
 
 - (void)makeDiskImage;
+- (id)dmgOptionsViewController;
 
 #pragma mark common method
 - (void)setupProgressWindow;

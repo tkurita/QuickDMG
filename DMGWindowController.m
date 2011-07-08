@@ -13,6 +13,11 @@
 	return dmgMaker;
 }
 
+- (id)dmgOptionsViewController
+{
+	return dmgOptionsViewController;
+}
+
 #pragma mark methods for sheet
 - (void)alertDidEnd:(NSWindow*)alert returnCode:(int)returnCode contextInfo:(void *)contextInfo //common
 {

@@ -106,7 +106,7 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 {
 	if (!iconImg) {
 		NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
-		[self setIconImg:[workspace iconForFile:[self fileName] ]];
+		[self setIconImg:[workspace iconForFile:[[self fileURL] path]]];
 	}
 	return convertImageSize(iconImg, 16);
 }
