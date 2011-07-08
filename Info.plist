@@ -34,9 +34,9 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>copyright 2005-2010, Tetsuro KURITA</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.2b</string>
+	<string>2.2</string>
 	<key>CFBundleVersion</key>
-	<string>5</string>
+	<string>7</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>QuickDMGHelp</string>
 	<key>CFBundleIconFile</key>
