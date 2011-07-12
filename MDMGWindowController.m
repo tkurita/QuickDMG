@@ -4,8 +4,6 @@
 #import "DMGDocument.h"
 #import "KXTableView.h"
 #import "FileTableController.h"
-#import "RBSplitView/RBSplitView.h"
-#import "RBSplitView/RBSplitSubview.h"
 #import "UtilityFunctions.h"
 
 #define useLog 0
@@ -101,7 +99,9 @@
 	
 	[fileTableController addFileURLs:initialItems];
 	
-	float current_dimension = [splitSubview dimension];
+
+	NSRect frame = [splitSubview frame];
+	float current_dimension = frame.size.height;
 	float row_height = [fileTable rowHeight];
 	int nrows = [fileTable numberOfRows];
 	NSSize spacing = [fileTable intercellSpacing];
@@ -110,9 +110,20 @@
 	float button_height = current_dimension - scroll_height;
 	float table_height = hframe.size.height + ((row_height + spacing.height)*(nrows)) +5;
 	float suggested_dimension = table_height + button_height;
+
+	fileTableMinHeight = row_height + hframe.size.height + button_height + spacing.height;
 	if (suggested_dimension > current_dimension) suggested_dimension = current_dimension;
-	[splitSubview setDimension:suggested_dimension ];
+	[splitView setPosition:suggested_dimension ofDividerAtIndex:0];
 }
+
+- (CGFloat)splitView:(NSSplitView *)sender constrainMinCoordinate:(CGFloat)proposedMin ofSubviewAt:(NSInteger)offset
+{
+	if (offset == 0) {
+		proposedMin = fileTableMinHeight;
+	}
+	return proposedMin;
+}
+
 
 #pragma mark delegate of KXTabelView
 

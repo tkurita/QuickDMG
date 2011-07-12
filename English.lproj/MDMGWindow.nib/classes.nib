@@ -92,6 +92,8 @@
 				<string>id</string>
 				<key>splitSubview</key>
 				<string>id</string>
+				<key>splitView</key>
+				<string>id</string>
 			</dict>
 			<key>SUPERCLASS</key>
 			<string>DMGWindowController</string>

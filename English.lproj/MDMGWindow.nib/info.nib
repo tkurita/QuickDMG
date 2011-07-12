@@ -4,8 +4,10 @@
 <dict>
 	<key>IBFramework Version</key>
 	<string>677</string>
+	<key>IBLastKnownRelativeProjectPath</key>
+	<string>../QuickDMG.xcodeproj</string>
 	<key>IBOldestOS</key>
-	<integer>4</integer>
+	<integer>5</integer>
 	<key>IBOpenObjects</key>
 	<array>
 		<integer>6</integer>

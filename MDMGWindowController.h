@@ -8,7 +8,9 @@
     IBOutlet id fileTable;
 	IBOutlet id fileTableController;
     IBOutlet id splitSubview;
+	IBOutlet id splitView;
 	NSArray *initialItems;
+	CGFloat fileTableMinHeight;
 }
 
 #pragma mark actions
