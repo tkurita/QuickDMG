@@ -30,9 +30,9 @@
 	<key>CFBundleExecutable</key>
 	<string>QuickDMG</string>
 	<key>CFBundleGetInfoString</key>
-	<string>2.2 copyright 2005-2010, Tetsuro KURITA</string>
+	<string>2.2 copyright 2005-2011, Tetsuro KURITA</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>copyright 2005-2010, Tetsuro KURITA</string>
+	<string>copyright 2005-2011, Tetsuro KURITA</string>
 	<key>CFBundleShortVersionString</key>
 	<string>2.2</string>
 	<key>CFBundleVersion</key>
