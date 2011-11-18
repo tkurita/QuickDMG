@@ -153,6 +153,7 @@
 		if (sheet != nil) {
 			[[NSApplication sharedApplication] endSheet:sheet returnCode:DIALOG_OK];
 		}
+		[dmgOptionsViewController saveSettings];
 		[self close];
 	}
 	else {
@@ -173,8 +174,6 @@
 {
 	[[dmgOptionsViewController dmgFormatController] removeObserver:self 
 													forKeyPath:@"selectedObjects"];
-
-	[dmgOptionsViewController saveSettings];
 }
 
 #pragma mark action

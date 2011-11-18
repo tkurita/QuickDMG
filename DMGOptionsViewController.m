@@ -1,6 +1,8 @@
 #import "DMGOptionsViewController.h"
 #import "LocalizedStringTransformer.h"
 
+#define useLog 1
+
 @implementation DMGOptionsViewController
 + (void)initialize
 {	
@@ -10,6 +12,9 @@
 
 - (id)initWithNibName:(NSString *)nibName owner:(id)owner
 {
+#if useLog
+	NSLog(@"start [DMGOptionsViewController initWithNibName:owner:]");
+#endif	
 	self = [self init];
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
 	[self setInternetEnable:[user_defaults boolForKey:@"InternetEnable"]];
@@ -119,6 +124,9 @@
 
 - (void)setSelectedFormatIndexes:(NSIndexSet *)indexSet
 {
+#if useLog
+	NSLog(@"setSelectedFormatIndexes: %@", [indexSet description]);
+#endif
 	[indexSet retain];
 	[selectedFormatIndexes autorelease];
 	selectedFormatIndexes = indexSet;
