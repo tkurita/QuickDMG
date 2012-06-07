@@ -1,7 +1,7 @@
 #import "DMGOptionsViewController.h"
 #import "LocalizedStringTransformer.h"
 
-#define useLog 1
+#define useLog 0
 
 @implementation DMGOptionsViewController
 + (void)initialize
