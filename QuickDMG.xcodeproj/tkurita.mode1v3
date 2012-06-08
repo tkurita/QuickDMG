@@ -235,6 +235,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -272,25 +274,22 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>2A37F4AAFDCFA73011CA2CEA</string>
+								<string>2C895FB3081CCA3D00694C34</string>
+								<string>2A37F4AFFDCFA73011CA2CEA</string>
 								<string>2A37F4B8FDCFA73011CA2CEA</string>
-								<string>089C165FFE840EACC02AAC07</string>
-								<string>2A37F4B6FDCFA73011CA2CEA</string>
-								<string>2A37F4C3FDCFA73011CA2CEA</string>
-								<string>1058C7A6FEA54F5311CA2CBB</string>
-								<string>2CF8415B1581B3DD004E5E20</string>
-								<string>1058C7A8FEA54F5311CA2CBB</string>
+								<string>2CF840C61580D788004E5E20</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FAAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>1</integer>
-									<integer>0</integer>
+									<integer>35</integer>
+									<integer>34</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {262, 666}}</string>
+							<string>{{0, 17}, {262, 666}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -375,14 +374,12 @@
 							<string>0pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>History.rtf</string>
+								<string>Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -390,11 +387,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>History.rtf</string>
+										<string>Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2CF841E215824F4E004E5E20</string>
+										<string>2CF8421615825657004E5E20</string>
 										<key>history</key>
 										<array>
 											<string>2CEFC6C810215F85003C67DB</string>
@@ -421,8 +418,8 @@
 											<string>2CF8412C15818FDE004E5E20</string>
 											<string>2CF8412D15818FDE004E5E20</string>
 											<string>2CF841C71581FACE004E5E20</string>
-											<string>2CF841C91581FACE004E5E20</string>
-											<string>2CF841CE1581FC63004E5E20</string>
+											<string>2CF8421415825657004E5E20</string>
+											<string>2CF8421515825657004E5E20</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -628,6 +625,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>2CF8421E15825657004E5E20</string>
+		<string>2CF8421F15825657004E5E20</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>2C3F626B0F6B542600C42308</string>
 		<string>/Users/tkurita/Dev/Projects/QuickDMG/QuickDMG/trunk/QuickDMG.xcodeproj</string>
 	</array>
@@ -829,13 +830,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>2CF841881581B455004E5E20</string>
+				<string>2CF8421715825657004E5E20</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>2CF841891581B455004E5E20</string>
-				<string>2CF8418A1581B455004E5E20</string>
-				<string>2CF8418B1581B455004E5E20</string>
-				<string>2CF8418C1581B455004E5E20</string>
-				<string>2CF8418D1581B455004E5E20</string>
+				<string>2CF8421815825657004E5E20</string>
+				<string>2CF8421915825657004E5E20</string>
+				<string>2CF8421A15825657004E5E20</string>
+				<string>2CF8421B15825657004E5E20</string>
+				<string>2CF8421C15825657004E5E20</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -991,7 +992,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>2CF841C41581F9AB004E5E20</string>
+				<string>2CF8421D15825657004E5E20</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

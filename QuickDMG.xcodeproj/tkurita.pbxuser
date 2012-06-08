@@ -411,6 +411,9 @@
 			2CF841CA1581FACE004E5E20 = 2CF841CA1581FACE004E5E20 /* PBXTextBookmark */;
 			2CF841CE1581FC63004E5E20 = 2CF841CE1581FC63004E5E20 /* PBXTextBookmark */;
 			2CF841E215824F4E004E5E20 /* PBXTextBookmark */ = 2CF841E215824F4E004E5E20 /* PBXTextBookmark */;
+			2CF8421415825657004E5E20 /* PBXTextBookmark */ = 2CF8421415825657004E5E20 /* PBXTextBookmark */;
+			2CF8421515825657004E5E20 /* PlistBookmark */ = 2CF8421515825657004E5E20 /* PlistBookmark */;
+			2CF8421615825657004E5E20 /* PlistBookmark */ = 2CF8421615825657004E5E20 /* PlistBookmark */;
 		};
 		sourceControlManager = 2CD4856F0818DDC400A7FDA9 /* Source Control */;
 		userBookmarkGroup = 2C7F5059089BDE19008C1816 /* PBXBookmarkGroup */;
@@ -1242,6 +1245,13 @@
 		vrLen = 197;
 		vrLoc = 0;
 	};
+	2CF840C71580D788004E5E20 /* Japanese */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {985, 1733}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 2123}";
+		};
+	};
 	2CF840FC1580ED73004E5E20 /* Credits.rtf */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {787, 362}}";
@@ -1347,6 +1357,45 @@
 		rType = 0;
 		vrLen = 693;
 		vrLoc = 515;
+	};
+	2CF841E615824F92004E5E20 /* dsa_pub.pem */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {767, 477}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1194}";
+		};
+	};
+	2CF8421415825657004E5E20 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C7FBFD2081BAAAC00340E25 /* History.rtf */;
+		name = "History.rtf: 37";
+		rLen = 0;
+		rLoc = 809;
+		rType = 0;
+		vrLen = 693;
+		vrLoc = 515;
+	};
+	2CF8421515825657004E5E20 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D15AC360486D014006FF6A4 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/tkurita/Dev/Projects/QuickDMG/QuickDMG/trunk/Info.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	2CF8421615825657004E5E20 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D15AC360486D014006FF6A4 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/tkurita/Dev/Projects/QuickDMG/QuickDMG/trunk/Info.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
 	};
 	2CFAE2550CE848E70070AEF4 /* FileTableController.h */ = {
 		uiCtxt = {
