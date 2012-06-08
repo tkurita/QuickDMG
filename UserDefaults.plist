@@ -163,8 +163,6 @@
 			<true/>
 		</dict>
 	</array>
-	<key>DonationURL</key>
-	<string>http://homepage.mac.com/tkurita/scriptfactory/donationproxy.html</string>
 	<key>InternetEnable</key>
 	<false/>
 	<key>additionalSize</key>
@@ -179,5 +177,7 @@
 	<real>0.3</real>
 	<key>putawaySources</key>
 	<false/>
+	<key>SUScheduledCheckInterval</key>
+	<integer>86400</integer>
 </dict>
 </plist>

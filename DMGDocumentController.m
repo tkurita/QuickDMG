@@ -33,7 +33,7 @@
 	//[super removeDocument:document];
 }
 
-- (int)runModalOpenPanel:(NSOpenPanel*)openPanel forTypes:(NSArray*)extensions
+- (NSInteger)runModalOpenPanel:(NSOpenPanel*)openPanel forTypes:(NSArray*)extensions
 {
 	[openPanel setCanChooseDirectories:YES];
     

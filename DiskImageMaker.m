@@ -539,7 +539,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 		NSFileManager *file_manager = [NSFileManager defaultManager];
 		if ([file_manager fileExistsAtPath:target_path]) {
 			NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
-			int tag;
+			NSInteger tag;
 			if (![workspace performFileOperation:NSWorkspaceRecycleOperation
 										  source:workingLocation destination:@""
 										   files:[NSArray arrayWithObject:dmgName] tag:&tag]) {
@@ -737,8 +737,6 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 #if useLog
 	NSLog(@"start dmgTaskTerminate");
 #endif
-
-	
 	PipingTask *dmg_task = [notification object];
 	terminationStatus = [dmg_task terminationStatus];
 	if (terminationStatus) {
@@ -748,7 +746,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 		NSEnumerator *enumerator = [sourceItems objectEnumerator];
 		NSDocument<DMGDocument> *item;
 		while (item = [enumerator nextObject]) {
-			int tag;
+			NSInteger tag;
 			NSString *path = [[item fileURL] path];
 			NSString *dir = [path stringByDeletingLastPathComponent];
 			NSString *itemname = [path lastPathComponent];

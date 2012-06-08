@@ -64,7 +64,8 @@ static NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
 	return YES;
 }
 
-- (NSDragOperation)tableView:(NSTableView*)tv validateDrop:(id <NSDraggingInfo>)info proposedRow:(int)row proposedDropOperation:(NSTableViewDropOperation)op 
+- (NSDragOperation)tableView:(NSTableView*)tv validateDrop:(id <NSDraggingInfo>)info 
+				 proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)op 
 {
 #if useLog
     NSLog(@"validate Drop: %i",op);
@@ -87,7 +88,7 @@ static NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
 -(void) moveObjectsInArrangedObjectsFromIndexes:(NSIndexSet *)indexSet
 										toIndex:(unsigned int)insertIndex
 {
-	unsigned int	index = [indexSet lastIndex];
+	NSUInteger index = [indexSet lastIndex];
 	
     unsigned int	aboveInsertIndexCount = 0;
     id object;
@@ -138,7 +139,7 @@ static NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
 
 
 - (BOOL)tableView:(NSTableView *)tv acceptDrop:(id <NSDraggingInfo>)info 
-			  row:(int)row dropOperation:(NSTableViewDropOperation)operation
+			  row:(NSInteger)row dropOperation:(NSTableViewDropOperation)operation
 {
     NSPasteboard* pboard = [info draggingPasteboard];
     BOOL success = NO;
