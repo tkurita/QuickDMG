@@ -53,6 +53,7 @@
 		2CF840FD1580ED73004E5E20 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2CF840FC1580ED73004E5E20 /* Credits.rtf */; };
 		2CF8415C1581B3DD004E5E20 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF8415B1581B3DD004E5E20 /* Sparkle.framework */; };
 		2CF841651581B3F6004E5E20 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CF8415B1581B3DD004E5E20 /* Sparkle.framework */; };
+		2CF841E715824F92004E5E20 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CF841E615824F92004E5E20 /* dsa_pub.pem */; };
 		2CFAE2580CE848E70070AEF4 /* FileTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFAE2560CE848E70070AEF4 /* FileTableController.m */; };
 		8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */; };
 		8D15AC2E0486D014006FF6A4 /* DMGDocument.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B4FDCFA73011CA2CEA /* DMGDocument.nib */; };
@@ -142,6 +143,7 @@
 		2CF840D81580D7DC004E5E20 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		2CF840FC1580ED73004E5E20 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		2CF8415B1581B3DD004E5E20 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = /Users/tkurita/Dev/Projects/QuickDMG/QuickDMG/Sparkle.framework; sourceTree = "<absolute>"; };
+		2CF841E615824F92004E5E20 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		2CFAE2550CE848E70070AEF4 /* FileTableController.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = FileTableController.h; sourceTree = "<group>"; };
 		2CFAE2560CE848E70070AEF4 /* FileTableController.m */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.objc; path = FileTableController.m; sourceTree = "<group>"; };
 		32DBCF750370BD2300C91783 /* QuickDMG_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickDMG_Prefix.pch; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CF841E615824F92004E5E20 /* dsa_pub.pem */,
 				2CF840FC1580ED73004E5E20 /* Credits.rtf */,
 				2C1D0A430CEAC5AF00B59A0E /* plus.tiff */,
 				2C1D0A440CEAC5AF00B59A0E /* minus.tiff */,
@@ -369,6 +372,7 @@
 				2CF840CD1580D788004E5E20 /* MainMenu.strings in Resources */,
 				2CF840CE1580D788004E5E20 /* MDMGWindow.strings in Resources */,
 				2CF840FD1580ED73004E5E20 /* Credits.rtf in Resources */,
+				2CF841E715824F92004E5E20 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
