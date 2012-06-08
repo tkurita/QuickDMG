@@ -37,7 +37,7 @@ static BOOL AUTO_QUIT = YES;
 			[a_doc showWindows];
 
 		} else {
-			NSLog([error localizedDescription]);
+			NSLog(@"%@",[error localizedDescription]);
 		}
 	}
 }

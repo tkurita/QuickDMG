@@ -62,7 +62,7 @@
 {
 	if (returnCode == NSOKButton) {
 		NSString *result_path = [sheet filename];
-		NSLog(result_path);
+		NSLog(@"%@", result_path);
 		if (!dmgMaker) {
 			[dmgMaker release];
 		}

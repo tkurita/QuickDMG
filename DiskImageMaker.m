@@ -416,7 +416,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 											   arguments:[NSArray arrayWithObjects:@"rename" ,devEntry, diskName, nil]];
 		[dt_task waitUntilExit];
 		if ([dt_task terminationStatus] !=0) {
-			NSLog([dt_task stderrString]);
+			NSLog(@"%@", [dt_task stderrString]);
 		}
 		
 		NSString *bufmp = mountPointForDevEntry(devEntry);
