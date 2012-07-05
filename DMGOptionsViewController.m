@@ -16,6 +16,7 @@
 	NSLog(@"start [DMGOptionsViewController initWithNibName:owner:]");
 #endif	
 	self = [self init];
+	[NSBundle loadNibNamed:nibName owner:self];
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
 	[self setInternetEnable:[user_defaults boolForKey:@"InternetEnable"]];
 	[self setDeleteDSStore:[user_defaults boolForKey:@"deleteDSStore"]];
@@ -23,7 +24,6 @@
 									[user_defaults integerForKey:@"formatIndex"]]];
 	[self setCompressionLevel:[user_defaults integerForKey:@"compressionLevel"]];
 	[self setPutawaySources:[user_defaults boolForKey:@"putawaySources"]];
-	[NSBundle loadNibNamed:nibName owner:self];
 	return self;
 }
 
