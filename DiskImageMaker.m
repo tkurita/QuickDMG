@@ -739,6 +739,8 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 #endif
 	PipingTask *dmg_task = [notification object];
 	terminationStatus = [dmg_task terminationStatus];
+	[myNotiCenter removeObserver:self];
+	
 	if (terminationStatus) {
 		[self setTerminationMessage:[dmg_task stderrString]];
 	} else if ([dmgOptions putawaySources]) {
