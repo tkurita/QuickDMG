@@ -4,6 +4,7 @@
 #import "DonationReminder/DonationReminder.h"
 #import "UtilityFunctions.h"
 #import "DMGDocumentController.h"
+#import "ExpandDMGWindowController.h"
 
 #define useLog 0
 
@@ -67,6 +68,24 @@ static BOOL AUTO_QUIT = YES;
 - (IBAction)makeDonation:(id)sender
 {
 	[DonationReminder goToDonation];
+}
+
+- (void)expandDmgFromPasteboard:(NSPasteboard *)pboard userData:(NSString *)data error:(NSString **)error
+{
+	NSArray *types = [pboard types];
+	NSArray *filenames;
+	if (![types containsObject:NSFilenamesPboardType] 
+		|| !(filenames = [pboard propertyListForType:NSFilenamesPboardType])) {
+        *error = NSLocalizedString(@"Error: Pasteboard doesn't contain file paths.",
+								   @"Pasteboard couldn't give string.");
+        return;
+    }
+
+	for (NSString *s in filenames) {
+		ExpandDMGWindowController *edmgw_controlle = [[ExpandDMGWindowController alloc] 
+													  initWithWindowNibName:@"ExpandDMGWindow"];
+		[edmgw_controlle processFile:s];
+	}
 }
 
 - (void)createDmgFromPasteboard:(NSPasteboard *)pboard userData:(NSString *)data error:(NSString **)error

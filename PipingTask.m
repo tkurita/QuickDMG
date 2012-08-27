@@ -10,7 +10,7 @@
 	[a_task setLaunchPath:path];
 	[a_task setArguments:arguments];
 	[a_task launch];
-	return a_task;
+	return [a_task autorelease];
 }
 
 - (id)init

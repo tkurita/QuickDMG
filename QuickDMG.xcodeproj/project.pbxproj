@@ -21,6 +21,13 @@
 
 /* Begin PBXBuildFile section */
 		2C03FBB4088A1353008B7312 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C03FBB3088A1353008B7312 /* UserDefaults.plist */; };
+		2C1451F315E60CD300481DE3 /* ExpandDMGWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1451F215E60CD300481DE3 /* ExpandDMGWindowController.m */; };
+		2C14520315E61AEE00481DE3 /* ExpandDMGWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C14520215E61AEE00481DE3 /* ExpandDMGWindow.xib */; };
+		2C14526715E720AC00481DE3 /* DummyTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C14526615E720AC00481DE3 /* DummyTask.m */; };
+		2C1452A215E751CB00481DE3 /* DMGHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1452A115E751CB00481DE3 /* DMGHandler.m */; };
+		2C14530015E8572300481DE3 /* NSURL+NDCarbonUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1452FB15E8572300481DE3 /* NSURL+NDCarbonUtilities.m */; };
+		2C14530115E8572300481DE3 /* PathExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1452FD15E8572300481DE3 /* PathExtra.m */; };
+		2C14530215E8572300481DE3 /* StringExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1452FF15E8572300481DE3 /* StringExtra.m */; };
 		2C1D0A450CEAC5AF00B59A0E /* plus.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D0A430CEAC5AF00B59A0E /* plus.tiff */; };
 		2C1D0A460CEAC5AF00B59A0E /* minus.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D0A440CEAC5AF00B59A0E /* minus.tiff */; };
 		2C24C8680CA0E60400E01AC0 /* DMGOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */; };
@@ -29,7 +36,6 @@
 		2C4DACFC0CE29B0D009240B6 /* DMGOptionsView.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4DACFB0CE29B0D009240B6 /* DMGOptionsView.nib */; };
 		2C4DAD040CE29DD3009240B6 /* DMGProgressWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4DAD020CE29DD3009240B6 /* DMGProgressWindowController.m */; };
 		2C59F41D0E2C5F4400261662 /* PipingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F78C00E14E6A600BDD9E3 /* PipingTask.m */; };
-		2C5A350A0897DCAB00F95662 /* stringExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5A35080897DCAB00F95662 /* stringExtra.m */; };
 		2C7FBE4708196D8300340E25 /* DMGWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7FBE4508196D8300340E25 /* DMGWindowController.m */; };
 		2C895FA8081C9D2900694C34 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C895FA6081C9D2900694C34 /* AppController.m */; };
 		2C895FB5081CCA5E00694C34 /* GetFinderSelection.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2C895FB4081CCA5E00694C34 /* GetFinderSelection.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
@@ -91,6 +97,19 @@
 		2C0F786E0E13E88200BDD9E3 /* PipingTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PipingTask.h; sourceTree = "<group>"; };
 		2C0F78C00E14E6A600BDD9E3 /* PipingTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PipingTask.m; sourceTree = "<group>"; };
 		2C0F78C10E14E6A900BDD9E3 /* LocalizedStringTransformer.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = LocalizedStringTransformer.h; sourceTree = "<group>"; };
+		2C1451F115E60CD300481DE3 /* ExpandDMGWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandDMGWindowController.h; sourceTree = "<group>"; };
+		2C1451F215E60CD300481DE3 /* ExpandDMGWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandDMGWindowController.m; sourceTree = "<group>"; };
+		2C1451F615E61ACD00481DE3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ExpandDMGWindow.xib; sourceTree = "<group>"; };
+		2C14526515E720AC00481DE3 /* DummyTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyTask.h; sourceTree = "<group>"; };
+		2C14526615E720AC00481DE3 /* DummyTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyTask.m; sourceTree = "<group>"; };
+		2C1452A015E751CB00481DE3 /* DMGHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGHandler.h; sourceTree = "<group>"; };
+		2C1452A115E751CB00481DE3 /* DMGHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGHandler.m; sourceTree = "<group>"; };
+		2C1452FA15E8572300481DE3 /* NSURL+NDCarbonUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+NDCarbonUtilities.h"; sourceTree = "<group>"; };
+		2C1452FB15E8572300481DE3 /* NSURL+NDCarbonUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+NDCarbonUtilities.m"; sourceTree = "<group>"; };
+		2C1452FC15E8572300481DE3 /* PathExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathExtra.h; sourceTree = "<group>"; };
+		2C1452FD15E8572300481DE3 /* PathExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathExtra.m; sourceTree = "<group>"; };
+		2C1452FE15E8572300481DE3 /* StringExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringExtra.h; sourceTree = "<group>"; };
+		2C1452FF15E8572300481DE3 /* StringExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringExtra.m; sourceTree = "<group>"; };
 		2C1D0A430CEAC5AF00B59A0E /* plus.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = plus.tiff; sourceTree = "<group>"; };
 		2C1D0A440CEAC5AF00B59A0E /* minus.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = minus.tiff; sourceTree = "<group>"; };
 		2C24C8060CA0AACA00E01AC0 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MDMGWindow.nib; sourceTree = "<group>"; };
@@ -102,8 +121,6 @@
 		2C4DACF70CE29AFA009240B6 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/DMGProgressWindow.nib; sourceTree = "<group>"; };
 		2C4DAD020CE29DD3009240B6 /* DMGProgressWindowController.m */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.objc; path = DMGProgressWindowController.m; sourceTree = "<group>"; };
 		2C4DAD030CE29DD3009240B6 /* DMGProgressWindowController.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = DMGProgressWindowController.h; sourceTree = "<group>"; };
-		2C5A35080897DCAB00F95662 /* stringExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = stringExtra.m; sourceTree = "<group>"; };
-		2C5A35090897DCAB00F95662 /* stringExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringExtra.h; sourceTree = "<group>"; };
 		2C7FBDE108194C6D00340E25 /* DMGDocumentController.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = DMGDocumentController.h; sourceTree = "<group>"; };
 		2C7FBE4408196D8300340E25 /* DMGWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGWindowController.h; sourceTree = "<group>"; };
 		2C7FBE4508196D8300340E25 /* DMGWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGWindowController.m; sourceTree = "<group>"; };
@@ -196,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				2C7FBFD2081BAAAC00340E25 /* History.rtf */,
+				2C1452F915E8572300481DE3 /* CocoaLib */,
 				2A37F4ABFDCFA73011CA2CEA /* Classes */,
 				2C895FB3081CCA3D00694C34 /* Scripts */,
 				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
@@ -209,6 +227,10 @@
 		2A37F4ABFDCFA73011CA2CEA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2C1452A015E751CB00481DE3 /* DMGHandler.h */,
+				2C1452A115E751CB00481DE3 /* DMGHandler.m */,
+				2C1451F115E60CD300481DE3 /* ExpandDMGWindowController.h */,
+				2C1451F215E60CD300481DE3 /* ExpandDMGWindowController.m */,
 				2C0F78C10E14E6A900BDD9E3 /* LocalizedStringTransformer.h */,
 				2CB60F6E0BCB9D56009F39D7 /* PipingTask.m */,
 				2CB60F6F0BCB9D56009F39D7 /* LocalizedStringTransformer.m */,
@@ -224,8 +246,6 @@
 				2CC2DBCD0CABC876006E7800 /* DMGDocumentController.m */,
 				2C895FA5081C9D2900694C34 /* AppController.h */,
 				2C895FA6081C9D2900694C34 /* AppController.m */,
-				2C5A35080897DCAB00F95662 /* stringExtra.m */,
-				2C5A35090897DCAB00F95662 /* stringExtra.h */,
 				2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */,
 				2C24C8670CA0E60400E01AC0 /* DMGOptionsViewController.h */,
 				2C24C8760CA0EBFD00E01AC0 /* MDMGWindowController.h */,
@@ -241,6 +261,8 @@
 				2CC904130CE877830016E8D7 /* UtilityFunctions.m */,
 				2C0F786E0E13E88200BDD9E3 /* PipingTask.h */,
 				2C0F78C00E14E6A600BDD9E3 /* PipingTask.m */,
+				2C14526515E720AC00481DE3 /* DummyTask.h */,
+				2C14526615E720AC00481DE3 /* DummyTask.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -263,6 +285,7 @@
 				2C1D0A440CEAC5AF00B59A0E /* minus.tiff */,
 				2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */,
 				2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */,
+				2C14520215E61AEE00481DE3 /* ExpandDMGWindow.xib */,
 				2CF42622088EB8F1002BBE99 /* Localizable.strings */,
 				2C03FBB3088A1353008B7312 /* UserDefaults.plist */,
 				8D15AC360486D014006FF6A4 /* Info.plist */,
@@ -289,6 +312,19 @@
 				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C1452F915E8572300481DE3 /* CocoaLib */ = {
+			isa = PBXGroup;
+			children = (
+				2C1452FA15E8572300481DE3 /* NSURL+NDCarbonUtilities.h */,
+				2C1452FB15E8572300481DE3 /* NSURL+NDCarbonUtilities.m */,
+				2C1452FC15E8572300481DE3 /* PathExtra.h */,
+				2C1452FD15E8572300481DE3 /* PathExtra.m */,
+				2C1452FE15E8572300481DE3 /* StringExtra.h */,
+				2C1452FF15E8572300481DE3 /* StringExtra.m */,
+			);
+			path = CocoaLib;
 			sourceTree = "<group>";
 		};
 		2C895FB3081CCA3D00694C34 /* Scripts */ = {
@@ -373,6 +409,7 @@
 				2CF840CE1580D788004E5E20 /* MDMGWindow.strings in Resources */,
 				2CF840FD1580ED73004E5E20 /* Credits.rtf in Resources */,
 				2CF841E715824F92004E5E20 /* dsa_pub.pem in Resources */,
+				2C14520315E61AEE00481DE3 /* ExpandDMGWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +470,6 @@
 				2C7FBE4708196D8300340E25 /* DMGWindowController.m in Sources */,
 				2C895FA8081C9D2900694C34 /* AppController.m in Sources */,
 				2C896428081D105D00694C34 /* DiskImageMaker.m in Sources */,
-				2C5A350A0897DCAB00F95662 /* stringExtra.m in Sources */,
 				2CB60F710BCB9D56009F39D7 /* LocalizedStringTransformer.m in Sources */,
 				2C24C8680CA0E60400E01AC0 /* DMGOptionsViewController.m in Sources */,
 				2C24C8790CA0EBFD00E01AC0 /* MDMGWindowController.m in Sources */,
@@ -442,6 +478,12 @@
 				2CFAE2580CE848E70070AEF4 /* FileTableController.m in Sources */,
 				2CC904150CE877830016E8D7 /* UtilityFunctions.m in Sources */,
 				2C59F41D0E2C5F4400261662 /* PipingTask.m in Sources */,
+				2C1451F315E60CD300481DE3 /* ExpandDMGWindowController.m in Sources */,
+				2C14526715E720AC00481DE3 /* DummyTask.m in Sources */,
+				2C1452A215E751CB00481DE3 /* DMGHandler.m in Sources */,
+				2C14530015E8572300481DE3 /* NSURL+NDCarbonUtilities.m in Sources */,
+				2C14530115E8572300481DE3 /* PathExtra.m in Sources */,
+				2C14530215E8572300481DE3 /* StringExtra.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +515,14 @@
 				2CF840BE1580D765004E5E20 /* Japanese */,
 			);
 			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		2C14520215E61AEE00481DE3 /* ExpandDMGWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C1451F615E61ACD00481DE3 /* English */,
+			);
+			name = ExpandDMGWindow.xib;
 			sourceTree = "<group>";
 		};
 		2C4DACF60CE29AFA009240B6 /* DMGProgressWindow.nib */ = {

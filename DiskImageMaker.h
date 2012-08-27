@@ -1,6 +1,6 @@
 #import <Cocoa/Cocoa.h>
 #import "DMGDocumentProtocol.h"
-#import "stringExtra.h"
+#import "StringExtra.h"
 #import "DMGOptionsProtocol.h"
 #import "DMGWindowControllerProtocol.h"
 #import "PipingTask.h"
@@ -74,10 +74,8 @@
 //public
 - (int)terminationStatus;
 
-- (NSString *)terminationMessage;
-- (void)setTerminationMessage:(NSString *)theString;
-- (NSString *)workingLocation;
-- (void)setWorkingLocation:(NSString *)theWorkingLocation;
+@property(retain) NSString *terminationMessage;
+@property(retain) NSString *workingLocation;
 - (void)setReplacing:(BOOL)aFlag;
 
 //private
@@ -87,8 +85,10 @@
 - (NSString *)dmgName;
 - (void)setDmgName:(NSString *)theDmgName;
 
-- (void)setDevEntry:(NSString *)theDevEntry;
-- (void)setCurrentTask:(PipingTask *)aTask;
+//- (void)setDevEntry:(NSString *)theDevEntry;
+@property(retain) NSString *devEntry;
+//- (void)setCurrentTask:(PipingTask *)aTask;
+@property(retain) PipingTask *currentTask;
 - (void)setMountPoint:(NSString *)theMountPoint;
 
 #pragma mark private use

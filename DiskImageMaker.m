@@ -22,6 +22,11 @@ id getTaskResult(PipingTask *aTask)
 
 @implementation DiskImageMaker
 
+@synthesize workingLocation;
+@synthesize terminationMessage;
+@synthesize devEntry;
+@synthesize currentTask;
+
 #pragma mark internal use
 - (NSString *)uniqueName:(NSString *)baseName suffix:(NSString *)theSuffix location:(NSString *)dirPath;
 {
@@ -71,7 +76,8 @@ id getTaskResult(PipingTask *aTask)
 	NSString *source_path = [anItem fileName];
 	
 	if ([[[NSWorkspace sharedWorkspace] mountedLocalVolumePaths] containsObject:source_path]) {
-		[self setWorkingLocation:[NSSearchPathForDirectoriesInDomains(NSDesktopDirectory, NSUserDomainMask, YES) lastObject]];
+		[self setWorkingLocation:[NSSearchPathForDirectoriesInDomains(NSDesktopDirectory, NSUserDomainMask, YES) 
+								  lastObject]];
 	} else {				
 		[self setWorkingLocation:[source_path stringByDeletingLastPathComponent]];
 	}
@@ -425,7 +431,9 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 		} else {
 			//NSLog([NSString stringWithFormat:@"Can't find the mount point for %@", devEntry]);
 			terminationStatus = 1;
-			[self setTerminationMessage:[NSString stringWithFormat:@"Can't find the mount point for %@", devEntry]];		
+			[self setTerminationMessage:
+				[NSString stringWithFormat:@"Can't find the mount point for %@", 
+										 devEntry]];		
 			[myNotiCenter postNotificationName: @"DmgDidTerminationNotification" object:self];
 			return;
 		}
@@ -441,10 +449,10 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	
 	
 	[self copySourceItems:[NSNotification notificationWithName:@"StartCopySources"
-														object:nil
-													  userInfo:[NSDictionary dictionaryWithObjectsAndKeys:mountPoint, @"copyDestination",
-																[sourceItems objectEnumerator], @"sourceEnumerator", 
-																next_selector, @"nextSelector", nil]]];
+									object:nil
+					  userInfo:[NSDictionary dictionaryWithObjectsAndKeys:mountPoint, @"copyDestination",
+								[sourceItems objectEnumerator], @"sourceEnumerator", 
+								next_selector, @"nextSelector", nil]]];
 }
 
 - (void) attachDiskImage: (NSNotification *) notification
@@ -463,7 +471,8 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	NSString *dmgPath = [resultArray objectAtIndex:0];
 	dmg_task = [self hdiUtilTask];
 	
-	[dmg_task setArguments:[NSArray arrayWithObjects:@"attach",dmgPath,@"-noverify",@"-nobrowse",@"-plist",nil]];
+	[dmg_task setArguments:[NSArray arrayWithObjects:@"attach",dmgPath,@"-noverify",
+														@"-nobrowse",@"-plist",nil]];
 	
 	[myNotiCenter addObserver:self selector:@selector(afterAttachDiskImage:) 
 					name:NSTaskDidTerminateNotification object:dmg_task];
@@ -634,7 +643,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 #if useLog
 		NSLog(terminationMessage);
 #endif
-		if ([terminationMessage endsWith:@".Trashes: Permission denied\n"]) {
+		if ([terminationMessage hasSuffix:@".Trashes: Permission denied\n"]) {
 #if useLog
 			NSLog(@"success to delete .DS_Store");
 #endif
@@ -834,7 +843,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 {
 	return self->dmgName;
 }
-
+/*
 - (void)setTerminationMessage:(NSString *)theString
 {
 	[theString retain];
@@ -846,12 +855,13 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 {
 	return self->terminationMessage;
 }
-
+*/
 - (int)terminationStatus
 {
 	return self->terminationStatus;
 }
 
+/*
 - (void)setWorkingLocation:(NSString *)theWorkingLocation
 {
 	[theWorkingLocation retain];
@@ -862,7 +872,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 - (NSString *)workingLocation
 {
 	return self->workingLocation;
-}
+}*/
 
 - (void)setReplacing:(BOOL)aFlag
 {

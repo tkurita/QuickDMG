@@ -65,6 +65,42 @@
 			</dict>
 			<key>NSMessage</key>
 			<string>createDmgFromPasteboard</string>
+			<key>NSSendFileTypes</key>
+			<array>
+				<string>public.item</string>
+				<string>public.folder</string>
+				<string>public.symlink</string>
+				<string>com.apple.alias-file</string>
+			</array>
+			<key>NSRequiredContext</key>
+			<dict>
+				<key>NSTextContent</key>
+				<string>FilePath</string>
+			</dict>
+			<key>NSPortName</key>
+			<string>QuickDMGService</string>
+			<key>NSSendTypes</key>
+			<array>
+				<string>NSFilenamesPboardType</string>
+			</array>
+		</dict>
+		<dict>
+			<key>NSMenuItem</key>
+			<dict>
+				<key>default</key>
+				<string>Expand Disk Image</string>
+			</dict>
+			<key>NSMessage</key>
+			<string>expandDmgFromPasteboard</string>
+			<key>NSSendFileTypes</key>
+			<array>
+				<string>com.apple.disk-image</string>
+			</array>
+			<key>NSRequiredContext</key>
+			<dict>
+				<key>NSTextContent</key>
+				<string>FilePath</string>
+			</dict>
 			<key>NSPortName</key>
 			<string>QuickDMGService</string>
 			<key>NSSendTypes</key>
