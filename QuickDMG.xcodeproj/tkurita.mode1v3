@@ -234,7 +234,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>2C1D447D15EF33ED00A88F15</string>
+						<string>2C1D448E15EF35E100A88F15</string>
 						<key>history</key>
 						<array>
 							<string>2CFE2F9115EEF04E00D93023</string>
@@ -328,6 +328,7 @@
 								<string>2A37F4ABFDCFA73011CA2CEA</string>
 								<string>2C895FB3081CCA3D00694C34</string>
 								<string>2A37F4AFFDCFA73011CA2CEA</string>
+								<string>2A37F4B8FDCFA73011CA2CEA</string>
 								<string>19C28FB0FE9D524F11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FAAC04509CD000000102</string>
@@ -335,13 +336,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
+									<integer>25</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {363, 668}}</string>
+							<string>{{0, 191}, {363, 668}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -438,7 +439,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2C1D447B15EF33ED00A88F15</string>
+										<string>2C1D448915EF35E100A88F15</string>
 										<key>history</key>
 										<array>
 											<string>2CCB73F113BC343800C77039</string>
@@ -498,7 +499,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DMGHandler.m</string>
+								<string>History.rtf</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -506,11 +507,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DMGHandler.m</string>
+										<string>History.rtf</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2C1D447C15EF33ED00A88F15</string>
+										<string>2C1D448D15EF35E100A88F15</string>
 										<key>history</key>
 										<array>
 											<string>2CCB73F113BC343800C77039</string>
@@ -521,7 +522,6 @@
 											<string>2C4B295C13C72AA80059C065</string>
 											<string>2C4B29D613CC6A8F0059C065</string>
 											<string>2CE8D0D715196ABA000A8E8B</string>
-											<string>2CE8D0D815196ABA000A8E8B</string>
 											<string>2CE8D0DA15196ABA000A8E8B</string>
 											<string>2CF8412D15818FDE004E5E20</string>
 											<string>2CF841C71581FACE004E5E20</string>
@@ -538,11 +538,12 @@
 											<string>2CFE2F8E15EEF04E00D93023</string>
 											<string>2C1D445D15EF31FA00A88F15</string>
 											<string>2C1D445E15EF31FA00A88F15</string>
-											<string>2C1D446015EF31FA00A88F15</string>
 											<string>2C1D446115EF31FA00A88F15</string>
 											<string>2C1D447215EF338F00A88F15</string>
-											<string>2C1D447315EF338F00A88F15</string>
-											<string>2C1D447415EF338F00A88F15</string>
+											<string>2C1D448015EF351C00A88F15</string>
+											<string>2C1D448A15EF35E100A88F15</string>
+											<string>2C1D448B15EF35E100A88F15</string>
+											<string>2C1D448C15EF35E100A88F15</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

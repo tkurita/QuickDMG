@@ -10,7 +10,6 @@
 
 - (void)dealloc
 {
-	NSLog(@"dealloc ExpandDMGWindowController");
 	[dmgHandler release];
 	[dmgPath release];
 	[dmgEnumerator release];
@@ -100,6 +99,10 @@
 	[dmgHandler abortTask];
 	[progressIndicator stopAnimation:self];
 	[self close];
+}
+
+- (void)windowWillClose:(NSNotification*)notification {
+	[self autorelease];
 }
 
 @end
