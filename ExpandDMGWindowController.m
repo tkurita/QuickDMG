@@ -6,12 +6,39 @@
 
 @synthesize dmgHandler;
 @synthesize dmgPath;
+@synthesize dmgEnumerator;
 
 - (void)dealloc
 {
+	NSLog(@"dealloc ExpandDMGWindowController");
 	[dmgHandler release];
 	[dmgPath release];
+	[dmgEnumerator release];
 	[super dealloc];
+}
+
+- (BOOL)processNextItem
+{
+	if (! dmgEnumerator) return NO;
+	if (! (self.dmgPath = [dmgEnumerator nextObject])) return NO;
+	
+	[self.window setRepresentedFilename:dmgPath];
+	NSString *title = [NSString stringWithLocalizedFormat:@"Expanding %@", 
+					   [dmgPath lastPathComponent]];
+	[self.window setTitle:title];
+	[self.dmgHandler attachDiskImage:dmgPath];
+	return YES;
+}
+
+- (void)processFiles:(NSArray *)array
+{
+	self.dmgHandler = [DMGHandler dmgHandlerWithDelegate:self];
+	self.dmgEnumerator = [array objectEnumerator];
+	[self showWindow:self];
+	[progressIndicator startAnimation:self];
+	if (! [self processNextItem]) {
+		[self close];
+	}
 }
 
 - (void)processFile:(NSString *)path
@@ -36,8 +63,11 @@
 															sender.terminationMessage];
 		return;
 	}
-	[progressIndicator stopAnimation:self];
-	[self close];
+	
+	if (![self processNextItem]) {
+		[progressIndicator stopAnimation:self];
+		[self close];
+	}
 }
 
 - (void)dittoFinished:(DMGHandler *)sender

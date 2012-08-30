@@ -1,7 +1,7 @@
 #import "DMGHandler.h"
 #include <sys/mount.h>
 
-#define useLog 1
+#define useLog 0
 
 @implementation DMGHandler
 
@@ -38,7 +38,6 @@
 #if useLog
 	NSLog(@"start checkPreviousTask");
 #endif
-	
 	PipingTask *dmg_task = [notification object];
 	NSNotificationCenter *noticenter = [NSNotificationCenter defaultCenter];
 	[noticenter removeObserver:self];

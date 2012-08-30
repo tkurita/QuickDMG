@@ -23,7 +23,6 @@
 		2C03FBB4088A1353008B7312 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C03FBB3088A1353008B7312 /* UserDefaults.plist */; };
 		2C1451F315E60CD300481DE3 /* ExpandDMGWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1451F215E60CD300481DE3 /* ExpandDMGWindowController.m */; };
 		2C14520315E61AEE00481DE3 /* ExpandDMGWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C14520215E61AEE00481DE3 /* ExpandDMGWindow.xib */; };
-		2C14526715E720AC00481DE3 /* DummyTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C14526615E720AC00481DE3 /* DummyTask.m */; };
 		2C1452A215E751CB00481DE3 /* DMGHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1452A115E751CB00481DE3 /* DMGHandler.m */; };
 		2C14530015E8572300481DE3 /* NSURL+NDCarbonUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1452FB15E8572300481DE3 /* NSURL+NDCarbonUtilities.m */; };
 		2C14530115E8572300481DE3 /* PathExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1452FD15E8572300481DE3 /* PathExtra.m */; };
@@ -100,8 +99,6 @@
 		2C1451F115E60CD300481DE3 /* ExpandDMGWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandDMGWindowController.h; sourceTree = "<group>"; };
 		2C1451F215E60CD300481DE3 /* ExpandDMGWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandDMGWindowController.m; sourceTree = "<group>"; };
 		2C1451F615E61ACD00481DE3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ExpandDMGWindow.xib; sourceTree = "<group>"; };
-		2C14526515E720AC00481DE3 /* DummyTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyTask.h; sourceTree = "<group>"; };
-		2C14526615E720AC00481DE3 /* DummyTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyTask.m; sourceTree = "<group>"; };
 		2C1452A015E751CB00481DE3 /* DMGHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGHandler.h; sourceTree = "<group>"; };
 		2C1452A115E751CB00481DE3 /* DMGHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGHandler.m; sourceTree = "<group>"; };
 		2C1452FA15E8572300481DE3 /* NSURL+NDCarbonUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+NDCarbonUtilities.h"; sourceTree = "<group>"; };
@@ -261,8 +258,6 @@
 				2CC904130CE877830016E8D7 /* UtilityFunctions.m */,
 				2C0F786E0E13E88200BDD9E3 /* PipingTask.h */,
 				2C0F78C00E14E6A600BDD9E3 /* PipingTask.m */,
-				2C14526515E720AC00481DE3 /* DummyTask.h */,
-				2C14526615E720AC00481DE3 /* DummyTask.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -479,7 +474,6 @@
 				2CC904150CE877830016E8D7 /* UtilityFunctions.m in Sources */,
 				2C59F41D0E2C5F4400261662 /* PipingTask.m in Sources */,
 				2C1451F315E60CD300481DE3 /* ExpandDMGWindowController.m in Sources */,
-				2C14526715E720AC00481DE3 /* DummyTask.m in Sources */,
 				2C1452A215E751CB00481DE3 /* DMGHandler.m in Sources */,
 				2C14530015E8572300481DE3 /* NSURL+NDCarbonUtilities.m in Sources */,
 				2C14530115E8572300481DE3 /* PathExtra.m in Sources */,
