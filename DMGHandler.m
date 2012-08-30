@@ -5,6 +5,7 @@
 
 @implementation DMGHandler
 
+@synthesize statusMessage;
 @synthesize terminationMessage;
 @synthesize workingLocation;
 @synthesize devEntry;
@@ -12,6 +13,17 @@
 @synthesize currentTask;
 @synthesize terminationStatus;
 @synthesize delegate;
+
+- (void)dealloc
+{
+	[statusMessage release];
+	[terminationMessage release];
+	[workingLocation release];
+	[devEntry release];
+	[mountPoint release];
+	[currentTask release];
+	[super dealloc];
+}
 
 - (PipingTask *)hdiUtilTask
 {
@@ -42,13 +54,7 @@
 #if useLog
 			NSLog(@"error occur");
 #endif
-			if (devEntry) {
-				PipingTask *detachTask = [self hdiUtilTask];
-				[detachTask setArguments:[NSArray arrayWithObjects:@"detach", devEntry, nil]];
-				[detachTask launch];
-				self.devEntry = nil;
-				self.mountPoint = nil;
-			}
+			[self detachNow];
 			terminationStatus = [dmg_task terminationStatus];
 			[noticenter postNotificationName: @"DmgDidTerminationNotification" object:self];
 			return NO;
@@ -65,6 +71,7 @@
 
 - (void) postStatusNotification: (NSString *) message
 {
+	self.statusMessage = message;
 	NSDictionary* info = [NSDictionary dictionaryWithObject:message forKey:@"statusMessage"];
 	[[NSNotificationCenter defaultCenter] postNotificationName: @"DmgProgressNotification"
 														object:self userInfo:info];
@@ -81,6 +88,27 @@
 	[self checkPreviousTask:notification];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[delegate diskImageDetached:self];
+}
+
+- (PipingTask *)detachNow
+{
+	if (!devEntry) {
+		return nil;
+	}	
+	PipingTask *detach_task = [self hdiUtilTask];
+	[detach_task setArguments:[NSArray arrayWithObjects:@"detach", devEntry, nil]];
+	[detach_task launch];
+	self.devEntry = nil;
+	self.mountPoint = nil;
+	return detach_task;
+}
+
+- (void)abortTask
+{
+	self.statusMessage = NSLocalizedString(@"Canceling task.", @"");
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	[currentTask terminate];
+	[self detachNow];
 }
 
 - (void)detachDiskImage:(NSString *)dev
@@ -129,7 +157,7 @@
 		PipingTask *previous_task = [notification object];
 		NSDictionary *task_result = [[previous_task stdoutString] propertyList];
 	#if useLog
-		NSLog([task_result description]);
+		NSLog(@"%@", [task_result description]);
 	#endif
 		task_result = [[task_result objectForKey:@"system-entities"] objectAtIndex:0];
 		self.devEntry = [task_result objectForKey:@"dev-entry"];

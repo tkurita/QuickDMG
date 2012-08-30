@@ -27,3 +27,10 @@
 "NDIF_R_Only" = "NDIF 読み込み専用";
 "UDF_ISO" = "UDF フォーマットの ISO イメージ";
 "this software" = "QuickDMG";
+
+/* ExpandDMGWindowControoler */
+"Expanding %@" =  "\"%@\" を展開しています。";
+"Failed copy with error : %@" = "コピーに失敗しました。エラー : %@";
+"Failed attaching with error : %@" = "ディスクイメージのアタッチに失敗しました。エラー : %@";
+"Failed detaching with error : %@" = "ディスクイメージのデタッチに失敗しました。エラー : %@";
+"Canceling task." = "処理をキャンセルしています。";

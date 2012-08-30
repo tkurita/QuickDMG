@@ -2,6 +2,7 @@
 #import "PipingTask.h"
 
 @interface DMGHandler : NSObject {
+	NSString *statusMessage;
 	NSString *terminationMessage;
 	NSString *workingLocation;
 	NSString *devEntry;
@@ -11,6 +12,7 @@
 	id delegate;
 }
 
+@property(retain) NSString *statusMessage;
 @property(retain) NSString *terminationMessage;
 @property(retain) NSString *workingLocation;
 @property(retain) NSString *devEntry;
@@ -22,6 +24,8 @@
 - (void)attachDiskImage:(NSString *)path;
 - (void)detachDiskImage:(NSString *)dev;
 - (void)dittoPath:(NSString *)srcPath toPath:(NSString *)destPath;
+- (PipingTask *)detachNow;
+- (void)abortTask;
 
 + (DMGHandler *)dmgHandlerWithDelegate:(id)object;
 
