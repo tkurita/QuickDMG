@@ -11,6 +11,9 @@
 @implementation MDMGWindowController
 
 - (void) dealloc {
+#if useLog
+	NSLog(@"start dealloc in MDMGWindowController");
+#endif	
 	[initialItems release];
 	[super dealloc];
 }
@@ -62,7 +65,9 @@
 {
 	if (returnCode == NSOKButton) {
 		NSString *result_path = [sheet filename];
+#if useLog
 		NSLog(@"%@", result_path);
+#endif
 		if (!dmgMaker) {
 			[dmgMaker release];
 		}
@@ -77,9 +82,9 @@
 #pragma mark setup contents
 - (void)setInitialItems:(NSArray *)files
 {
+	[initialItems autorelease];
 	[files retain];
 	initialItems = files;
-	[initialItems release];
 }
 
 - (void)showWindow:(id)sender withFiles:(NSArray *)files
@@ -174,6 +179,7 @@
 {
 	[fileTableController disposeDocuments];
 	[[self dmgOptionsViewController] saveSettings];
+	[self autorelease];
 }
 
 @end

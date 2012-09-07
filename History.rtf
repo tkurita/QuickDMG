@@ -1,6 +1,7 @@
 {\rtf1\ansi\ansicpg932\cocoartf1038\cocoasubrtf360
-{\fonttbl\f0\fnil\fcharset128 Osaka;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset128 HiraKakuProN-W3;
-\f3\fnil\fcharset0 Monaco;\f4\fnil\fcharset128 Osaka-Mono;}
+{\fonttbl\f0\fnil\fcharset128 Osaka;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset128 HiraKakuProN-W3;\f4\fnil\fcharset0 Monaco;\f5\fnil\fcharset128 Osaka-Mono;
+}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx565\tx1133\tx1700\tx2266\tx2832\tx3401\tx3967\tx4535\tx5102\tx5669\tx6235\tx6802\ql\qnatural
 
@@ -42,8 +43,27 @@ MDMGWindowController\'81\'40\'82\'c6 DMGWindowController \'82\'cc\'8c\'c5\'97\'4
 * DiskImageMaker \'82\'c5DMGHandler \'82\'f0\'8a\'88\'97\'70\'82\'b7\'82\'e9\'82\'e6\'82\'a4\'82\'c9\'82\'b7\'82\'e9\'81\'42\
 \
 -- \'82\'b1\'82\'b1\'82\'dc\'82\'c5\'82\'e2\'82\'c1\'82\'bd\'82\'e7\'8c\'f6\'8a\'4a\'81\'42\
-* MDMGWindowController \'82\'cd\'83\'8a\'83\'8a\'81\'5b\'83\'58\'82\'b3\'82\'ea\'82\'e9\'82\'cc\'81\'48\
-* ExpandDMGWindow \'82\'cc\'83\'8d\'81\'5b\'83\'4a\'83\'89\'83\'43\'83\'59\
+\
+\
+== 
+\f1 \CocoaLigature1 2012-09-08\
+
+\f0 \CocoaLigature0 * MDMGWindowController \'82\'cd\'83\'8a\'83\'8a\'81\'5b\'83\'58\'82\'b3\'82\'ea\'82\'e9\'82\'cc \'81\'48\
+
+\f2\fs22   - 
+\f3 \'82\'b3\'82\'ea\'82\'c8\'82\'a9\'82\'c1\'82\'bd\'81\'42
+\f2 \
+\pard\tx560\pardeftab560\ql\qnatural\pardirnatural
+\cf0   - windowWillClose 
+\f3 \'82\'c5
+\f2  [self autorelease] 
+\f3 \'82\'b7\'82\'e9\'82\'e6\'82\'a4\'82\'c9\'82\'b5\'82\'bd\'81\'42
+\f1\fs24 \CocoaLigature1 \
+\pard\tx565\tx1133\tx1700\tx2266\tx2832\tx3401\tx3967\tx4535\tx5102\tx5669\tx6235\tx6802\ql\qnatural
+
+\f0 \cf0 \CocoaLigature0 * \'81\'75\'83\'66\'83\'42\'83\'58\'83\'4e\'83\'43\'83\'81\'81\'5b\'83\'57\'82\'f0\'93\'57\'8a\'4a\'81\'76\'82\'f0\'83\'66\'83\'42\'83\'58\'83\'4e\'83\'43\'83\'81\'81\'5b\'83\'57\'82\'be\'82\'af\'82\'c9\'82\'b7\'82\'e9\'81\'42 \
+  - NSSendTypes : NSFilenamesPboardType \'82\'f0 Info.plist \'82\'a9\'82\'e7\'8d\'ed\'8f\'9c\
+* ExpandDMGWindow \'82\'cc\'83\'8d\'81\'5b\'83\'4a\'83\'89\'83\'43\'83\'59 -- \'8d\'cf\'82\'dd\
 \
 == 
 \f1 \CocoaLigature1 2012-08-30\
@@ -74,21 +94,21 @@ MDMGWindowController\'81\'40\'82\'c6 DMGWindowController \'82\'cc\'8c\'c5\'97\'4
 == 
 \f1 \CocoaLigature1 2011-11-18\
 * 
-\f2 \'83\'49\'83\'76\'83\'56\'83\'87\'83\'93\'82\'cc\'95\'db\'91\'b6\'82\'aa\'8d\'73\'82\'ed\'82\'ea\'82\'e9\'82\'cc\'82\'cd\'81\'41\'8e\'c0\'8d\'db\'82\'c9\'83\'66\'83\'42\'83\'58\'83\'4e\'83\'43\'83\'81\'81\'5b\'83\'57\'82\'f0\'8d\'ec\'82\'c1\'82\'bd\'8e\'9e\'82\'cc\'82\'dd\'81\'42
+\f3 \'83\'49\'83\'76\'83\'56\'83\'87\'83\'93\'82\'cc\'95\'db\'91\'b6\'82\'aa\'8d\'73\'82\'ed\'82\'ea\'82\'e9\'82\'cc\'82\'cd\'81\'41\'8e\'c0\'8d\'db\'82\'c9\'83\'66\'83\'42\'83\'58\'83\'4e\'83\'43\'83\'81\'81\'5b\'83\'57\'82\'f0\'8d\'ec\'82\'c1\'82\'bd\'8e\'9e\'82\'cc\'82\'dd\'81\'42
 \f1 \
 \
 * format table 
-\f2 \'82\'cc\'91\'49\'91\'f0\'82\'aa\'95\'db\'91\'b6\'82\'b3\'82\'ea\'82\'c8\'82\'a2\'95\'73\'8b\'ef\'8d\'87\'82\'c9\'82\'c2\'82\'a2\'82\'c4
+\f3 \'82\'cc\'91\'49\'91\'f0\'82\'aa\'95\'db\'91\'b6\'82\'b3\'82\'ea\'82\'c8\'82\'a2\'95\'73\'8b\'ef\'8d\'87\'82\'c9\'82\'c2\'82\'a2\'82\'c4
 \f1 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
 
-\f2 \cf0 \'83\'6f\'81\'5b\'83\'57\'83\'87\'83\'93
+\f3 \cf0 \'83\'6f\'81\'5b\'83\'57\'83\'87\'83\'93
 \f1  2.2 
-\f2 \'82\'c5\'82\'cd\'81\'41window \'82\'f0\'8a\'4a\'82\'a2\'82\'bd\'8e\'9e\'82\'c9\'81\'41
+\f3 \'82\'c5\'82\'cd\'81\'41window \'82\'f0\'8a\'4a\'82\'a2\'82\'bd\'8e\'9e\'82\'c9\'81\'41
 \f1 UserDefault 
-\f2 \'82\'cc
+\f3 \'82\'cc
 \f1  formatIndex 
-\f2 \'82\'aa\'94\'bd\'89\'66\'82\'b3\'82\'ea\'82\'c8\'82\'a2\'95\'73\'8b\'ef\'8d\'87\'82\'aa\'82\'a0\'82\'e9\'82\'e6\'82\'a4\'82\'be\'81\'42\
+\f3 \'82\'aa\'94\'bd\'89\'66\'82\'b3\'82\'ea\'82\'c8\'82\'a2\'95\'73\'8b\'ef\'8d\'87\'82\'aa\'82\'a0\'82\'e9\'82\'e6\'82\'a4\'82\'be\'81\'42\
 \'83\'72\'83\'8b\'83\'68\'82\'b5\'92\'bc\'82\'b7\'82\'c6\'81\'41\'82\'c8\'82\'ba\'82\'a9\'92\'bc\'82\'c1\'82\'c4\'82\'b5\'82\'dc\'82\'c1\'82\'c4\'82\'a2\'82\'e9\'81\'42\
 \'83\'8d\'81\'5b\'83\'4a\'83\'89\'83\'43\'83\'59\'92\'86\'82\'c9 Nib \'82\'c9\'89\'bd\'82\'e7\'82\'a9\'82\'cc\'96\'e2\'91\'e8\'82\'aa\'94\'ad\'90\'b6\'82\'b5\'82\'bd\'82\'e0\'82\'e6\'82\'a4\'81\'42\'93\'fa\'96\'7b\'8c\'ea\'83\'8d\'81\'5b\'83\'4a\'83\'89\'83\'43\'83\'59\'82\'cc\'82\'dd\'82\'a8\'82\'a9\'82\'b5\'82\'a2\'81\'42\
 DMGOptionsView.nib \'82\'f0\'95\'db\'91\'b6\'82\'b5\'82\'c8\'82\'a8\'82\'b5\'82\'bd\'82\'e7\'92\'bc\'82\'c1\'82\'bd\'82\'e6\'82\'a4\'82\'be\'81\'42\
@@ -100,7 +120,7 @@ DMGOptionsView.nib \'82\'cc Deployment Target \'82\'f0 Mac OS X 10.4->Mac OS X 1
 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
 
-\f2 \cf0 === \'82\'a2\'82\'c2\'82\'cc\'8a\'d4\'82\'c9\'82\'a9\'8d\'cf\'82\'dd
+\f3 \cf0 === \'82\'a2\'82\'c2\'82\'cc\'8a\'d4\'82\'c9\'82\'a9\'8d\'cf\'82\'dd
 \f0 \CocoaLigature0 \
 \pard\tx565\tx1133\tx1700\tx2266\tx2832\tx3401\tx3967\tx4535\tx5102\tx5669\tx6235\tx6802\ql\qnatural
 \cf0 * \'95\'a1\'90\'94\'8d\'80\'96\'da\'83\'45\'83\'43\'83\'93\'83\'68\'83\'45\'82\'cc\'83\'8d\'81\'5b\'83\'4a\'83\'89\'83\'43\'83\'59\'82\'aa\'82\'a8\'82\'a9\'82\'b5\'82\'a2\'81\'42\
@@ -138,11 +158,11 @@ copySourceItemsToFolder\
 \f1 \CocoaLigature1 2011-06-30\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
 \cf0 UDF-ISO 
-\f2 \'83\'43\'83\'81\'81\'5b\'83\'57\'82\'f0\'8d\'ec\'82\'ea\'82\'e9\'82\'e6\'82\'a4\'82\'c9\'82\'b5\'82\'bd\'81\'42
+\f3 \'83\'43\'83\'81\'81\'5b\'83\'57\'82\'f0\'8d\'ec\'82\'ea\'82\'e9\'82\'e6\'82\'a4\'82\'c9\'82\'b5\'82\'bd\'81\'42
 \f1 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
 
-\f2 \cf0 \'83\'5c\'81\'5b\'83\'58\'82\'aa\'83\'74\'83\'48\'83\'8b\'83\'5f\'82\'c5\'82\'c8\'82\'a2\'82\'c6\'8d\'73\'82\'af\'82\'c8\'82\'a2\'81\'42
+\f3 \cf0 \'83\'5c\'81\'5b\'83\'58\'82\'aa\'83\'74\'83\'48\'83\'8b\'83\'5f\'82\'c5\'82\'c8\'82\'a2\'82\'c6\'8d\'73\'82\'af\'82\'c8\'82\'a2\'81\'42
 \f0 \CocoaLigature0 \
 \pard\tx565\tx1133\tx1700\tx2266\tx2832\tx3401\tx3967\tx4535\tx5102\tx5669\tx6235\tx6802\ql\qnatural
 \cf0 \
@@ -158,17 +178,17 @@ standard error \'82\'cd notification \'82\'f0\'97\'98\'97\'70\'82\'b5\'82\'c4\'9
 HFS \'82\'cc\'8f\'ea\'8d\'87\'82\'cd disk \'82\'cc encoding \'82\'f0\'8e\'77\'92\'e8\'82\'b5\'82\'c8\'82\'a2\'82\'c6\'93\'fa\'96\'7b\'8c\'ea\'83\'74\'83\'40\'83\'43\'83\'8b\'96\'bc\'82\'f0\'83\'52\'83\'73\'81\'5b\'82\'c5\'82\'ab\'82\'c8\'82\'a2\'81\'42\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
 
-\f3\fs26 \cf0 \CocoaLigature1 getattrlist/
+\f4\fs26 \cf0 \CocoaLigature1 getattrlist/
 \fs28 setattrlist 
-\f4 \'82\'c5\'82\'c5\'82\'ab\'82\'e9\'82\'c6\'8e\'76\'82\'c1\'82\'bd\'82\'af\'82\'c7\'81\'41\'82\'a4\'82\'dc\'82\'ad\'82\'a2\'82\'a9\'82\'c8\'82\'a2\'81\'42
-\f3 \
+\f5 \'82\'c5\'82\'c5\'82\'ab\'82\'e9\'82\'c6\'8e\'76\'82\'c1\'82\'bd\'82\'af\'82\'c7\'81\'41\'82\'a4\'82\'dc\'82\'ad\'82\'a2\'82\'a9\'82\'c8\'82\'a2\'81\'42
+\f4 \
 disktool -s 
-\f4 \'82\'f0\'8e\'67\'82\'c1\'82\'c4\'82\'e2\'82\'e9\'81\'42\'81\'69\'83\'7d\'83\'45\'83\'93\'83\'67\'83\'7c\'83\'43\'83\'93\'83\'67\'82\'c5\'82\'cd\'82\'c8\'82\'ad \'83\'66\'83\'6f\'83\'43\'83\'58\'96\'bc\'82\'f0\'93\'6e\'82\'b7\'81\'6a
-\f3 \
+\f5 \'82\'f0\'8e\'67\'82\'c1\'82\'c4\'82\'e2\'82\'e9\'81\'42\'81\'69\'83\'7d\'83\'45\'83\'93\'83\'67\'83\'7c\'83\'43\'83\'93\'83\'67\'82\'c5\'82\'cd\'82\'c8\'82\'ad \'83\'66\'83\'6f\'83\'43\'83\'58\'96\'bc\'82\'f0\'93\'6e\'82\'b7\'81\'6a
+\f4 \
 \pard\pardeftab720\ql\qnatural
 
 \fs22 \cf0 CFStringGetSystemEncoding 
-\f4 \'82\'c5\'8e\'e6\'93\'be\'82\'c5\'82\'ab\'82\'bd\'82\'e0\'82\'cc\'82\'f0\'8e\'67\'82\'a4
+\f5 \'82\'c5\'8e\'e6\'93\'be\'82\'c5\'82\'ab\'82\'bd\'82\'e0\'82\'cc\'82\'f0\'8e\'67\'82\'a4
 \f0\fs24 \
 \pard\tx565\tx1133\tx1700\tx2266\tx2832\tx3401\tx3967\tx4535\tx5102\tx5669\tx6235\tx6802\ql\qnatural
 \cf0 \CocoaLigature0 \
@@ -176,27 +196,27 @@ disktool -s
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
 \cf0 \CocoaLigature1 == 2008-01-21\
 
-\f3 * service 
+\f4 * service 
 \f0 menu \'8c\'6f\'97\'52\'82\'c5\'8b\'4e\'93\'ae\'82\'b5\'82\'bd\'82\'c6\'82\'ab\'81\'41service message \'82\'e6\'82\'e8\'81\'41
-\f3 applicationDidFinishLaunching
+\f4 applicationDidFinishLaunching
 \f0  \'82\'aa\'90\'e6\'82\'c9\'8c\'c4\'82\'d1\'8f\'6f\'82\'b3\'82\'ea\'82\'e9\'81\'42\
 
-\f3 	* performSelectorOnMainThread 
+\f4 	* performSelectorOnMainThread 
 \f0 \'82\'f0\'8e\'67\'82\'a4\'82\'c6\'81\'41openFinderSelection \'82\'f0 
-\f3 applicationDidFinishLaunching 
-\f4 \'82\'c9
+\f4 applicationDidFinishLaunching 
+\f5 \'82\'c9
 \f0 \'8c\'e3\'82\'eb\'82\'c9\'8e\'9d\'82\'c1\'82\'c4\'82\'b1\'82\'e7\'82\'ea\'82\'e9\'82\'aa\'81\'41
-\f3 createDmgFromPasteboard 
-\f4 \'82\'e6\'82\'e8\'91\'4f\'82\'c9\'82\'cd\'82\'c8\'82\'e7\'82\'c8\'82\'a2\'81\'42\
+\f4 createDmgFromPasteboard 
+\f5 \'82\'e6\'82\'e8\'91\'4f\'82\'c9\'82\'cd\'82\'c8\'82\'e7\'82\'c8\'82\'a2\'81\'42\
 	* 
-\f3 \CocoaLigature0 performSelector:withObject:afterDelay:0.1 
-\f4 \'82\'be\'82\'c6 
+\f4 \CocoaLigature0 performSelector:withObject:afterDelay:0.1 
+\f5 \'82\'be\'82\'c6 
 \f0 \CocoaLigature1 createDmgFromPasteboard \'82\'cc\'8c\'e3\'82\'eb\'82\'c9\'8e\'9d\'82\'c1\'82\'c4\'82\'b1\'82\'e7\'82\'ea\'82\'e9\'81\'42\'82\'c5\'82\'e0\'81\'41
-\f3 \CocoaLigature0 performSelector:withObject:afterDelay:0.01 or 0.05 
-\f4 \'82\'be\'82\'c6\'81\'41\'91\'4f\'82\'c9\'97\'88\'82\'e9\'82\'cc\'82\'c5\'8c\'b4\'97\'9d\'93\'49\'82\'c9\'8a\'ae\'91\'53\'82\'c5\'82\'cd\'82\'c8\'82\'a2\'81\'42\
+\f4 \CocoaLigature0 performSelector:withObject:afterDelay:0.01 or 0.05 
+\f5 \'82\'be\'82\'c6\'81\'41\'91\'4f\'82\'c9\'97\'88\'82\'e9\'82\'cc\'82\'c5\'8c\'b4\'97\'9d\'93\'49\'82\'c9\'8a\'ae\'91\'53\'82\'c5\'82\'cd\'82\'c8\'82\'a2\'81\'42\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\tx7280\tx7840\tx8400\tx8960\tx9520\tx10080\tx10640\tx11200\tx11760\tx12320\tx12880\tx13440\tx14000\tx14560\tx15120\tx15680\tx16240\tx16800\tx17360\tx17920\tx18480\tx19040\tx19600\tx20160\tx20720\tx21280\tx21840\tx22400\tx22960\tx23520\tx24080\tx24640\tx25200\tx25760\tx26320\tx26880\tx27440\tx28000\tx28560\tx29120\tx29680\tx30240\tx30800\tx31360\tx31920\tx32480\tx33040\tx33600\tx34160\tx34720\tx35280\tx35840\tx36400\tx36960\tx37520\tx38080\tx38640\tx39200\tx39760\tx40320\tx40880\tx41440\tx42000\tx42560\tx43120\tx43680\tx44240\tx44800\tx45360\tx45920\tx46480\tx47040\tx47600\tx48160\tx48720\tx49280\tx49840\tx50400\tx50960\tx51520\tx52080\tx52640\tx53200\tx53760\tx54320\tx54880\tx55440\tx56000\ql\qnatural\pardirnatural
 
-\f3 \cf0 \
+\f4 \cf0 \
 
 \f0 \
 \pard\tx565\tx1133\tx1700\tx2266\tx2832\tx3401\tx3967\tx4535\tx5102\tx5669\tx6235\tx6802\ql\qnatural
@@ -265,18 +285,18 @@ DMGOptions \'82\'cc store/restore \'82\'aa\'82\'a4\'82\'dc\'82\'ad\'82\'a2\'82\'
 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\tx7280\tx7840\tx8400\tx8960\tx9520\tx10080\tx10640\tx11200\tx11760\tx12320\tx12880\tx13440\tx14000\tx14560\tx15120\tx15680\tx16240\tx16800\tx17360\tx17920\tx18480\tx19040\tx19600\tx20160\tx20720\tx21280\tx21840\tx22400\tx22960\tx23520\tx24080\tx24640\tx25200\tx25760\tx26320\tx26880\tx27440\tx28000\tx28560\tx29120\tx29680\tx30240\tx30800\tx31360\tx31920\tx32480\tx33040\tx33600\tx34160\tx34720\tx35280\tx35840\tx36400\tx36960\tx37520\tx38080\tx38640\tx39200\tx39760\tx40320\tx40880\tx41440\tx42000\tx42560\tx43120\tx43680\tx44240\tx44800\tx45360\tx45920\tx46480\tx47040\tx47600\tx48160\tx48720\tx49280\tx49840\tx50400\tx50960\tx51520\tx52080\tx52640\tx53200\tx53760\tx54320\tx54880\tx55440\tx56000\ql\qnatural\pardirnatural
 
-\f3 \cf0 DMGDocument 
-\f4 \'82\'c9
-\f3  
-\f4 \'82\'cc \'8f\'ea\'8d\'87\'82\'cd\'81\'41
-\f3 removeDocument 
-\f4 \'82\'cd\'8e\'a9\'95\'aa\'82\'c5\'88\'ea\'90\'b6\'8c\'9c\'96\'bd\'8c\'c4\'82\'d4\'95\'4b\'97\'76\'82\'cd\'96\'b3\'82\'a2\
+\f4 \cf0 DMGDocument 
+\f5 \'82\'c9
+\f4  
+\f5 \'82\'cc \'8f\'ea\'8d\'87\'82\'cd\'81\'41
+\f4 removeDocument 
+\f5 \'82\'cd\'8e\'a9\'95\'aa\'82\'c5\'88\'ea\'90\'b6\'8c\'9c\'96\'bd\'8c\'c4\'82\'d4\'95\'4b\'97\'76\'82\'cd\'96\'b3\'82\'a2\
 
 \f0 \
 \pard\tx565\tx1133\tx1700\tx2266\tx2832\tx3401\tx3967\tx4535\tx5102\tx5669\tx6235\tx6802\ql\qnatural
 \cf0 \'82\'c8\'82\'ba\'82\'a9\'81\'41
-\f3 performSelectorOnMainThread
-\f4  \'82\'f0\'8e\'67\'82\'ed\'82\'c8\'82\'a2\'82\'c6\'81\'41application \'82\'aa\'8e\'a9\'93\'ae\'8f\'49\'97\'b9\'82\'b5\'82\'c8\'82\'ad\'82\'c8\'82\'c1\'82\'bd\'81\'42\
+\f4 performSelectorOnMainThread
+\f5  \'82\'f0\'8e\'67\'82\'ed\'82\'c8\'82\'a2\'82\'c6\'81\'41application \'82\'aa\'8e\'a9\'93\'ae\'8f\'49\'97\'b9\'82\'b5\'82\'c8\'82\'ad\'82\'c8\'82\'c1\'82\'bd\'81\'42\
 
 \f0 \
 progress sheet \'82\'c5 cancel button \'82\'f0\'82\'a8\'82\'b5\'82\'c4\'82\'e0\'81\'41\'8e\'c0\'82\'cd\'83\'4c\'83\'83\'83\'93\'83\'5a\'83\'8b\'82\'b5\'82\'c8\'82\'a2\'82\'bc\
@@ -324,8 +344,8 @@ DMGDocument \'82\'cd\'81\'41\'8f\'89\'8a\'fa\'89\'bb\'8e\'9e\'82\'c9 DiskImageMa
 DiskImageMaker \'82\'c5\'95\'a1\'90\'94\'82\'cc\'83\'5c\'81\'5b\'83\'58\'82\'f0\'8f\'88\'97\'9d\'82\'c5\'82\'ab\'82\'e9\'82\'e6\'82\'a4\'82\'c9\'82\'b7\'82\'e9\'81\'42\
 	* \'83\'54\'83\'43\'83\'59\'82\'cc\'8c\'76\'8e\'5a -- 2007.09.27 \'8d\'cf\'82\'dd\
 	* 
-\f3 createDiskImage 
-\f4 \'82\'a9\'82\'e7\'8f\'6f\'94\'ad\'82\'b5\'82\'c4\'8c\'a9\'92\'bc\'82\'b7
+\f4 createDiskImage 
+\f5 \'82\'a9\'82\'e7\'8f\'6f\'94\'ad\'82\'b5\'82\'c4\'8c\'a9\'92\'bc\'82\'b7
 \f0 \
 	* \'83\'52\'83\'73\'81\'5b\
 \
