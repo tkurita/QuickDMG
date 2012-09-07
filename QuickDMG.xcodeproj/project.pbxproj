@@ -50,11 +50,6 @@
 		2CF1C0A30B413A9800EAB8DD /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF1C09E0B413A9800EAB8DD /* DonationReminder.framework */; };
 		2CF1C0A80B413AB200EAB8DD /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CF1C09E0B413A9800EAB8DD /* DonationReminder.framework */; };
 		2CF42623088EB8F1002BBE99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF42622088EB8F1002BBE99 /* Localizable.strings */; };
-		2CF840CA1580D788004E5E20 /* DMGDocument.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF840C01580D788004E5E20 /* DMGDocument.strings */; };
-		2CF840CB1580D788004E5E20 /* DMGOptionsView.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF840C21580D788004E5E20 /* DMGOptionsView.strings */; };
-		2CF840CC1580D788004E5E20 /* DMGProgressWindow.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF840C41580D788004E5E20 /* DMGProgressWindow.strings */; };
-		2CF840CD1580D788004E5E20 /* MainMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF840C61580D788004E5E20 /* MainMenu.strings */; };
-		2CF840CE1580D788004E5E20 /* MDMGWindow.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF840C81580D788004E5E20 /* MDMGWindow.strings */; };
 		2CF840FD1580ED73004E5E20 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2CF840FC1580ED73004E5E20 /* Credits.rtf */; };
 		2CF8415C1581B3DD004E5E20 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF8415B1581B3DD004E5E20 /* Sparkle.framework */; };
 		2CF841651581B3F6004E5E20 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CF8415B1581B3DD004E5E20 /* Sparkle.framework */; };
@@ -139,6 +134,10 @@
 		2CC2E7AB0CE7EB6400653E25 /* KXTableView.m */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.objc; path = KXTableView.m; sourceTree = "<group>"; };
 		2CC904120CE877830016E8D7 /* UtilityFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityFunctions.h; sourceTree = "<group>"; };
 		2CC904130CE877830016E8D7 /* UtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityFunctions.m; sourceTree = "<group>"; };
+		2CDB2F1D15FA35EC002DE27C /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Japanese; path = Japanese.lproj/ExpandDMGWindow.xib; sourceTree = "<group>"; };
+		2CDB2F3615FA39AD002DE27C /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/DMGDocument.strings; sourceTree = "<group>"; };
+		2CDB2F3815FA39B9002DE27C /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/DMGOptionsView.strings; sourceTree = "<group>"; };
+		2CDB2F7015FA417B002DE27C /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/ExpandDMGWindow.strings; sourceTree = "<group>"; };
 		2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = HelpSetup.plist; sourceTree = "<group>"; };
 		2CF1C09E0B413A9800EAB8DD /* DonationReminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = DonationReminder.framework; path = ../DonationReminder.framework; sourceTree = SOURCE_ROOT; };
 		2CF42620088EB8E6002BBE99 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -147,8 +146,6 @@
 		2CF840BD1580D765004E5E20 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/DMGOptionsView.nib; sourceTree = "<group>"; };
 		2CF840BE1580D765004E5E20 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		2CF840BF1580D765004E5E20 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MDMGWindow.nib; sourceTree = "<group>"; };
-		2CF840C11580D788004E5E20 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/DMGDocument.strings; sourceTree = "<group>"; };
-		2CF840C31580D788004E5E20 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/DMGOptionsView.strings; sourceTree = "<group>"; };
 		2CF840C51580D788004E5E20 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/DMGProgressWindow.strings; sourceTree = "<group>"; };
 		2CF840C71580D788004E5E20 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		2CF840C91580D788004E5E20 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/MDMGWindow.strings; sourceTree = "<group>"; };
@@ -280,16 +277,17 @@
 				2C1D0A440CEAC5AF00B59A0E /* minus.tiff */,
 				2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */,
 				2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */,
-				2C14520215E61AEE00481DE3 /* ExpandDMGWindow.xib */,
 				2CF42622088EB8F1002BBE99 /* Localizable.strings */,
 				2C03FBB3088A1353008B7312 /* UserDefaults.plist */,
 				8D15AC360486D014006FF6A4 /* Info.plist */,
+				2CDB2F6F15FA417B002DE27C /* ExpandDMGWindow.strings */,
+				2CDB2F3515FA39AD002DE27C /* DMGDocument.strings */,
+				2CDB2F3715FA39B9002DE27C /* DMGOptionsView.strings */,
 				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
-				2CF840C01580D788004E5E20 /* DMGDocument.strings */,
-				2CF840C21580D788004E5E20 /* DMGOptionsView.strings */,
 				2CF840C41580D788004E5E20 /* DMGProgressWindow.strings */,
 				2CF840C61580D788004E5E20 /* MainMenu.strings */,
 				2CF840C81580D788004E5E20 /* MDMGWindow.strings */,
+				2C14520215E61AEE00481DE3 /* ExpandDMGWindow.xib */,
 				2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */,
 				2CC2E7A70CE7E9A300653E25 /* MDMGWindow.nib */,
 				2A37F4B4FDCFA73011CA2CEA /* DMGDocument.nib */,
@@ -397,11 +395,6 @@
 				2C1D0A450CEAC5AF00B59A0E /* plus.tiff in Resources */,
 				2C1D0A460CEAC5AF00B59A0E /* minus.tiff in Resources */,
 				2C97F33A0D34E39F008813CF /* ServicesMenu.strings in Resources */,
-				2CF840CA1580D788004E5E20 /* DMGDocument.strings in Resources */,
-				2CF840CB1580D788004E5E20 /* DMGOptionsView.strings in Resources */,
-				2CF840CC1580D788004E5E20 /* DMGProgressWindow.strings in Resources */,
-				2CF840CD1580D788004E5E20 /* MainMenu.strings in Resources */,
-				2CF840CE1580D788004E5E20 /* MDMGWindow.strings in Resources */,
 				2CF840FD1580ED73004E5E20 /* Credits.rtf in Resources */,
 				2CF841E715824F92004E5E20 /* dsa_pub.pem in Resources */,
 				2C14520315E61AEE00481DE3 /* ExpandDMGWindow.xib in Resources */,
@@ -426,7 +419,9 @@
 				"$(SRCROOT)/Japanese.lproj/MDMGWindow.strings",
 				"$(SRCROOT)/Japanese.lproj/DMGDocument.strings",
 				"$(SRCROOT)/Japanese.lproj/DMGOptionsView.strings",
+				"$(SRCROOT)/English.lproj/ExpandDMGWindwo.xin",
 				"$(SRCROOT)/Japanese.lproj/DMGProgressWindow.strings",
+				"$(SRCROOT)/Japanese.lproj/ExpandDMGWindow.strings",
 			);
 			outputPaths = (
 				"$(SRCROOT)/Japanese.lproj/MainMenu.nib",
@@ -434,10 +429,11 @@
 				"$(SRCROOT)/Japanese.lproj/DMGDocument.nib",
 				"$(SRCROOT)/Japanese.lproj/DMGOptionsView.nib",
 				"$(SRCROOT)/Japanese.lproj/DMGProgressWindow.nib",
+				"$(SRCROOT)/Japanese.lproj/ExpandDMGWindow.xib",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Extract English strings (use this to check if you added new strings to your nibs)\n# ibtool --generate-strings-file Resources/English.lproj/MainWindow.strings Resources/English.lproj/MainWindow.xib\n# Generate Localized interface\n\nfunction generate_localized_interface\n{\nbase_lang=$1\ntarget_lang=$2\ntarget_nib=$3\nnib_basename=`basename ${target_nib} .nib` \n\ntarget_lang_strings=${target_lang}.lproj/${nib_basename}.strings\ntarget_lang_nib=${target_lang}.lproj/${target_nib}\n\nif ! [ -e ${target_lang_strings} ]; then\n\tibtool --generate-strings-file ${target_lang_strings} ${target_lang_nib}\nelse\n\techo \"${target_lang_strings} exist\"\U0013\nfi\n\nibtool --strings-file ${target_lang_strings} --write ${target_lang_nib} ${base_lang}.lproj/${target_nib}\nrm -rf ${target_lang_nib}/.svn\n}\n\ngenerate_localized_interface English Japanese MainMenu.nib\ngenerate_localized_interface English Japanese MDMGWindow.nib\ngenerate_localized_interface English Japanese DMGDocument.nib\ngenerate_localized_interface English Japanese DMGOptionsView.nib\ngenerate_localized_interface English Japanese DMGProgressWindow.nib";
+			shellScript = "# Extract English strings (use this to check if you added new strings to your nibs)\n# ibtool --generate-strings-file Resources/English.lproj/MainWindow.strings Resources/English.lproj/MainWindow.xib\n# Generate Localized interface\n\nfunction generate_localized_interface\n{\nbase_lang=$1\ntarget_lang=$2\ntarget_nib=$3\n\nnib_basename=`echo ${target_nib} | sed -E -e 's/\\.(nib|xib)//'`\n\ntarget_lang_strings=${target_lang}.lproj/${nib_basename}.strings\ntarget_lang_nib=${target_lang}.lproj/${target_nib}\n\nif ! [ -e ${target_lang_strings} ]; then\n\tibtool --generate-strings-file ${target_lang_strings} ${target_lang_nib}\nelse\n\techo \"${target_lang_strings} exist\"\U0013\nfi\n\nibtool --strings-file ${target_lang_strings} --write ${target_lang_nib} ${base_lang}.lproj/${target_nib}\nif [ -e ${target_lang_nib}/.svn ]; then \n\trm -rf ${target_lang_nib}/.svn\nfi\n}\n\ngenerate_localized_interface English Japanese MainMenu.nib\ngenerate_localized_interface English Japanese MDMGWindow.nib\ngenerate_localized_interface English Japanese DMGDocument.nib\ngenerate_localized_interface English Japanese DMGOptionsView.nib\ngenerate_localized_interface English Japanese DMGProgressWindow.nib\ngenerate_localized_interface English Japanese ExpandDMGWindow.xib";
 		};
 		2CF840A11580AFD8004E5E20 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -515,6 +511,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2C1451F615E61ACD00481DE3 /* English */,
+				2CDB2F1D15FA35EC002DE27C /* Japanese */,
 			);
 			name = ExpandDMGWindow.xib;
 			sourceTree = "<group>";
@@ -555,6 +552,30 @@
 			name = MDMGWindow.nib;
 			sourceTree = "<group>";
 		};
+		2CDB2F3515FA39AD002DE27C /* DMGDocument.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CDB2F3615FA39AD002DE27C /* Japanese */,
+			);
+			name = DMGDocument.strings;
+			sourceTree = "<group>";
+		};
+		2CDB2F3715FA39B9002DE27C /* DMGOptionsView.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CDB2F3815FA39B9002DE27C /* Japanese */,
+			);
+			name = DMGOptionsView.strings;
+			sourceTree = "<group>";
+		};
+		2CDB2F6F15FA417B002DE27C /* ExpandDMGWindow.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CDB2F7015FA417B002DE27C /* Japanese */,
+			);
+			name = ExpandDMGWindow.strings;
+			sourceTree = "<group>";
+		};
 		2CF42622088EB8F1002BBE99 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -562,22 +583,6 @@
 				2CF840D71580D7DC004E5E20 /* Japanese */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		2CF840C01580D788004E5E20 /* DMGDocument.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CF840C11580D788004E5E20 /* Japanese */,
-			);
-			name = DMGDocument.strings;
-			sourceTree = "<group>";
-		};
-		2CF840C21580D788004E5E20 /* DMGOptionsView.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CF840C31580D788004E5E20 /* Japanese */,
-			);
-			name = DMGOptionsView.strings;
 			sourceTree = "<group>";
 		};
 		2CF840C41580D788004E5E20 /* DMGProgressWindow.strings */ = {
