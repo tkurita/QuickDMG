@@ -60,6 +60,7 @@
 	if (sender.terminationStatus != 0) {
 		dmgHandler.statusMessage = [NSString stringWithLocalizedFormat:@"Failed detaching with error : %@",
 															sender.terminationMessage];
+		[progressIndicator stopAnimation:self];
 		return;
 	}
 	
@@ -75,6 +76,7 @@
 		dmgHandler.statusMessage = [NSString stringWithLocalizedFormat:@"Failed copy with error : %@",
 															sender.terminationMessage];
 		[sender detachNow];
+		[progressIndicator stopAnimation:self];
 		return;
 	}
 	[sender detachDiskImage:nil];
@@ -85,6 +87,7 @@
 	if (sender.terminationStatus != 0) {
 		dmgHandler.statusMessage = [NSString stringWithLocalizedFormat:@"Failed attaching with error : %@",
 										sender.terminationMessage];
+		[progressIndicator stopAnimation:self];
 		return;
 	}
 	NSString *src = sender.mountPoint;

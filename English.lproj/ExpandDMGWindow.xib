@@ -38,17 +38,17 @@
 				<string key="NSClassName">NSApplication</string>
 			</object>
 			<object class="NSWindowTemplate" id="1005">
-				<int key="NSWindowStyleMask">5</int>
+				<int key="NSWindowStyleMask">13</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{453, 567}, {458, 51}}</string>
 				<int key="NSWTFlags">544735232</int>
 				<string key="NSWindowTitle">Expand Disk Image</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
-				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
+				<string key="NSWindowContentMaxSize">{600, 200}</string>
 				<string key="NSWindowContentMinSize">{458, 51}</string>
 				<object class="NSView" key="NSWindowView" id="1006">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -58,18 +58,20 @@
 							<object class="NSPSMatrix" key="NSDrawMatrix"/>
 							<string key="NSFrame">{{12, 12}, {32, 32}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<int key="NSpiFlags">20490</int>
 							<double key="NSMaxValue">100</double>
 						</object>
 						<object class="NSTextField" id="934848778">
 							<reference key="NSNextResponder" ref="1006"/>
-							<int key="NSvFlags">298</int>
-							<string key="NSFrame">{{49, 19}, {392, 17}}</string>
+							<int key="NSvFlags">274</int>
+							<string key="NSFrame">{{49, 19}, {367, 17}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="163319321">
-								<int key="NSCellFlags">68288064</int>
-								<int key="NSCellFlags2">272630784</int>
+								<int key="NSCellFlags">67239424</int>
+								<int key="NSCellFlags2">272629760</int>
 								<string key="NSContents">Status</string>
 								<object class="NSFont" key="NSSupport">
 									<string key="NSName">LucidaGrande</string>
@@ -99,9 +101,10 @@
 						</object>
 						<object class="NSButton" id="670257164">
 							<reference key="NSNextResponder" ref="1006"/>
-							<int key="NSvFlags">289</int>
+							<int key="NSvFlags">297</int>
 							<string key="NSFrame">{{404, 18}, {54, 19}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="410356239">
 								<int key="NSCellFlags">67239424</int>
@@ -127,10 +130,12 @@
 						</object>
 					</object>
 					<string key="NSFrameSize">{458, 51}</string>
+					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{458, 73}</string>
-				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
+				<string key="NSMaxSize">{600, 222}</string>
 				<string key="NSFrameAutosaveName">ExpandDMGWindow</string>
 			</object>
 		</object>
@@ -286,7 +291,9 @@
 					<string>1.NSWindowTemplate.visibleAtLaunch</string>
 					<string>1.WindowOrigin</string>
 					<string>1.editorWindowContentRectSynchronizationRect</string>
+					<string>1.windowTemplate.hasMaxSize</string>
 					<string>1.windowTemplate.hasMinSize</string>
+					<string>1.windowTemplate.maxSize</string>
 					<string>1.windowTemplate.minSize</string>
 					<string>2.IBPluginDependency</string>
 					<string>3.IBPluginDependency</string>
@@ -300,13 +307,15 @@
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>{{453, 567}, {458, 51}}</string>
+					<string>{{333, 567}, {458, 51}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{453, 567}, {458, 51}}</string>
+					<string>{{333, 567}, {458, 51}}</string>
 					<integer value="1"/>
 					<string>{196, 240}</string>
 					<string>{{202, 428}, {480, 270}}</string>
 					<boolean value="YES"/>
+					<boolean value="YES"/>
+					<string>{600, 200}</string>
 					<string>{458, 51}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
