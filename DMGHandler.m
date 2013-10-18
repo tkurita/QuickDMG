@@ -158,9 +158,16 @@
 	#if useLog
 		NSLog(@"%@", [task_result description]);
 	#endif
-		task_result = [[task_result objectForKey:@"system-entities"] objectAtIndex:0];
-		self.devEntry = [task_result objectForKey:@"dev-entry"];
-		self.mountPoint = [task_result objectForKey:@"mount-point"];
+		NSArray *entities = [task_result objectForKey:@"system-entities"];
+		NSString *mount_point = nil;
+		for (NSDictionary *dict in entities) {
+			mount_point = [dict objectForKey:@"mount-point"];
+			if (mount_point) {
+				self.devEntry = [dict objectForKey:@"dev-entry"];
+				self.mountPoint = mount_point;
+				break;
+			}
+		}
 	}
 	[delegate diskImageAttached:self];
 }
