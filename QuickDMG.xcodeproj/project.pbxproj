@@ -24,9 +24,6 @@
 		2C1451F315E60CD300481DE3 /* ExpandDMGWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1451F215E60CD300481DE3 /* ExpandDMGWindowController.m */; };
 		2C14520315E61AEE00481DE3 /* ExpandDMGWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C14520215E61AEE00481DE3 /* ExpandDMGWindow.xib */; };
 		2C1452A215E751CB00481DE3 /* DMGHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1452A115E751CB00481DE3 /* DMGHandler.m */; };
-		2C14530015E8572300481DE3 /* NSURL+NDCarbonUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1452FB15E8572300481DE3 /* NSURL+NDCarbonUtilities.m */; };
-		2C14530115E8572300481DE3 /* PathExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1452FD15E8572300481DE3 /* PathExtra.m */; };
-		2C14530215E8572300481DE3 /* StringExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1452FF15E8572300481DE3 /* StringExtra.m */; };
 		2C1D0A450CEAC5AF00B59A0E /* plus.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D0A430CEAC5AF00B59A0E /* plus.tiff */; };
 		2C1D0A460CEAC5AF00B59A0E /* minus.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D0A440CEAC5AF00B59A0E /* minus.tiff */; };
 		2C24C8680CA0E60400E01AC0 /* DMGOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */; };
@@ -46,13 +43,16 @@
 		2CC2E7A80CE7E9A300653E25 /* MDMGWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC2E7A70CE7E9A300653E25 /* MDMGWindow.nib */; };
 		2CC2E7AD0CE7EB6400653E25 /* KXTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E7AB0CE7EB6400653E25 /* KXTableView.m */; };
 		2CC904150CE877830016E8D7 /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC904130CE877830016E8D7 /* UtilityFunctions.m */; };
+		2CC914F21C7740120054346E /* History.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2CC914F11C7740120054346E /* History.rtf */; };
+		2CC914FA1C77414F0054346E /* PathExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC914F81C77414F0054346E /* PathExtra.m */; };
+		2CC914FE1C77416E0054346E /* StringExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC914FD1C77416E0054346E /* StringExtra.m */; };
+		2CC915061C7741A90054346E /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC915051C7741A90054346E /* Sparkle.framework */; };
+		2CC915091C7741E50054346E /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC915041C7741840054346E /* DonationReminder.framework */; };
+		2CC9150A1C7741F50054346E /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CC915041C7741840054346E /* DonationReminder.framework */; };
+		2CC9150B1C7741F70054346E /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CC915051C7741A90054346E /* Sparkle.framework */; };
 		2CDD29E40B16DFCE000B3543 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */; };
-		2CF1C0A30B413A9800EAB8DD /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF1C09E0B413A9800EAB8DD /* DonationReminder.framework */; };
-		2CF1C0A80B413AB200EAB8DD /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CF1C09E0B413A9800EAB8DD /* DonationReminder.framework */; };
 		2CF42623088EB8F1002BBE99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF42622088EB8F1002BBE99 /* Localizable.strings */; };
 		2CF840FD1580ED73004E5E20 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2CF840FC1580ED73004E5E20 /* Credits.rtf */; };
-		2CF8415C1581B3DD004E5E20 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF8415B1581B3DD004E5E20 /* Sparkle.framework */; };
-		2CF841651581B3F6004E5E20 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CF8415B1581B3DD004E5E20 /* Sparkle.framework */; };
 		2CF841E715824F92004E5E20 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CF841E615824F92004E5E20 /* dsa_pub.pem */; };
 		2CFAE2580CE848E70070AEF4 /* FileTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFAE2560CE848E70070AEF4 /* FileTableController.m */; };
 		8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */; };
@@ -63,6 +63,23 @@
 		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2CC915031C7741840054346E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CC914FF1C7741840054346E /* DonationReminder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2C4A363E19E61FC40031E521;
+			remoteInfo = DonationReminder;
+		};
+		2CC915071C7741DD0054346E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CC914FF1C7741840054346E /* DonationReminder.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C4A363119E61FC40031E521;
+			remoteInfo = DonationReminder;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		2CF1C0A40B413AA600EAB8DD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -70,8 +87,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2CF841651581B3F6004E5E20 /* Sparkle.framework in CopyFiles */,
-				2CF1C0A80B413AB200EAB8DD /* DonationReminder.framework in CopyFiles */,
+				2CC9150A1C7741F50054346E /* DonationReminder.framework in CopyFiles */,
+				2CC9150B1C7741F70054346E /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,12 +113,6 @@
 		2C1451F615E61ACD00481DE3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ExpandDMGWindow.xib; sourceTree = "<group>"; };
 		2C1452A015E751CB00481DE3 /* DMGHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGHandler.h; sourceTree = "<group>"; };
 		2C1452A115E751CB00481DE3 /* DMGHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGHandler.m; sourceTree = "<group>"; };
-		2C1452FA15E8572300481DE3 /* NSURL+NDCarbonUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+NDCarbonUtilities.h"; sourceTree = "<group>"; };
-		2C1452FB15E8572300481DE3 /* NSURL+NDCarbonUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+NDCarbonUtilities.m"; sourceTree = "<group>"; };
-		2C1452FC15E8572300481DE3 /* PathExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathExtra.h; sourceTree = "<group>"; };
-		2C1452FD15E8572300481DE3 /* PathExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathExtra.m; sourceTree = "<group>"; };
-		2C1452FE15E8572300481DE3 /* StringExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringExtra.h; sourceTree = "<group>"; };
-		2C1452FF15E8572300481DE3 /* StringExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringExtra.m; sourceTree = "<group>"; };
 		2C1D0A430CEAC5AF00B59A0E /* plus.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = plus.tiff; sourceTree = "<group>"; };
 		2C1D0A440CEAC5AF00B59A0E /* minus.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = minus.tiff; sourceTree = "<group>"; };
 		2C24C8060CA0AACA00E01AC0 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MDMGWindow.nib; sourceTree = "<group>"; };
@@ -133,12 +144,20 @@
 		2CC2E7AB0CE7EB6400653E25 /* KXTableView.m */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.objc; path = KXTableView.m; sourceTree = "<group>"; };
 		2CC904120CE877830016E8D7 /* UtilityFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityFunctions.h; sourceTree = "<group>"; };
 		2CC904130CE877830016E8D7 /* UtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityFunctions.m; sourceTree = "<group>"; };
+		2CC914F11C7740120054346E /* History.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = History.rtf; path = ../History.rtf; sourceTree = "<group>"; };
+		2CC914F51C77414F0054346E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PathExtra_Localizable.strings; sourceTree = "<group>"; };
+		2CC914F61C77414F0054346E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/PathExtra_Localizable.strings; sourceTree = "<group>"; };
+		2CC914F71C77414F0054346E /* PathExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathExtra.h; sourceTree = "<group>"; };
+		2CC914F81C77414F0054346E /* PathExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathExtra.m; sourceTree = "<group>"; };
+		2CC914FC1C77416E0054346E /* StringExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringExtra.h; sourceTree = "<group>"; };
+		2CC914FD1C77416E0054346E /* StringExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringExtra.m; sourceTree = "<group>"; };
+		2CC914FF1C7741840054346E /* DonationReminder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DonationReminder.xcodeproj; path = DonationReminder/DonationReminder.xcodeproj; sourceTree = "<group>"; };
+		2CC915051C7741A90054346E /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		2CDB2F1D15FA35EC002DE27C /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Japanese; path = Japanese.lproj/ExpandDMGWindow.xib; sourceTree = "<group>"; };
 		2CDB2F3615FA39AD002DE27C /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/DMGDocument.strings; sourceTree = "<group>"; };
 		2CDB2F3815FA39B9002DE27C /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/DMGOptionsView.strings; sourceTree = "<group>"; };
 		2CDB2F7015FA417B002DE27C /* Japanese */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/ExpandDMGWindow.strings; sourceTree = "<group>"; };
 		2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = HelpSetup.plist; sourceTree = "<group>"; };
-		2CF1C09E0B413A9800EAB8DD /* DonationReminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = DonationReminder.framework; path = ../DonationReminder.framework; sourceTree = SOURCE_ROOT; };
 		2CF42620088EB8E6002BBE99 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CF8408E1580A7D3004E5E20 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/DMGProgressWindow.nib; sourceTree = "<group>"; };
 		2CF840BC1580D765004E5E20 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/DMGDocument.nib; sourceTree = "<group>"; };
@@ -152,7 +171,6 @@
 		2CF840D71580D7DC004E5E20 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CF840D81580D7DC004E5E20 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		2CF840FC1580ED73004E5E20 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
-		2CF8415B1581B3DD004E5E20 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = /Users/tkurita/Dev/Projects/QuickDMG/QuickDMG/Sparkle.framework; sourceTree = "<absolute>"; };
 		2CF841E615824F92004E5E20 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		2CFAE2550CE848E70070AEF4 /* FileTableController.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = FileTableController.h; sourceTree = "<group>"; };
 		2CFAE2560CE848E70070AEF4 /* FileTableController.m */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.objc; path = FileTableController.m; sourceTree = "<group>"; };
@@ -166,9 +184,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC915091C7741E50054346E /* DonationReminder.framework in Frameworks */,
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
-				2CF1C0A30B413A9800EAB8DD /* DonationReminder.framework in Frameworks */,
-				2CF8415C1581B3DD004E5E20 /* Sparkle.framework in Frameworks */,
+				2CC915061C7741A90054346E /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,8 +196,7 @@
 		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2CF8415B1581B3DD004E5E20 /* Sparkle.framework */,
-				2CF1C09E0B413A9800EAB8DD /* DonationReminder.framework */,
+				2CC915051C7741A90054346E /* Sparkle.framework */,
 				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -205,13 +222,16 @@
 		2A37F4AAFDCFA73011CA2CEA /* docbaseApp */ = {
 			isa = PBXGroup;
 			children = (
-				2C1452F915E8572300481DE3 /* CocoaLib */,
+				2CC914F11C7740120054346E /* History.rtf */,
+				2CC914FB1C77416E0054346E /* StringExtra */,
+				2CC914F31C77414F0054346E /* PathExtra */,
 				2A37F4ABFDCFA73011CA2CEA /* Classes */,
 				2C895FB3081CCA3D00694C34 /* Scripts */,
 				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
 				2A37F4B8FDCFA73011CA2CEA /* Resources */,
 				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
 				19C28FB0FE9D524F11CA2CBB /* Products */,
+				2CC914FF1C7741840054346E /* DonationReminder.xcodeproj */,
 			);
 			name = docbaseApp;
 			sourceTree = "<group>";
@@ -305,25 +325,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2C1452F915E8572300481DE3 /* CocoaLib */ = {
-			isa = PBXGroup;
-			children = (
-				2C1452FA15E8572300481DE3 /* NSURL+NDCarbonUtilities.h */,
-				2C1452FB15E8572300481DE3 /* NSURL+NDCarbonUtilities.m */,
-				2C1452FC15E8572300481DE3 /* PathExtra.h */,
-				2C1452FD15E8572300481DE3 /* PathExtra.m */,
-				2C1452FE15E8572300481DE3 /* StringExtra.h */,
-				2C1452FF15E8572300481DE3 /* StringExtra.m */,
-			);
-			path = CocoaLib;
-			sourceTree = "<group>";
-		};
 		2C895FB3081CCA3D00694C34 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
 				2C895FB4081CCA5E00694C34 /* GetFinderSelection.applescript */,
 			);
 			name = Scripts;
+			sourceTree = "<group>";
+		};
+		2CC914F31C77414F0054346E /* PathExtra */ = {
+			isa = PBXGroup;
+			children = (
+				2CC914F41C77414F0054346E /* PathExtra_Localizable.strings */,
+				2CC914F71C77414F0054346E /* PathExtra.h */,
+				2CC914F81C77414F0054346E /* PathExtra.m */,
+			);
+			path = PathExtra;
+			sourceTree = "<group>";
+		};
+		2CC914FB1C77416E0054346E /* StringExtra */ = {
+			isa = PBXGroup;
+			children = (
+				2CC914FC1C77416E0054346E /* StringExtra.h */,
+				2CC914FD1C77416E0054346E /* StringExtra.m */,
+			);
+			path = StringExtra;
+			sourceTree = "<group>";
+		};
+		2CC915001C7741840054346E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CC915041C7741840054346E /* DonationReminder.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +378,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				2CC915081C7741DD0054346E /* PBXTargetDependency */,
 			);
 			name = QuickDMG;
 			productInstallPath = "$(HOME)/Applications";
@@ -365,15 +400,33 @@
 				Japanese,
 				French,
 				German,
+				en,
+				ja,
 			);
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* docbaseApp */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2CC915001C7741840054346E /* Products */;
+					ProjectRef = 2CC914FF1C7741840054346E /* DonationReminder.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D15AC270486D014006FF6A4 /* QuickDMG */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2CC915041C7741840054346E /* DonationReminder.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DonationReminder.framework;
+			remoteRef = 2CC915031C7741840054346E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D15AC2B0486D014006FF6A4 /* Resources */ = {
@@ -396,6 +449,7 @@
 				2CF840FD1580ED73004E5E20 /* Credits.rtf in Resources */,
 				2CF841E715824F92004E5E20 /* dsa_pub.pem in Resources */,
 				2C14520315E61AEE00481DE3 /* ExpandDMGWindow.xib in Resources */,
+				2CC914F21C7740120054346E /* History.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,13 +523,20 @@
 				2C59F41D0E2C5F4400261662 /* PipingTask.m in Sources */,
 				2C1451F315E60CD300481DE3 /* ExpandDMGWindowController.m in Sources */,
 				2C1452A215E751CB00481DE3 /* DMGHandler.m in Sources */,
-				2C14530015E8572300481DE3 /* NSURL+NDCarbonUtilities.m in Sources */,
-				2C14530115E8572300481DE3 /* PathExtra.m in Sources */,
-				2C14530215E8572300481DE3 /* StringExtra.m in Sources */,
+				2CC914FA1C77414F0054346E /* PathExtra.m in Sources */,
+				2CC914FE1C77416E0054346E /* StringExtra.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2CC915081C7741DD0054346E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DonationReminder;
+			targetProxy = 2CC915071C7741DD0054346E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		089C165FFE840EACC02AAC07 /* InfoPlist.strings */ = {
@@ -550,6 +611,15 @@
 			name = MDMGWindow.nib;
 			sourceTree = "<group>";
 		};
+		2CC914F41C77414F0054346E /* PathExtra_Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CC914F51C77414F0054346E /* en */,
+				2CC914F61C77414F0054346E /* ja */,
+			);
+			name = PathExtra_Localizable.strings;
+			sourceTree = "<group>";
+		};
 		2CDB2F3515FA39AD002DE27C /* DMGDocument.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -620,9 +690,11 @@
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_2)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/..\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/..\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -634,7 +706,6 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PRODUCT_NAME = QuickDMG;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 				VERSIONING_SYSTEM = "apple generic";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -655,9 +726,11 @@
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/..\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/..\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -667,7 +740,6 @@
 				INSTALL_PATH = /Applications;
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PRODUCT_NAME = QuickDMG;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 				VERSIONING_SYSTEM = "apple generic";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
@@ -683,10 +755,12 @@
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_2)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/..\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)/../../QuickFileType/RBSplitView/build/Release\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/..\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -695,7 +769,6 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PRODUCT_NAME = QuickDMG;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 				VERSIONING_SYSTEM = "apple generic";
 				WRAPPER_EXTENSION = app;
 			};
@@ -704,29 +777,31 @@
 		2CC63E0209377A2500503C26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1 = x86_64;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx10.8;
 			};
 			name = Debug;
 		};
 		2CC63E0309377A2500503C26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1 = x86_64;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				SDKROOT = macosx10.8;
 			};
 			name = Release;
 		};
 		2CC63E0409377A2500503C26 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1 = x86_64;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx10.8;
 			};
 			name = Default;
 		};
@@ -741,7 +816,7 @@
 				2CC63E0009377A2500503C26 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Release;
 		};
 		2CC63E0109377A2500503C26 /* Build configuration list for PBXProject "QuickDMG" */ = {
 			isa = XCConfigurationList;
@@ -751,7 +826,7 @@
 				2CC63E0409377A2500503C26 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
