@@ -6,10 +6,10 @@
 @interface DMGDocument : NSDocument <DMGDocument>
 {
 	BOOL isMultiSourceMember;
-	
-	NSImage *iconImg;
-	NSDictionary *fileInfo;
 }
+
+@property (nonatomic, retain) NSImage *iconImg;
+@property (nonatomic, retain) NSDictionary *fileInfo;
 
 - (NSString *)itemName;
 

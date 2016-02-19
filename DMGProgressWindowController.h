@@ -13,6 +13,6 @@
 }
 - (id)initWithNibName:(NSString *)nibName;
 - (IBAction)cancelAction:(id)sender;
-- (void) beginSheetWith:(NSWindowController *)aController;
+- (void) beginSheetWith:(NSWindowController<DMGWindowController> *)aController;
 
 @end

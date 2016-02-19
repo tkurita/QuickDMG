@@ -24,17 +24,6 @@
 	[alert release];
 }
 
-- (void)savePanelDidEnd:(NSSavePanel *)sheet returnCode:(int)returnCode 
-												contextInfo:(void *)contextInfo // not common
-{
-	if (returnCode == NSOKButton) {
-		NSString *resultPath = [sheet filename];
-		[dmgMaker setWorkingLocation:[resultPath stringByDeletingLastPathComponent]];
-		[dmgMaker setCustomDmgName:[resultPath lastPathComponent]];
-		[self setTargetPath:[dmgMaker dmgPath]];
-	}
-}
-
 - (void)showAlertMessage:(NSString *)theMessageText withInformativeText:(NSString *)infoText
 {
 	NSWindow *window = [self window];
@@ -59,11 +48,17 @@
 	id document = [self document];
 	[savePanel setRequiredFileType:[dmgOptionsViewController dmgSuffix]];
 	[savePanel setCanSelectHiddenExtension:YES];
-	[savePanel beginSheetForDirectory:[dmgMaker workingLocation] file:[dmgMaker dmgName]
-				   modalForWindow:[self window]
-					modalDelegate:self
-				   didEndSelector:@selector(savePanelDidEnd:returnCode:contextInfo:)
-					  contextInfo:nil];
+    [savePanel setDirectoryURL:dmgMaker.workingLocationURL];
+    [savePanel setNameFieldStringValue:[dmgMaker dmgName]];
+    [savePanel beginSheetModalForWindow:self.window
+                      completionHandler:^(NSInteger result){
+                          if (result == NSOKButton) {
+                              NSURL *result_url = [savePanel URL];
+                              dmgMaker.workingLocationURL = [result_url URLByDeletingLastPathComponent];
+                              [dmgMaker setCustomDmgName:[result_url lastPathComponent]];
+                              [self setTargetPath:[dmgMaker dmgPath]];
+                          }
+                      }];
 }
 
 

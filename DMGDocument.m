@@ -1,6 +1,7 @@
 #import "DMGDocument.h"
 #import "DMGWindowController.h"
 #import "PipingTask.h"
+#import "PathExtra.h"
 
 #define useLog 0
 
@@ -45,22 +46,24 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 #pragma mark internal use
 - (NSDictionary *)fileInfo
 {
-	if (!fileInfo) {
-		NSFileManager *file_manager = [NSFileManager defaultManager];
-		fileInfo = [[file_manager fileAttributesAtPath:[self fileName] traverseLink:NO] retain];
+	if (!_fileInfo) {
+		NSError *err = nil;
+        self.fileInfo = [self.fileURL
+                         resourceValuesForKeys:@[NSURLIsPackageKey, NSURLIsDirectoryKey,NSURLFileSizeKey]
+                         error:&err];
 	}
-	return fileInfo;
+	return _fileInfo;
 }
 
 #pragma mark DMGDocument Protocol
 - (BOOL)isFolder 
 {
-	return ([[self fileInfo] objectForKey:NSFileType] == NSFileTypeDirectory);
+    return _fileInfo[NSURLIsDirectoryKey];
 }
 
 - (BOOL)isPackage
 {
-	return [[NSWorkspace sharedWorkspace] isFilePackageAtPath:[self fileName]];
+   return _fileInfo[NSURLIsPackageKey];
 }
 
 - (unsigned long long)fileSize
@@ -73,7 +76,7 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 	if ([self isFolder]) {
 		PipingTask *du = [[PipingTask alloc] init];
 		[du setLaunchPath:@"/usr/bin/du"];
-		[du setArguments:[NSArray arrayWithObjects:@"-sk",[self fileName],nil]];
+		[du setArguments:[NSArray arrayWithObjects:@"-sk",self.fileURL.path,nil]];
 		[du launch];
 		[du waitUntilExit];
 		result = [[du stdoutString] intValue];
@@ -81,7 +84,7 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 		[du release];
 	}
 	else {
-		result = [[self fileInfo] fileSize];
+		result = _fileInfo[NSURLFileSizeKey];
 	}
 #if useLog
 	NSLog(@"end fileSize");
@@ -95,20 +98,13 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 	return [self displayName];
 }
 
-- (void)setIconImg:(NSImage *)anImage
-{
-	[anImage retain];
-	[iconImg release];
-	iconImg = anImage;
-}
-
 - (NSImage *)iconImg16
 {
-	if (!iconImg) {
+	if (!_iconImg) {
 		NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
-		[self setIconImg:[workspace iconForFile:[[self fileURL] path]]];
+		self.iconImg = [workspace iconForFile:self.fileURL.path];
 	}
-	return convertImageSize(iconImg, 16);
+	return convertImageSize(_iconImg, 16);
 }
 
 - (BOOL)isMultiSourceMember
@@ -127,15 +123,16 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 #if useLog
 	NSLog(@"dealloc DMGDocument");
 #endif
-	[iconImg release];
-	[fileInfo release];
+	[_iconImg release];
+	[_fileInfo release];
 	[super dealloc];
 }
 
 - (id) init
 {
-	[super init];
-	isMultiSourceMember = NO;
+	if ((self = [super init])) {
+        isMultiSourceMember = NO;
+    }
 	return self;
 }
 

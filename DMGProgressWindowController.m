@@ -34,7 +34,7 @@
     }
 }
 
-- (void) beginSheetWith:(NSWindowController *)aController
+- (void) beginSheetWith:(NSWindowController<DMGWindowController> *)aController
 {
 	owner = aController;
 	[[NSApplication sharedApplication] beginSheet:window

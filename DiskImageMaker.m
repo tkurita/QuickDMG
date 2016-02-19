@@ -1,5 +1,6 @@
 #import "DiskImageMaker.h"
 #import "DMGDocumentProtocol.h"
+#import "PathExtra.h"
 #include <unistd.h>
 #include <sys/param.h>
 #include <sys/ucred.h>
@@ -21,11 +22,6 @@ id getTaskResult(PipingTask *aTask)
 }
 
 @implementation DiskImageMaker
-
-@synthesize workingLocation;
-@synthesize terminationMessage;
-@synthesize devEntry;
-@synthesize currentTask;
 
 #pragma mark internal use
 - (NSString *)uniqueName:(NSString *)baseName suffix:(NSString *)theSuffix location:(NSString *)dirPath;
@@ -52,7 +48,7 @@ id getTaskResult(PipingTask *aTask)
 		NSNumber * numberSuffix = [NSNumber numberWithShort:i++];
 		newName = [[baseName stringByAppendingPathExtension:[numberSuffix stringValue]] 
 									stringByAppendingPathExtension:[dmgOptions dmgSuffix]];
-		checkPath = [workingLocation stringByAppendingPathComponent:newName];
+		checkPath = [_workingLocationURL.path stringByAppendingPathComponent:newName];
 	}
 	return newName;
 }
@@ -60,33 +56,35 @@ id getTaskResult(PipingTask *aTask)
 #pragma mark init and dealloc
 - (id) init
 {
-	[super init];
-	requireSpaceRatio = 1.0;
-	myNotiCenter = [NSNotificationCenter defaultCenter];
-	isReplacing = NO;
-	expectedCompressRatio = 0.7;
-	isAttached = NO;
+	if ((self = [super init])) {
+        requireSpaceRatio = 1.0;
+        self.myNotiCenter = [NSNotificationCenter defaultCenter];
+        isReplacing = NO;
+        expectedCompressRatio = 0.7;
+        isAttached = NO;
+    }
 	return self;
 }
 
 - (id)initWithSourceItem:(NSDocument<DMGDocument> *)anItem
 {
 	[self init];
-	sourceItems = [[NSArray arrayWithObject:anItem] retain];
-	NSString *source_path = [anItem fileName];
+	self.sourceItems = [NSArray arrayWithObject:anItem];
+	NSURL *source_url = [anItem fileURL];
 	
-	if ([[[NSWorkspace sharedWorkspace] mountedLocalVolumePaths] containsObject:source_path]) {
-		[self setWorkingLocation:[NSSearchPathForDirectoriesInDomains(NSDesktopDirectory, NSUserDomainMask, YES) 
+	if ([[[NSWorkspace sharedWorkspace] mountedLocalVolumePaths] containsObject:source_url.path]) {
+		self.workingLocationURL = [NSURL fileURLWithPath:
+                                   [NSSearchPathForDirectoriesInDomains(NSDesktopDirectory, NSUserDomainMask, YES)
 								  lastObject]];
 	} else {				
-		[self setWorkingLocation:[source_path stringByDeletingLastPathComponent]];
+		self.workingLocationURL = [source_url URLByDeletingLastPathComponent];
 	}
 	
-	NSString *source_name = [source_path lastPathComponent];
+	NSString *source_name = [source_url lastPathComponent];
 	if ((![anItem isFolder]) || [anItem isPackage]) {
-		[self setDiskName:[source_name stringByDeletingPathExtension]];
+		self.diskName = [source_name stringByDeletingPathExtension];
 	} else {
-		[self setDiskName:source_name];
+		self.diskName = source_name;
 	}
 	return self;
 }
@@ -94,20 +92,20 @@ id getTaskResult(PipingTask *aTask)
 - (id)initWithSourceItems:(NSArray *)array
 {
 	[self init];
-	sourceItems = [array retain];
+	self.sourceItems = array;
 	return self;
 }
 
 - (void)dealloc
 {
-	[sourceDmgPath release];
-	[mountPoint release];
-	[devEntry release];
-	[terminationMessage release];
-	[workingLocation release];
-	[diskName release];
-	[tmpDir release];
-	[sourceItems release];
+	[_sourceDmgPath release];
+	[_mountPoint release];
+	[_devEntry release];
+	[_terminationMessage release];
+	[_workingLocationURL release];
+	[_diskName release];
+	[_tmpDir release];
+	[_sourceItems release];
 	[super dealloc];
 }
 
@@ -121,34 +119,34 @@ id getTaskResult(PipingTask *aTask)
 
 - (void)setDestination:(NSString *)aPath replacing:(BOOL)aFlag;
 {
-	[self setWorkingLocation:[aPath stringByDeletingLastPathComponent]];
-	[self setDiskName:[[aPath lastPathComponent] stringByDeletingPathExtension]];
+	self.workingLocationURL = [NSURL fileURLWithPath:[aPath stringByDeletingLastPathComponent]];
+	self.diskName = [[aPath lastPathComponent] stringByDeletingPathExtension];
 	isReplacing = aFlag;
 	if (isReplacing) {
-		[self setDmgName:[aPath lastPathComponent]];
+		self.dmgName = [aPath lastPathComponent];
 	} else {
-		[self setDmgName:[self uniqueName:diskName location:workingLocation]];
+		self.dmgName = [self uniqueName:_diskName location:_workingLocationURL.path];
 	}
 }
 
 - (NSString *)resolveDmgName
 {
-	[self setDmgName:[self uniqueName:diskName location:workingLocation]];
-	return dmgName;
+	self.dmgName = [self uniqueName:_diskName location:_workingLocationURL.path];
+	return _dmgName;
 }
 
 - (void)setCustomDmgName:(NSString *)theDmgName
 {
 	
 	isReplacing = YES;
-	[self setDmgName:theDmgName];
-	[self setDiskName:[theDmgName stringByDeletingPathExtension]];
+	self.dmgName = theDmgName;
+	self.diskName = [theDmgName stringByDeletingPathExtension];
 }
 
 - (NSString *)dmgPath
 {
-	if (!dmgName) [self resolveDmgName];
-	return [workingLocation stringByAppendingPathComponent:dmgName];
+	if (!_dmgName) [self resolveDmgName];
+	return [_workingLocationURL.path stringByAppendingPathComponent:_dmgName];
 }
 
 #pragma mark instance methods
@@ -156,7 +154,7 @@ id getTaskResult(PipingTask *aTask)
 {
 	if (![self checkWorkingLocationPermission]) {
 		NSString* detailMessage = [NSString stringWithFormat:NSLocalizedString(@"No write permission",""),
-			[self workingLocation]];
+			_workingLocationURL.path];
 		[aWindowController showAlertMessage:NSLocalizedString(@"Insufficient access right.","") 
 											withInformativeText:detailMessage];
 		return NO;
@@ -170,8 +168,8 @@ id getTaskResult(PipingTask *aTask)
 	}
 	
 	isOnlyFolder = NO;
-	if ([sourceItems count] == 1) {
-		id <DMGDocument>item = [sourceItems lastObject];
+	if ([_sourceItems count] == 1) {
+		id <DMGDocument>item = [_sourceItems lastObject];
 		isOnlyFolder = ([item isFolder] && ![item isPackage]);
 	}
 	
@@ -184,7 +182,7 @@ id getTaskResult(PipingTask *aTask)
 	NSLog(@"start checkWorkingLocationPermission");
 	NSLog(workingLocation);
 #endif
-	int wirtePermInt = access([workingLocation fileSystemRepresentation],02);
+	int wirtePermInt = access([_workingLocationURL.path fileSystemRepresentation],02);
 	return (wirtePermInt == 0);
 }
 
@@ -196,7 +194,7 @@ id getTaskResult(PipingTask *aTask)
 	[self postStatusNotification: 
 		NSLocalizedString(@"Checking free space of disks.","")];
 		
-	NSEnumerator *enumerator = [sourceItems objectEnumerator];
+	NSEnumerator *enumerator = [_sourceItems objectEnumerator];
 	sourceSize = 0;
 	id <DMGDocument>an_item;
 	while (an_item = [enumerator nextObject]) {
@@ -204,15 +202,23 @@ id getTaskResult(PipingTask *aTask)
 	}
 	//sourceSize += 500000;
 	sourceSize += [[NSUserDefaults standardUserDefaults] integerForKey:@"additionalSize"];
+		
+    NSFileManager *file_manager = [NSFileManager defaultManager];
 	
-	NSFileManager *file_manager = [NSFileManager defaultManager];
-	
-	NSDictionary *infoWorkingDisk = [file_manager fileSystemAttributesAtPath:workingLocation];
+	NSError *err = nil;
+    NSDictionary *infoWorkingDisk = [file_manager
+                                     attributesOfFileSystemForPath:_workingLocationURL.path
+                                     error: &err];
+    if (err) {
+        [NSApp presentError:err];
+        return;
+    }
 	unsigned long long freeSize = [[infoWorkingDisk objectForKey:NSFileSystemFreeSize] unsignedLongLongValue];
+    
 	NSString *dmg_format = [dmgOptions dmgFormat];
 	willBeConverted = [dmgOptions needConversion];
 	
-	[self setTmpDir:NSTemporaryDirectory()];
+	self.tmpDir = NSTemporaryDirectory();
 	requireSpaceRatio = 0;
 	if ([[dmgOptions command] isEqualToString:@"makehybrid"]) {
 		if (isOnlyFolder) {
@@ -226,8 +232,13 @@ id getTaskResult(PipingTask *aTask)
 	
 	if (!requireSpaceRatio) {
 		if (willBeConverted) {
-			NSDictionary *infoTmpDisk = [file_manager fileSystemAttributesAtPath:tmpDir];
-			
+            NSDictionary *infoTmpDisk = [file_manager
+                                             attributesOfFileSystemForPath:_tmpDir
+                                             error: &err];
+            if (err) {
+                [NSApp presentError:err];
+                return;
+            }
 			if ([[infoTmpDisk objectForKey:NSFileSystemNumber] isEqualToNumber:[infoWorkingDisk objectForKey:NSFileSystemNumber]]) {
 				requireSpaceRatio = 1 + expectedCompressRatio;
 			}
@@ -265,7 +276,7 @@ id getTaskResult(PipingTask *aTask)
 {
 	PipingTask *task = [[PipingTask alloc] init];
 	[task setLaunchPath:@"/usr/bin/hdiutil"];
-	[task setCurrentDirectoryPath:workingLocation];
+	[task setCurrentDirectoryPath:_workingLocationURL.path];
 	return [task autorelease];
 }
 
@@ -280,19 +291,19 @@ id getTaskResult(PipingTask *aTask)
 	
 	[self postStatusNotification:NSLocalizedString(@"Detaching a disk image.","")];
 	PipingTask * dmg_task = [self hdiUtilTask];
-	[dmg_task setArguments:[NSArray arrayWithObjects:@"detach",devEntry,nil]];
+	[dmg_task setArguments:[NSArray arrayWithObjects:@"detach",_devEntry,nil]];
 
 	if (willBeConverted) {
-		[myNotiCenter addObserver:self selector:@selector(convertTmpDiskImage:) 
+		[_myNotiCenter addObserver:self selector:@selector(convertTmpDiskImage:)
 						name:NSTaskDidTerminateNotification object:dmg_task];
 	}
 	else {
 		if ([dmgOptions internetEnable]) {
-			[myNotiCenter addObserver:self selector:@selector(internetEnable:)
+			[_myNotiCenter addObserver:self selector:@selector(internetEnable:)
 				name:NSTaskDidTerminateNotification object:dmg_task];
 		}
 		else {
-			[myNotiCenter addObserver:self selector:@selector(dmgTaskTerminate:)
+			[_myNotiCenter addObserver:self selector:@selector(dmgTaskTerminate:)
 				name:NSTaskDidTerminateNotification object:dmg_task];
 		}
 	}
@@ -314,9 +325,9 @@ id getTaskResult(PipingTask *aTask)
 	[self postStatusNotification:NSLocalizedString(@"Deleting .DS_Store files.","")];
 	PipingTask *task = [[[PipingTask alloc] init] autorelease];
 	[task setLaunchPath:@"/usr/bin/find"];
-	[task setArguments:[NSArray arrayWithObjects:mountPoint, @"-name", @".DS_Store", @"-delete", nil]];
+	[task setArguments:[NSArray arrayWithObjects:_mountPoint, @"-name", @".DS_Store", @"-delete", nil]];
 	
-	[myNotiCenter addObserver:self selector:@selector(detachDiskImage:) name:NSTaskDidTerminateNotification object:task];
+	[_myNotiCenter addObserver:self selector:@selector(detachDiskImage:) name:NSTaskDidTerminateNotification object:task];
 
 	[self launchAsCurrentTask:task];
 }
@@ -364,12 +375,13 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	NSString *destination = [[notification userInfo] objectForKey:@"copyDestination"];
 	
 	if (!isOnlyFolder && [source_item isFolder]) {
-		destination = [destination stringByAppendingPathComponent:[[source_item fileName] lastPathComponent]];
+		destination = [destination
+                       stringByAppendingPathComponent:[[source_item fileURL] lastPathComponent]];
 	}
 	
-	[task setArguments:[NSArray arrayWithObjects:@"--rsrc",[source_item fileName],destination,nil]];
+	[task setArguments:@[@"--rsrc",[[source_item fileURL] path],destination]];
 	[task setUserInfo:[notification userInfo]];
-	[myNotiCenter addObserver:self selector:@selector(copySourceItems:) name:NSTaskDidTerminateNotification object:task];		
+	[_myNotiCenter addObserver:self selector:@selector(copySourceItems:) name:NSTaskDidTerminateNotification object:task];
 	
 	[self launchAsCurrentTask:task];
 #if useLog
@@ -388,9 +400,9 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 
 	[self postStatusNotification:NSLocalizedString(@"Setting internet-enable option.","")];
 	PipingTask * dmg_task = [self hdiUtilTask];
-	[dmg_task setArguments:[NSArray arrayWithObjects:@"internet-enable",@"-yes", dmgName, nil]];
+	[dmg_task setArguments:@[@"internet-enable", @"-yes", _dmgName]];
 
-	[myNotiCenter addObserver:self selector:@selector(dmgTaskTerminate:) 
+	[_myNotiCenter addObserver:self selector:@selector(dmgTaskTerminate:)
 					name:NSTaskDidTerminateNotification object:dmg_task];
 	[self launchAsCurrentTask:dmg_task];
 #if useLog
@@ -414,27 +426,29 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	
 	if ([[dmgOptions filesystem] isEqualToString:@"HFS"]) {
 		CFStringEncoding sysenc = CFStringGetSystemEncoding();
-		PipingTask *dt_task = [PipingTask launchedTaskWithLaunchPath:@"/usr/sbin/disktool"
-														   arguments:[NSArray arrayWithObjects:@"-s", devEntry, [NSString stringWithFormat:@"%d",sysenc],  nil]];
+		PipingTask *dt_task = [PipingTask
+                               launchedTaskWithLaunchPath:@"/usr/sbin/disktool"
+                            arguments:@[@"-s", _devEntry, [NSString stringWithFormat:@"%d",sysenc]]];
 		[dt_task waitUntilExit];
 		// Fix volume name is not reflected if diskName have multi byte characters, 
-		dt_task = [PipingTask launchedTaskWithLaunchPath:@"/usr/sbin/diskutil"
-											   arguments:[NSArray arrayWithObjects:@"rename" ,devEntry, diskName, nil]];
+		dt_task = [PipingTask
+                   launchedTaskWithLaunchPath:@"/usr/sbin/diskutil"
+                   arguments:@[@"rename" ,_devEntry, _diskName]];
 		[dt_task waitUntilExit];
 		if ([dt_task terminationStatus] !=0) {
 			NSLog(@"%@", [dt_task stderrString]);
 		}
 		
-		NSString *bufmp = mountPointForDevEntry(devEntry);
+		NSString *bufmp = mountPointForDevEntry(_devEntry);
 		if (bufmp) {
 			[self setMountPoint:bufmp];
 		} else {
 			//NSLog([NSString stringWithFormat:@"Can't find the mount point for %@", devEntry]);
-			terminationStatus = 1;
+			self.terminationStatus = 1;
 			[self setTerminationMessage:
 				[NSString stringWithFormat:@"Can't find the mount point for %@", 
-										 devEntry]];		
-			[myNotiCenter postNotificationName: @"DmgDidTerminationNotification" object:self];
+										 _devEntry]];
+			[_myNotiCenter postNotificationName: @"DmgDidTerminationNotification" object:self];
 			return;
 		}
 	}
@@ -450,8 +464,8 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	
 	[self copySourceItems:[NSNotification notificationWithName:@"StartCopySources"
 									object:nil
-					  userInfo:[NSDictionary dictionaryWithObjectsAndKeys:mountPoint, @"copyDestination",
-								[sourceItems objectEnumerator], @"sourceEnumerator", 
+					  userInfo:[NSDictionary dictionaryWithObjectsAndKeys:_mountPoint, @"copyDestination",
+								[_sourceItems objectEnumerator], @"sourceEnumerator",
 								next_selector, @"nextSelector", nil]]];
 }
 
@@ -474,7 +488,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	[dmg_task setArguments:[NSArray arrayWithObjects:@"attach",dmgPath,@"-noverify",
 														@"-nobrowse",@"-plist",nil]];
 	
-	[myNotiCenter addObserver:self selector:@selector(afterAttachDiskImage:) 
+	[_myNotiCenter addObserver:self selector:@selector(afterAttachDiskImage:)
 					name:NSTaskDidTerminateNotification object:dmg_task];
 
 	[self launchAsCurrentTask:dmg_task];
@@ -493,8 +507,8 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 - (PipingTask *)makeHybridTask:(NSString *)source destination:(NSString *)destination
 {
 	PipingTask *task = [self hdiUtilTask];
-	[task setArguments:[NSArray arrayWithObjects:@"makehybrid", @"-iso", @"-udf", @"-udf-version", @"1.0.2",
-							@"-udf-volume-name",diskName, @"-o", destination, source, nil]];
+	[task setArguments:@[@"makehybrid", @"-iso", @"-udf", @"-udf-version", @"1.0.2",
+							@"-udf-volume-name",_diskName, @"-o", destination, source]];
 	return task;
 }
 
@@ -505,10 +519,14 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	}
 
 	[self postStatusNotification:NSLocalizedString(@"Cleaning temporary files.","")];
-	[[NSFileManager defaultManager] removeFileAtPath:[[notification userInfo] objectForKey:@"dmgSource"]
-											 handler:nil];
-	
-	[myNotiCenter postNotificationName: @"DmgDidTerminationNotification" object:self];
+	NSError *err = nil;
+    [[NSFileManager defaultManager]
+                removeItemAtPath:[notification userInfo][@"dmgSource"]
+                        error:&err];
+    if (err) {
+        NSLog(@"%@", err);
+    }
+	[_myNotiCenter postNotificationName: @"DmgDidTerminationNotification" object:self];
 }
 
 - (void)performMakeHybrid:(NSNotification *)notification
@@ -522,7 +540,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	NSString *source = [[notification userInfo] objectForKey:@"dmgSource"];
 	NSString *destination = [[notification userInfo] objectForKey:@"dmgDestination"];
 	PipingTask *task = [self makeHybridTask:source destination:destination];
-	[myNotiCenter addObserver:self selector:@selector(performCleanTempSources:)
+	[_myNotiCenter addObserver:self selector:@selector(performCleanTempSources:)
 						 name:NSTaskDidTerminateNotification object:task];
 	[self launchAsCurrentTask:task];
 }
@@ -541,17 +559,17 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	[self postStatusNotification: NSLocalizedString(@"Preparing.",
 													"Status message of checking condition.")];
 
-	NSString* dmg_target = dmgName;
+	NSString* dmg_target = _dmgName;
 
 	if (isReplacing) {
-		NSString *target_path = [workingLocation stringByAppendingPathComponent:dmgName];
+		NSString *target_path = [_workingLocationURL.path stringByAppendingPathComponent:_dmgName];
 		NSFileManager *file_manager = [NSFileManager defaultManager];
 		if ([file_manager fileExistsAtPath:target_path]) {
 			NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
 			NSInteger tag;
 			if (![workspace performFileOperation:NSWorkspaceRecycleOperation
-										  source:workingLocation destination:@""
-										   files:[NSArray arrayWithObject:dmgName] tag:&tag]) {
+                                    source:_workingLocationURL.path destination:@""
+                                   files:@[_dmgName] tag:&tag]) {
 #if useLog
 				NSLog(@"can not delete");
 #endif
@@ -559,8 +577,8 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 											 NSLocalizedString(@"The file \n %@ could not be removed.", 
 															   "can not trash existing file"),
 											 target_path]];
-				self->terminationStatus = 1;
-				[myNotiCenter postNotificationName: @"DmgDidTerminationNotification" object:self];
+				self.terminationStatus = 1;
+				[_myNotiCenter postNotificationName: @"DmgDidTerminationNotification" object:self];
 				return;
 			}
 		}
@@ -570,23 +588,26 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	NSString *command = [dmgOptions command];
 	if ([command isEqualToString:@"makehybrid"]) {
 		if (isOnlyFolder) {
-			NSDocument<DMGDocument>* source_item = [sourceItems lastObject];
-			task = [self makeHybridTask:[[source_item fileURL] path] destination:dmg_target];
-			[myNotiCenter addObserver:self selector:@selector(dmgTaskTerminate:)
+			NSDocument<DMGDocument>* source_item = [_sourceItems lastObject];
+			task = [self makeHybridTask:[[source_item fileURL] path]
+                            destination:dmg_target];
+			[_myNotiCenter addObserver:self selector:@selector(dmgTaskTerminate:)
 								 name:NSTaskDidTerminateNotification object:task];
 			[self postStatusNotification:NSLocalizedString(@"Creating a hybrid disk image.","")];
 		} else {
-			NSString *tmp_name = [self uniqueName:diskName suffix:@"" location:tmpDir];
-			NSString *tmp_path = [tmpDir stringByAppendingPathComponent:tmp_name];
-			if ([[NSFileManager defaultManager] createDirectoryAtPath:tmp_path attributes:nil]) {
-				[self copySourceItems:[NSNotification notificationWithName:@"StartCopySources"
-																	object:nil
-												  userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
-																	tmp_path, @"copyDestination",
-																	[sourceItems objectEnumerator], @"sourceEnumerator", 
-																	@"performMakeHybrid:", @"nextSelector",
-																	tmp_path,@"dmgSource", 
-																	dmg_target, @"dmgDestination", nil]]];
+			NSString *tmp_name = [self uniqueName:_diskName suffix:@"" location:_tmpDir];
+			NSString *tmp_path = [_tmpDir stringByAppendingPathComponent:tmp_name];
+            if ([[NSFileManager defaultManager]
+                                createDirectoryAtURL: [tmp_path fileURL]
+                                    withIntermediateDirectories:YES
+                                            attributes:nil error:nil]) {
+                [self copySourceItems:[NSNotification notificationWithName:@"StartCopySources"
+                            object:nil
+                          userInfo:@{@"copyDestination": tmp_path,
+                                @"sourceEnumerator": [_sourceItems objectEnumerator],
+                                @"nextSelector": @"performMakeHybrid:",
+                                @"dmgSource": tmp_path,
+                                @"dmgDestination": dmg_target}]];
 				return;
 			} else {
 				NSLog(@"Failed to make directory");
@@ -600,12 +621,13 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 		task = [self hdiUtilTask];
 		if (willBeConverted) {
 			NSString *a_suffix = @"dmg";
-			NSString *tmp_name = [self uniqueName:diskName suffix:a_suffix location:tmpDir];
+			NSString *tmp_name = [self uniqueName:_diskName
+                                           suffix:a_suffix location:_tmpDir];
 #if useLog
 			NSLog(tmp_name);
 #endif
-			dmg_target = [tmpDir stringByAppendingPathComponent:tmp_name];
-			sourceDmgPath = [dmg_target retain];
+			dmg_target = [_tmpDir stringByAppendingPathComponent:tmp_name];
+			self.sourceDmgPath = [dmg_target retain];
 		}
 		
 		NSString *dmg_type;
@@ -615,10 +637,10 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 		else
 			dmg_type = @"UDIF";
 		NSString *fs = [dmgOptions filesystem];
-		[task setArguments:[NSArray arrayWithObjects:@"create",@"-fs", fs,@"-size",imageSize,
-								@"-layout",@"None",@"-type",dmg_type,@"-volname",diskName,
-								dmg_target,@"-plist",nil]];		
-		[myNotiCenter addObserver:self selector:@selector(attachDiskImage:) 
+		[task setArguments:@[@"create",@"-fs", fs,@"-size",imageSize,
+                    @"-layout",@"None",@"-type",dmg_type,@"-volname",_diskName,
+								dmg_target,@"-plist"]];		
+		[_myNotiCenter addObserver:self selector:@selector(attachDiskImage:)
 							 name:NSTaskDidTerminateNotification object:task];
 	}
 	
@@ -633,7 +655,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 
 	PipingTask *dmg_task = [notification object];
 	
-	[myNotiCenter removeObserver:self];
+	[_myNotiCenter removeObserver:self];
 	
 	if ([dmg_task terminationStatus] != 0) {
 #if useLog
@@ -643,7 +665,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 #if useLog
 		NSLog(terminationMessage);
 #endif
-		if ([terminationMessage hasSuffix:@".Trashes: Permission denied\n"]) {
+		if ([_terminationMessage hasSuffix:@".Trashes: Permission denied\n"]) {
 #if useLog
 			NSLog(@"success to delete .DS_Store");
 #endif
@@ -655,11 +677,11 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 #endif
 			if (isAttached) {
 				PipingTask *detachTask = [self hdiUtilTask];
-				[detachTask setArguments:[NSArray arrayWithObjects:@"detach",devEntry,nil]];
+				[detachTask setArguments:@[@"detach",_devEntry]];
 				[detachTask launch];
 			}
-			terminationStatus = [dmg_task terminationStatus];
-			[myNotiCenter postNotificationName: @"DmgDidTerminationNotification" object:self];
+			self.terminationStatus = [dmg_task terminationStatus];
+			[_myNotiCenter postNotificationName: @"DmgDidTerminationNotification" object:self];
 			return NO;
 		}
 	} else {
@@ -701,14 +723,14 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	
 	PipingTask *dmg_task = [self hdiUtilTask];
 	if (willBeConverted) 
-		[myNotiCenter addObserver:self selector:@selector(deleteSourceDmg:)
+		[_myNotiCenter addObserver:self selector:@selector(deleteSourceDmg:)
 			name:NSTaskDidTerminateNotification object:dmg_task];			
 	else
-		[myNotiCenter addObserver:self selector:@selector(dmgTaskTerminate:)
+		[_myNotiCenter addObserver:self selector:@selector(dmgTaskTerminate:)
 			name:NSTaskDidTerminateNotification object:dmg_task];
 	
-	NSMutableArray *arguments = [NSMutableArray arrayWithObjects:@"convert",
-		sourceDmgPath, @"-format", [dmgOptions dmgFormat], @"-o",dmgName,@"-plist",nil];
+	NSMutableArray *arguments = @[@"convert", _sourceDmgPath, @"-format",
+                               [dmgOptions dmgFormat], @"-o",_dmgName,@"-plist"].mutableCopy;
 	
 	if ([[dmgOptions dmgFormat] isEqualToString:@"UDZO"]) {
 		NSString *zlibLevelString = [NSString stringWithFormat:@"zlib-level=%i", [dmgOptions compressionLevel]+1];
@@ -726,9 +748,8 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 #if useLog
 	NSLog(@"start deleteSourceDmg");
 #endif
-	NSFileManager *file_manager = [NSFileManager defaultManager];
-	[file_manager removeFileAtPath:sourceDmgPath handler:nil];
-
+        
+    [[NSFileManager defaultManager] removeItemAtPath:_sourceDmgPath error:nil];
 	if ([self checkPreviousTask:notification]) {
 		if ([dmgOptions internetEnable]) 
 			[self internetEnable:notification];
@@ -747,14 +768,14 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	NSLog(@"start dmgTaskTerminate");
 #endif
 	PipingTask *dmg_task = [notification object];
-	terminationStatus = [dmg_task terminationStatus];
-	[myNotiCenter removeObserver:self];
+	_terminationStatus = [dmg_task terminationStatus];
+	[_myNotiCenter removeObserver:self];
 	
-	if (terminationStatus) {
+	if (_terminationStatus) {
 		[self setTerminationMessage:[dmg_task stderrString]];
 	} else if ([dmgOptions putawaySources]) {
 		NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
-		NSEnumerator *enumerator = [sourceItems objectEnumerator];
+		NSEnumerator *enumerator = [_sourceItems objectEnumerator];
 		NSDocument<DMGDocument> *item;
 		while (item = [enumerator nextObject]) {
 			NSInteger tag;
@@ -767,7 +788,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 		}
 	}
 	
-	[myNotiCenter postNotificationName: @"DmgDidTerminationNotification" object:self];
+	[_myNotiCenter postNotificationName: @"DmgDidTerminationNotification" object:self];
 #if useLog
 	NSLog(@"end dmgTaskTerminate");
 #endif
@@ -775,108 +796,26 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 
 - (void)aboartTask
 {
-	[myNotiCenter removeObserver:self];
-	[currentTask terminate];
+	[_myNotiCenter removeObserver:self];
+	[_currentTask terminate];
 	if (isAttached) {
 		PipingTask *dmg_task = [self hdiUtilTask];
-		[dmg_task setArguments:[NSArray arrayWithObjects:@"detach",devEntry,nil]];
+		[dmg_task setArguments:@[@"detach", _devEntry]];
 		[self launchAsCurrentTask:dmg_task];
 	}
 	
-	NSString *dmg_path = [workingLocation stringByAppendingPathComponent:dmgName];
+	NSString *dmg_path = [_workingLocationURL.path
+                          stringByAppendingPathComponent:_dmgName];
 	NSFileManager *file_manager = [NSFileManager defaultManager];
 	if ([file_manager fileExistsAtPath:dmg_path]) {
-		[file_manager removeFileAtPath:dmg_path handler:nil];
+		[file_manager removeItemAtPath:dmg_path error:nil];
 	}
 	
-	if ((willBeConverted) && ([file_manager fileExistsAtPath:sourceDmgPath])) {
-		[file_manager removeFileAtPath:sourceDmgPath handler:nil];
+	if ((willBeConverted) && ([file_manager fileExistsAtPath:_sourceDmgPath])) {
+		[file_manager removeItemAtPath:_sourceDmgPath error:nil];
 	}
 	
 }
 
-#pragma mark accessor methods
-
-- (void)setMountPoint:(NSString *)theMountPoint
-{
-	[theMountPoint retain];
-	[mountPoint release];
-	mountPoint = theMountPoint;
-}
-
-- (void)setDevEntry:(NSString *)theDevEntry
-{
-	[theDevEntry retain];
-	[devEntry release];
-	devEntry = theDevEntry;
-}
-
-- (void)setCurrentTask:(PipingTask *)aTask
-{
-	[aTask retain];
-	[currentTask release];
-	currentTask = aTask;
-}
-
-- (void)setTmpDir:(NSString *)path
-{
-	[path retain];
-	[tmpDir release];
-	tmpDir = path;
-}
-
-- (void)setDiskName:(NSString *)theDiskName
-{
-	[theDiskName retain];
-	[diskName release];
-	diskName = theDiskName;
-}
-
-- (void)setDmgName:(NSString *) theDmgName
-{
-	[theDmgName retain];
-	[dmgName release];
-	dmgName = theDmgName;
-}
-
-- (NSString *)dmgName
-{
-	return self->dmgName;
-}
-/*
-- (void)setTerminationMessage:(NSString *)theString
-{
-	[theString retain];
-	[terminationMessage release];
-	terminationMessage = theString;
-}
-
-- (NSString *)terminationMessage
-{
-	return self->terminationMessage;
-}
-*/
-- (int)terminationStatus
-{
-	return self->terminationStatus;
-}
-
-/*
-- (void)setWorkingLocation:(NSString *)theWorkingLocation
-{
-	[theWorkingLocation retain];
-	[workingLocation release];
-	workingLocation = theWorkingLocation;
-}
-
-- (NSString *)workingLocation
-{
-	return self->workingLocation;
-}*/
-
-- (void)setReplacing:(BOOL)aFlag
-{
-	isReplacing = aFlag;
-}
 @end
 
