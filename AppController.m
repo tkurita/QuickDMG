@@ -134,11 +134,9 @@ static BOOL AUTO_QUIT = YES;
 		[alert setAlertStyle:NSWarningAlertStyle];
 		if ([alert runModal] == NSAlertFirstButtonReturn) {
 		} 
-		[alert release];
 		return;
 	}
 	
-	[getFinderSelection release];
 	
 	if ([scriptResult descriptorType] == typeAEList) {
 		NSMutableArray *filenames = [NSMutableArray array];

@@ -5,11 +5,11 @@
 
 }
 
-@property(nonatomic, retain) NSMutableData *stdoutData;
-@property(nonatomic, retain) NSMutableData *stderrData;
-@property(nonatomic, retain) NSTask *task;
-@property(nonatomic, retain) NSFileHandle *errHandle;
-@property(nonatomic, retain) NSDictionary *userInfo;
+@property(nonatomic, strong) NSMutableData *stdoutData;
+@property(nonatomic, strong) NSMutableData *stderrData;
+@property(nonatomic, strong) NSTask *task;
+@property(nonatomic, strong) NSFileHandle *errHandle;
+@property(nonatomic, strong) NSDictionary *userInfo;
 
 + (PipingTask *)launchedTaskWithLaunchPath:path arguments:arguments;
 

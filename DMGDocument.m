@@ -37,7 +37,7 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 #endif
 	}
 	
-	return [new_image autorelease];
+	return new_image;
 	//return new_image;
 }
 
@@ -81,7 +81,6 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 		[du waitUntilExit];
 		result = [[du stdoutString] intValue];
 		result = (result * 1024 *1.1);
-		[du release];
 	}
 	else {
 		result = _fileInfo[NSURLFileSizeKey];
@@ -118,15 +117,6 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 }
 
 #pragma mark init and dealloc
-- (void)dealloc
-{
-#if useLog
-	NSLog(@"dealloc DMGDocument");
-#endif
-	[_iconImg release];
-	[_fileInfo release];
-	[super dealloc];
-}
 
 - (id) init
 {
@@ -180,7 +170,7 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 	NSLog(@"start makeWindowControlls");
 #endif	
 	DMGWindowController *a_controller = [[DMGWindowController alloc] initWithWindowNibName:@"DMGDocument"];
-    [self addWindowController:[a_controller autorelease]];
+    [self addWindowController:a_controller];
 }
 
 @end

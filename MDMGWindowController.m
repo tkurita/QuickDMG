@@ -10,13 +10,6 @@
 
 @implementation MDMGWindowController
 
-- (void) dealloc {
-#if useLog
-	NSLog(@"start dealloc in MDMGWindowController");
-#endif	
-	[initialItems release];
-	[super dealloc];
-}
 
 #pragma mark actions
 - (IBAction)okAction:(id)sender
@@ -60,16 +53,9 @@
 }
 
 #pragma mark setup contents
-- (void)setInitialItems:(NSArray *)files
-{
-	[initialItems autorelease];
-	[files retain];
-	initialItems = files;
-}
-
 - (void)showWindow:(id)sender withFiles:(NSArray *)files
 {
-	[self setInitialItems:files];
+	self.initialItems = files;
 	[self showWindow:sender];
 }
 
@@ -78,11 +64,11 @@
 #if useLog	
 	NSLog(@"setupFileTable in MDMGWindowController");
 #endif
-	if (!initialItems) {
+	if (!_initialItems) {
 		return;
 	}
 	
-	[fileTableController addFileURLs:initialItems];
+	[fileTableController addFileURLs:_initialItems];
 	
 
 	NSRect frame = [splitSubview frame];
@@ -159,7 +145,6 @@
 {
 	[fileTableController disposeDocuments];
 	[[self dmgOptionsViewController] saveSettings];
-	[self autorelease];
 }
 
 @end

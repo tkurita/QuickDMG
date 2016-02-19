@@ -6,9 +6,9 @@
 	IBOutlet id statusLabel;
 }
 
-@property(nonatomic, retain) DMGHandler *dmgHandler;
-@property(nonatomic, retain) NSString *dmgPath;
-@property(nonatomic, retain) NSEnumerator *dmgEnumerator;
+@property(nonatomic, strong) DMGHandler *dmgHandler;
+@property(nonatomic, strong) NSString *dmgPath;
+@property(nonatomic, strong) NSEnumerator *dmgEnumerator;
 
 - (IBAction)cancelTask:(id)sender;
 

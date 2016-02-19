@@ -28,6 +28,6 @@
 - (void)setInternetEnable:(BOOL)aFlag;
 - (void)setPutawaySources:(BOOL)flag;
 
-@property (nonatomic, retain) NSIndexSet *selectedFormatIndexes;
+@property (nonatomic, strong) NSIndexSet *selectedFormatIndexes;
 
 @end

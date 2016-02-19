@@ -6,7 +6,7 @@
 @implementation DMGOptionsViewController
 + (void)initialize
 {	
-	NSValueTransformer *transformer = [[[LocalizedStringTransformer alloc] init] autorelease];
+	NSValueTransformer *transformer = [[LocalizedStringTransformer alloc] init];
 	[NSValueTransformer setValueTransformer:transformer forName:@"LocalizedStringTransformer"];
 }
 
@@ -27,10 +27,6 @@
 	return self;
 }
 
-- (void) dealloc {
-	[_selectedFormatIndexes release];
-	[super dealloc];
-}
 
 #pragma mark instance methods
 - (void)saveSettings

@@ -13,6 +13,6 @@
 - (id)initWithNibName:(NSString *)nibName;
 - (IBAction)cancelAction:(id)sender;
 - (void) beginSheetWith:(NSWindowController<DMGWindowController> *)aController;
-@property(nonatomic, assign) NSWindowController<DMGWindowController> *owner;
+@property(nonatomic, unsafe_unretained) NSWindowController<DMGWindowController> *owner;
 
 @end

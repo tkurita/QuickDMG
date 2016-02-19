@@ -3,14 +3,14 @@
 
 @interface DMGHandler : NSObject
 
-@property(nonatomic, retain) NSString *statusMessage;
-@property(nonatomic, retain) NSString *terminationMessage;
-@property(nonatomic, retain) NSString *workingLocation;
-@property(nonatomic, retain) NSString *devEntry;
-@property(nonatomic, retain) NSString *mountPoint;
-@property(nonatomic, retain) PipingTask *currentTask;
+@property(nonatomic, strong) NSString *statusMessage;
+@property(nonatomic, strong) NSString *terminationMessage;
+@property(nonatomic, strong) NSString *workingLocation;
+@property(nonatomic, strong) NSString *devEntry;
+@property(nonatomic, strong) NSString *mountPoint;
+@property(nonatomic, strong) PipingTask *currentTask;
 @property(nonatomic, assign) int terminationStatus;
-@property(nonatomic, assign) id delegate;
+@property(nonatomic, unsafe_unretained) id delegate;
 
 - (void)attachDiskImage:(NSString *)path;
 - (void)detachDiskImage:(NSString *)dev;

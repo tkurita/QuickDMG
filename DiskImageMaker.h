@@ -52,7 +52,7 @@
 - (void) postStatusNotification:(NSString *) message;
 
 #pragma mark setup methods
-@property (nonatomic, retain) id<DMGOptions> dmgOptions;
+@property (nonatomic, strong) id<DMGOptions> dmgOptions;
 - (void)setDestination:(NSString *)aPath replacing:(BOOL)aFlag;
 - (NSString *)resolveDmgName;
 
@@ -60,22 +60,22 @@
 //public
 @property(assign) int terminationStatus;
 
-@property(nonatomic, retain) NSString *terminationMessage;
-@property(nonatomic, retain) NSURL *workingLocationURL;
-@property(nonatomic, retain) NSString *diskName;
+@property(nonatomic, strong) NSString *terminationMessage;
+@property(nonatomic, strong) NSURL *workingLocationURL;
+@property(nonatomic, strong) NSString *diskName;
 
 //related source item
-@property (nonatomic, retain) NSArray *sourceItems;
+@property (nonatomic, strong) NSArray *sourceItems;
 
 //private
-@property (nonatomic, retain) NSString *dmgName;
-@property(nonatomic, retain) NSString *devEntry;
-@property(nonatomic, retain) PipingTask *currentTask;
-@property(nonatomic, retain) NSString *mountPoint;
-@property(nonatomic, retain) NSString *tmpDir;
+@property (nonatomic, strong) NSString *dmgName;
+@property(nonatomic, strong) NSString *devEntry;
+@property(nonatomic, strong) PipingTask *currentTask;
+@property(nonatomic, strong) NSString *mountPoint;
+@property(nonatomic, strong) NSString *tmpDir;
 //target path to convert dmg file
-@property(nonatomic, retain) NSString *sourceDmgPath;
-@property(nonatomic, retain) NSNotificationCenter *myNotiCenter;
+@property(nonatomic, strong) NSString *sourceDmgPath;
+@property(nonatomic, strong) NSNotificationCenter *myNotiCenter;
 
 #pragma mark private use
 //- (NSString *) uniqueName:(NSString *)baseName location:(NSString*)dirPath; //baseName に dmgSuffix を付けて、workingLocation で unique な名前を求める

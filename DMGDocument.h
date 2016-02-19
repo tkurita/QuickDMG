@@ -8,8 +8,8 @@
 	BOOL isMultiSourceMember;
 }
 
-@property (nonatomic, retain) NSImage *iconImg;
-@property (nonatomic, retain) NSDictionary *fileInfo;
+@property (nonatomic, strong) NSImage *iconImg;
+@property (nonatomic, strong) NSDictionary *fileInfo;
 
 - (NSString *)itemName;
 

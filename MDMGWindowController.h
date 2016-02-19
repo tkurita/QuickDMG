@@ -9,9 +9,10 @@
 	IBOutlet id fileTableController;
     IBOutlet id splitSubview;
 	IBOutlet id splitView;
-	NSArray *initialItems;
 	CGFloat fileTableMinHeight;
 }
+
+@property (nonatomic, strong) NSArray *initialItems;
 
 #pragma mark actions
 - (IBAction)deleteTabelSelection:(id)sender;

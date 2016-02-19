@@ -68,7 +68,7 @@ id getTaskResult(PipingTask *aTask)
 
 - (id)initWithSourceItem:(NSDocument<DMGDocument> *)anItem
 {
-	[self init];
+	if (!(self = [self init])) return nil;
 	self.sourceItems = @[anItem];
 	NSURL *source_url = [anItem fileURL];
 	
@@ -91,23 +91,11 @@ id getTaskResult(PipingTask *aTask)
 
 - (id)initWithSourceItems:(NSArray *)array
 {
-	[self init];
+	if (!(self = [self init])) return nil;
 	self.sourceItems = array;
 	return self;
 }
 
-- (void)dealloc
-{
-	[_sourceDmgPath release];
-	[_mountPoint release];
-	[_devEntry release];
-	[_terminationMessage release];
-	[_workingLocationURL release];
-	[_diskName release];
-	[_tmpDir release];
-	[_sourceItems release];
-	[super dealloc];
-}
 
 #pragma mark setup methods
 - (void)setDestination:(NSString *)aPath replacing:(BOOL)aFlag;
@@ -270,7 +258,7 @@ id getTaskResult(PipingTask *aTask)
 	PipingTask *task = [[PipingTask alloc] init];
 	[task setLaunchPath:@"/usr/bin/hdiutil"];
 	[task setCurrentDirectoryPath:_workingLocationURL.path];
-	return [task autorelease];
+	return task;
 }
 
 - (void) detachDiskImage:(NSNotification *)notification
@@ -316,7 +304,7 @@ id getTaskResult(PipingTask *aTask)
 	}
 	
 	[self postStatusNotification:NSLocalizedString(@"Deleting .DS_Store files.","")];
-	PipingTask *task = [[[PipingTask alloc] init] autorelease];
+	PipingTask *task = [[PipingTask alloc] init];
 	[task setLaunchPath:@"/usr/bin/find"];
 	[task setArguments:@[_mountPoint, @"-name", @".DS_Store", @"-delete"]];
 	
@@ -362,7 +350,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	}
 
 	
-	PipingTask * task = [[[PipingTask alloc] init] autorelease];
+	PipingTask * task = [[PipingTask alloc] init];
 	[task setLaunchPath:@"/usr/bin/ditto"];
 	
 	NSString *destination = [notification userInfo][@"copyDestination"];
@@ -620,7 +608,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 			NSLog(tmp_name);
 #endif
 			dmg_target = [_tmpDir stringByAppendingPathComponent:tmp_name];
-			self.sourceDmgPath = [dmg_target retain];
+			self.sourceDmgPath = dmg_target;
 		}
 		
 		NSString *dmg_type;

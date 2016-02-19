@@ -5,23 +5,13 @@
 
 @implementation DMGHandler
 
-- (void)dealloc
-{
-	[_statusMessage release];
-	[_terminationMessage release];
-	[_workingLocation release];
-	[_devEntry release];
-	[_mountPoint release];
-	[_currentTask release];
-	[super dealloc];
-}
 
 - (PipingTask *)hdiUtilTask
 {
 	PipingTask *task = [[PipingTask alloc] init];
 	[task setLaunchPath:@"/usr/bin/hdiutil"];
 	if (_workingLocation) [task setCurrentDirectoryPath:_workingLocation];
-	return [task autorelease];
+	return task;
 }
 
 -(BOOL) checkPreviousTask:(NSNotification *)notification
@@ -177,7 +167,7 @@
 #endif
 	[self postStatusNotification: NSLocalizedString(@"Copying source files.","")];
 	
-	PipingTask * task = [[PipingTask new] autorelease];
+	PipingTask * task = [PipingTask new];
 	[task setLaunchPath:@"/usr/bin/ditto"];
 	[task setArguments:@[@"--rsrc",srcPath,destPath]];
 	[[NSNotificationCenter defaultCenter] 
@@ -192,7 +182,7 @@
 
 + (DMGHandler *)dmgHandlerWithDelegate:(id)object
 {
-	DMGHandler *h = [[self new] autorelease];
+	DMGHandler *h = [self new];
 	h.delegate = object;
 	return h;
 }

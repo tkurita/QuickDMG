@@ -10,13 +10,13 @@
 	[a_task setLaunchPath:path];
 	[a_task setArguments:arguments];
 	[a_task launch];
-	return [a_task autorelease];
+	return a_task;
 }
 
 - (id)init
 {
     if (self = [super init]) {
-		self.task  = [[NSTask new] autorelease];
+		self.task  = [NSTask new];
     }
 	
     return self;
@@ -28,12 +28,6 @@
 	NSLog(@"will dealloc PipingTask");
 #endif
 	[_errHandle closeFile];
-	[_errHandle release];
-	[_task release];
-	[_stdoutData release];
-	[_stderrData release];
-	[_userInfo release];
-	[super dealloc];
 }
 
 - (void)waitUntilExit
@@ -45,14 +39,14 @@
 - (void)launch
 {
 	self.stdoutData = nil;
-	self.stdoutData = [[NSMutableData new] autorelease];
+	self.stdoutData = [NSMutableData new];
 	self.stderrData = nil;
-	self.stderrData = [[NSMutableData new] autorelease];
+	self.stderrData = [NSMutableData new];
 	[_task setStandardOutput:[NSPipe pipe]];
 	[_task setStandardError:[NSPipe pipe]];
 	NSNotificationCenter *notification_center = [NSNotificationCenter defaultCenter];
 	
-	self.errHandle = [[[_task standardError] fileHandleForReading] retain];
+	self.errHandle = [[_task standardError] fileHandleForReading];
     [notification_center
         addObserver : self 
            selector : @selector(readStdErr:) 
@@ -88,23 +82,23 @@
 
 - (void)readStdOut:(id)arg
 {
-	NSAutoreleasePool *pool=[[NSAutoreleasePool alloc] init];
-	NSPipe *standardOutput = [_task standardOutput];
-	
-	NSFileHandle *out_h = [standardOutput fileHandleForReading];
-	while(1) {
-		//NSLog(@"will read");
-		NSData *data_out = [out_h availableData];
+	@autoreleasepool {
+		NSPipe *standardOutput = [_task standardOutput];
 		
-		if ([data_out length]) {
-			[_stdoutData appendData:data_out];
-		} else {
-			break;
+		NSFileHandle *out_h = [standardOutput fileHandleForReading];
+		while(1) {
+			//NSLog(@"will read");
+			NSData *data_out = [out_h availableData];
+			
+			if ([data_out length]) {
+				[_stdoutData appendData:data_out];
+			} else {
+				break;
+			}
 		}
+		
+		[out_h closeFile];
 	}
-	
-	[out_h closeFile];
-	[pool release];
 #if useLog
 	NSLog(@"end readStdOut PipingTask");
 #endif
@@ -137,7 +131,7 @@
 
 - (NSString *)stdoutString
 {
-	return [[[NSString alloc] initWithData:_stdoutData encoding:NSUTF8StringEncoding] autorelease];
+	return [[NSString alloc] initWithData:_stdoutData encoding:NSUTF8StringEncoding];
 }
 
 - (NSString *)stderrString
@@ -145,7 +139,7 @@
 	if (![_stderrData length]) {
 	  [_stderrData appendData:[_errHandle availableData]];
 	}
-	return [[[NSString alloc] initWithData:_stderrData encoding:NSUTF8StringEncoding] autorelease];
+	return [[NSString alloc] initWithData:_stderrData encoding:NSUTF8StringEncoding];
 }
 
 #pragma mark bridges to NSTask

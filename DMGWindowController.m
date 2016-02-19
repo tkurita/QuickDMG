@@ -10,7 +10,6 @@
 #pragma mark methods for sheet
 - (void)alertDidEnd:(NSWindow*)alert returnCode:(int)returnCode contextInfo:(void *)contextInfo //common
 {
-	[alert release];
 }
 
 - (void)showAlertMessage:(NSString *)theMessageText withInformativeText:(NSString *)infoText
@@ -172,14 +171,6 @@
 }
 
 #pragma mark initialize
-- (void)dealloc
-{
-	//NSLog(@"dealloc DMGWindowController");
-	[_dmgOptionsViewController release];
-	[_progressWindowController release];
-	[_dmgMaker release];
-	[super dealloc];
-}
 
 - (void)windowDidLoad
 {

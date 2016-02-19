@@ -9,9 +9,6 @@
 
 static NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
 
-- (void) dealloc {
-	[super dealloc];
-}
 
 - (void)disposeDocuments
 {

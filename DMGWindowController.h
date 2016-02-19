@@ -11,9 +11,9 @@
 	IBOutlet id okButton;
 }
 
-@property(nonatomic ,retain) id dmgOptionsViewController;
-@property(nonatomic ,retain) DMGProgressWindowController *progressWindowController;
-@property(nonatomic ,retain) DiskImageMaker *dmgMaker;
+@property(nonatomic ,strong) id dmgOptionsViewController;
+@property(nonatomic ,strong) DMGProgressWindowController *progressWindowController;
+@property(nonatomic ,strong) DiskImageMaker *dmgMaker;
 
 - (IBAction)cancelAction:(id)sender;
 - (IBAction)okAction:(id)sender;

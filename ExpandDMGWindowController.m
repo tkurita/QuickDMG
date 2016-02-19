@@ -4,13 +4,6 @@
 
 @implementation ExpandDMGWindowController
 
-- (void)dealloc
-{
-	[_dmgHandler release];
-	[_dmgPath release];
-	[_dmgEnumerator release];
-	[super dealloc];
-}
 
 - (BOOL)processNextItem
 {
@@ -101,7 +94,6 @@
 }
 
 - (void)windowWillClose:(NSNotification*)notification {
-	[self autorelease];
 }
 
 @end
