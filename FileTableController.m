@@ -50,7 +50,7 @@ static NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
 	NSLog(@"start awakeFromNib in FileTableController");
 #endif	
 	[fileTableView registerForDraggedTypes: 
-		[NSArray arrayWithObjects:MovedRowsType, NSFilenamesPboardType, nil]];
+		@[MovedRowsType, NSFilenamesPboardType]];
 }
 
 - (BOOL)tableView:(NSTableView *)tv writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard*)pboard 
@@ -59,7 +59,7 @@ static NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
 	NSLog(@"start writeRowsWithIndexes");
 #endif
 	NSData *data = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes];
-	[pboard declareTypes:[NSArray arrayWithObject:MovedRowsType] owner:self];
+	[pboard declareTypes:@[MovedRowsType] owner:self];
 	[pboard setData:data forType:MovedRowsType];
 	return YES;
 }
@@ -105,7 +105,7 @@ static NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
 			insertIndex -= 1;
 		}
 		
-		object = [objects objectAtIndex:removeIndex];
+		object = objects[removeIndex];
 		[objects removeObjectAtIndex:removeIndex];
 		[objects insertObject:object atIndex:insertIndex];
 		[selectedObj addObject:object];

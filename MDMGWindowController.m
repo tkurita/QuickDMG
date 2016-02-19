@@ -28,13 +28,20 @@
 	}
 	
 	NSSavePanel *save_panel = [NSSavePanel savePanel];
-	[save_panel setRequiredFileType:[self.dmgOptionsViewController dmgSuffix]];
+	[save_panel setAllowedFileTypes:@[[self.dmgOptionsViewController dmgSuffix]]];
 	[save_panel setCanSelectHiddenExtension:YES];
-	[save_panel beginSheetForDirectory:nil file:nil
-				   modalForWindow:[self window]
-					modalDelegate:self
-				   didEndSelector:@selector(savePanelDidEnd:returnCode:contextInfo:)
-					  contextInfo:nil];
+    [save_panel beginSheetModalForWindow:self.window
+                       completionHandler:^(NSInteger result) {
+                           if (result != NSOKButton) return;
+                           if (!self.dmgMaker) {
+                               self.dmgMaker = nil;;
+                           }
+                           self.dmgMaker = [[DiskImageMaker alloc] initWithSourceItems:[fileListController arrangedObjects]];
+                           self.dmgMaker.dmgOptions = self.dmgOptionsViewController;
+                           [self.dmgMaker setDestination:[[save_panel URL] path] replacing:YES];
+                           [save_panel orderOut:self];
+                           [self makeDiskImage];
+                       }];
 
 }
 
@@ -43,40 +50,13 @@
 	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
 	[openPanel setCanChooseDirectories:YES];
 	[openPanel setAllowsMultipleSelection:YES];
-	[openPanel beginSheetForDirectory:nil 
-								 file:nil
-								types:nil
-					   modalForWindow:[sender window]
-						modalDelegate:self
-					   didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:)
-						  contextInfo:nil];
-}
 
-
-#pragma mark delegate sheet
-- (void)openPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode  contextInfo:(void  *)contextInfo
-{
-	if (returnCode == NSOKButton) {
-		[fileTableController addFileURLs:[panel URLs]];
-	}
-}
-
-- (void)savePanelDidEnd:(NSSavePanel *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
-{
-	if (returnCode == NSOKButton) {
-		NSString *result_path = [sheet filename];
-#if useLog
-		NSLog(@"%@", result_path);
-#endif
-		if (!self.dmgMaker) {
-			self.dmgMaker = nil;;
-		}
-		self.dmgMaker = [[DiskImageMaker alloc] initWithSourceItems:[fileListController arrangedObjects]];
-		self.dmgMaker.dmgOptions = self.dmgOptionsViewController;
-		[self.dmgMaker setDestination:result_path replacing:YES];
-		[sheet orderOut:self];
-		[self makeDiskImage];
-	}
+    [openPanel beginSheetModalForWindow:[sender window]
+                      completionHandler:^(NSInteger result) {
+                          if (result == NSOKButton) {
+                              [fileTableController addFileURLs:[openPanel URLs]];
+                          }
+                      }];
 }
 
 #pragma mark setup contents

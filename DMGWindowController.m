@@ -35,7 +35,7 @@
 {
 	NSSavePanel *savePanel = [NSSavePanel savePanel];
 	id document = [self document];
-	[savePanel setRequiredFileType:[_dmgOptionsViewController dmgSuffix]];
+	[savePanel setAllowedFileTypes:@[[_dmgOptionsViewController dmgSuffix]]];
 	[savePanel setCanSelectHiddenExtension:YES];
     [savePanel setDirectoryURL:_dmgMaker.workingLocationURL];
     [savePanel setNameFieldStringValue:[_dmgMaker dmgName]];

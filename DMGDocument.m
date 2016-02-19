@@ -76,7 +76,7 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 	if ([self isFolder]) {
 		PipingTask *du = [[PipingTask alloc] init];
 		[du setLaunchPath:@"/usr/bin/du"];
-		[du setArguments:[NSArray arrayWithObjects:@"-sk",self.fileURL.path,nil]];
+		[du setArguments:@[@"-sk",self.fileURL.path]];
 		[du launch];
 		[du waitUntilExit];
 		result = [[du stdoutString] intValue];

@@ -128,9 +128,9 @@ static BOOL AUTO_QUIT = YES;
 		NSAlert *alert = [[NSAlert alloc] init];
 		[alert addButtonWithTitle:@"OK"];
 		[alert setMessageText:
-			[NSString stringWithFormat:@"AppleScript Error : %@",[errorDict objectForKey:NSAppleScriptErrorNumber]]
+			[NSString stringWithFormat:@"AppleScript Error : %@",errorDict[NSAppleScriptErrorNumber]]
 			];
-		[alert setInformativeText:[errorDict objectForKey:NSAppleScriptErrorMessage]];
+		[alert setInformativeText:errorDict[NSAppleScriptErrorMessage]];
 		[alert setAlertStyle:NSWarningAlertStyle];
 		if ([alert runModal] == NSAlertFirstButtonReturn) {
 		} 

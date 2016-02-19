@@ -47,7 +47,7 @@
 
 - (void)showStatusMessage:(NSNotification *)notification
 {
-	NSString* statusMessage = [[notification userInfo] objectForKey:@"statusMessage"];
+	NSString* statusMessage = [notification userInfo][@"statusMessage"];
 	[progressText setStringValue: statusMessage];
 }
 

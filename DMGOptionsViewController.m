@@ -38,7 +38,7 @@
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
 	[user_defaults setBool:internetEnable forKey:@"InternetEnable"];
 	[user_defaults setBool:isDeleteDSStore forKey:@"deleteDSStore"];
-	[user_defaults setObject:[NSNumber numberWithInt:[_selectedFormatIndexes firstIndex]]
+	[user_defaults setObject:@([_selectedFormatIndexes firstIndex])
 					forKey:@"formatIndex"];
 	[user_defaults setInteger:compressionLevel forKey:@"compressionLevel"];
 	[user_defaults setBool:putawaySources forKey:@"putawaySources"];
@@ -48,37 +48,37 @@
 - (NSString *)dmgFormat
 {
 	NSArray *an_array = [dmgFormatController selectedObjects];
-	return [[an_array lastObject] objectForKey:@"formatID"];
+	return [an_array lastObject][@"formatID"];
 }
 
 - (NSString *)dmgSuffix
 {
 	NSArray *an_array = [dmgFormatController selectedObjects];
-	return [[an_array lastObject] objectForKey:@"extension"];
+	return [an_array lastObject][@"extension"];
 }
 
 - (NSString *)filesystem
 {
 	NSArray *an_array = [dmgFormatController selectedObjects];
-	return [[an_array lastObject] objectForKey:@"filesystem"];
+	return [an_array lastObject][@"filesystem"];
 }
 
 - (BOOL)internetEnable
 {
-	return [[[[dmgFormatController selectedObjects] lastObject] objectForKey:@"canInternetEnable"] boolValue]
+	return [[[dmgFormatController selectedObjects] lastObject][@"canInternetEnable"] boolValue]
 			&& internetEnable;
 }
 
 - (BOOL)needConversion
 {
 	NSArray *array = [dmgFormatController selectedObjects];
-	return [[[array lastObject] objectForKey:@"needConversion"] boolValue];
+	return [[array lastObject][@"needConversion"] boolValue];
 }
 
 - (NSString *)command
 {
 	NSArray *array = [dmgFormatController selectedObjects];
-	return [[array lastObject] objectForKey:@"command"];
+	return [array lastObject][@"command"];
 }
 
 - (BOOL)isDeleteDSStore

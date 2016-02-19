@@ -118,7 +118,7 @@
 	NSLog(@"start readStdErr PipingTask");
 #endif
 	[_stderrData appendData:
-		[[notification userInfo] objectForKey:NSFileHandleNotificationDataItem]]; 
+		[notification userInfo][NSFileHandleNotificationDataItem]]; 
 		
      
     if (_task && [_task isRunning]) {

@@ -62,7 +62,7 @@
 - (void) postStatusNotification: (NSString *) message
 {
 	self.statusMessage = message;
-	NSDictionary* info = [NSDictionary dictionaryWithObject:message forKey:@"statusMessage"];
+	NSDictionary* info = @{@"statusMessage": message};
 	[[NSNotificationCenter defaultCenter] postNotificationName: @"DmgProgressNotification"
 														object:self userInfo:info];
 }
@@ -86,7 +86,7 @@
 		return nil;
 	}	
 	PipingTask *detach_task = [self hdiUtilTask];
-	[detach_task setArguments:[NSArray arrayWithObjects:@"detach", _devEntry, nil]];
+	[detach_task setArguments:@[@"detach", _devEntry]];
 	[detach_task launch];
 	self.devEntry = nil;
 	self.mountPoint = nil;
@@ -111,7 +111,7 @@
 	
 	[self postStatusNotification:NSLocalizedString(@"Detaching a disk image.","")];
 	PipingTask *dmg_task = [self hdiUtilTask];
-	[dmg_task setArguments:[NSArray arrayWithObjects:@"detach", dev, nil]];
+	[dmg_task setArguments:@[@"detach", dev]];
 	[[NSNotificationCenter defaultCenter]
 					addObserver:self selector:@selector(afterDetachDiskImage:) 
 						name:NSTaskDidTerminateNotification object:dmg_task];
@@ -125,8 +125,8 @@
 #endif
 	[self postStatusNotification: NSLocalizedString(@"Attaching a disk image.","")];
 	PipingTask *dmg_task = [self hdiUtilTask];
-	[dmg_task setArguments:[NSArray arrayWithObjects:@"attach",path,@"-noverify",
-							@"-nobrowse",@"-plist",nil]];
+	[dmg_task setArguments:@[@"attach",path,@"-noverify",
+							@"-nobrowse",@"-plist"]];
 	
 	[[NSNotificationCenter defaultCenter]
 		 addObserver:self selector:@selector(afterAttachDiskImage:) 
@@ -149,12 +149,12 @@
 	#if useLog
 		NSLog(@"%@", [task_result description]);
 	#endif
-		NSArray *entities = [task_result objectForKey:@"system-entities"];
+		NSArray *entities = task_result[@"system-entities"];
 		NSString *mount_point = nil;
 		for (NSDictionary *dict in entities) {
-			mount_point = [dict objectForKey:@"mount-point"];
+			mount_point = dict[@"mount-point"];
 			if (mount_point) {
-				self.devEntry = [dict objectForKey:@"dev-entry"];
+				self.devEntry = dict[@"dev-entry"];
 				self.mountPoint = mount_point;
 				break;
 			}
@@ -179,7 +179,7 @@
 	
 	PipingTask * task = [[PipingTask new] autorelease];
 	[task setLaunchPath:@"/usr/bin/ditto"];
-	[task setArguments:[NSArray arrayWithObjects:@"--rsrc",srcPath,destPath,nil]];
+	[task setArguments:@[@"--rsrc",srcPath,destPath]];
 	[[NSNotificationCenter defaultCenter] 
 								addObserver:self selector:@selector(afterDitto:) 
 									name:NSTaskDidTerminateNotification object:task];		

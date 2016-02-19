@@ -627,6 +627,7 @@
 		2CC63DFE09377A2500503C26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 15;
@@ -648,8 +649,9 @@
 				GCC_PREFIX_HEADER = QuickDMG_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
 				PRODUCT_NAME = QuickDMG;
+				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple generic";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -659,11 +661,7 @@
 		2CC63DFF09377A2500503C26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					x86_64,
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 15;
@@ -682,8 +680,9 @@
 				GCC_PREFIX_HEADER = QuickDMG_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Applications;
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
 				PRODUCT_NAME = QuickDMG;
+				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple generic";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
@@ -693,6 +692,7 @@
 		2CC63E0009377A2500503C26 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 15;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -712,8 +712,9 @@
 				GCC_PREFIX_HEADER = QuickDMG_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
 				PRODUCT_NAME = QuickDMG;
+				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple generic";
 				WRAPPER_EXTENSION = app;
 			};
