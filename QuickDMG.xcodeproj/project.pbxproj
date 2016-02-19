@@ -28,8 +28,6 @@
 		2C1D0A460CEAC5AF00B59A0E /* minus.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D0A440CEAC5AF00B59A0E /* minus.tiff */; };
 		2C24C8680CA0E60400E01AC0 /* DMGOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */; };
 		2C24C8790CA0EBFD00E01AC0 /* MDMGWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C24C8770CA0EBFD00E01AC0 /* MDMGWindowController.m */; };
-		2C4DACF80CE29AFA009240B6 /* DMGProgressWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4DACF60CE29AFA009240B6 /* DMGProgressWindow.nib */; };
-		2C4DACFC0CE29B0D009240B6 /* DMGOptionsView.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4DACFB0CE29B0D009240B6 /* DMGOptionsView.nib */; };
 		2C4DAD040CE29DD3009240B6 /* DMGProgressWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4DAD020CE29DD3009240B6 /* DMGProgressWindowController.m */; };
 		2C59F41D0E2C5F4400261662 /* PipingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F78C00E14E6A600BDD9E3 /* PipingTask.m */; };
 		2C7FBE4708196D8300340E25 /* DMGWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7FBE4508196D8300340E25 /* DMGWindowController.m */; };
@@ -40,7 +38,6 @@
 		2CA4BEAA09E22BAF00D9C9D6 /* QuickDMG.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */; };
 		2CB60F710BCB9D56009F39D7 /* LocalizedStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB60F6F0BCB9D56009F39D7 /* LocalizedStringTransformer.m */; };
 		2CC2DCFD0CABE945006E7800 /* DMGDocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2DBCD0CABC876006E7800 /* DMGDocumentController.m */; };
-		2CC2E7A80CE7E9A300653E25 /* MDMGWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC2E7A70CE7E9A300653E25 /* MDMGWindow.nib */; };
 		2CC2E7AD0CE7EB6400653E25 /* KXTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E7AB0CE7EB6400653E25 /* KXTableView.m */; };
 		2CC904150CE877830016E8D7 /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC904130CE877830016E8D7 /* UtilityFunctions.m */; };
 		2CC914F21C7740120054346E /* History.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2CC914F11C7740120054346E /* History.rtf */; };
@@ -50,13 +47,16 @@
 		2CC915091C7741E50054346E /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC915041C7741840054346E /* DonationReminder.framework */; };
 		2CC9150A1C7741F50054346E /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CC915041C7741840054346E /* DonationReminder.framework */; };
 		2CC9150B1C7741F70054346E /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CC915051C7741A90054346E /* Sparkle.framework */; };
+		2CC915231C7744A60054346E /* DMGDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC915191C7744A60054346E /* DMGDocument.xib */; };
+		2CC915241C7744A60054346E /* DMGOptionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC9151B1C7744A60054346E /* DMGOptionsView.xib */; };
+		2CC915251C7744A60054346E /* DMGProgressWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC9151D1C7744A60054346E /* DMGProgressWindow.xib */; };
+		2CC915261C7744A60054346E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC9151F1C7744A60054346E /* MainMenu.xib */; };
+		2CC915271C7744A60054346E /* MDMGWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC915211C7744A60054346E /* MDMGWindow.xib */; };
 		2CDD29E40B16DFCE000B3543 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */; };
 		2CF42623088EB8F1002BBE99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF42622088EB8F1002BBE99 /* Localizable.strings */; };
 		2CF840FD1580ED73004E5E20 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2CF840FC1580ED73004E5E20 /* Credits.rtf */; };
 		2CF841E715824F92004E5E20 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CF841E615824F92004E5E20 /* dsa_pub.pem */; };
 		2CFAE2580CE848E70070AEF4 /* FileTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFAE2560CE848E70070AEF4 /* FileTableController.m */; };
-		8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */; };
-		8D15AC2E0486D014006FF6A4 /* DMGDocument.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B4FDCFA73011CA2CEA /* DMGDocument.nib */; };
 		8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
 		8D15AC310486D014006FF6A4 /* DMGDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* DMGDocument.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -148,28 +148,22 @@
 		2CC914FF1C7741840054346E /* DonationReminder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DonationReminder.xcodeproj; path = DonationReminder/DonationReminder.xcodeproj; sourceTree = "<group>"; };
 		2CC915051C7741A90054346E /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		2CC9150C1C7742CC0054346E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ExpandDMGWindow.xib; sourceTree = "<group>"; };
-		2CC9150D1C7742CC0054346E /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/MainMenu.nib; sourceTree = "<group>"; };
-		2CC9150E1C7742CC0054346E /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/MDMGWindow.nib; sourceTree = "<group>"; };
-		2CC9150F1C7742CC0054346E /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/DMGDocument.nib; sourceTree = "<group>"; };
-		2CC915101C7742CC0054346E /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/DMGOptionsView.nib; sourceTree = "<group>"; };
-		2CC915111C7742CC0054346E /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/DMGProgressWindow.nib; sourceTree = "<group>"; };
-		2CC915121C7742E30054346E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = Japanese.lproj/ExpandDMGWindow.strings; sourceTree = "<group>"; };
-		2CC915131C77432B0054346E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = Japanese.lproj/MainMenu.strings; sourceTree = "<group>"; };
-		2CC915141C77433B0054346E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = Japanese.lproj/MDMGWindow.strings; sourceTree = "<group>"; };
-		2CC915151C7743420054346E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = Japanese.lproj/DMGDocument.strings; sourceTree = "<group>"; };
-		2CC915161C77434A0054346E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = Japanese.lproj/DMGOptionsView.strings; sourceTree = "<group>"; };
-		2CC915171C77434F0054346E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = Japanese.lproj/DMGProgressWindow.strings; sourceTree = "<group>"; };
-		2CDB2F3615FA39AD002DE27C /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/DMGDocument.strings; sourceTree = "<group>"; };
-		2CDB2F3815FA39B9002DE27C /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/DMGOptionsView.strings; sourceTree = "<group>"; };
-		2CDB2F7015FA417B002DE27C /* Japanese */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/ExpandDMGWindow.strings; sourceTree = "<group>"; };
+		2CC915181C7744760054346E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ExpandDMGWindow.strings; sourceTree = "<group>"; };
+		2CC9151A1C7744A60054346E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DMGDocument.xib; sourceTree = "<group>"; };
+		2CC9151C1C7744A60054346E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DMGOptionsView.xib; sourceTree = "<group>"; };
+		2CC9151E1C7744A60054346E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DMGProgressWindow.xib; sourceTree = "<group>"; };
+		2CC915201C7744A60054346E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2CC915221C7744A60054346E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MDMGWindow.xib; sourceTree = "<group>"; };
+		2CC915281C7744AC0054346E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/DMGDocument.strings; sourceTree = "<group>"; };
+		2CC915291C7744B10054346E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/DMGOptionsView.strings; sourceTree = "<group>"; };
+		2CC9152A1C7744B50054346E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/DMGProgressWindow.strings; sourceTree = "<group>"; };
+		2CC9152B1C7744B90054346E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		2CC9152C1C7744BC0054346E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MDMGWindow.strings; sourceTree = "<group>"; };
+		2CC9152D1C77451A0054346E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2CC9152E1C7745230054346E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
+		2CC9152F1C77452B0054346E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = HelpSetup.plist; sourceTree = "<group>"; };
 		2CF42620088EB8E6002BBE99 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2CF840C51580D788004E5E20 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/DMGProgressWindow.strings; sourceTree = "<group>"; };
-		2CF840C71580D788004E5E20 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/MainMenu.strings; sourceTree = "<group>"; };
-		2CF840C91580D788004E5E20 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/MDMGWindow.strings; sourceTree = "<group>"; };
-		2CF840D61580D7DC004E5E20 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2CF840D71580D7DC004E5E20 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2CF840D81580D7DC004E5E20 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		2CF840FC1580ED73004E5E20 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		2CF841E615824F92004E5E20 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		2CFAE2550CE848E70070AEF4 /* FileTableController.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = FileTableController.h; sourceTree = "<group>"; };
@@ -289,6 +283,12 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CC915191C7744A60054346E /* DMGDocument.xib */,
+				2CC9151B1C7744A60054346E /* DMGOptionsView.xib */,
+				2CC9151D1C7744A60054346E /* DMGProgressWindow.xib */,
+				2CC9151F1C7744A60054346E /* MainMenu.xib */,
+				2CC915211C7744A60054346E /* MDMGWindow.xib */,
+				2C14520215E61AEE00481DE3 /* ExpandDMGWindow.xib */,
 				2CF841E615824F92004E5E20 /* dsa_pub.pem */,
 				2CF840FC1580ED73004E5E20 /* Credits.rtf */,
 				2C1D0A430CEAC5AF00B59A0E /* plus.tiff */,
@@ -298,19 +298,7 @@
 				2CF42622088EB8F1002BBE99 /* Localizable.strings */,
 				2C03FBB3088A1353008B7312 /* UserDefaults.plist */,
 				8D15AC360486D014006FF6A4 /* Info.plist */,
-				2CDB2F6F15FA417B002DE27C /* ExpandDMGWindow.strings */,
-				2CDB2F3515FA39AD002DE27C /* DMGDocument.strings */,
-				2CDB2F3715FA39B9002DE27C /* DMGOptionsView.strings */,
 				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
-				2CF840C41580D788004E5E20 /* DMGProgressWindow.strings */,
-				2CF840C61580D788004E5E20 /* MainMenu.strings */,
-				2CF840C81580D788004E5E20 /* MDMGWindow.strings */,
-				2C14520215E61AEE00481DE3 /* ExpandDMGWindow.xib */,
-				2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */,
-				2CC2E7A70CE7E9A300653E25 /* MDMGWindow.nib */,
-				2A37F4B4FDCFA73011CA2CEA /* DMGDocument.nib */,
-				2C4DACFB0CE29B0D009240B6 /* DMGOptionsView.nib */,
-				2C4DACF60CE29AFA009240B6 /* DMGProgressWindow.nib */,
 				2C97F3390D34E39F008813CF /* ServicesMenu.strings */,
 			);
 			name = Resources;
@@ -435,15 +423,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CA4BEAA09E22BAF00D9C9D6 /* QuickDMG.icns in Resources */,
-				8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */,
-				8D15AC2E0486D014006FF6A4 /* DMGDocument.nib in Resources */,
 				8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */,
 				2C03FBB4088A1353008B7312 /* UserDefaults.plist in Resources */,
 				2CF42623088EB8F1002BBE99 /* Localizable.strings in Resources */,
 				2CDD29E40B16DFCE000B3543 /* HelpSetup.plist in Resources */,
-				2CC2E7A80CE7E9A300653E25 /* MDMGWindow.nib in Resources */,
-				2C4DACFC0CE29B0D009240B6 /* DMGOptionsView.nib in Resources */,
-				2C4DACF80CE29AFA009240B6 /* DMGProgressWindow.nib in Resources */,
 				2C1D0A450CEAC5AF00B59A0E /* plus.tiff in Resources */,
 				2C1D0A460CEAC5AF00B59A0E /* minus.tiff in Resources */,
 				2C97F33A0D34E39F008813CF /* ServicesMenu.strings in Resources */,
@@ -451,6 +434,11 @@
 				2CF841E715824F92004E5E20 /* dsa_pub.pem in Resources */,
 				2C14520315E61AEE00481DE3 /* ExpandDMGWindow.xib in Resources */,
 				2CC914F21C7740120054346E /* History.rtf in Resources */,
+				2CC915231C7744A60054346E /* DMGDocument.xib in Resources */,
+				2CC915241C7744A60054346E /* DMGOptionsView.xib in Resources */,
+				2CC915251C7744A60054346E /* DMGProgressWindow.xib in Resources */,
+				2CC915261C7744A60054346E /* MainMenu.xib in Resources */,
+				2CC915271C7744A60054346E /* MDMGWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,72 +532,27 @@
 			isa = PBXVariantGroup;
 			children = (
 				089C1660FE840EACC02AAC07 /* English */,
-				2CF840D61580D7DC004E5E20 /* Japanese */,
+				2CC9152F1C77452B0054346E /* ja */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		2A37F4B4FDCFA73011CA2CEA /* DMGDocument.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CC9150F1C7742CC0054346E /* Base */,
-				2CC915151C7743420054346E /* ja */,
-			);
-			name = DMGDocument.nib;
-			sourceTree = "<group>";
-		};
-		2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CC9150D1C7742CC0054346E /* Base */,
-				2CC915131C77432B0054346E /* ja */,
-			);
-			name = MainMenu.nib;
 			sourceTree = "<group>";
 		};
 		2C14520215E61AEE00481DE3 /* ExpandDMGWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2CC9150C1C7742CC0054346E /* Base */,
-				2CC915121C7742E30054346E /* ja */,
+				2CC915181C7744760054346E /* ja */,
 			);
 			name = ExpandDMGWindow.xib;
-			sourceTree = "<group>";
-		};
-		2C4DACF60CE29AFA009240B6 /* DMGProgressWindow.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CC915111C7742CC0054346E /* Base */,
-				2CC915171C77434F0054346E /* ja */,
-			);
-			name = DMGProgressWindow.nib;
-			sourceTree = "<group>";
-		};
-		2C4DACFB0CE29B0D009240B6 /* DMGOptionsView.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CC915101C7742CC0054346E /* Base */,
-				2CC915161C77434A0054346E /* ja */,
-			);
-			name = DMGOptionsView.nib;
 			sourceTree = "<group>";
 		};
 		2C97F3390D34E39F008813CF /* ServicesMenu.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2C97F3330D34E38F008813CF /* English */,
-				2CF840D81580D7DC004E5E20 /* Japanese */,
+				2CC9152E1C7745230054346E /* ja */,
 			);
 			name = ServicesMenu.strings;
-			sourceTree = "<group>";
-		};
-		2CC2E7A70CE7E9A300653E25 /* MDMGWindow.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CC9150E1C7742CC0054346E /* Base */,
-				2CC915141C77433B0054346E /* ja */,
-			);
-			name = MDMGWindow.nib;
 			sourceTree = "<group>";
 		};
 		2CC914F41C77414F0054346E /* PathExtra_Localizable.strings */ = {
@@ -621,61 +564,58 @@
 			name = PathExtra_Localizable.strings;
 			sourceTree = "<group>";
 		};
-		2CDB2F3515FA39AD002DE27C /* DMGDocument.strings */ = {
+		2CC915191C7744A60054346E /* DMGDocument.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2CDB2F3615FA39AD002DE27C /* Japanese */,
+				2CC9151A1C7744A60054346E /* Base */,
+				2CC915281C7744AC0054346E /* ja */,
 			);
-			name = DMGDocument.strings;
+			name = DMGDocument.xib;
 			sourceTree = "<group>";
 		};
-		2CDB2F3715FA39B9002DE27C /* DMGOptionsView.strings */ = {
+		2CC9151B1C7744A60054346E /* DMGOptionsView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2CDB2F3815FA39B9002DE27C /* Japanese */,
+				2CC9151C1C7744A60054346E /* Base */,
+				2CC915291C7744B10054346E /* ja */,
 			);
-			name = DMGOptionsView.strings;
+			name = DMGOptionsView.xib;
 			sourceTree = "<group>";
 		};
-		2CDB2F6F15FA417B002DE27C /* ExpandDMGWindow.strings */ = {
+		2CC9151D1C7744A60054346E /* DMGProgressWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2CDB2F7015FA417B002DE27C /* Japanese */,
+				2CC9151E1C7744A60054346E /* Base */,
+				2CC9152A1C7744B50054346E /* ja */,
 			);
-			name = ExpandDMGWindow.strings;
+			name = DMGProgressWindow.xib;
+			sourceTree = "<group>";
+		};
+		2CC9151F1C7744A60054346E /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CC915201C7744A60054346E /* Base */,
+				2CC9152B1C7744B90054346E /* ja */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		2CC915211C7744A60054346E /* MDMGWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CC915221C7744A60054346E /* Base */,
+				2CC9152C1C7744BC0054346E /* ja */,
+			);
+			name = MDMGWindow.xib;
 			sourceTree = "<group>";
 		};
 		2CF42622088EB8F1002BBE99 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2CF42620088EB8E6002BBE99 /* English */,
-				2CF840D71580D7DC004E5E20 /* Japanese */,
+				2CC9152D1C77451A0054346E /* ja */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		2CF840C41580D788004E5E20 /* DMGProgressWindow.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CF840C51580D788004E5E20 /* Japanese */,
-			);
-			name = DMGProgressWindow.strings;
-			sourceTree = "<group>";
-		};
-		2CF840C61580D788004E5E20 /* MainMenu.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CF840C71580D788004E5E20 /* Japanese */,
-			);
-			name = MainMenu.strings;
-			sourceTree = "<group>";
-		};
-		2CF840C81580D788004E5E20 /* MDMGWindow.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CF840C91580D788004E5E20 /* Japanese */,
-			);
-			name = MDMGWindow.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

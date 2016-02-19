@@ -47,7 +47,7 @@
 				<string key="NSClassName">NSApplication</string>
 			</object>
 			<object class="NSCustomView" id="413236818">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">256</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="NSScrollView" id="697620292">
@@ -241,7 +241,6 @@
 						<reference key="NSHScroller" ref="1016852080"/>
 						<reference key="NSContentView" ref="267982086"/>
 						<reference key="NSHeaderClipView" ref="125131539"/>
-						<reference key="NSCornerView" ref="823366079"/>
 						<bytes key="NSScrollAmts">QSAAAEEgAABBmAAAQZgAAA</bytes>
 						<double key="NSMinMagnification">0.25</double>
 						<double key="NSMaxMagnification">4</double>
@@ -489,7 +488,6 @@
 					</object>
 				</array>
 				<string key="NSFrameSize">{400, 185}</string>
-				<reference key="NSSuperview"/>
 				<object class="NSMutableString" key="NSClassName">
 					<characters key="NS.bytes">NSView</characters>
 				</object>
