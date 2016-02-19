@@ -40,14 +40,14 @@ id getTaskResult(PipingTask *aTask)
 
 - (NSString *)uniqueName:(NSString *)baseName location:(NSString*)dirPath;
 {
-	NSString * newName = [baseName stringByAppendingPathExtension:[dmgOptions dmgSuffix]];
+	NSString * newName = [baseName stringByAppendingPathExtension:[_dmgOptions dmgSuffix]];
 	NSString * checkPath = [dirPath stringByAppendingPathComponent:newName];
 	NSFileManager *file_manager = [NSFileManager defaultManager];
 	short i = 1;
 	while ([file_manager fileExistsAtPath:checkPath]){
 		NSNumber * numberSuffix = [NSNumber numberWithShort:i++];
 		newName = [[baseName stringByAppendingPathExtension:[numberSuffix stringValue]] 
-									stringByAppendingPathExtension:[dmgOptions dmgSuffix]];
+									stringByAppendingPathExtension:[_dmgOptions dmgSuffix]];
 		checkPath = [_workingLocationURL.path stringByAppendingPathComponent:newName];
 	}
 	return newName;
@@ -110,13 +110,6 @@ id getTaskResult(PipingTask *aTask)
 }
 
 #pragma mark setup methods
-- (void)setDMGOptions:(id<DMGOptions>)anObject
-{
-	[anObject retain];
-	[dmgOptions release];
-	dmgOptions = anObject;
-}
-
 - (void)setDestination:(NSString *)aPath replacing:(BOOL)aFlag;
 {
 	self.workingLocationURL = [NSURL fileURLWithPath:[aPath stringByDeletingLastPathComponent]];
@@ -215,12 +208,12 @@ id getTaskResult(PipingTask *aTask)
     }
 	unsigned long long freeSize = [[infoWorkingDisk objectForKey:NSFileSystemFreeSize] unsignedLongLongValue];
     
-	NSString *dmg_format = [dmgOptions dmgFormat];
-	willBeConverted = [dmgOptions needConversion];
+	NSString *dmg_format = [_dmgOptions dmgFormat];
+	willBeConverted = [_dmgOptions needConversion];
 	
 	self.tmpDir = NSTemporaryDirectory();
 	requireSpaceRatio = 0;
-	if ([[dmgOptions command] isEqualToString:@"makehybrid"]) {
+	if ([[_dmgOptions command] isEqualToString:@"makehybrid"]) {
 		if (isOnlyFolder) {
 			requireSpaceRatio = 1;
 		} else {
@@ -298,7 +291,7 @@ id getTaskResult(PipingTask *aTask)
 						name:NSTaskDidTerminateNotification object:dmg_task];
 	}
 	else {
-		if ([dmgOptions internetEnable]) {
+		if ([_dmgOptions internetEnable]) {
 			[_myNotiCenter addObserver:self selector:@selector(internetEnable:)
 				name:NSTaskDidTerminateNotification object:dmg_task];
 		}
@@ -424,7 +417,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	[self setDevEntry:[task_result objectForKey:@"dev-entry"]];
 	[self setMountPoint:[task_result objectForKey:@"mount-point"]];
 	
-	if ([[dmgOptions filesystem] isEqualToString:@"HFS"]) {
+	if ([[_dmgOptions filesystem] isEqualToString:@"HFS"]) {
 		CFStringEncoding sysenc = CFStringGetSystemEncoding();
 		PipingTask *dt_task = [PipingTask
                                launchedTaskWithLaunchPath:@"/usr/sbin/disktool"
@@ -454,7 +447,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	}
 	
 	NSString *next_selector;
-	if ([dmgOptions isDeleteDSStore]) {
+	if ([_dmgOptions isDeleteDSStore]) {
 		next_selector = @"deleteDSStore:";
 	}
 	else {
@@ -585,7 +578,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	}
 	
 	PipingTask *task = nil;
-	NSString *command = [dmgOptions command];
+	NSString *command = [_dmgOptions command];
 	if ([command isEqualToString:@"makehybrid"]) {
 		if (isOnlyFolder) {
 			NSDocument<DMGDocument>* source_item = [_sourceItems lastObject];
@@ -632,11 +625,11 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 		
 		NSString *dmg_type;
 
-		if ([[dmgOptions dmgFormat] isEqualToString:@"UDSP"]) 
+		if ([[_dmgOptions dmgFormat] isEqualToString:@"UDSP"])
 			dmg_type = @"SPARSE";
 		else
 			dmg_type = @"UDIF";
-		NSString *fs = [dmgOptions filesystem];
+		NSString *fs = [_dmgOptions filesystem];
 		[task setArguments:@[@"create",@"-fs", fs,@"-size",imageSize,
                     @"-layout",@"None",@"-type",dmg_type,@"-volname",_diskName,
 								dmg_target,@"-plist"]];		
@@ -730,10 +723,10 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 			name:NSTaskDidTerminateNotification object:dmg_task];
 	
 	NSMutableArray *arguments = @[@"convert", _sourceDmgPath, @"-format",
-                               [dmgOptions dmgFormat], @"-o",_dmgName,@"-plist"].mutableCopy;
+                               [_dmgOptions dmgFormat], @"-o",_dmgName,@"-plist"].mutableCopy;
 	
-	if ([[dmgOptions dmgFormat] isEqualToString:@"UDZO"]) {
-		NSString *zlibLevelString = [NSString stringWithFormat:@"zlib-level=%i", [dmgOptions compressionLevel]+1];
+	if ([[_dmgOptions dmgFormat] isEqualToString:@"UDZO"]) {
+		NSString *zlibLevelString = [NSString stringWithFormat:@"zlib-level=%i", [_dmgOptions compressionLevel]+1];
 		[arguments addObjectsFromArray:[NSArray arrayWithObjects:@"-imagekey" ,zlibLevelString ,nil]];
 	}
 	[dmg_task setArguments:arguments];
@@ -751,7 +744,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
         
     [[NSFileManager defaultManager] removeItemAtPath:_sourceDmgPath error:nil];
 	if ([self checkPreviousTask:notification]) {
-		if ([dmgOptions internetEnable]) 
+		if ([_dmgOptions internetEnable])
 			[self internetEnable:notification];
 		else
 			[self dmgTaskTerminate:notification];
@@ -773,7 +766,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	
 	if (_terminationStatus) {
 		[self setTerminationMessage:[dmg_task stderrString]];
-	} else if ([dmgOptions putawaySources]) {
+	} else if ([_dmgOptions putawaySources]) {
 		NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
 		NSEnumerator *enumerator = [_sourceItems objectEnumerator];
 		NSDocument<DMGDocument> *item;

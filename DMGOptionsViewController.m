@@ -20,15 +20,15 @@
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
 	[self setInternetEnable:[user_defaults boolForKey:@"InternetEnable"]];
 	[self setDeleteDSStore:[user_defaults boolForKey:@"deleteDSStore"]];
-	[self setSelectedFormatIndexes:[NSIndexSet indexSetWithIndex:
-									[user_defaults integerForKey:@"formatIndex"]]];
+	self.selectedFormatIndexes = [NSIndexSet indexSetWithIndex:
+									[user_defaults integerForKey:@"formatIndex"]];
 	[self setCompressionLevel:[user_defaults integerForKey:@"compressionLevel"]];
 	[self setPutawaySources:[user_defaults boolForKey:@"putawaySources"]];
 	return self;
 }
 
 - (void) dealloc {
-	[selectedFormatIndexes release];
+	[_selectedFormatIndexes release];
 	[super dealloc];
 }
 
@@ -38,7 +38,7 @@
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
 	[user_defaults setBool:internetEnable forKey:@"InternetEnable"];
 	[user_defaults setBool:isDeleteDSStore forKey:@"deleteDSStore"];
-	[user_defaults setObject:[NSNumber numberWithInt:[selectedFormatIndexes firstIndex]]
+	[user_defaults setObject:[NSNumber numberWithInt:[_selectedFormatIndexes firstIndex]]
 					forKey:@"formatIndex"];
 	[user_defaults setInteger:compressionLevel forKey:@"compressionLevel"];
 	[user_defaults setBool:putawaySources forKey:@"putawaySources"];
@@ -115,21 +115,6 @@
 - (void)setDeleteDSStore:(BOOL)aFlag
 {
 	isDeleteDSStore = aFlag;
-}
-
-- (NSIndexSet *)selectedFormatIndexes
-{
-	return selectedFormatIndexes;
-}
-
-- (void)setSelectedFormatIndexes:(NSIndexSet *)indexSet
-{
-#if useLog
-	NSLog(@"setSelectedFormatIndexes: %@", [indexSet description]);
-#endif
-	[indexSet retain];
-	[selectedFormatIndexes autorelease];
-	selectedFormatIndexes = indexSet;
 }
 
 - (void)setCompressionLevel:(int)aValue

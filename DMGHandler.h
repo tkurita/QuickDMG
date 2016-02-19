@@ -1,25 +1,16 @@
 #import <Cocoa/Cocoa.h>
 #import "PipingTask.h"
 
-@interface DMGHandler : NSObject {
-	NSString *statusMessage;
-	NSString *terminationMessage;
-	NSString *workingLocation;
-	NSString *devEntry;
-	NSString *mountPoint;
-	PipingTask *currentTask;
-	int terminationStatus;	
-	id delegate;
-}
+@interface DMGHandler : NSObject
 
-@property(retain) NSString *statusMessage;
-@property(retain) NSString *terminationMessage;
-@property(retain) NSString *workingLocation;
-@property(retain) NSString *devEntry;
-@property(retain) NSString *mountPoint;
-@property(retain) PipingTask *currentTask;
-@property(assign) int terminationStatus;
-@property(assign) id delegate;
+@property(nonatomic, retain) NSString *statusMessage;
+@property(nonatomic, retain) NSString *terminationMessage;
+@property(nonatomic, retain) NSString *workingLocation;
+@property(nonatomic, retain) NSString *devEntry;
+@property(nonatomic, retain) NSString *mountPoint;
+@property(nonatomic, retain) PipingTask *currentTask;
+@property(nonatomic, assign) int terminationStatus;
+@property(nonatomic, assign) id delegate;
 
 - (void)attachDiskImage:(NSString *)path;
 - (void)detachDiskImage:(NSString *)dev;

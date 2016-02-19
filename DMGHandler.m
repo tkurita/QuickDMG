@@ -5,23 +5,14 @@
 
 @implementation DMGHandler
 
-@synthesize statusMessage;
-@synthesize terminationMessage;
-@synthesize workingLocation;
-@synthesize devEntry;
-@synthesize mountPoint;
-@synthesize currentTask;
-@synthesize terminationStatus;
-@synthesize delegate;
-
 - (void)dealloc
 {
-	[statusMessage release];
-	[terminationMessage release];
-	[workingLocation release];
-	[devEntry release];
-	[mountPoint release];
-	[currentTask release];
+	[_statusMessage release];
+	[_terminationMessage release];
+	[_workingLocation release];
+	[_devEntry release];
+	[_mountPoint release];
+	[_currentTask release];
 	[super dealloc];
 }
 
@@ -29,7 +20,7 @@
 {
 	PipingTask *task = [[PipingTask alloc] init];
 	[task setLaunchPath:@"/usr/bin/hdiutil"];
-	if (workingLocation) [task setCurrentDirectoryPath:workingLocation];
+	if (_workingLocation) [task setCurrentDirectoryPath:_workingLocation];
 	return [task autorelease];
 }
 
@@ -43,8 +34,8 @@
 	[noticenter removeObserver:self];
 	
 	if ([dmg_task terminationStatus] != 0) {
-		[self setTerminationMessage:[dmg_task stderrString]];
-		if ([terminationMessage hasSuffix:@".Trashes: Permission denied\n"]) {
+		self.terminationMessage = [dmg_task stderrString];
+		if ([_terminationMessage hasSuffix:@".Trashes: Permission denied\n"]) {
 #if useLog
 			NSLog(@"success to delete .DS_Store");
 #endif
@@ -54,12 +45,12 @@
 			NSLog(@"error occur");
 #endif
 			[self detachNow];
-			terminationStatus = [dmg_task terminationStatus];
+			self.terminationStatus = [dmg_task terminationStatus];
 			[noticenter postNotificationName: @"DmgDidTerminationNotification" object:self];
 			return NO;
 		}
 	} else {
-		[self setTerminationMessage:nil];
+		self.terminationMessage = nil;
 	}
 #if useLog	
 	NSLog(@"termination status is 0");
@@ -78,7 +69,7 @@
 
 -(void) launchAsCurrentTask:(PipingTask *)task
 {
-	[self setCurrentTask:task];
+	self.currentTask = task;
 	[task launch];
 }
 
@@ -86,16 +77,16 @@
 {
 	[self checkPreviousTask:notification];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	[delegate diskImageDetached:self];
+	[_delegate diskImageDetached:self];
 }
 
 - (PipingTask *)detachNow
 {
-	if (!devEntry) {
+	if (!_devEntry) {
 		return nil;
 	}	
 	PipingTask *detach_task = [self hdiUtilTask];
-	[detach_task setArguments:[NSArray arrayWithObjects:@"detach", devEntry, nil]];
+	[detach_task setArguments:[NSArray arrayWithObjects:@"detach", _devEntry, nil]];
 	[detach_task launch];
 	self.devEntry = nil;
 	self.mountPoint = nil;
@@ -106,7 +97,7 @@
 {
 	self.statusMessage = NSLocalizedString(@"Canceling task.", @"");
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	[currentTask terminate];
+	[_currentTask terminate];
 	[self detachNow];
 }
 
@@ -152,7 +143,7 @@
 	[self checkPreviousTask:notification];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	
-	if (terminationStatus == 0 ) {
+	if (_terminationStatus == 0 ) {
 		PipingTask *previous_task = [notification object];
 		NSDictionary *task_result = [[previous_task stdoutString] propertyList];
 	#if useLog
@@ -169,14 +160,14 @@
 			}
 		}
 	}
-	[delegate diskImageAttached:self];
+	[_delegate diskImageAttached:self];
 }
 
 - (void)afterDitto:(NSNotification *)notification
 {
 	[self checkPreviousTask:notification];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	[delegate dittoFinished:self];
+	[_delegate dittoFinished:self];
 }
 
 - (void)dittoPath:(NSString *)srcPath toPath:(NSString *)destPath

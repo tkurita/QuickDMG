@@ -2,12 +2,14 @@
 
 
 @interface PipingTask : NSObject {
-	NSMutableData *stdoutData;
-	NSMutableData *stderrData;
-	NSTask *task;
-	NSFileHandle *errHandle;
-	NSDictionary *userInfo;
+
 }
+
+@property(nonatomic, retain) NSMutableData *stdoutData;
+@property(nonatomic, retain) NSMutableData *stderrData;
+@property(nonatomic, retain) NSTask *task;
+@property(nonatomic, retain) NSFileHandle *errHandle;
+@property(nonatomic, retain) NSDictionary *userInfo;
 
 + (PipingTask *)launchedTaskWithLaunchPath:path arguments:arguments;
 
@@ -16,9 +18,6 @@
 
 - (void)waitUntilExit;
 - (void)launch;
-
-- (NSDictionary *)userInfo;
-- (void)setUserInfo:(NSDictionary *)info;
 
 #pragma mark bridges to NSTask
 - (void)terminate;

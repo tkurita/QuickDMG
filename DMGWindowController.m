@@ -7,17 +7,6 @@
 
 @implementation DMGWindowController
 
-#pragma mark accessors
-- (id)dmgMaker
-{
-	return dmgMaker;
-}
-
-- (id)dmgOptionsViewController
-{
-	return dmgOptionsViewController;
-}
-
 #pragma mark methods for sheet
 - (void)alertDidEnd:(NSWindow*)alert returnCode:(int)returnCode contextInfo:(void *)contextInfo //common
 {
@@ -46,17 +35,17 @@
 {
 	NSSavePanel *savePanel = [NSSavePanel savePanel];
 	id document = [self document];
-	[savePanel setRequiredFileType:[dmgOptionsViewController dmgSuffix]];
+	[savePanel setRequiredFileType:[_dmgOptionsViewController dmgSuffix]];
 	[savePanel setCanSelectHiddenExtension:YES];
-    [savePanel setDirectoryURL:dmgMaker.workingLocationURL];
-    [savePanel setNameFieldStringValue:[dmgMaker dmgName]];
+    [savePanel setDirectoryURL:_dmgMaker.workingLocationURL];
+    [savePanel setNameFieldStringValue:[_dmgMaker dmgName]];
     [savePanel beginSheetModalForWindow:self.window
                       completionHandler:^(NSInteger result){
                           if (result == NSOKButton) {
                               NSURL *result_url = [savePanel URL];
-                              dmgMaker.workingLocationURL = [result_url URLByDeletingLastPathComponent];
-                              [dmgMaker setCustomDmgName:[result_url lastPathComponent]];
-                              [self setTargetPath:[dmgMaker dmgPath]];
+                              _dmgMaker.workingLocationURL = [result_url URLByDeletingLastPathComponent];
+                              [_dmgMaker setCustomDmgName:[result_url lastPathComponent]];
+                              [self setTargetPath:[_dmgMaker dmgPath]];
                           }
                       }];
 }
@@ -81,10 +70,10 @@
 #pragma mark methods for setup
 - (void)setupProgressWindow //common
 {
-	if (!progressWindowController) {
-		progressWindowController = [[DMGProgressWindowController alloc] initWithNibName:@"DMGProgressWindow"];
+	if (!_progressWindowController) {
+		self.progressWindowController = [[DMGProgressWindowController alloc] initWithNibName:@"DMGProgressWindow"];
 	}
-	[progressWindowController beginSheetWith:self];
+	[_progressWindowController beginSheetWith:self];
 }
 
 - (void)setTargetPath:(NSString *)string // not common
@@ -96,30 +85,30 @@
 
 - (void)setupDMGOptionsView //common
 {
-	dmgOptionsViewController = [[DMGOptionsViewController alloc]
+	self.dmgOptionsViewController = [[DMGOptionsViewController alloc]
 								initWithNibName:@"DMGOptionsView" owner:self];
-	[dmgOptionsBox setContentView:[dmgOptionsViewController view]];
-	[okButton bind:@"enabled" toObject:[dmgOptionsViewController dmgFormatController] 
+	[dmgOptionsBox setContentView:[_dmgOptionsViewController view]];
+	[okButton bind:@"enabled" toObject:[_dmgOptionsViewController dmgFormatController]
 								withKeyPath:@"selectedObjects.@count" options:nil];
-	[[dmgOptionsViewController tableView] setDoubleAction:@selector(okAction:)];
+	[[_dmgOptionsViewController tableView] setDoubleAction:@selector(okAction:)];
 }
 
 #pragma mark communicate with DiskImageMaker
 - (void)makeDiskImage //common
 {
 	[self setupProgressWindow];
-	if ([dmgMaker checkCondition:self]) {
+	if ([_dmgMaker checkCondition:self]) {
 		NSNotificationCenter* notification_center = [NSNotificationCenter defaultCenter];
-		[notification_center addObserver:progressWindowController
+		[notification_center addObserver:_progressWindowController
 							   selector:@selector(showStatusMessage:)
 								   name:@"DmgProgressNotification"
-								 object:dmgMaker];
+								 object:_dmgMaker];
 		[notification_center addObserver:self
 							   selector:@selector(dmgDidTerminate:)
 								   name:@"DmgDidTerminationNotification"
-								 object:dmgMaker];
+								 object:_dmgMaker];
 
-		[dmgMaker createDiskImage];
+		[_dmgMaker createDiskImage];
 	}
 }
 
@@ -127,8 +116,8 @@
 				change:(NSDictionary *)change context:(void *)context
 {
     if ([keyPath isEqual:@"selectedObjects"]) {
-		[dmgMaker resolveDmgName];
-		[targetPathView setStringValue:[dmgMaker dmgPath]];
+		[_dmgMaker resolveDmgName];
+		[targetPathView setStringValue:[_dmgMaker dmgPath]];
     }
 }
 
@@ -148,7 +137,7 @@
 		if (sheet != nil) {
 			[[NSApplication sharedApplication] endSheet:sheet returnCode:DIALOG_OK];
 		}
-		[dmgOptionsViewController saveSettings];
+		[_dmgOptionsViewController saveSettings];
 		[self close];
 	}
 	else {
@@ -167,7 +156,7 @@
 #pragma mark delegate of NSWindow
 - (void)windowWillClose:(NSNotification *)aNotification
 {
-	[[dmgOptionsViewController dmgFormatController] removeObserver:self 
+	[[_dmgOptionsViewController dmgFormatController] removeObserver:self
 													forKeyPath:@"selectedObjects"];
 }
 
@@ -186,15 +175,15 @@
 - (void)dealloc
 {
 	//NSLog(@"dealloc DMGWindowController");
-	[dmgOptionsViewController release];
-	[progressWindowController release];
-	[dmgMaker release];
+	[_dmgOptionsViewController release];
+	[_progressWindowController release];
+	[_dmgMaker release];
 	[super dealloc];
 }
 
 - (void)windowDidLoad
 {
-	[[dmgOptionsViewController dmgFormatController] addObserver:self
+	[[_dmgOptionsViewController dmgFormatController] addObserver:self
 							 forKeyPath:@"selectedObjects"
 								 options:(NSKeyValueObservingOptionNew)
 									context:NULL];
@@ -203,9 +192,9 @@
 	id theDocument = [self document];
 
 	[sourcePathView setStringValue:[theDocument fileName]];
-	dmgMaker = [[DiskImageMaker alloc] initWithSourceItem:theDocument];
-	[dmgMaker setDMGOptions:dmgOptionsViewController];
-	[targetPathView setStringValue:[dmgMaker dmgPath]];
+	self.dmgMaker = [[DiskImageMaker alloc] initWithSourceItem:theDocument];
+	_dmgMaker.dmgOptions = _dmgOptionsViewController;
+	[targetPathView setStringValue:[_dmgMaker dmgPath]];
 }
 
 NSValue *lefttop_of_frame(NSRect aRect)

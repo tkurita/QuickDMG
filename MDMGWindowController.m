@@ -28,7 +28,7 @@
 	}
 	
 	NSSavePanel *save_panel = [NSSavePanel savePanel];
-	[save_panel setRequiredFileType:[dmgOptionsViewController dmgSuffix]];
+	[save_panel setRequiredFileType:[self.dmgOptionsViewController dmgSuffix]];
 	[save_panel setCanSelectHiddenExtension:YES];
 	[save_panel beginSheetForDirectory:nil file:nil
 				   modalForWindow:[self window]
@@ -68,12 +68,12 @@
 #if useLog
 		NSLog(@"%@", result_path);
 #endif
-		if (!dmgMaker) {
-			[dmgMaker release];
+		if (!self.dmgMaker) {
+			self.dmgMaker = nil;;
 		}
-		dmgMaker = [[DiskImageMaker alloc] initWithSourceItems:[fileListController arrangedObjects]];
-		[dmgMaker setDMGOptions:dmgOptionsViewController];
-		[dmgMaker setDestination:result_path replacing:YES];
+		self.dmgMaker = [[DiskImageMaker alloc] initWithSourceItems:[fileListController arrangedObjects]];
+		self.dmgMaker.dmgOptions = self.dmgOptionsViewController;
+		[self.dmgMaker setDestination:result_path replacing:YES];
 		[sheet orderOut:self];
 		[self makeDiskImage];
 	}

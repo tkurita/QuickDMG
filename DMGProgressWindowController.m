@@ -15,7 +15,7 @@
 {
 	[[NSApplication sharedApplication] endSheet: [sender window] returnCode:DIALOG_ABORT];
 	[progressBar stopAnimation:self];
-	[[owner dmgMaker] aboartTask];
+	[[_owner dmgMaker] aboartTask];
 }
 
 - (void)sheetDidEnd:(NSWindow*)sheet returnCode:(int)returnCode contextInfo:(void*)contextInfo
@@ -36,7 +36,7 @@
 
 - (void) beginSheetWith:(NSWindowController<DMGWindowController> *)aController
 {
-	owner = aController;
+	self.owner = aController;
 	[[NSApplication sharedApplication] beginSheet:window
 							modalForWindow:[aController window] 
 							modalDelegate:self 

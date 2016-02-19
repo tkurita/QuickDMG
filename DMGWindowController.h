@@ -9,17 +9,16 @@
     IBOutlet id targetPathView;
 	IBOutlet id dmgOptionsBox;
 	IBOutlet id okButton;
-		
-	id dmgOptionsViewController;
-	DMGProgressWindowController *progressWindowController;
-	DiskImageMaker *dmgMaker;
 }
+
+@property(nonatomic ,retain) id dmgOptionsViewController;
+@property(nonatomic ,retain) DMGProgressWindowController *progressWindowController;
+@property(nonatomic ,retain) DiskImageMaker *dmgMaker;
 
 - (IBAction)cancelAction:(id)sender;
 - (IBAction)okAction:(id)sender;
 
 - (void)makeDiskImage;
-- (id)dmgOptionsViewController;
 
 #pragma mark common method
 - (void)setupProgressWindow;

@@ -8,11 +8,11 @@
     IBOutlet id progressBar;
     IBOutlet id progressText;
 	IBOutlet id window;
-	
-	NSWindowController<DMGWindowController> *owner;
 }
+
 - (id)initWithNibName:(NSString *)nibName;
 - (IBAction)cancelAction:(id)sender;
 - (void) beginSheetWith:(NSWindowController<DMGWindowController> *)aController;
+@property(nonatomic, assign) NSWindowController<DMGWindowController> *owner;
 
 @end

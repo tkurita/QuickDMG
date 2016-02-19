@@ -12,7 +12,6 @@
 	//related disk image file
 	float requireSpaceRatio;
 	float expectedCompressRatio;
-	id<DMGOptions> dmgOptions;
 	
 	//parameters of setup status
 	BOOL willBeConverted;
@@ -53,7 +52,7 @@
 - (void) postStatusNotification:(NSString *) message;
 
 #pragma mark setup methods
-- (void)setDMGOptions:(id<DMGOptions>)anObject;
+@property (nonatomic, retain) id<DMGOptions> dmgOptions;
 - (void)setDestination:(NSString *)aPath replacing:(BOOL)aFlag;
 - (NSString *)resolveDmgName;
 
@@ -70,13 +69,14 @@
 
 //private
 @property (nonatomic, retain) NSString *dmgName;
-@property(retain) NSString *devEntry;
-@property(retain) PipingTask *currentTask;
-@property(retain) NSString *mountPoint;
-@property(retain) NSString *tmpDir;
+@property(nonatomic, retain) NSString *devEntry;
+@property(nonatomic, retain) PipingTask *currentTask;
+@property(nonatomic, retain) NSString *mountPoint;
+@property(nonatomic, retain) NSString *tmpDir;
 //target path to convert dmg file
-@property(retain) NSString *sourceDmgPath;
-@property(retain) NSNotificationCenter *myNotiCenter;
+@property(nonatomic, retain) NSString *sourceDmgPath;
+@property(nonatomic, retain) NSNotificationCenter *myNotiCenter;
+
 #pragma mark private use
 //- (NSString *) uniqueName:(NSString *)baseName location:(NSString*)dirPath; //baseName に dmgSuffix を付けて、workingLocation で unique な名前を求める
 - (BOOL) checkPreviousTask:(NSNotification *)notification;

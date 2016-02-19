@@ -11,7 +11,6 @@
 	
 	BOOL internetEnable;
 	BOOL isDeleteDSStore;
-	NSIndexSet *selectedFormatIndexes;
 	int compressionLevel;
 	BOOL putawaySources;
 }
@@ -28,5 +27,7 @@
 - (void)setDeleteDSStore:(BOOL)aFlag;
 - (void)setInternetEnable:(BOOL)aFlag;
 - (void)setPutawaySources:(BOOL)flag;
+
+@property (nonatomic, retain) NSIndexSet *selectedFormatIndexes;
 
 @end

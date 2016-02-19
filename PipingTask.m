@@ -16,7 +16,7 @@
 - (id)init
 {
     if (self = [super init]) {
-		task  = [[NSTask alloc] init];
+		self.task  = [[NSTask new] autorelease];
     }
 	
     return self;
@@ -27,59 +27,47 @@
 #if useLog
 	NSLog(@"will dealloc PipingTask");
 #endif
-	[errHandle closeFile];
-	[errHandle release];
-	[task release];
-	[stdoutData release];
-	[stderrData release];
-	[userInfo release];
+	[_errHandle closeFile];
+	[_errHandle release];
+	[_task release];
+	[_stdoutData release];
+	[_stderrData release];
+	[_userInfo release];
 	[super dealloc];
-}
-
-- (void)setUserInfo:(NSDictionary *)info
-{
-	[info retain];
-	[userInfo autorelease];
-	userInfo = info;
-}
-
-- (NSDictionary *)userInfo
-{
-	return userInfo;
 }
 
 - (void)waitUntilExit
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	[task waitUntilExit];
+	[_task waitUntilExit];
 }
 
 - (void)launch
 {
-	[stdoutData release];
-	stdoutData = [[NSMutableData alloc] init];
-	[stderrData release];
-	stderrData = [[NSMutableData alloc] init];
-	[task setStandardOutput:[NSPipe pipe]];
-	[task setStandardError:[NSPipe pipe]];
+	self.stdoutData = nil;
+	self.stdoutData = [[NSMutableData new] autorelease];
+	self.stderrData = nil;
+	self.stderrData = [[NSMutableData new] autorelease];
+	[_task setStandardOutput:[NSPipe pipe]];
+	[_task setStandardError:[NSPipe pipe]];
 	NSNotificationCenter *notification_center = [NSNotificationCenter defaultCenter];
 	
-	errHandle = [[[task standardError] fileHandleForReading] retain];
+	self.errHandle = [[[_task standardError] fileHandleForReading] retain];
     [notification_center
         addObserver : self 
            selector : @selector(readStdErr:) 
                name : NSFileHandleReadCompletionNotification 
-             object : errHandle]; 
+             object : _errHandle]; 
 
-	[errHandle readInBackgroundAndNotify];
+	[_errHandle readInBackgroundAndNotify];
 
 	[notification_center
 		addObserver : self 
 		   selector : @selector(forwardNotification:)
 			   name : nil 
-			 object : task];
+			 object : _task];
 		
-	[task launch];
+	[_task launch];
 
 	[NSThread detachNewThreadSelector:@selector(readStdOut:)
 							 toTarget:self withObject:nil];
@@ -95,13 +83,13 @@
 	[n_center removeObserver:self];
 	[n_center postNotification:
 		[NSNotification notificationWithName:[notification name]
-									  object:self userInfo:userInfo]];
+									  object:self userInfo:_userInfo]];
 }
 
 - (void)readStdOut:(id)arg
 {
 	NSAutoreleasePool *pool=[[NSAutoreleasePool alloc] init];
-	NSPipe *standardOutput = [task standardOutput];
+	NSPipe *standardOutput = [_task standardOutput];
 	
 	NSFileHandle *out_h = [standardOutput fileHandleForReading];
 	while(1) {
@@ -109,7 +97,7 @@
 		NSData *data_out = [out_h availableData];
 		
 		if ([data_out length]) {
-			[stdoutData appendData:data_out];
+			[_stdoutData appendData:data_out];
 		} else {
 			break;
 		}
@@ -129,11 +117,11 @@
 #if useLog
 	NSLog(@"start readStdErr PipingTask");
 #endif
-	[stderrData appendData:
+	[_stderrData appendData:
 		[[notification userInfo] objectForKey:NSFileHandleNotificationDataItem]]; 
 		
      
-    if (task && [task isRunning]) {
+    if (_task && [_task isRunning]) {
         [[notification object] readInBackgroundAndNotify]; 
 	/*
     } else {
@@ -149,52 +137,52 @@
 
 - (NSString *)stdoutString
 {
-	return [[[NSString alloc] initWithData:stdoutData encoding:NSUTF8StringEncoding] autorelease];
+	return [[[NSString alloc] initWithData:_stdoutData encoding:NSUTF8StringEncoding] autorelease];
 }
 
 - (NSString *)stderrString
 {	
-	if (![stderrData length]) {
-	  [stderrData appendData:[errHandle availableData]];
+	if (![_stderrData length]) {
+	  [_stderrData appendData:[_errHandle availableData]];
 	}
-	return [[[NSString alloc] initWithData:stderrData encoding:NSUTF8StringEncoding] autorelease];
+	return [[[NSString alloc] initWithData:_stderrData encoding:NSUTF8StringEncoding] autorelease];
 }
 
 #pragma mark bridges to NSTask
 
 - (void)terminate
 {
-	[task terminate];
+	[_task terminate];
 }
 
 - (NSArray *)arguments
 {
-	return [task arguments];
+	return [_task arguments];
 }
 
 - (int)terminationStatus
 {
-	return [task terminationStatus];
+	return [_task terminationStatus];
 }
 
 - (NSString *)launchPath
 {
-	return [task launchPath];
+	return [_task launchPath];
 }
 
 - (void)setArguments:(NSArray *)arguments
 {
-	[task setArguments:arguments];
+	[_task setArguments:arguments];
 }
 
 - (void)setLaunchPath:(NSString *)path
 {
-	[task setLaunchPath:path];
+	[_task setLaunchPath:path];
 }
 
 - (void)setCurrentDirectoryPath:(NSString*)path
 {
-	[task setCurrentDirectoryPath:path];
+	[_task setCurrentDirectoryPath:path];
 } 
 
 @end

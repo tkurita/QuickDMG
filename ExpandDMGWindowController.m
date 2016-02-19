@@ -4,28 +4,24 @@
 
 @implementation ExpandDMGWindowController
 
-@synthesize dmgHandler;
-@synthesize dmgPath;
-@synthesize dmgEnumerator;
-
 - (void)dealloc
 {
-	[dmgHandler release];
-	[dmgPath release];
-	[dmgEnumerator release];
+	[_dmgHandler release];
+	[_dmgPath release];
+	[_dmgEnumerator release];
 	[super dealloc];
 }
 
 - (BOOL)processNextItem
 {
-	if (! dmgEnumerator) return NO;
-	if (! (self.dmgPath = [dmgEnumerator nextObject])) return NO;
+	if (! _dmgEnumerator) return NO;
+	if (! (self.dmgPath = [_dmgEnumerator nextObject])) return NO;
 	
-	[self.window setRepresentedFilename:dmgPath];
+	[self.window setRepresentedFilename:_dmgPath];
 	NSString *title = [NSString stringWithLocalizedFormat:@"Expanding %@", 
-					   [dmgPath lastPathComponent]];
+					   [_dmgPath lastPathComponent]];
 	[self.window setTitle:title];
-	[self.dmgHandler attachDiskImage:dmgPath];
+	[self.dmgHandler attachDiskImage:_dmgPath];
 	return YES;
 }
 
@@ -58,7 +54,7 @@
 - (void)diskImageDetached:(DMGHandler *)sender
 {
 	if (sender.terminationStatus != 0) {
-		dmgHandler.statusMessage = [NSString stringWithLocalizedFormat:@"Failed detaching with error : %@",
+		_dmgHandler.statusMessage = [NSString stringWithLocalizedFormat:@"Failed detaching with error : %@",
 															sender.terminationMessage];
 		[progressIndicator stopAnimation:self];
 		return;
@@ -73,7 +69,7 @@
 - (void)dittoFinished:(DMGHandler *)sender
 {
 	if (sender.terminationStatus != 0) {
-		dmgHandler.statusMessage = [NSString stringWithLocalizedFormat:@"Failed copy with error : %@",
+		_dmgHandler.statusMessage = [NSString stringWithLocalizedFormat:@"Failed copy with error : %@",
 															sender.terminationMessage];
 		[sender detachNow];
 		[progressIndicator stopAnimation:self];
@@ -85,13 +81,13 @@
 - (void)diskImageAttached:(DMGHandler *)sender
 {
 	if (sender.terminationStatus != 0) {
-		dmgHandler.statusMessage = [NSString stringWithLocalizedFormat:@"Failed attaching with error : %@",
+		_dmgHandler.statusMessage = [NSString stringWithLocalizedFormat:@"Failed attaching with error : %@",
 										sender.terminationMessage];
 		[progressIndicator stopAnimation:self];
 		return;
 	}
 	NSString *src = sender.mountPoint;
-	NSString *dest_dir = [dmgPath stringByDeletingLastPathComponent];
+	NSString *dest_dir = [_dmgPath stringByDeletingLastPathComponent];
 	NSString *uname = [[src lastPathComponent] uniqueNameAtLocation:dest_dir];
 	NSString *dest_path = [dest_dir stringByAppendingPathComponent:uname];
 	[sender dittoPath:sender.mountPoint toPath:dest_path];
@@ -99,7 +95,7 @@
 
 - (IBAction)cancelTask:(id)sender
 {
-	[dmgHandler abortTask];
+	[_dmgHandler abortTask];
 	[progressIndicator stopAnimation:self];
 	[self close];
 }
