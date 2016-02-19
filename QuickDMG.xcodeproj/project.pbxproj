@@ -355,7 +355,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CC63DFD09377A2500503C26 /* Build configuration list for PBXNativeTarget "QuickDMG" */;
 			buildPhases = (
-				2CF840901580A97C004E5E20 /* ShellScript */,
 				8D15AC2B0486D014006FF6A4 /* Resources */,
 				8D15AC300486D014006FF6A4 /* Sources */,
 				8D15AC330486D014006FF6A4 /* Frameworks */,
@@ -448,37 +447,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2CF840901580A97C004E5E20 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/English.lproj/MainMenu.nib",
-				"$(SRCROOT)/English.lproj/DMGProgressWindow.nib",
-				"$(SRCROOT)/English.lproj/MFMGWindwow.nib",
-				"$(SRCROOT)/English.lproj/DMGDocument.nib",
-				"$(SRCROOT)/English.lproj/DMGOptionsView.nib",
-				"$(SRCROOT)/Japanese.lproj/MainMenu.strings",
-				"$(SRCROOT)/Japanese.lproj/MDMGWindow.strings",
-				"$(SRCROOT)/Japanese.lproj/DMGDocument.strings",
-				"$(SRCROOT)/Japanese.lproj/DMGOptionsView.strings",
-				"$(SRCROOT)/English.lproj/ExpandDMGWindwo.xin",
-				"$(SRCROOT)/Japanese.lproj/DMGProgressWindow.strings",
-				"$(SRCROOT)/Japanese.lproj/ExpandDMGWindow.strings",
-			);
-			outputPaths = (
-				"$(SRCROOT)/Japanese.lproj/MainMenu.nib",
-				"$(SRCROOT)/Japanese.lproj/MFMGWindow.nib",
-				"$(SRCROOT)/Japanese.lproj/DMGDocument.nib",
-				"$(SRCROOT)/Japanese.lproj/DMGOptionsView.nib",
-				"$(SRCROOT)/Japanese.lproj/DMGProgressWindow.nib",
-				"$(SRCROOT)/Japanese.lproj/ExpandDMGWindow.xib",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Extract English strings (use this to check if you added new strings to your nibs)\n# ibtool --generate-strings-file Resources/English.lproj/MainWindow.strings Resources/English.lproj/MainWindow.xib\n# Generate Localized interface\n\nfunction generate_localized_interface\n{\nbase_lang=$1\ntarget_lang=$2\ntarget_nib=$3\n\nnib_basename=`echo ${target_nib} | sed -E -e 's/\\.(nib|xib)//'`\n\ntarget_lang_strings=${target_lang}.lproj/${nib_basename}.strings\ntarget_lang_nib=${target_lang}.lproj/${target_nib}\n\nif ! [ -e ${target_lang_strings} ]; then\n\tibtool --generate-strings-file ${target_lang_strings} ${target_lang_nib}\nelse\n\techo \"${target_lang_strings} exist\"\U0013\nfi\n\nibtool --strings-file ${target_lang_strings} --write ${target_lang_nib} ${base_lang}.lproj/${target_nib}\nif [ -e ${target_lang_nib}/.svn ]; then \n\trm -rf ${target_lang_nib}/.svn\nfi\n}\n\ngenerate_localized_interface English Japanese MainMenu.nib\ngenerate_localized_interface English Japanese MDMGWindow.nib\ngenerate_localized_interface English Japanese DMGDocument.nib\ngenerate_localized_interface English Japanese DMGOptionsView.nib\ngenerate_localized_interface English Japanese DMGProgressWindow.nib\ngenerate_localized_interface English Japanese ExpandDMGWindow.xib";
-		};
 		2CF840A11580AFD8004E5E20 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
@@ -639,7 +607,7 @@
 				GCC_PREFIX_HEADER = QuickDMG_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = QuickDMG;
 				PRODUCT_VERSION = 2.4;
 				VERSIONING_SYSTEM = "apple generic";
@@ -660,7 +628,7 @@
 				GCC_PREFIX_HEADER = QuickDMG_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Applications;
-				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = QuickDMG;
 				PRODUCT_VERSION = 2.4;
 				VERSIONING_SYSTEM = "apple generic";
@@ -680,7 +648,7 @@
 				GCC_PREFIX_HEADER = QuickDMG_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = QuickDMG;
 				PRODUCT_VERSION = 2.4;
 				VERSIONING_SYSTEM = "apple generic";
