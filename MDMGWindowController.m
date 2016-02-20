@@ -10,6 +10,14 @@
 
 @implementation MDMGWindowController
 
+static NSMutableArray *WINDOW_CONTROLLER_STRAGE = nil;
+
++(void)initialize
+{
+    if (!WINDOW_CONTROLLER_STRAGE) {
+        WINDOW_CONTROLLER_STRAGE = [NSMutableArray new];
+    }
+}
 
 #pragma mark actions
 - (IBAction)okAction:(id)sender
@@ -127,7 +135,8 @@
 #pragma mark override NSWindowController
 - (void)windowDidLoad
 {
-	[fileTable setDeleteAction:@selector(deleteTabelSelection:)];
+	[WINDOW_CONTROLLER_STRAGE addObject:self];
+    [fileTable setDeleteAction:@selector(deleteTabelSelection:)];
 	[fileTable setDoubleAction:@selector(openTableSelection:)];
 	[self setupFileTable];
 }
@@ -145,6 +154,7 @@
 {
 	[fileTableController disposeDocuments];
 	[[self dmgOptionsViewController] saveSettings];
+    [WINDOW_CONTROLLER_STRAGE removeObjectIdenticalTo:self];
 }
 
 @end

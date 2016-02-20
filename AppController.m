@@ -145,9 +145,10 @@ static BOOL AUTO_QUIT = YES;
 			[filenames addObject:a_selection];
 		}
 		if ([filenames count] > 1) {
-			MDMGWindowController* mdmg_window = [[MDMGWindowController alloc] 
-												initWithWindowNibName:@"MDMGWindow"];
-			[mdmg_window showWindow:self withFiles:URLsFromPaths(filenames)];
+            [[[MDMGWindowController alloc]
+                initWithWindowNibName:@"MDMGWindow"]
+                        showWindow:self withFiles:URLsFromPaths(filenames)];
+
 		} else {
 			DMGDocument *a_doc = [documentController 
 					openDocumentWithContentsOfFile:[filenames lastObject] display:YES];
@@ -204,7 +205,7 @@ static BOOL AUTO_QUIT = YES;
 			break;
 	}
 	
-	[DonationReminder remindDonation];
+	//[DonationReminder remindDonation];
 #if useLog
 	NSLog(@"end applicationDidFinishLaunching");
 #endif
