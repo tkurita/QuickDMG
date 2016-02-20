@@ -91,8 +91,9 @@ id getTaskResult(PipingTask *aTask)
 
 - (id)initWithSourceItems:(NSArray *)array
 {
-	if (!(self = [self init])) return nil;
-	self.sourceItems = array;
+	if ((self = [self init])) {
+        self.sourceItems = array;
+    }
 	return self;
 }
 
@@ -248,7 +249,7 @@ id getTaskResult(PipingTask *aTask)
 
 -(void) launchAsCurrentTask:(PipingTask *)aTask
 {
-	[self setCurrentTask:aTask];
+	self.currentTask = aTask;
 	[aTask launch];
 }
 
@@ -340,9 +341,9 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	}
 	
 	[self postStatusNotification: NSLocalizedString(@"Copying source files.","")];
-	NSEnumerator *source_enumerator = [notification userInfo][@"sourceEnumerator"];
+	//NSEnumerator *source_enumerator = [notification userInfo][@"sourceEnumerator"];
 		
-	NSDocument<DMGDocument>* source_item = [source_enumerator nextObject];
+	NSDocument<DMGDocument>* source_item = [[notification userInfo][@"sourceEnumerator"] nextObject];
 	if (!source_item) {
 		SEL selector = NSSelectorFromString([notification userInfo][@"nextSelector"]);
 		[self performSelector:selector withObject:notification];		
@@ -361,8 +362,9 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	}
 	
 	[task setArguments:@[@"--rsrc",[[source_item fileURL] path],destination]];
-	[task setUserInfo:[notification userInfo]];
-	[_myNotiCenter addObserver:self selector:@selector(copySourceItems:) name:NSTaskDidTerminateNotification object:task];
+	task.userInfo = [notification userInfo];
+	[_myNotiCenter addObserver:self selector:@selector(copySourceItems:)
+                          name:NSTaskDidTerminateNotification object:task];
 	
 	[self launchAsCurrentTask:task];
 #if useLog

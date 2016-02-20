@@ -36,9 +36,16 @@ static NSMutableArray *WINDOW_CONTROLLER_STRAGE = nil;
                        completionHandler:^(NSInteger result) {
                            if (result != NSOKButton) return;
                            if (!self.dmgMaker) {
-                               self.dmgMaker = nil;;
+                               self.dmgMaker = nil;
                            }
-                           self.dmgMaker = [[DiskImageMaker alloc] initWithSourceItems:[fileListController arrangedObjects]];
+                           // The result of arrangedObjects is not real NSArray and it looks mutable.
+                           // the internal changes during processing and it cause an error.
+                           // Then it is required to create a new array
+                           // of which elements are elements of arrangedObjects.
+                           NSArray *source_items = [NSArray arrayWithArray:
+                                                    [fileListController arrangedObjects]];
+                           self.dmgMaker = [[DiskImageMaker alloc]
+                                            initWithSourceItems:source_items];
                            self.dmgMaker.dmgOptions = self.dmgOptionsViewController;
                            [self.dmgMaker setDestination:[[save_panel URL] path] replacing:YES];
                            [save_panel orderOut:self];

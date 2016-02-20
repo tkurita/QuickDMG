@@ -58,12 +58,12 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 #pragma mark DMGDocument Protocol
 - (BOOL)isFolder 
 {
-    return _fileInfo[NSURLIsDirectoryKey];
+    return [self.fileInfo[NSURLIsDirectoryKey] boolValue];
 }
 
 - (BOOL)isPackage
 {
-   return _fileInfo[NSURLIsPackageKey];
+   return [self.fileInfo[NSURLIsPackageKey] boolValue];
 }
 
 - (unsigned long long)fileSize
