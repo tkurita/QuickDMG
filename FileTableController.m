@@ -12,9 +12,7 @@ static NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
 
 - (void)disposeDocuments
 {
-	NSEnumerator *enumerator = [[fileListController arrangedObjects] objectEnumerator];
-	DMGDocument *a_source;
-	while (a_source = [enumerator nextObject]) {
+	for (DMGDocument *a_source in [fileListController arrangedObjects]) {
 		[a_source setIsMultiSourceMember:NO];
 		[a_source dispose:self];
 	}
@@ -33,9 +31,7 @@ static NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
 
 - (void)addFileURLs:(NSArray *)files
 {
-	NSEnumerator *enumerator = [files objectEnumerator];
-	NSURL *file_url;
-	while (file_url = [enumerator nextObject]) {
+	for (NSURL *file_url in files) {
 		[self addFileURL:file_url];
 	}
 }
@@ -117,13 +113,10 @@ static NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
 - (void)insertFromPathes:(NSArray *)pathes row:(int)row
 {
 	NSFileManager *fileManager = [NSFileManager defaultManager];
-	NSMutableArray *doc_list = [NSMutableArray arrayWithCapacity:[pathes count]];
-	NSEnumerator *enumerator = [URLsFromPaths(pathes) objectEnumerator];
-	
-	NSURL *aFileURL;
+	NSMutableArray *doc_list = [NSMutableArray arrayWithCapacity:[pathes count]];	
 	NSDocument *a_doc;
 	NSArray *current_docs = [fileListController arrangedObjects];
-	while (aFileURL = [enumerator nextObject]) {
+	for (NSURL *aFileURL in URLsFromPaths(pathes)) {
 		a_doc = [[NSDocumentController sharedDocumentController]
 							openDocumentWithContentsOfURL:aFileURL display:NO error:nil];
 		if (![current_docs containsObject:a_doc]) {

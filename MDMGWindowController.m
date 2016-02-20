@@ -118,9 +118,7 @@ static NSMutableArray *WINDOW_CONTROLLER_STRAGE = nil;
 {
 	NSArray *selected_items = [fileListController selectedObjects];
 	[fileListController removeObjects:selected_items];
-	NSEnumerator *enumerator = [selected_items objectEnumerator];
-	DMGDocument *a_source;
-	while (a_source = [enumerator nextObject]) {
+	for (DMGDocument *a_source in selected_items) {
 		[a_source setIsMultiSourceMember:NO];
 		[a_source dispose:self];
 	}
@@ -128,10 +126,7 @@ static NSMutableArray *WINDOW_CONTROLLER_STRAGE = nil;
 
 - (void)openTableSelection:(id)sender
 {
-	NSArray *selected_items = [fileListController selectedObjects];	
-	NSEnumerator *enumerator = [selected_items objectEnumerator];
-	DMGDocument *a_source;
-	while (a_source = [enumerator nextObject]) {
+	for (DMGDocument *a_source in [fileListController selectedObjects]) {
 		if (![[a_source windowControllers] count]) {
 			[a_source makeWindowControllers];
 		}

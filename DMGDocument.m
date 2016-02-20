@@ -7,13 +7,10 @@
 
 NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 {
-	NSArray * repArray = [iconImage representations];
-	NSEnumerator *repEnum = [repArray objectEnumerator];
-	NSImageRep *imageRep;
 	NSSize targetSize = NSMakeSize(imgSize, imgSize);
 	NSImage *new_image;
 	BOOL hasTargetSize = NO;
-	while (imageRep = [repEnum nextObject]) {
+	for (NSImageRep *imageRep in [iconImage representations]) {
 		if (NSEqualSizes([imageRep size],targetSize)) {
 			hasTargetSize = YES;
 			break;

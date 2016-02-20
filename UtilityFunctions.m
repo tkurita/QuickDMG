@@ -2,10 +2,8 @@
 
 NSArray *URLsFromPaths(NSArray *filenames)
 {
-	NSEnumerator *enumerator = [filenames objectEnumerator];
 	NSMutableArray *urls = [NSMutableArray arrayWithCapacity:[filenames count]];
-	NSString *aFilename;
-	while (aFilename = [enumerator nextObject]) {
+	for (NSString *aFilename in filenames) {
 		[urls addObject:[NSURL fileURLWithPath:aFilename]];
 	}
 	return urls;

@@ -176,10 +176,8 @@ id getTaskResult(PipingTask *aTask)
 	[self postStatusNotification: 
 		NSLocalizedString(@"Checking free space of disks.","")];
 		
-	NSEnumerator *enumerator = [_sourceItems objectEnumerator];
 	sourceSize = 0;
-	id <DMGDocument>an_item;
-	while (an_item = [enumerator nextObject]) {
+	for (id <DMGDocument>an_item in _sourceItems) {
 		sourceSize += [an_item fileSize];
 	}
 	//sourceSize += 500000;
@@ -758,9 +756,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 		[self setTerminationMessage:[dmg_task stderrString]];
 	} else if ([_dmgOptions putawaySources]) {
 		NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
-		NSEnumerator *enumerator = [_sourceItems objectEnumerator];
-		NSDocument<DMGDocument> *item;
-		while (item = [enumerator nextObject]) {
+		for (NSDocument<DMGDocument> *item in _sourceItems) {
 			NSInteger tag;
 			NSString *path = [[item fileURL] path];
 			NSString *dir = [path stringByDeletingLastPathComponent];

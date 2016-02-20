@@ -196,18 +196,12 @@ NSValue *lefttop_of_frame(NSRect aRect)
 - (void)awakeFromNib
 {
 	//NSLog(@"awakeFromNib in DMGWindowController");
-//	isFirstWindow = [[NSApp delegate] isFirstOpen];
-//	[[NSApp delegate] setFirstOpen:NO];
-	[self setupDMGOptionsView];
-	
+	[self setupDMGOptionsView];	
 	[[self window] center];
 	NSValue *current_lt = lefttop_of_frame([[self window] frame]);
-	
 	NSMutableArray *left_tops = [NSMutableArray array];
-	NSEnumerator *enumerator = [[NSApp windows] objectEnumerator];
-	NSWindow *a_window;
 	NSRect a_frame;
-	while(a_window = [enumerator nextObject]) {
+	for (NSWindow *a_window in [NSApp windows]) {
 		if ([a_window isVisible]) {
 			a_frame = [a_window frame];
 			[left_tops addObject:lefttop_of_frame(a_frame)];
