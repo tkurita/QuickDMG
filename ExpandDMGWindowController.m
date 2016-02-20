@@ -4,6 +4,14 @@
 
 @implementation ExpandDMGWindowController
 
+static NSMutableArray *WINDOW_CONTROLLER_STRAGE = nil;
+
++(void)initialize
+{
+    if (!WINDOW_CONTROLLER_STRAGE) {
+        WINDOW_CONTROLLER_STRAGE = [NSMutableArray new];
+    }
+}
 
 - (BOOL)processNextItem
 {
@@ -86,6 +94,11 @@
 	[sender dittoPath:sender.mountPoint toPath:dest_path];
 }
 
+- (void)windowDidLoad
+{
+    [WINDOW_CONTROLLER_STRAGE addObject:self];
+}
+
 - (IBAction)cancelTask:(id)sender
 {
 	[_dmgHandler abortTask];
@@ -94,6 +107,7 @@
 }
 
 - (void)windowWillClose:(NSNotification*)notification {
+    [WINDOW_CONTROLLER_STRAGE removeObjectIdenticalTo:self];
 }
 
 @end
