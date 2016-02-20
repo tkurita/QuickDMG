@@ -31,6 +31,7 @@ static NSMutableArray *WINDOW_CONTROLLER_STRAGE = nil;
 	NSSavePanel *save_panel = [NSSavePanel savePanel];
 	[save_panel setAllowedFileTypes:@[[self.dmgOptionsViewController dmgSuffix]]];
 	[save_panel setCanSelectHiddenExtension:YES];
+    [save_panel setNameFieldStringValue:@"Untitled.dmg"];
     [save_panel beginSheetModalForWindow:self.window
                        completionHandler:^(NSInteger result) {
                            if (result != NSOKButton) return;
@@ -109,7 +110,6 @@ static NSMutableArray *WINDOW_CONTROLLER_STRAGE = nil;
 - (IBAction)deleteTabelSelection:(id)sender
 {
 	NSArray *selected_items = [fileListController selectedObjects];
-	//[fileListController remove:self];
 	[fileListController removeObjects:selected_items];
 	NSEnumerator *enumerator = [selected_items objectEnumerator];
 	DMGDocument *a_source;
