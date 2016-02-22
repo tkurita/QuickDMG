@@ -152,7 +152,7 @@
 		2CF840D71580D7DC004E5E20 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CF840D81580D7DC004E5E20 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		2CF840FC1580ED73004E5E20 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
-		2CF8415B1581B3DD004E5E20 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = /Users/tkurita/Dev/Projects/QuickDMG/QuickDMG/Sparkle.framework; sourceTree = "<absolute>"; };
+		2CF8415B1581B3DD004E5E20 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "/Users/tkurita/Dev/Projects/QuickDMG/svn-workingcopy/Sparkle.framework"; sourceTree = "<absolute>"; };
 		2CF841E615824F92004E5E20 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		2CFAE2550CE848E70070AEF4 /* FileTableController.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = FileTableController.h; sourceTree = "<group>"; };
 		2CFAE2560CE848E70070AEF4 /* FileTableController.m */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.objc; path = FileTableController.m; sourceTree = "<group>"; };
@@ -614,7 +614,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
@@ -650,7 +650,7 @@
 					i386,
 				);
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
@@ -677,7 +677,7 @@
 		2CC63E0009377A2500503C26 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
@@ -704,7 +704,9 @@
 		2CC63E0209377A2500503C26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COPYRIGHT = "Copyright 2005-2016, Tetsuro KURITA";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PROCUCT_Version = 2.3.1;
 				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Debug;
@@ -716,8 +718,10 @@
 					ppc,
 					i386,
 				);
+				COPYRIGHT = "Copyright 2005-2016, Tetsuro KURITA";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PREBINDING = NO;
+				PROCUCT_Version = 2.3.1;
 				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Release;
@@ -725,7 +729,9 @@
 		2CC63E0409377A2500503C26 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COPYRIGHT = "Copyright 2005-2016, Tetsuro KURITA";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PROCUCT_Version = 2.3.1;
 				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Default;

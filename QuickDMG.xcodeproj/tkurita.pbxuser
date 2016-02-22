@@ -195,7 +195,7 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 477574229;
+			PBXPerProjectTemplateStateSaveDate = 477574396;
 			PBXPrepackagedSmartGroups_v2 = (
 				{
 					PBXTransientLocationAtTop = bottom;
@@ -372,7 +372,7 @@
 					};
 				},
 			);
-			PBXWorkspaceStateSaveDate = 477574229;
+			PBXWorkspaceStateSaveDate = 477574396;
 		};
 		perUserProjectItems = {
 			2C21D8C41C77297B00218C42 = 2C21D8C41C77297B00218C42 /* PBXTextBookmark */;
@@ -804,12 +804,6 @@
 		name = History.rtf;
 		path = "/Users/tkurita/Dev/Projects/QuickDMG/svn-workingcopy/trunk/History.rtf";
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1070, 6873}}";
-			sepNavSelRange = "{871, 0}";
-			sepNavVisRect = "{{0, 425}, {1070, 539}}";
-			sepNavWindowFrame = "{{110, 242}, {644, 619}}";
-		};
 	};
 	2C895FA5081C9D2900694C34 /* AppController.h */ = {
 		uiCtxt = {
