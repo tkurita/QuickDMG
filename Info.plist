@@ -31,14 +31,10 @@
 	<string>QuickDMG</string>
 	<key>CFBundleGetInfoString</key>
 	<string>${PRODUCT_VERSION} ${COPYRIGHT}</string>
-	<key>NSHumanReadableCopyright</key>
-	<string>${COPYRIGHT}</string>
-	<key>CFBundleShortVersionString</key>
-	<string>${PRODUCT_VERSION}</string>
-	<key>CFBundleVersion</key>
-	<string>17</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>QuickDMGHelp</string>
+	<key>CFBundleHelpBookName</key>
+	<string>Scriptfactory.QuickDMG.help</string>
 	<key>CFBundleIconFile</key>
 	<string>QuickDMG</string>
 	<key>CFBundleIdentifier</key>
@@ -49,8 +45,14 @@
 	<string>QuickDMG</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>${PRODUCT_VERSION}</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>17</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>${COPYRIGHT}</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
@@ -65,6 +67,13 @@
 			</dict>
 			<key>NSMessage</key>
 			<string>createDmgFromPasteboard</string>
+			<key>NSPortName</key>
+			<string>QuickDMGService</string>
+			<key>NSRequiredContext</key>
+			<dict>
+				<key>NSTextContent</key>
+				<string>FilePath</string>
+			</dict>
 			<key>NSSendFileTypes</key>
 			<array>
 				<string>public.item</string>
@@ -72,13 +81,6 @@
 				<string>public.symlink</string>
 				<string>com.apple.alias-file</string>
 			</array>
-			<key>NSRequiredContext</key>
-			<dict>
-				<key>NSTextContent</key>
-				<string>FilePath</string>
-			</dict>
-			<key>NSPortName</key>
-			<string>QuickDMGService</string>
 			<key>NSSendTypes</key>
 			<array>
 				<string>NSFilenamesPboardType</string>
@@ -92,22 +94,22 @@
 			</dict>
 			<key>NSMessage</key>
 			<string>expandDmgFromPasteboard</string>
-			<key>NSSendFileTypes</key>
-			<array>
-				<string>com.apple.disk-image</string>
-			</array>
+			<key>NSPortName</key>
+			<string>QuickDMGService</string>
 			<key>NSRequiredContext</key>
 			<dict>
 				<key>NSTextContent</key>
 				<string>FilePath</string>
 			</dict>
-			<key>NSPortName</key>
-			<string>QuickDMGService</string>
+			<key>NSSendFileTypes</key>
+			<array>
+				<string>com.apple.disk-image</string>
+			</array>
 		</dict>
 	</array>
-	<key>SUPublicDSAKeyFile</key>
-	<string>dsa_pub.pem</string>
 	<key>SUFeedURL</key>
 	<string>http://www.script-factory.net/appcast/QuickDMG.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
 </dict>
 </plist>

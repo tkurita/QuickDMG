@@ -52,6 +52,7 @@
 		2CC915251C7744A60054346E /* DMGProgressWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC9151D1C7744A60054346E /* DMGProgressWindow.xib */; };
 		2CC915261C7744A60054346E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC9151F1C7744A60054346E /* MainMenu.xib */; };
 		2CC915271C7744A60054346E /* MDMGWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC915211C7744A60054346E /* MDMGWindow.xib */; };
+		2CD8A27C1C7C7F99001800EE /* QuickDMGHelp in Resources */ = {isa = PBXBuildFile; fileRef = 2CD8A27B1C7C7F99001800EE /* QuickDMGHelp */; };
 		2CDD29E40B16DFCE000B3543 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */; };
 		2CF42623088EB8F1002BBE99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF42622088EB8F1002BBE99 /* Localizable.strings */; };
 		2CF840FD1580ED73004E5E20 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2CF840FC1580ED73004E5E20 /* Credits.rtf */; };
@@ -162,6 +163,7 @@
 		2CC9152D1C77451A0054346E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CC9152E1C7745230054346E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		2CC9152F1C77452B0054346E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2CD8A27B1C7C7F99001800EE /* QuickDMGHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = QuickDMGHelp; sourceTree = "<group>"; };
 		2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = HelpSetup.plist; sourceTree = "<group>"; };
 		2CF42620088EB8E6002BBE99 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CF840FC1580ED73004E5E20 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CD8A27B1C7C7F99001800EE /* QuickDMGHelp */,
 				2CC915191C7744A60054346E /* DMGDocument.xib */,
 				2CC9151B1C7744A60054346E /* DMGOptionsView.xib */,
 				2CC9151D1C7744A60054346E /* DMGProgressWindow.xib */,
@@ -441,6 +444,7 @@
 				2CC915251C7744A60054346E /* DMGProgressWindow.xib in Resources */,
 				2CC915261C7744A60054346E /* MainMenu.xib in Resources */,
 				2CC915271C7744A60054346E /* MDMGWindow.xib in Resources */,
+				2CD8A27C1C7C7F99001800EE /* QuickDMGHelp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,7 +462,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"$BUILD_STYLE\" = 'Release' ]; then\ncd $BUILT_PRODUCTS_DIR\nSetupHelpBook $FULL_PRODUCT_NAME\nfi\n";
+			shellScript = "if [ ! \"$CONFIGURATION\" = 'Release' ]; then\necho \"HelpBook setup script will run only with Release configuration\";\nexit 0\nfi\necho \"$BUILT_PRODUCTS_DIR\"\ncd \"$BUILT_PRODUCTS_DIR\"\necho \"$FULL_PRODUCT_NAME\"\nSetupHelpBook \"$FULL_PRODUCT_NAME\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
