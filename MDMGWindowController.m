@@ -63,7 +63,8 @@ static NSMutableArray *WINDOW_CONTROLLER_STRAGE = nil;
     [openPanel beginSheetModalForWindow:[sender window]
                       completionHandler:^(NSInteger result) {
                           if (result == NSOKButton) {
-                              [fileTableController addFileURLs:[openPanel URLs]];
+                              [fileTableController addFileURLs:[openPanel URLs]
+                                             completionHandler:^(){}];
                           }
                       }];
 }
@@ -83,24 +84,25 @@ static NSMutableArray *WINDOW_CONTROLLER_STRAGE = nil;
 	if (!_initialItems) {
 		return;
 	}
-	
-	[fileTableController addFileURLs:_initialItems];
-	
+    __block id ssview = splitSubview;
+    __block id ftable = fileTable;
+    __block id sview = splitView;
+    [fileTableController addFileURLs:_initialItems completionHandler:^(){
+        NSRect frame = [ssview frame];
+        float current_dimension = frame.size.height;
+        float row_height = [ftable rowHeight];
+        NSInteger nrows = [ftable numberOfRows];
+        NSSize spacing = [ftable intercellSpacing];
+        NSRect hframe =	[[ftable headerView] frame];
+        float scroll_height = [[[ftable superview] superview] frame].size.height;
+        float button_height = current_dimension - scroll_height;
+        float table_height = hframe.size.height + ((row_height + spacing.height)*(nrows)) +5;
+        float suggested_dimension = table_height + button_height;
 
-	NSRect frame = [splitSubview frame];
-	float current_dimension = frame.size.height;
-	float row_height = [fileTable rowHeight];
-	NSInteger nrows = [fileTable numberOfRows];
-	NSSize spacing = [fileTable intercellSpacing];
-	NSRect hframe =	[[fileTable headerView] frame];
-	float scroll_height = [[[fileTable superview] superview] frame].size.height;
-	float button_height = current_dimension - scroll_height;
-	float table_height = hframe.size.height + ((row_height + spacing.height)*(nrows)) +5;
-	float suggested_dimension = table_height + button_height;
-
-	fileTableMinHeight = row_height + hframe.size.height + button_height + spacing.height;
-	if (suggested_dimension > current_dimension) suggested_dimension = current_dimension;
-	[splitView setPosition:suggested_dimension ofDividerAtIndex:0];
+        fileTableMinHeight = row_height + hframe.size.height + button_height + spacing.height;
+        if (suggested_dimension > current_dimension) suggested_dimension = current_dimension;
+        [sview setPosition:suggested_dimension ofDividerAtIndex:0];
+    }];
 }
 
 - (CGFloat)splitView:(NSSplitView *)sender constrainMinCoordinate:(CGFloat)proposedMin ofSubviewAt:(NSInteger)offset

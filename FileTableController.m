@@ -18,7 +18,7 @@ static NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
 	}
 }
 
-- (void)addFileURL:(NSURL *)aFileURL
+- (void)addFileURL:(NSURL *)aFileURL completionHandler:(void (^)())completionHandler
 {
     [[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:aFileURL
                                                                             display:NO
@@ -29,24 +29,27 @@ static NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
                  [fileListController addObject:document];
              }
          }
+         completionHandler();
      }];
-     
-    /*
-    NSDocument *a_doc = [[NSDocumentController sharedDocumentController]
-							openDocumentWithContentsOfURL:aFileURL display:NO error:nil];
-	if (a_doc) {
-		if (![[fileListController arrangedObjects] containsObject:a_doc]) {
-			[fileListController addObject:a_doc];
-		}
-	}
-     */
 }
 
-- (void)addFileURLs:(NSArray *)files
+- (void)addFileURLs:(NSArray *)files completionHandler:(void (^)())completionHandler
 {
-	for (NSURL *file_url in files) {
-		[self addFileURL:file_url];
-	}
+    NSEnumerator *file_enumerator = [files objectEnumerator];
+    
+    typedef void (^block_t)();
+    __weak __block block_t recurse;
+    block_t addFileURLHandler;
+    recurse = addFileURLHandler = ^(){
+        NSURL *file_url = [file_enumerator nextObject];
+        if (! file_url) {
+            completionHandler();
+            return;
+        }
+        [self addFileURL:file_url completionHandler:recurse];
+        };
+    [self addFileURL:[file_enumerator nextObject]
+        completionHandler:addFileURLHandler];
 }
 
 
@@ -127,28 +130,34 @@ static NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
 {
 	NSMutableArray *doc_list = [NSMutableArray arrayWithCapacity:[pathes count]];
 	NSArray *current_docs = [fileListController arrangedObjects];
-	for (NSURL *aFileURL in URLsFromPaths(pathes)) {
-        dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    NSEnumerator *file_enumerator = [URLsFromPaths(pathes) objectEnumerator];
+    
+    typedef void (^openDocument_t)(NSURL *file_url);
+
+    void (^openNextDocument)(openDocument_t nextHandler) = ^(openDocument_t nextHandler){
+        NSURL *file_url = [file_enumerator nextObject];
+        if (! file_url) {
+            NSIndexSet *insertIdxes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(row,[doc_list count])];
+            [fileListController insertObjects:doc_list atArrangedObjectIndexes:insertIdxes];
+            return;
+        }
+        nextHandler(file_url);
+    };
+    
+    __weak __block openDocument_t recurse;
+    openDocument_t openDocument;
+    recurse = openDocument = ^(NSURL *file_url) {
         [[NSDocumentController sharedDocumentController]
-         openDocumentWithContentsOfURL:aFileURL
-         display:NO
+            openDocumentWithContentsOfURL:file_url
+            display:NO
          completionHandler:^(NSDocument *document, BOOL wasAlreayOpen, NSError *error){
-             if (![current_docs containsObject:document]) {
-                 [doc_list addObject:document];
-             }
-            dispatch_semaphore_signal(semaphore);
-         }];
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-		/*
-        a_doc = [[NSDocumentController sharedDocumentController]
-                        openDocumentWithContentsOfURL:aFileURL display:NO error:nil];
-		if (![current_docs containsObject:a_doc]) {
-			[doc_list addObject:a_doc];
-		}
-         */
-	}
-	NSIndexSet *insertIdxes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(row,[doc_list count])];
-	[fileListController insertObjects:doc_list atArrangedObjectIndexes:insertIdxes];
+         if (![current_docs containsObject:document]) {
+             [doc_list addObject:document];
+         }
+         openNextDocument(recurse);
+         }];};
+    
+    openNextDocument(openDocument);
 }
 
 

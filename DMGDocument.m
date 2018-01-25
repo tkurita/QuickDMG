@@ -3,7 +3,7 @@
 #import "PipingTask.h"
 #import "PathExtra.h"
 
-#define useLog 1
+#define useLog 0
 
 NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 {
@@ -18,7 +18,7 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 	}
 	
 	if (hasTargetSize) {
-		[iconImage setScalesWhenResized:NO];
+		//[iconImage setScalesWhenResized:NO];
 		new_image = [iconImage copy];
 		[new_image setSize:targetSize];
 #if useLog
@@ -26,7 +26,7 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 #endif
 	}
 	else {
-		[iconImage setScalesWhenResized:YES];
+		//[iconImage setScalesWhenResized:YES];
 		new_image = [iconImage copy];
 		[new_image setSize:targetSize];
 #if useLog

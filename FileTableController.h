@@ -8,8 +8,8 @@
     IBOutlet id fileTableView;
 }
 
-- (void)addFileURLs:(NSArray *)files;
-- (void)addFileURL:(NSURL *)aFileURL;
+- (void)addFileURLs:(NSArray *)files completionHandler:(void (^)())completionHandler;
+- (void)addFileURL:(NSURL *)aFileURL completionHandler:(void (^)())completionHandler;
 - (void)disposeDocuments;
 
 @end

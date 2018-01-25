@@ -4,7 +4,7 @@
 #import "AppController.h"
 #import "DMGProgressWindowController.h"
 
-#define useLog 1
+#define useLog 0
 
 @implementation DMGWindowController
 

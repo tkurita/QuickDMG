@@ -6,7 +6,7 @@
 #import "DMGDocumentController.h"
 #import "ExpandDMGWindowController.h"
 
-#define useLog 1
+#define useLog 0
 
 @implementation AppController
 
@@ -40,21 +40,6 @@ static BOOL AUTO_QUIT = YES;
                                      NSLog(@"%@",[error localizedDescription]);
                                  }
                              }];
-         /*
-        NSError *error = nil;
-        NSDocument *a_doc = [documentController
-                             openDocumentWithContentsOfURL:[URLsFromPaths(filenames) lastObject]
-                             display:YES error:&error];
-        if (a_doc) {
-            if (![[a_doc windowControllers] count]) {
-                [a_doc makeWindowControllers];
-            }
-            [a_doc showWindows];
-            
-        } else {
-            NSLog(@"%@",[error localizedDescription]);
-        }
-          */
 	}
 }
 
@@ -168,10 +153,6 @@ static BOOL AUTO_QUIT = YES;
             [documentController openDocumentWithContentsOfURL:[NSURL fileURLWithPath:[filenames lastObject]]
                                                       display:YES
                                             completionHandler:^(NSDocument *document, BOOL documentWasAlreadyOpen, NSError *error) {}];
-            /*
-            DMGDocument *a_doc = [documentController
-                                  openDocumentWithContentsOfFile:[filenames lastObject] display:YES];
-             */
 		}
 	}
 	else {
