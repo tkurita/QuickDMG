@@ -33,12 +33,12 @@
 - (void)saveSettings
 {
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
-	[user_defaults setBool:internetEnable forKey:@"InternetEnable"];
+	[user_defaults setBool:_internetEnable forKey:@"InternetEnable"];
 	[user_defaults setBool:_isDeleteDSStore forKey:@"deleteDSStore"];
 	[user_defaults setObject:@([_selectedFormatIndexes firstIndex])
 					forKey:@"formatIndex"];
 	[user_defaults setInteger:_compressionLevel forKey:@"compressionLevel"];
-	[user_defaults setBool:putawaySources forKey:@"putawaySources"];
+	[user_defaults setBool:_putawaySources forKey:@"putawaySources"];
 }
 
 #pragma mark DMGOptions Protocol
@@ -63,7 +63,7 @@
 - (BOOL)internetEnable
 {
 	return [[[dmgFormatController selectedObjects] lastObject][@"canInternetEnable"] boolValue]
-			&& internetEnable;
+			&& _internetEnable;
 }
 
 - (BOOL)needConversion
@@ -78,11 +78,6 @@
 	return [array lastObject][@"command"];
 }
 
-- (BOOL)putawaySources
-{
-	return putawaySources;
-}
-
 #pragma mark accessors
 - (NSTableView *)tableView
 {
@@ -94,20 +89,11 @@
 	return dmgOptionsView;
 }
 
-- (void)setInternetEnable:(BOOL)aFlag
-{
-	internetEnable = aFlag;
-}
-
 - (id)dmgFormatController
 {
 	return dmgFormatController;
 }
 
--(void)setPutawaySources:(BOOL)flag
-{
-	putawaySources = flag;
-}
 
 
 @end

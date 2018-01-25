@@ -8,9 +8,6 @@
 	IBOutlet id dmgOptionsView;
     IBOutlet id internetEnableButton;
     IBOutlet id zlibLevelButton;
-	
-	BOOL internetEnable;
-	BOOL putawaySources;
 }
 
 - (id)initWithNibName:(NSString *)nibName owner:(id)owner;
@@ -21,12 +18,11 @@
 - (void)setSelectedFormatIndexes:(NSIndexSet *)indexSet;
 - (id)dmgFormatController;
 - (NSTableView *)tableView;
-- (void)setDeleteDSStore:(BOOL)aFlag;
-- (void)setInternetEnable:(BOOL)aFlag;
-- (void)setPutawaySources:(BOOL)flag;
 
 @property (nonatomic, strong) NSIndexSet *selectedFormatIndexes;
 @property (nonatomic) NSInteger compressionLevel;
 @property (nonatomic) BOOL isDeleteDSStore;
+@property (nonatomic) BOOL internetEnable;
+@property (nonatomic) BOOL putawaySources;
 
 @end
