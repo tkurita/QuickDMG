@@ -20,7 +20,7 @@
     [[NSBundle mainBundle] loadNibNamed:nibName owner:self topLevelObjects:&top_levels];
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
 	[self setInternetEnable:[user_defaults boolForKey:@"InternetEnable"]];
-	[self setDeleteDSStore:[user_defaults boolForKey:@"deleteDSStore"]];
+	self.isDeleteDSStore = [user_defaults boolForKey:@"deleteDSStore"];
 	self.selectedFormatIndexes = [NSIndexSet indexSetWithIndex:
 									[user_defaults integerForKey:@"formatIndex"]];
 	self.compressionLevel = [user_defaults integerForKey:@"compressionLevel"];
@@ -34,7 +34,7 @@
 {
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
 	[user_defaults setBool:internetEnable forKey:@"InternetEnable"];
-	[user_defaults setBool:isDeleteDSStore forKey:@"deleteDSStore"];
+	[user_defaults setBool:_isDeleteDSStore forKey:@"deleteDSStore"];
 	[user_defaults setObject:@([_selectedFormatIndexes firstIndex])
 					forKey:@"formatIndex"];
 	[user_defaults setInteger:_compressionLevel forKey:@"compressionLevel"];
@@ -78,11 +78,6 @@
 	return [array lastObject][@"command"];
 }
 
-- (BOOL)isDeleteDSStore
-{
-	return isDeleteDSStore;
-}
-
 - (BOOL)putawaySources
 {
 	return putawaySources;
@@ -102,11 +97,6 @@
 - (void)setInternetEnable:(BOOL)aFlag
 {
 	internetEnable = aFlag;
-}
-
-- (void)setDeleteDSStore:(BOOL)aFlag
-{
-	isDeleteDSStore = aFlag;
 }
 
 - (id)dmgFormatController

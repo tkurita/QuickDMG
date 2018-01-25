@@ -10,7 +10,6 @@
     IBOutlet id zlibLevelButton;
 	
 	BOOL internetEnable;
-	BOOL isDeleteDSStore;
 	BOOL putawaySources;
 }
 
@@ -28,5 +27,6 @@
 
 @property (nonatomic, strong) NSIndexSet *selectedFormatIndexes;
 @property (nonatomic) NSInteger compressionLevel;
+@property (nonatomic) BOOL isDeleteDSStore;
 
 @end
