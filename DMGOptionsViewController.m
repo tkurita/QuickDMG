@@ -1,7 +1,7 @@
 #import "DMGOptionsViewController.h"
 #import "LocalizedStringTransformer.h"
 
-#define useLog 0
+#define useLog 1
 
 @implementation DMGOptionsViewController
 + (void)initialize
@@ -16,13 +16,14 @@
 	NSLog(@"start [DMGOptionsViewController initWithNibName:owner:]");
 #endif	
 	self = [self init];
-	[NSBundle loadNibNamed:nibName owner:self];
+    NSArray *top_levels;
+    [[NSBundle mainBundle] loadNibNamed:nibName owner:self topLevelObjects:&top_levels];
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
 	[self setInternetEnable:[user_defaults boolForKey:@"InternetEnable"]];
 	[self setDeleteDSStore:[user_defaults boolForKey:@"deleteDSStore"]];
 	self.selectedFormatIndexes = [NSIndexSet indexSetWithIndex:
 									[user_defaults integerForKey:@"formatIndex"]];
-	[self setCompressionLevel:[user_defaults integerForKey:@"compressionLevel"]];
+	self.compressionLevel = [user_defaults integerForKey:@"compressionLevel"];
 	[self setPutawaySources:[user_defaults boolForKey:@"putawaySources"]];
 	return self;
 }
@@ -36,7 +37,7 @@
 	[user_defaults setBool:isDeleteDSStore forKey:@"deleteDSStore"];
 	[user_defaults setObject:@([_selectedFormatIndexes firstIndex])
 					forKey:@"formatIndex"];
-	[user_defaults setInteger:compressionLevel forKey:@"compressionLevel"];
+	[user_defaults setInteger:_compressionLevel forKey:@"compressionLevel"];
 	[user_defaults setBool:putawaySources forKey:@"putawaySources"];
 }
 
@@ -82,11 +83,6 @@
 	return isDeleteDSStore;
 }
 
-- (int)compressionLevel
-{
-	return compressionLevel;
-}
-
 - (BOOL)putawaySources
 {
 	return putawaySources;
@@ -111,11 +107,6 @@
 - (void)setDeleteDSStore:(BOOL)aFlag
 {
 	isDeleteDSStore = aFlag;
-}
-
-- (void)setCompressionLevel:(int)aValue
-{
-	compressionLevel = aValue;
 }
 
 - (id)dmgFormatController

@@ -2,8 +2,9 @@
 #import "DMGDocument.h"
 #import "DMGOptionsViewController.h"
 #import "AppController.h"
+#import "DMGProgressWindowController.h"
 
-#define useLog 0
+#define useLog 1
 
 @implementation DMGWindowController
 
@@ -33,7 +34,6 @@
 - (IBAction)chooseTargetPath:(id)sender //not common
 {
 	NSSavePanel *savePanel = [NSSavePanel savePanel];
-	id document = [self document];
 	[savePanel setAllowedFileTypes:@[[_dmgOptionsViewController dmgSuffix]]];
 	[savePanel setCanSelectHiddenExtension:YES];
     [savePanel setDirectoryURL:_dmgMaker.workingLocationURL];
@@ -84,7 +84,10 @@
 
 - (void)setupDMGOptionsView //common
 {
-	self.dmgOptionsViewController = [[DMGOptionsViewController alloc]
+#if useLog
+    NSLog(@"%@", @"start setupDMGOptionsView");
+#endif
+    self.dmgOptionsViewController = [[DMGOptionsViewController alloc]
 								initWithNibName:@"DMGOptionsView" owner:self];
 	[dmgOptionsBox setContentView:[_dmgOptionsViewController view]];
 	[okButton bind:@"enabled" toObject:[_dmgOptionsViewController dmgFormatController]
@@ -120,14 +123,19 @@
     }
 }
 
+/*
 -(void) dmgErrorTermiante:(NSNotification *) notification
 {
 	DiskImageMaker *dmg_maker = [notification object];
 }
+*/
 
 -(void) dmgDidTerminate:(NSNotification *) notification //common
 {	
-	DiskImageMaker *dmg_maker = [notification object];
+#if useLog
+    NSLog(@"%@", @"start dmgDidTerminate");
+#endif
+    DiskImageMaker *dmg_maker = [notification object];
 
 	if ([dmg_maker terminationStatus] == 0) {
 		NSWindow *window = [self window];
@@ -182,7 +190,7 @@
 	
 	id theDocument = [self document];
 
-	[sourcePathView setStringValue:[theDocument fileName]];
+	[sourcePathView setStringValue:[[theDocument fileURL] path]];
 	self.dmgMaker = [[DiskImageMaker alloc] initWithSourceItem:theDocument];
 	_dmgMaker.dmgOptions = _dmgOptionsViewController;
 	[targetPathView setStringValue:[_dmgMaker dmgPath]];
@@ -195,7 +203,9 @@ NSValue *lefttop_of_frame(NSRect aRect)
 
 - (void)awakeFromNib
 {
-	//NSLog(@"awakeFromNib in DMGWindowController");
+#if useLog
+    NSLog(@"awakeFromNib in DMGWindowController");
+#endif
 	[self setupDMGOptionsView];	
 	[[self window] center];
 	NSValue *current_lt = lefttop_of_frame([[self window] frame]);

@@ -6,7 +6,7 @@
 #include <sys/ucred.h>
 #include <sys/mount.h>
 	 
-#define useLog 0
+#define useLog 1
 
 id getTaskResult(PipingTask *aTask)
 {
@@ -15,7 +15,7 @@ id getTaskResult(PipingTask *aTask)
 #endif
 	NSString *result = [aTask stdoutString];
 #if useLog
-	NSLog(result);
+	NSLog(@"%@", result);
 #endif
 	id resultProp = [result propertyList];
 	return resultProp;
@@ -161,8 +161,7 @@ id getTaskResult(PipingTask *aTask)
 - (BOOL)checkWorkingLocationPermission
 {
 #if useLog
-	NSLog(@"start checkWorkingLocationPermission");
-	NSLog(workingLocation);
+	NSLog(@"start checkWorkingLocationPermission:%@", _workingLocationURL.path);
 #endif
 	int wirtePermInt = access([_workingLocationURL.path fileSystemRepresentation],02);
 	return (wirtePermInt == 0);
@@ -191,7 +190,7 @@ id getTaskResult(PipingTask *aTask)
                                      error: &err];
     if (err) {
         [NSApp presentError:err];
-        return;
+        return NO;
     }
 	unsigned long long freeSize = [infoWorkingDisk[NSFileSystemFreeSize] unsignedLongLongValue];
     
@@ -217,7 +216,7 @@ id getTaskResult(PipingTask *aTask)
                                              error: &err];
             if (err) {
                 [NSApp presentError:err];
-                return;
+                return NO;
             }
 			if ([infoTmpDisk[NSFileSystemNumber] isEqualToNumber:infoWorkingDisk[NSFileSystemNumber]]) {
 				requireSpaceRatio = 1 + expectedCompressRatio;
@@ -399,7 +398,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	PipingTask *previous_task = [notification object];
 	NSDictionary *task_result = [[previous_task stdoutString] propertyList];
 #if useLog
-	NSLog([task_result description]);
+	NSLog(@"%@", [task_result description]);
 #endif
 	task_result = task_result[@"system-entities"][0];
 	[self setDevEntry:task_result[@"dev-entry"]];
@@ -528,7 +527,6 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 
 - (void) createDiskImage
 {
-	NSDictionary * resultDict;
 	NSString * imageSize;
 	
 	/*** make disk image file ***/
@@ -605,7 +603,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 			NSString *tmp_name = [self uniqueName:_diskName
                                            suffix:a_suffix location:_tmpDir];
 #if useLog
-			NSLog(tmp_name);
+			NSLog(@"%@", tmp_name);
 #endif
 			dmg_target = [_tmpDir stringByAppendingPathComponent:tmp_name];
 			self.sourceDmgPath = dmg_target;
@@ -637,14 +635,13 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 	PipingTask *dmg_task = [notification object];
 	
 	[_myNotiCenter removeObserver:self];
-	
 	if ([dmg_task terminationStatus] != 0) {
 #if useLog
 		NSLog(@"termination status is not 0");
 #endif
-		[self setTerminationMessage:[dmg_task stderrString]];
+		self.terminationMessage = [dmg_task stderrString];
 #if useLog
-		NSLog(terminationMessage);
+		NSLog(@"termination message: %@", _terminationMessage);
 #endif
 		if ([_terminationMessage hasSuffix:@".Trashes: Permission denied\n"]) {
 #if useLog

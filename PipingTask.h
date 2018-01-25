@@ -8,7 +8,6 @@
 @property(nonatomic, strong) NSMutableData *stdoutData;
 @property(nonatomic, strong) NSMutableData *stderrData;
 @property(nonatomic, strong) NSTask *task;
-@property(nonatomic, strong) NSFileHandle *errHandle;
 @property(nonatomic, strong) NSDictionary *userInfo;
 
 + (PipingTask *)launchedTaskWithLaunchPath:path arguments:arguments;

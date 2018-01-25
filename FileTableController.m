@@ -20,13 +20,26 @@ static NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
 
 - (void)addFileURL:(NSURL *)aFileURL
 {
-	NSDocument *a_doc = [[NSDocumentController sharedDocumentController]
+    [[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:aFileURL
+                                                                            display:NO
+                                                                  completionHandler:
+     ^(NSDocument *document, BOOL documentWasAleadyOpen, NSError *error) {
+         if (document) {
+             if (![[fileListController arrangedObjects] containsObject:document]) {
+                 [fileListController addObject:document];
+             }
+         }
+     }];
+     
+    /*
+    NSDocument *a_doc = [[NSDocumentController sharedDocumentController]
 							openDocumentWithContentsOfURL:aFileURL display:NO error:nil];
 	if (a_doc) {
 		if (![[fileListController arrangedObjects] containsObject:a_doc]) {
 			[fileListController addObject:a_doc];
 		}
 	}
+     */
 }
 
 - (void)addFileURLs:(NSArray *)files
@@ -79,13 +92,13 @@ static NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
 }
 
 -(void) moveObjectsInArrangedObjectsFromIndexes:(NSIndexSet *)indexSet
-										toIndex:(unsigned int)insertIndex
+										toIndex:(NSInteger)insertIndex
 {
 	NSUInteger index = [indexSet lastIndex];
 	
-    unsigned int	aboveInsertIndexCount = 0;
+    NSUInteger	aboveInsertIndexCount = 0;
     id object;
-    unsigned int	removeIndex;
+    NSUInteger	removeIndex;
 	NSMutableArray *objects = [[fileListController arrangedObjects] mutableCopy];
 	NSMutableArray *selectedObj = [NSMutableArray arrayWithCapacity:[indexSet count]];
 	while (NSNotFound != index) {
@@ -104,24 +117,35 @@ static NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
 		[selectedObj addObject:object];
 		index = [indexSet indexLessThanIndex:index];
     }
-	[fileListController setSortDescriptors:nil];
+	//[fileListController setSortDescriptors:nil];
 	[fileListController removeObjects:objects];
 	[fileListController addObjects:objects];
 	[fileListController setSelectedObjects:selectedObj];
 }
 
-- (void)insertFromPathes:(NSArray *)pathes row:(int)row
+- (void)insertFromPathes:(NSArray *)pathes row:(NSInteger)row
 {
-	NSFileManager *fileManager = [NSFileManager defaultManager];
-	NSMutableArray *doc_list = [NSMutableArray arrayWithCapacity:[pathes count]];	
-	NSDocument *a_doc;
+	NSMutableArray *doc_list = [NSMutableArray arrayWithCapacity:[pathes count]];
 	NSArray *current_docs = [fileListController arrangedObjects];
 	for (NSURL *aFileURL in URLsFromPaths(pathes)) {
-		a_doc = [[NSDocumentController sharedDocumentController]
-							openDocumentWithContentsOfURL:aFileURL display:NO error:nil];
+        dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+        [[NSDocumentController sharedDocumentController]
+         openDocumentWithContentsOfURL:aFileURL
+         display:NO
+         completionHandler:^(NSDocument *document, BOOL wasAlreayOpen, NSError *error){
+             if (![current_docs containsObject:document]) {
+                 [doc_list addObject:document];
+             }
+            dispatch_semaphore_signal(semaphore);
+         }];
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+		/*
+        a_doc = [[NSDocumentController sharedDocumentController]
+                        openDocumentWithContentsOfURL:aFileURL display:NO error:nil];
 		if (![current_docs containsObject:a_doc]) {
 			[doc_list addObject:a_doc];
 		}
+         */
 	}
 	NSIndexSet *insertIdxes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(row,[doc_list count])];
 	[fileListController insertObjects:doc_list atArrangedObjectIndexes:insertIdxes];

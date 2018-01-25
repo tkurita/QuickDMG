@@ -6,8 +6,7 @@
 #import "DMGDocumentController.h"
 #import "ExpandDMGWindowController.h"
 
-#define useLog 0
-
+#define useLog 1
 
 @implementation AppController
 
@@ -21,32 +20,48 @@ static BOOL AUTO_QUIT = YES;
 
 - (void)processFiles:(NSArray *)filenames
 {
-	NSError *error = nil;
-	
 	if ([filenames count] > 1) {
 		id mdmg_window = [[MDMGWindowController alloc] initWithWindowNibName:@"MDMGWindow"];
 		[mdmg_window showWindow:self withFiles:URLsFromPaths(filenames)];
 	}
 	else {
-		NSDocument *a_doc = [documentController
-						openDocumentWithContentsOfURL:[URLsFromPaths(filenames) lastObject] 
-							display:YES error:&error];
-		if (a_doc) {
-			if (![[a_doc windowControllers] count]) {
-				[a_doc makeWindowControllers];
-			}
-			[a_doc showWindows];
-
-		} else {
-			NSLog(@"%@",[error localizedDescription]);
-		}
+        
+        [documentController
+            openDocumentWithContentsOfURL:[URLsFromPaths(filenames) lastObject]
+            display:YES
+            completionHandler:^(NSDocument *document, BOOL documentWasAlreadyOpen, NSError *error) {
+                                 if (document) {
+                                     if (![[document windowControllers] count]) {
+                                         [document makeWindowControllers];
+                                     }
+                                     [document showWindows];
+                                     
+                                 } else {
+                                     NSLog(@"%@",[error localizedDescription]);
+                                 }
+                             }];
+         /*
+        NSError *error = nil;
+        NSDocument *a_doc = [documentController
+                             openDocumentWithContentsOfURL:[URLsFromPaths(filenames) lastObject]
+                             display:YES error:&error];
+        if (a_doc) {
+            if (![[a_doc windowControllers] count]) {
+                [a_doc makeWindowControllers];
+            }
+            [a_doc showWindows];
+            
+        } else {
+            NSLog(@"%@",[error localizedDescription]);
+        }
+          */
 	}
 }
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
 {
 #if useLog
-	NSLog([NSString stringWithFormat:@"start openFiles for :%@",[filenames description]]);
+	NSLog(@"start openFiles for :%@",[filenames description]);
 #endif		
 	[self processFiles:filenames];
 }
@@ -123,7 +138,7 @@ static BOOL AUTO_QUIT = YES;
 	NSAppleEventDescriptor * scriptResult = [getFinderSelection executeAndReturnError:&errorDict];
 	if (errorDict != nil) {
 #if useLog
-		NSLog([errorDict description]);
+		NSLog(@"%@", [errorDict description]);
 #endif
 		NSAlert *alert = [[NSAlert alloc] init];
 		[alert addButtonWithTitle:@"OK"];
@@ -150,8 +165,13 @@ static BOOL AUTO_QUIT = YES;
                         showWindow:self withFiles:URLsFromPaths(filenames)];
 
 		} else {
-			DMGDocument *a_doc = [documentController 
-					openDocumentWithContentsOfFile:[filenames lastObject] display:YES];
+            [documentController openDocumentWithContentsOfURL:[NSURL fileURLWithPath:[filenames lastObject]]
+                                                      display:YES
+                                            completionHandler:^(NSDocument *document, BOOL documentWasAlreadyOpen, NSError *error) {}];
+            /*
+            DMGDocument *a_doc = [documentController
+                                  openDocumentWithContentsOfFile:[filenames lastObject] display:YES];
+             */
 		}
 	}
 	else {
@@ -172,7 +192,7 @@ static BOOL AUTO_QUIT = YES;
 	
 	NSAppleEventDescriptor *ev = [[NSAppleEventManager sharedAppleEventManager] currentAppleEvent];
 #if useLog
-	NSLog([ev description]);
+	NSLog(@"%@", [ev description]);
 #endif
 	AEEventID evid = [ev eventID];
 	BOOL should_process = NO;

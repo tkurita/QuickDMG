@@ -7,7 +7,8 @@
 - (id)initWithNibName:(NSString *)nibName
 {
 	self = [self init];
-	[NSBundle loadNibNamed:nibName owner:self];
+    NSArray *top_levels;
+    [[NSBundle mainBundle] loadNibNamed:nibName owner:self topLevelObjects:&top_levels];
 	return self;
 }
 

@@ -3,7 +3,7 @@
 #import "PipingTask.h"
 #import "PathExtra.h"
 
-#define useLog 0
+#define useLog 1
 
 NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 {
@@ -80,7 +80,7 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 		result = (result * 1024 *1.1);
 	}
 	else {
-		result = _fileInfo[NSURLFileSizeKey];
+        result = [_fileInfo[NSURLFileSizeKey] unsignedLongLongValue];;
 	}
 #if useLog
 	NSLog(@"end fileSize");
@@ -164,7 +164,7 @@ NSImage *convertImageSize(NSImage *iconImage, int imgSize)
 - (void)makeWindowControllers
 {
 #if useLog
-	NSLog(@"start makeWindowControlls");
+	NSLog(@"start makeWindowControllers");
 #endif	
 	DMGWindowController *a_controller = [[DMGWindowController alloc] initWithWindowNibName:@"DMGDocument"];
     [self addWindowController:a_controller];

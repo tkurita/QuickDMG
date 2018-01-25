@@ -11,7 +11,6 @@
 	
 	BOOL internetEnable;
 	BOOL isDeleteDSStore;
-	int compressionLevel;
 	BOOL putawaySources;
 }
 
@@ -23,11 +22,11 @@
 - (void)setSelectedFormatIndexes:(NSIndexSet *)indexSet;
 - (id)dmgFormatController;
 - (NSTableView *)tableView;
-- (void)setCompressionLevel:(int)aValue;
 - (void)setDeleteDSStore:(BOOL)aFlag;
 - (void)setInternetEnable:(BOOL)aFlag;
 - (void)setPutawaySources:(BOOL)flag;
 
 @property (nonatomic, strong) NSIndexSet *selectedFormatIndexes;
+@property (nonatomic) NSInteger compressionLevel;
 
 @end

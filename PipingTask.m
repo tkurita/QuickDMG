@@ -22,14 +22,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-#if useLog
-	NSLog(@"will dealloc PipingTask");
-#endif
-	[_errHandle closeFile];
-}
-
 - (void)waitUntilExit
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -44,16 +36,8 @@
 	self.stderrData = [NSMutableData new];
 	[_task setStandardOutput:[NSPipe pipe]];
 	[_task setStandardError:[NSPipe pipe]];
+    
 	NSNotificationCenter *notification_center = [NSNotificationCenter defaultCenter];
-	
-	self.errHandle = [[_task standardError] fileHandleForReading];
-    [notification_center
-        addObserver : self 
-           selector : @selector(readStdErr:) 
-               name : NSFileHandleReadCompletionNotification 
-             object : _errHandle]; 
-
-	[_errHandle readInBackgroundAndNotify];
 
 	[notification_center
 		addObserver : self 
@@ -65,6 +49,8 @@
 
 	[NSThread detachNewThreadSelector:@selector(readStdOut:)
 							 toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(readStdErr:)
+                             toTarget:self withObject:nil];
 
 }
 
@@ -105,28 +91,29 @@
 	[NSThread exit];
 }
 
-
-- (void)readStdErr:(NSNotification *)notification
+- (void)readStdErr:(id)arg
 {
+    @autoreleasepool {
+        NSPipe *pipe_stderr = [_task standardError];
+        
+        NSFileHandle *out_h = [pipe_stderr fileHandleForReading];
+        while(1) {
+            //NSLog(@"will read");
+            NSData *data_out = [out_h availableData];
+            
+            if ([data_out length]) {
+                [_stderrData appendData:data_out];
+            } else {
+                break;
+            }
+        }
+        
+        [out_h closeFile];
+    }
 #if useLog
-	NSLog(@"start readStdErr PipingTask");
+    NSLog(@"end readStdError PipingTask");
 #endif
-	[_stderrData appendData:
-		[notification userInfo][NSFileHandleNotificationDataItem]]; 
-		
-     
-    if (_task && [_task isRunning]) {
-        [[notification object] readInBackgroundAndNotify]; 
-	/*
-    } else {
-		[[NSNotificationCenter defaultCenter] removeObserver:self 
-								name:NSFileHandleReadCompletionNotification 
-								object:[notification object]];
-	*/
-	}
-#if useLog
-	NSLog(@"end readStdErr PipingTask");
-#endif
+    [NSThread exit];
 }
 
 - (NSString *)stdoutString
@@ -135,11 +122,8 @@
 }
 
 - (NSString *)stderrString
-{	
-	if (![_stderrData length]) {
-	  [_stderrData appendData:[_errHandle availableData]];
-	}
-	return [[NSString alloc] initWithData:_stderrData encoding:NSUTF8StringEncoding];
+{
+    return [[NSString alloc] initWithData:_stderrData encoding:NSUTF8StringEncoding];
 }
 
 #pragma mark bridges to NSTask
@@ -156,7 +140,7 @@
 
 - (int)terminationStatus
 {
-	return [_task terminationStatus];
+	return _task.terminationStatus;
 }
 
 - (NSString *)launchPath
