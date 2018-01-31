@@ -177,6 +177,8 @@
 	<real>0.3</real>
 	<key>putawaySources</key>
 	<false/>
+	<key>NSQuitAlwaysKeepsWindows</key>
+	<false/>
 	<key>SUScheduledCheckInterval</key>
 	<integer>86400</integer>
 </dict>
