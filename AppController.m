@@ -115,8 +115,7 @@ static BOOL AUTO_QUIT = YES;
 	}
 	
 	NSBundle * bundle = [NSBundle mainBundle];
-	NSString * scriptPath = [bundle pathForResource:@"GetFinderSelection" ofType:@"scpt" inDirectory:@"Scripts"
-		];
+	NSString * scriptPath = [bundle pathForResource:@"GetFinderSelection" ofType:@"scpt"];
 	NSURL * scriptURL = [NSURL fileURLWithPath:scriptPath];
 	NSDictionary * errorDict = nil;
 	NSAppleScript * getFinderSelection = [[NSAppleScript alloc] initWithContentsOfURL:scriptURL error:&errorDict];
@@ -219,6 +218,9 @@ static BOOL AUTO_QUIT = YES;
 	NSDictionary *defautlsDict = [NSDictionary dictionaryWithContentsOfFile:defaultsPlistPath];
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	[userDefaults registerDefaults:defautlsDict];
+    /* Disable restoring documents.
+       Adding "NSQuitAlwaysKeepsWindows" entry in UserDefaults.plist does not work. */
+    [userDefaults setBool:NO forKey:@"NSQuitAlwaysKeepsWindows"];
 
 }
 
