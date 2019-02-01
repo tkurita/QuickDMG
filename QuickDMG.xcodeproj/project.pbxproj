@@ -159,6 +159,7 @@
 		2C1452A115E751CB00481DE3 /* DMGHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGHandler.m; sourceTree = "<group>"; };
 		2C1D0A430CEAC5AF00B59A0E /* plus.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = plus.tiff; sourceTree = "<group>"; };
 		2C1D0A440CEAC5AF00B59A0E /* minus.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = minus.tiff; sourceTree = "<group>"; };
+		2C201CCB2204414C00F331E4 /* Info-sandbox.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-sandbox.plist"; sourceTree = "<group>"; };
 		2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.objc; path = DMGOptionsViewController.m; sourceTree = "<group>"; };
 		2C24C8670CA0E60400E01AC0 /* DMGOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = DMGOptionsViewController.h; sourceTree = "<group>"; };
 		2C24C8760CA0EBFD00E01AC0 /* MDMGWindowController.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = MDMGWindowController.h; sourceTree = "<group>"; };
@@ -353,6 +354,8 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8D15AC360486D014006FF6A4 /* Info.plist */,
+				2C201CCB2204414C00F331E4 /* Info-sandbox.plist */,
 				2CD8A27B1C7C7F99001800EE /* QuickDMGHelp */,
 				2CC915191C7744A60054346E /* DMGDocument.xib */,
 				2CC9151B1C7744A60054346E /* DMGOptionsView.xib */,
@@ -368,7 +371,6 @@
 				2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */,
 				2CF42622088EB8F1002BBE99 /* Localizable.strings */,
 				2C03FBB3088A1353008B7312 /* UserDefaults.plist */,
-				8D15AC360486D014006FF6A4 /* Info.plist */,
 				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
 				2C97F3390D34E39F008813CF /* ServicesMenu.strings */,
 			);
@@ -935,7 +937,7 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = QuickDMG_Prefix.pch;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = "Info-sandbox.plist";
 				INSTALL_PATH = /Applications;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = (
@@ -1076,7 +1078,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = QuickDMG_Prefix.pch;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = "Info-sandbox.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = (

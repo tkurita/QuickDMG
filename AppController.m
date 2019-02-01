@@ -86,9 +86,9 @@ static BOOL AUTO_QUIT = YES;
         return;
     }
 
-	ExpandDMGWindowController *edmgw_controlle = [[ExpandDMGWindowController alloc] 
+	ExpandDMGWindowController *edmgw_controller = [[ExpandDMGWindowController alloc]
 												  initWithWindowNibName:@"ExpandDMGWindow"];
-	[edmgw_controlle processFiles:filenames];
+	[edmgw_controller processFiles:filenames];
 }
 
 - (void)createDmgFromPasteboard:(NSPasteboard *)pboard userData:(NSString *)data error:(NSString **)error
