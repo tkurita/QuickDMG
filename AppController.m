@@ -212,7 +212,9 @@ static BOOL AUTO_QUIT = YES;
 			break;
 	}
 	
-	//[DonationReminder remindDonation];
+    if (!SANDBOX)
+        [DonationReminder remindDonation];
+    
 #if useLog
 	NSLog(@"end applicationDidFinishLaunching");
 #endif
