@@ -9,6 +9,8 @@
     IBOutlet id targetPathView;
 	IBOutlet id dmgOptionsBox;
 	IBOutlet id okButton;
+    
+    BOOL okButtonPushed;
 }
 
 @property(nonatomic ,strong) id dmgOptionsViewController;

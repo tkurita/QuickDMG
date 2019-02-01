@@ -10,13 +10,17 @@
 @property(nonatomic, strong) NSTask *task;
 @property(nonatomic, strong) NSDictionary *userInfo;
 
-+ (PipingTask *)launchedTaskWithLaunchPath:path arguments:arguments;
++ (PipingTask *)launchedTaskWithLaunchPath:(NSString *)path arguments:(NSArray *)arguments;
++ (PipingTask *)launchedTaskWithLaunchPath:(NSString *)path
+                                 arguments:(NSArray *)arguments
+                        terminationHandler:(void(^)(PipingTask *))handler;
 
 - (NSString *)stdoutString;
 - (NSString *)stderrString;
 
 - (void)waitUntilExit;
 - (void)launch;
+- (void)launchWithCompletionHandler:(void(^)(int))handler;
 
 #pragma mark bridges to NSTask
 - (void)terminate;

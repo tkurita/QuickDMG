@@ -1,6 +1,7 @@
 #import <Cocoa/Cocoa.h>
 #import "DMGDocumentProtocol.h"
 #import "StringExtra.h"
+#import "DMGTask.h"
 #import "DMGOptionsProtocol.h"
 #import "DMGWindowControllerProtocol.h"
 #import "PipingTask.h"
@@ -21,7 +22,7 @@
 	BOOL isOnlyFolder;
 	
 	//temporary stocked parameters for internal use
-	BOOL isAttached; // disk image file が attach されている状態のはずなら YES
+    BOOL aborted;
 }
 
 
@@ -36,19 +37,16 @@
 #pragma mark launching tasks
 //pubulic
 - (BOOL)checkCondition:(NSWindowController<DMGWindowController> *)aWindowController;
-- (void)createDiskImage;
+- (void)createDiskImageWithCompletaionHandler:(void (^)(BOOL))handler;
 - (void)aboartTask;
 
 //private
 - (BOOL)checkWorkingLocationPermission;
 - (BOOL)checkFreeSpace;
 - (void)convertDiskImage;
-- (void)internetEnable:(NSNotification *)notification;
-- (void)convertTmpDiskImage:(NSNotification *)notification;
 
 #pragma mark posting notification
 //private
-- (void) dmgTaskTerminate:(NSNotification *)notification;
 - (void) postStatusNotification:(NSString *) message;
 
 #pragma mark setup methods
@@ -63,22 +61,18 @@
 @property(nonatomic, strong) NSString *terminationMessage;
 @property(nonatomic, strong) NSURL *workingLocationURL;
 @property(nonatomic, strong) NSString *diskName;
+@property(copy) void (^terminationHandler)(BOOL);
 
 //related source item
 @property (nonatomic, strong) NSArray *sourceItems;
 
-//private
+#pragma mark private use
 @property (nonatomic, strong) NSString *dmgName;
 @property(nonatomic, strong) NSString *devEntry;
-@property(nonatomic, strong) PipingTask *currentTask;
+@property(nonatomic, strong) DMGTask *currentDMGTask;
 @property(nonatomic, strong) NSString *mountPoint;
 @property(nonatomic, strong) NSString *tmpDir;
 //target path to convert dmg file
 @property(nonatomic, strong) NSString *sourceDmgPath;
-@property(nonatomic, strong) NSNotificationCenter *myNotiCenter;
-
-#pragma mark private use
-//- (NSString *) uniqueName:(NSString *)baseName location:(NSString*)dirPath; //baseName に dmgSuffix を付けて、workingLocation で unique な名前を求める
-- (BOOL) checkPreviousTask:(NSNotification *)notification;
 
 @end

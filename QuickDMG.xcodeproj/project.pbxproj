@@ -17,7 +17,50 @@
 		2C24C8790CA0EBFD00E01AC0 /* MDMGWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C24C8770CA0EBFD00E01AC0 /* MDMGWindowController.m */; };
 		2C4DAD040CE29DD3009240B6 /* DMGProgressWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4DAD020CE29DD3009240B6 /* DMGProgressWindowController.m */; };
 		2C59F41D0E2C5F4400261662 /* PipingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F78C00E14E6A600BDD9E3 /* PipingTask.m */; };
+		2C69751D220031FB008957F5 /* DMGTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C69751C220031FB008957F5 /* DMGTask.m */; };
+		2C69751E220031FB008957F5 /* DMGTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C69751C220031FB008957F5 /* DMGTask.m */; };
 		2C7FBE4708196D8300340E25 /* DMGWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7FBE4508196D8300340E25 /* DMGWindowController.m */; };
+		2C88999721F06BE800E5D745 /* QuickDMG.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */; };
+		2C88999821F06BE800E5D745 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
+		2C88999921F06BE800E5D745 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C03FBB3088A1353008B7312 /* UserDefaults.plist */; };
+		2C88999A21F06BE800E5D745 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF42622088EB8F1002BBE99 /* Localizable.strings */; };
+		2C88999B21F06BE800E5D745 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */; };
+		2C88999C21F06BE800E5D745 /* plus.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D0A430CEAC5AF00B59A0E /* plus.tiff */; };
+		2C88999D21F06BE800E5D745 /* minus.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D0A440CEAC5AF00B59A0E /* minus.tiff */; };
+		2C88999E21F06BE800E5D745 /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C97F3390D34E39F008813CF /* ServicesMenu.strings */; };
+		2C88999F21F06BE800E5D745 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2CF840FC1580ED73004E5E20 /* Credits.rtf */; };
+		2C8899A021F06BE800E5D745 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CF841E615824F92004E5E20 /* dsa_pub.pem */; };
+		2C8899A121F06BE800E5D745 /* ExpandDMGWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C14520215E61AEE00481DE3 /* ExpandDMGWindow.xib */; };
+		2C8899A221F06BE800E5D745 /* History.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2CC914F11C7740120054346E /* History.rtf */; };
+		2C8899A321F06BE800E5D745 /* DMGDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC915191C7744A60054346E /* DMGDocument.xib */; };
+		2C8899A421F06BE800E5D745 /* DMGOptionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC9151B1C7744A60054346E /* DMGOptionsView.xib */; };
+		2C8899A521F06BE800E5D745 /* DMGProgressWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC9151D1C7744A60054346E /* DMGProgressWindow.xib */; };
+		2C8899A621F06BE800E5D745 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC9151F1C7744A60054346E /* MainMenu.xib */; };
+		2C8899A721F06BE800E5D745 /* MDMGWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC915211C7744A60054346E /* MDMGWindow.xib */; };
+		2C8899A821F06BE800E5D745 /* QuickDMGHelp in Resources */ = {isa = PBXBuildFile; fileRef = 2CD8A27B1C7C7F99001800EE /* QuickDMGHelp */; };
+		2C8899AA21F06BE800E5D745 /* GetFinderSelection.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 2C895FB4081CCA5E00694C34 /* GetFinderSelection.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
+		2C8899AB21F06BE800E5D745 /* DMGDocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2DBCD0CABC876006E7800 /* DMGDocumentController.m */; };
+		2C8899AC21F06BE800E5D745 /* DMGDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* DMGDocument.m */; settings = {ATTRIBUTES = (); }; };
+		2C8899AD21F06BE800E5D745 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		2C8899AE21F06BE800E5D745 /* DMGWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7FBE4508196D8300340E25 /* DMGWindowController.m */; };
+		2C8899AF21F06BE800E5D745 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C895FA6081C9D2900694C34 /* AppController.m */; };
+		2C8899B021F06BE800E5D745 /* DiskImageMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */; };
+		2C8899B121F06BE800E5D745 /* LocalizedStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB60F6F0BCB9D56009F39D7 /* LocalizedStringTransformer.m */; };
+		2C8899B221F06BE800E5D745 /* DMGOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C24C8660CA0E60400E01AC0 /* DMGOptionsViewController.m */; };
+		2C8899B321F06BE800E5D745 /* MDMGWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C24C8770CA0EBFD00E01AC0 /* MDMGWindowController.m */; };
+		2C8899B421F06BE800E5D745 /* DMGProgressWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4DAD020CE29DD3009240B6 /* DMGProgressWindowController.m */; };
+		2C8899B521F06BE800E5D745 /* KXTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E7AB0CE7EB6400653E25 /* KXTableView.m */; };
+		2C8899B621F06BE800E5D745 /* FileTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFAE2560CE848E70070AEF4 /* FileTableController.m */; };
+		2C8899B721F06BE800E5D745 /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC904130CE877830016E8D7 /* UtilityFunctions.m */; };
+		2C8899B821F06BE800E5D745 /* PipingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F78C00E14E6A600BDD9E3 /* PipingTask.m */; };
+		2C8899B921F06BE800E5D745 /* ExpandDMGWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1451F215E60CD300481DE3 /* ExpandDMGWindowController.m */; };
+		2C8899BA21F06BE800E5D745 /* DMGHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1452A115E751CB00481DE3 /* DMGHandler.m */; };
+		2C8899BB21F06BE800E5D745 /* PathExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC914F81C77414F0054346E /* PathExtra.m */; };
+		2C8899BC21F06BE800E5D745 /* StringExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC914FD1C77416E0054346E /* StringExtra.m */; };
+		2C8899BE21F06BE800E5D745 /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC915041C7741840054346E /* DonationReminder.framework */; };
+		2C8899BF21F06BE800E5D745 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
+		2C8899C021F06BE800E5D745 /* libPods-QuickDMG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A69856CDE58ED685A6759F27 /* libPods-QuickDMG.a */; };
+		2C8899C221F06BE800E5D745 /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CC915041C7741840054346E /* DonationReminder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		2C895FA8081C9D2900694C34 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C895FA6081C9D2900694C34 /* AppController.m */; };
 		2C895FB5081CCA5E00694C34 /* GetFinderSelection.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 2C895FB4081CCA5E00694C34 /* GetFinderSelection.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		2C896428081D105D00694C34 /* DiskImageMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C896426081D105D00694C34 /* DiskImageMaker.m */; };
@@ -51,6 +94,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2C88999421F06BE800E5D745 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CC914FF1C7741840054346E /* DonationReminder.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C4A363119E61FC40031E521;
+			remoteInfo = DonationReminder;
+		};
 		2CC915031C7741840054346E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2CC914FF1C7741840054346E /* DonationReminder.xcodeproj */;
@@ -68,6 +118,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		2C8899C121F06BE800E5D745 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2C8899C221F06BE800E5D745 /* DonationReminder.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2CF1C0A40B413AA600EAB8DD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -105,9 +165,14 @@
 		2C24C8770CA0EBFD00E01AC0 /* MDMGWindowController.m */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.objc; path = MDMGWindowController.m; sourceTree = "<group>"; };
 		2C4DAD020CE29DD3009240B6 /* DMGProgressWindowController.m */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.objc; path = DMGProgressWindowController.m; sourceTree = "<group>"; };
 		2C4DAD030CE29DD3009240B6 /* DMGProgressWindowController.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = DMGProgressWindowController.h; sourceTree = "<group>"; };
+		2C69751B220031FB008957F5 /* DMGTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGTask.h; sourceTree = "<group>"; };
+		2C69751C220031FB008957F5 /* DMGTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGTask.m; sourceTree = "<group>"; };
 		2C7FBDE108194C6D00340E25 /* DMGDocumentController.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = DMGDocumentController.h; sourceTree = "<group>"; };
 		2C7FBE4408196D8300340E25 /* DMGWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGWindowController.h; sourceTree = "<group>"; };
 		2C7FBE4508196D8300340E25 /* DMGWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGWindowController.m; sourceTree = "<group>"; };
+		2C8899CA21F06BE800E5D745 /* QuickDMG-sandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuickDMG-sandbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C8899CB21F06BE800E5D745 /* QuickDMG copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "QuickDMG copy-Info.plist"; path = "/Users/tkurita/Dev/Projects/QuickDMG/QuickDMG/QuickDMG copy-Info.plist"; sourceTree = "<absolute>"; };
+		2C8899CC21F06C0700E5D745 /* QuickDMG-sandbox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "QuickDMG-sandbox.entitlements"; sourceTree = "<group>"; };
 		2C895FA5081C9D2900694C34 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		2C895FA6081C9D2900694C34 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		2C895FB4081CCA5E00694C34 /* GetFinderSelection.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = GetFinderSelection.applescript; sourceTree = "<group>"; };
@@ -164,6 +229,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2C8899BD21F06BE800E5D745 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C8899BE21F06BE800E5D745 /* DonationReminder.framework in Frameworks */,
+				2C8899BF21F06BE800E5D745 /* Cocoa.framework in Frameworks */,
+				2C8899C021F06BE800E5D745 /* libPods-QuickDMG.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D15AC330486D014006FF6A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -198,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				8D15AC370486D014006FF6A4 /* QuickDMG.app */,
+				2C8899CA21F06BE800E5D745 /* QuickDMG-sandbox.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,6 +281,7 @@
 		2A37F4AAFDCFA73011CA2CEA /* docbaseApp */ = {
 			isa = PBXGroup;
 			children = (
+				2C8899CC21F06C0700E5D745 /* QuickDMG-sandbox.entitlements */,
 				2CC914F11C7740120054346E /* History.rtf */,
 				2CC914FB1C77416E0054346E /* StringExtra */,
 				2CC914F31C77414F0054346E /* PathExtra */,
@@ -216,6 +293,7 @@
 				19C28FB0FE9D524F11CA2CBB /* Products */,
 				2CC914FF1C7741840054346E /* DonationReminder.xcodeproj */,
 				9295F088CE3057F52CAE8809 /* Pods */,
+				2C8899CB21F06BE800E5D745 /* QuickDMG copy-Info.plist */,
 			);
 			name = docbaseApp;
 			sourceTree = "<group>";
@@ -232,6 +310,8 @@
 				2CB60F6F0BCB9D56009F39D7 /* LocalizedStringTransformer.m */,
 				2C896425081D105D00694C34 /* DiskImageMaker.h */,
 				2C896426081D105D00694C34 /* DiskImageMaker.m */,
+				2C69751B220031FB008957F5 /* DMGTask.h */,
+				2C69751C220031FB008957F5 /* DMGTask.m */,
 				2CC2DC2F0CABCEA5006E7800 /* DMGWindowControllerProtocol.h */,
 				2C7FBE4408196D8300340E25 /* DMGWindowController.h */,
 				2C7FBE4508196D8300340E25 /* DMGWindowController.m */,
@@ -353,6 +433,30 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2C88999221F06BE800E5D745 /* QuickDMG-sandbox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C8899C621F06BE800E5D745 /* Build configuration list for PBXNativeTarget "QuickDMG-sandbox" */;
+			buildPhases = (
+				2C88999521F06BE800E5D745 /* [CP] Check Pods Manifest.lock */,
+				2C88999621F06BE800E5D745 /* Resources */,
+				2C8899A921F06BE800E5D745 /* Sources */,
+				2C8899BD21F06BE800E5D745 /* Frameworks */,
+				2C8899C121F06BE800E5D745 /* CopyFiles */,
+				2C8899C321F06BE800E5D745 /* ShellScript */,
+				2C8899C421F06BE800E5D745 /* [CP] Embed Pods Frameworks */,
+				2C8899C521F06BE800E5D745 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C88999321F06BE800E5D745 /* PBXTargetDependency */,
+			);
+			name = "QuickDMG-sandbox";
+			productInstallPath = "$(HOME)/Applications";
+			productName = docbaseApp;
+			productReference = 2C8899CA21F06BE800E5D745 /* QuickDMG-sandbox.app */;
+			productType = "com.apple.product-type.application";
+		};
 		8D15AC270486D014006FF6A4 /* QuickDMG */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CC63DFD09377A2500503C26 /* Build configuration list for PBXNativeTarget "QuickDMG" */;
@@ -385,6 +489,13 @@
 			attributes = {
 				LastUpgradeCheck = 0820;
 				TargetAttributes = {
+					2C88999221F06BE800E5D745 = {
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
 					8D15AC270486D014006FF6A4 = {
 						ProvisioningStyle = Automatic;
 					};
@@ -415,6 +526,7 @@
 			projectRoot = "";
 			targets = (
 				8D15AC270486D014006FF6A4 /* QuickDMG */,
+				2C88999221F06BE800E5D745 /* QuickDMG-sandbox */,
 			);
 		};
 /* End PBXProject section */
@@ -430,6 +542,31 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2C88999621F06BE800E5D745 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C88999721F06BE800E5D745 /* QuickDMG.icns in Resources */,
+				2C88999821F06BE800E5D745 /* InfoPlist.strings in Resources */,
+				2C88999921F06BE800E5D745 /* UserDefaults.plist in Resources */,
+				2C88999A21F06BE800E5D745 /* Localizable.strings in Resources */,
+				2C88999B21F06BE800E5D745 /* HelpSetup.plist in Resources */,
+				2C88999C21F06BE800E5D745 /* plus.tiff in Resources */,
+				2C88999D21F06BE800E5D745 /* minus.tiff in Resources */,
+				2C88999E21F06BE800E5D745 /* ServicesMenu.strings in Resources */,
+				2C88999F21F06BE800E5D745 /* Credits.rtf in Resources */,
+				2C8899A021F06BE800E5D745 /* dsa_pub.pem in Resources */,
+				2C8899A121F06BE800E5D745 /* ExpandDMGWindow.xib in Resources */,
+				2C8899A221F06BE800E5D745 /* History.rtf in Resources */,
+				2C8899A321F06BE800E5D745 /* DMGDocument.xib in Resources */,
+				2C8899A421F06BE800E5D745 /* DMGOptionsView.xib in Resources */,
+				2C8899A521F06BE800E5D745 /* DMGProgressWindow.xib in Resources */,
+				2C8899A621F06BE800E5D745 /* MainMenu.xib in Resources */,
+				2C8899A721F06BE800E5D745 /* MDMGWindow.xib in Resources */,
+				2C8899A821F06BE800E5D745 /* QuickDMGHelp in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D15AC2B0486D014006FF6A4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -459,6 +596,72 @@
 
 /* Begin PBXShellScriptBuildPhase section */
 		066848FBE47C4138F1196DF5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickDMG/Pods-QuickDMG-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C88999521F06BE800E5D745 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuickDMG-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C8899C321F06BE800E5D745 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "if [ ! \"$CONFIGURATION\" = 'Release' ]; then\necho \"HelpBook setup script will run only with Release configuration\";\nexit 0\nfi\necho \"$BUILT_PRODUCTS_DIR\"\ncd \"$BUILT_PRODUCTS_DIR\"\necho \"$FULL_PRODUCT_NAME\"\nSetupHelpBook \"$FULL_PRODUCT_NAME\"\n";
+		};
+		2C8899C421F06BE800E5D745 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-QuickDMG/Pods-QuickDMG-frameworks.sh",
+				"${PODS_ROOT}/Sparkle/Sparkle.framework",
+				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Sparkle.framework.dSYM",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickDMG/Pods-QuickDMG-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C8899C521F06BE800E5D745 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -527,6 +730,33 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2C8899A921F06BE800E5D745 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C8899AA21F06BE800E5D745 /* GetFinderSelection.applescript in Sources */,
+				2C8899AB21F06BE800E5D745 /* DMGDocumentController.m in Sources */,
+				2C8899AC21F06BE800E5D745 /* DMGDocument.m in Sources */,
+				2C8899AD21F06BE800E5D745 /* main.m in Sources */,
+				2C8899AE21F06BE800E5D745 /* DMGWindowController.m in Sources */,
+				2C8899AF21F06BE800E5D745 /* AppController.m in Sources */,
+				2C8899B021F06BE800E5D745 /* DiskImageMaker.m in Sources */,
+				2C8899B121F06BE800E5D745 /* LocalizedStringTransformer.m in Sources */,
+				2C8899B221F06BE800E5D745 /* DMGOptionsViewController.m in Sources */,
+				2C8899B321F06BE800E5D745 /* MDMGWindowController.m in Sources */,
+				2C8899B421F06BE800E5D745 /* DMGProgressWindowController.m in Sources */,
+				2C69751E220031FB008957F5 /* DMGTask.m in Sources */,
+				2C8899B521F06BE800E5D745 /* KXTableView.m in Sources */,
+				2C8899B621F06BE800E5D745 /* FileTableController.m in Sources */,
+				2C8899B721F06BE800E5D745 /* UtilityFunctions.m in Sources */,
+				2C8899B821F06BE800E5D745 /* PipingTask.m in Sources */,
+				2C8899B921F06BE800E5D745 /* ExpandDMGWindowController.m in Sources */,
+				2C8899BA21F06BE800E5D745 /* DMGHandler.m in Sources */,
+				2C8899BB21F06BE800E5D745 /* PathExtra.m in Sources */,
+				2C8899BC21F06BE800E5D745 /* StringExtra.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D15AC300486D014006FF6A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -542,6 +772,7 @@
 				2C24C8680CA0E60400E01AC0 /* DMGOptionsViewController.m in Sources */,
 				2C24C8790CA0EBFD00E01AC0 /* MDMGWindowController.m in Sources */,
 				2C4DAD040CE29DD3009240B6 /* DMGProgressWindowController.m in Sources */,
+				2C69751D220031FB008957F5 /* DMGTask.m in Sources */,
 				2CC2E7AD0CE7EB6400653E25 /* KXTableView.m in Sources */,
 				2CFAE2580CE848E70070AEF4 /* FileTableController.m in Sources */,
 				2CC904150CE877830016E8D7 /* UtilityFunctions.m in Sources */,
@@ -556,6 +787,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2C88999321F06BE800E5D745 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DonationReminder;
+			targetProxy = 2C88999421F06BE800E5D745 /* PBXContainerItemProxy */;
+		};
 		2CC915081C7741DD0054346E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DonationReminder;
@@ -657,11 +893,178 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2C72D73621F07AE500811DDF /* MacAppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = MacAppStore;
+		};
+		2C72D73721F07AE500811DDF /* MacAppStore */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 832E13A62A4332903944BD6A /* Pods-QuickDMG.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "QuickDMG-sandbox.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPYRIGHT = "Copyright 2005-2018, Tetsuro KURITA";
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 19;
+				DEVELOPMENT_TEAM = N3YK2F43T4;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = QuickDMG_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = /Applications;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Sparkle\"",
+					"-DSANDBOX=1",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
+				PRODUCT_NAME = QuickDMG;
+				PRODUCT_VERSION = 2.4.1;
+				VERSIONING_SYSTEM = "apple generic";
+				WRAPPER_EXTENSION = app;
+			};
+			name = MacAppStore;
+		};
+		2C72D73821F07AE500811DDF /* MacAppStore */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 832E13A62A4332903944BD6A /* Pods-QuickDMG.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "QuickDMG-sandbox.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPYRIGHT = "Copyright 2005-2018, Tetsuro KURITA";
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 19;
+				DEVELOPMENT_TEAM = N3YK2F43T4;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = QuickDMG_Prefix.pch;
+				INFOPLIST_FILE = "QuickDMG copy-Info.plist";
+				INSTALL_PATH = /Applications;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_VERSION = 2.4.1;
+				VERSIONING_SYSTEM = "apple generic";
+				WRAPPER_EXTENSION = app;
+			};
+			name = MacAppStore;
+		};
+		2C8899C721F06BE800E5D745 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69AB3D777E2C9BB8AB2FB252 /* Pods-QuickDMG.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "QuickDMG-sandbox.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPYRIGHT = "Copyright 2005-2018, Tetsuro KURITA";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 19;
+				DEVELOPMENT_TEAM = N3YK2F43T4;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = QuickDMG_Prefix.pch;
+				INFOPLIST_FILE = "QuickDMG copy-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_VERSION = 2.4.1;
+				VERSIONING_SYSTEM = "apple generic";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2C8899C821F06BE800E5D745 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 832E13A62A4332903944BD6A /* Pods-QuickDMG.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "QuickDMG-sandbox.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPYRIGHT = "Copyright 2005-2018, Tetsuro KURITA";
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 19;
+				DEVELOPMENT_TEAM = N3YK2F43T4;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = QuickDMG_Prefix.pch;
+				INFOPLIST_FILE = "QuickDMG copy-Info.plist";
+				INSTALL_PATH = /Applications;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_VERSION = 2.4.1;
+				VERSIONING_SYSTEM = "apple generic";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2C8899C921F06BE800E5D745 /* Default */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EB89CFD04B020FA92985426 /* Pods-QuickDMG.default.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "QuickDMG-sandbox.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPYRIGHT = "Copyright 2005-2018, Tetsuro KURITA";
+				CURRENT_PROJECT_VERSION = 19;
+				DEVELOPMENT_TEAM = N3YK2F43T4;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = QuickDMG_Prefix.pch;
+				INFOPLIST_FILE = "QuickDMG copy-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_VERSION = 2.4.1;
+				VERSIONING_SYSTEM = "apple generic";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Default;
+		};
 		2CC63DFE09377A2500503C26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69AB3D777E2C9BB8AB2FB252 /* Pods-QuickDMG.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "QuickDMG-sandbox.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPYRIGHT = "Copyright 2005-2018, Tetsuro KURITA";
@@ -676,6 +1079,14 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Sparkle\"",
+					"-DSANDBOX=1",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
 				PRODUCT_NAME = QuickDMG;
 				PRODUCT_VERSION = 2.4.1;
@@ -819,11 +1230,23 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2C8899C621F06BE800E5D745 /* Build configuration list for PBXNativeTarget "QuickDMG-sandbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C8899C721F06BE800E5D745 /* Debug */,
+				2C8899C821F06BE800E5D745 /* Release */,
+				2C72D73821F07AE500811DDF /* MacAppStore */,
+				2C8899C921F06BE800E5D745 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2CC63DFD09377A2500503C26 /* Build configuration list for PBXNativeTarget "QuickDMG" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CC63DFE09377A2500503C26 /* Debug */,
 				2CC63DFF09377A2500503C26 /* Release */,
+				2C72D73721F07AE500811DDF /* MacAppStore */,
 				2CC63E0009377A2500503C26 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -834,6 +1257,7 @@
 			buildConfigurations = (
 				2CC63E0209377A2500503C26 /* Debug */,
 				2CC63E0309377A2500503C26 /* Release */,
+				2C72D73621F07AE500811DDF /* MacAppStore */,
 				2CC63E0409377A2500503C26 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;

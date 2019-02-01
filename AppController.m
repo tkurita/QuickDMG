@@ -8,6 +8,11 @@
 
 #define useLog 0
 
+#ifdef SANDBOX
+#else
+#define SANDBOX 0
+#endif
+
 @implementation AppController
 
 static BOOL AUTO_QUIT = YES;
@@ -113,13 +118,15 @@ static BOOL AUTO_QUIT = YES;
 #endif
 		return;
 	}
-	
-	NSBundle * bundle = [NSBundle mainBundle];
-	NSString * scriptPath = [bundle pathForResource:@"GetFinderSelection" ofType:@"scpt"];
-	NSURL * scriptURL = [NSURL fileURLWithPath:scriptPath];
 	NSDictionary * errorDict = nil;
-	NSAppleScript * getFinderSelection = [[NSAppleScript alloc] initWithContentsOfURL:scriptURL error:&errorDict];
-	NSAppleEventDescriptor * scriptResult = [getFinderSelection executeAndReturnError:&errorDict];
+    NSAppleEventDescriptor * scriptResult = nil;
+    if (!SANDBOX) {
+        NSBundle * bundle = [NSBundle mainBundle];
+        NSString * scriptPath = [bundle pathForResource:@"GetFinderSelection" ofType:@"scpt"];
+        NSURL * scriptURL = [NSURL fileURLWithPath:scriptPath];
+        NSAppleScript * getFinderSelection = [[NSAppleScript alloc] initWithContentsOfURL:scriptURL error:&errorDict];
+        scriptResult = [getFinderSelection executeAndReturnError:&errorDict];
+    }
 	if (errorDict != nil) {
 #if useLog
 		NSLog(@"%@", [errorDict description]);
@@ -137,7 +144,7 @@ static BOOL AUTO_QUIT = YES;
 	}
 	
 	
-	if ([scriptResult descriptorType] == typeAEList) {
+	if ((!SANDBOX) && ([scriptResult descriptorType] == typeAEList)) {
 		NSMutableArray *filenames = [NSMutableArray array];
 		for (unsigned int i=1; i <= [scriptResult numberOfItems]; i++) {
 			NSString *a_selection = [[scriptResult descriptorAtIndex:i] stringValue];

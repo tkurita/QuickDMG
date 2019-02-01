@@ -5,7 +5,6 @@
 
 @implementation DMGHandler
 
-
 - (PipingTask *)hdiUtilTask
 {
 	PipingTask *task = [[PipingTask alloc] init];
@@ -133,7 +132,7 @@
 	[self checkPreviousTask:notification];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	
-	if (_terminationStatus == 0 ) {
+	if (0 == _terminationStatus ) {
 		PipingTask *previous_task = [notification object];
 		NSDictionary *task_result = [[previous_task stdoutString] propertyList];
 	#if useLog
@@ -185,6 +184,15 @@
 	DMGHandler *h = [self new];
 	h.delegate = object;
 	return h;
+}
+
+- (NSString *)terminationMessage
+{
+    if (_terminationMessage) {
+        return _terminationMessage;
+    } else {
+        return [self.currentTask stderrString];
+    }
 }
 
 @end

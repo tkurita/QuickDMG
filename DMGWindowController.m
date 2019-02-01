@@ -4,7 +4,12 @@
 #import "AppController.h"
 #import "DMGProgressWindowController.h"
 
-#define useLog 0
+#define useLog 1
+
+#ifdef SANDBOX
+#else
+#define SANDBOX 0
+#endif
 
 @implementation DMGWindowController
 
@@ -44,7 +49,12 @@
                               NSURL *result_url = [savePanel URL];
                               _dmgMaker.workingLocationURL = [result_url URLByDeletingLastPathComponent];
                               [_dmgMaker setCustomDmgName:[result_url lastPathComponent]];
+                              _dmgMaker.outputURL = result_url;
                               [self setTargetPath:[_dmgMaker dmgPath]];
+                              if (SANDBOX && okButtonPushed) {
+                                  [self makeDiskImage];
+                                  okButtonPushed = NO;
+                              }
                           }
                       }];
 }
@@ -100,17 +110,30 @@
 {
 	[self setupProgressWindow];
 	if ([_dmgMaker checkCondition:self]) {
+        
 		NSNotificationCenter* notification_center = [NSNotificationCenter defaultCenter];
 		[notification_center addObserver:_progressWindowController
 							   selector:@selector(showStatusMessage:)
 								   name:@"DmgProgressNotification"
 								 object:_dmgMaker];
-		[notification_center addObserver:self
-							   selector:@selector(dmgDidTerminate:)
-								   name:@"DmgDidTerminationNotification"
-								 object:_dmgMaker];
-
-		[_dmgMaker createDiskImage];
+        
+        [_dmgMaker createDiskImageWithCompletaionHandler:^(BOOL result){
+            if (result) {
+                NSWindow *window = [self window];
+                NSWindow *sheet = [window attachedSheet];
+                
+                if (sheet != nil) {
+                    [[NSApplication sharedApplication] endSheet:sheet returnCode:DIALOG_OK];
+                }
+                [_dmgOptionsViewController saveSettings];
+                [self close];
+            }
+            else {
+                NSString *a_message = _dmgMaker.terminationMessage;
+                [self showAlertMessage:NSLocalizedString(@"Error! Can't progress jobs.","")
+                   withInformativeText:a_message];
+            }
+        }];
 	}
 }
 
@@ -123,14 +146,7 @@
     }
 }
 
-/*
--(void) dmgErrorTermiante:(NSNotification *) notification
-{
-	DiskImageMaker *dmg_maker = [notification object];
-}
-*/
-
--(void) dmgDidTerminate:(NSNotification *) notification //common
+-(void) dmgDidTerminate:(NSNotification *) notification //common deprecated
 {	
 #if useLog
     NSLog(@"%@", @"start dmgDidTerminate");
@@ -175,7 +191,12 @@
 
 - (IBAction)okAction:(id)sender //not common
 {
-	[self makeDiskImage];
+    if (SANDBOX) {
+        okButtonPushed = YES;
+        [self chooseTargetPath:self];
+    } else {
+        [self makeDiskImage];
+    }
 }
 
 #pragma mark initialize
@@ -206,6 +227,7 @@ NSValue *lefttop_of_frame(NSRect aRect)
 #if useLog
     NSLog(@"awakeFromNib in DMGWindowController");
 #endif
+    okButtonPushed = NO;
 	[self setupDMGOptionsView];	
 	[[self window] center];
 	NSValue *current_lt = lefttop_of_frame([[self window] frame]);

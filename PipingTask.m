@@ -4,13 +4,27 @@
 
 @implementation PipingTask
 
-+ (PipingTask *)launchedTaskWithLaunchPath:path arguments:arguments
++ (PipingTask *)launchedTaskWithLaunchPath:(NSString *)path arguments:(NSArray *)arguments
 {
 	PipingTask *a_task = [[self alloc] init];
 	[a_task setLaunchPath:path];
 	[a_task setArguments:arguments];
 	[a_task launch];
 	return a_task;
+}
+
++ (PipingTask *)launchedTaskWithLaunchPath:(NSString *)path
+                                 arguments:(NSArray *)arguments
+                        terminationHandler:(void(^)(PipingTask *))handler
+{
+    PipingTask *a_task = [[self alloc] init];
+    [a_task setLaunchPath:path];
+    [a_task setArguments:arguments];
+    __unsafe_unretained typeof(a_task) weak_task = a_task;
+    [a_task launchWithCompletionHandler:^(int status) {
+        handler(weak_task);
+    }];
+    return a_task;
 }
 
 - (id)init
@@ -26,6 +40,26 @@
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[_task waitUntilExit];
+}
+
+- (void)launchWithCompletionHandler:(void(^)(int))handler
+{
+    self.stdoutData = nil;
+    self.stdoutData = [NSMutableData new];
+    self.stderrData = nil;
+    self.stderrData = [NSMutableData new];
+    _task.standardOutput = [NSPipe pipe];
+    _task.standardError = [NSPipe pipe];
+    _task.terminationHandler = ^(NSTask *t){
+        handler(t.terminationStatus);
+    };
+    
+    [_task launch];
+    
+    [NSThread detachNewThreadSelector:@selector(readStdOut:)
+                             toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(readStdErr:)
+                             toTarget:self withObject:nil];
 }
 
 - (void)launch
