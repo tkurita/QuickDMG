@@ -31,7 +31,6 @@
 		2C88999F21F06BE800E5D745 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2CF840FC1580ED73004E5E20 /* Credits.rtf */; };
 		2C8899A021F06BE800E5D745 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CF841E615824F92004E5E20 /* dsa_pub.pem */; };
 		2C8899A121F06BE800E5D745 /* ExpandDMGWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C14520215E61AEE00481DE3 /* ExpandDMGWindow.xib */; };
-		2C8899A221F06BE800E5D745 /* History.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2CC914F11C7740120054346E /* History.rtf */; };
 		2C8899A321F06BE800E5D745 /* DMGDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC915191C7744A60054346E /* DMGDocument.xib */; };
 		2C8899A421F06BE800E5D745 /* DMGOptionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC9151B1C7744A60054346E /* DMGOptionsView.xib */; };
 		2C8899A521F06BE800E5D745 /* DMGProgressWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC9151D1C7744A60054346E /* DMGProgressWindow.xib */; };
@@ -70,7 +69,6 @@
 		2CC2DCFD0CABE945006E7800 /* DMGDocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2DBCD0CABC876006E7800 /* DMGDocumentController.m */; };
 		2CC2E7AD0CE7EB6400653E25 /* KXTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E7AB0CE7EB6400653E25 /* KXTableView.m */; };
 		2CC904150CE877830016E8D7 /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC904130CE877830016E8D7 /* UtilityFunctions.m */; };
-		2CC914F21C7740120054346E /* History.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2CC914F11C7740120054346E /* History.rtf */; };
 		2CC914FA1C77414F0054346E /* PathExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC914F81C77414F0054346E /* PathExtra.m */; };
 		2CC914FE1C77416E0054346E /* StringExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC914FD1C77416E0054346E /* StringExtra.m */; };
 		2CC915091C7741E50054346E /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC915041C7741840054346E /* DonationReminder.framework */; };
@@ -508,12 +506,10 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				English,
-				Japanese,
+                                en,
+                                ja,
 				French,
 				German,
-				en,
-				ja,
 				Base,
 			);
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* docbaseApp */;
@@ -559,7 +555,6 @@
 				2C88999F21F06BE800E5D745 /* Credits.rtf in Resources */,
 				2C8899A021F06BE800E5D745 /* dsa_pub.pem in Resources */,
 				2C8899A121F06BE800E5D745 /* ExpandDMGWindow.xib in Resources */,
-				2C8899A221F06BE800E5D745 /* History.rtf in Resources */,
 				2C8899A321F06BE800E5D745 /* DMGDocument.xib in Resources */,
 				2C8899A421F06BE800E5D745 /* DMGOptionsView.xib in Resources */,
 				2C8899A521F06BE800E5D745 /* DMGProgressWindow.xib in Resources */,
@@ -584,7 +579,6 @@
 				2CF840FD1580ED73004E5E20 /* Credits.rtf in Resources */,
 				2CF841E715824F92004E5E20 /* dsa_pub.pem in Resources */,
 				2C14520315E61AEE00481DE3 /* ExpandDMGWindow.xib in Resources */,
-				2CC914F21C7740120054346E /* History.rtf in Resources */,
 				2CC915231C7744A60054346E /* DMGDocument.xib in Resources */,
 				2CC915241C7744A60054346E /* DMGOptionsView.xib in Resources */,
 				2CC915251C7744A60054346E /* DMGProgressWindow.xib in Resources */,
