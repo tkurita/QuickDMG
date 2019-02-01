@@ -6,7 +6,7 @@
 
 @implementation DMGDocumentController
 
-- (NSArray *)URLsFromRunningOpenPanel
+- (NSArray *)URLsFromRunningOpenPanel //not callled by openDocument:, may deletable.
 {
 #if useLog
 	NSLog(@"start URLsFromRunningOpenPanel");

@@ -190,7 +190,7 @@
 
 - (IBAction)okAction:(id)sender //not common
 {
-    if (SANDBOX) {
+    if (SANDBOX && ! _dmgMaker.isReplacing) {
         okButtonPushed = YES;
         [self chooseTargetPath:self];
     } else {

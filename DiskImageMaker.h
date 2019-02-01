@@ -16,7 +16,6 @@
 	
 	//parameters of setup status
 	BOOL willBeConverted;
-	BOOL isReplacing;
 	
 	//parameters of mid-flow
 	BOOL isOnlyFolder;
@@ -62,6 +61,7 @@
 @property(nonatomic, strong) NSURL *workingLocationURL;
 @property(nonatomic, strong) NSString *diskName;
 @property(copy) void (^terminationHandler)(BOOL);
+@property(assign) BOOL isReplacing;
 
 //related source item
 @property (nonatomic, strong) NSArray *sourceItems;

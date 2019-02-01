@@ -51,7 +51,7 @@
 {
 	if ((self = [super init])) {
         requireSpaceRatio = 1.0;
-        isReplacing = NO;
+        self.isReplacing = NO;
         expectedCompressRatio = 0.7;
         aborted = NO;
     }
@@ -95,8 +95,8 @@
 {
 	self.workingLocationURL = [NSURL fileURLWithPath:[aPath stringByDeletingLastPathComponent]];
 	self.diskName = [[aPath lastPathComponent] stringByDeletingPathExtension];
-	isReplacing = aFlag;
-	if (isReplacing) {
+	self.isReplacing = aFlag;
+	if (_isReplacing) {
 		self.dmgName = [aPath lastPathComponent];
 	} else {
 		self.dmgName = [self uniqueName:_diskName location:_workingLocationURL.path];
@@ -111,7 +111,7 @@
 
 - (void)setCustomDmgName:(NSString *)aName
 {
-	isReplacing = YES;
+	self.isReplacing = YES;
 	self.dmgName = aName;
 	self.diskName = [aName stringByDeletingPathExtension];
 }
@@ -484,7 +484,7 @@ NSString *mountPointForDevEntry(NSString *devEntry)
     [self postStatusNotification: NSLocalizedString(@"Preparing.",
                                                     "Status message of checking condition.")];
     
-    if (isReplacing) {
+    if (_isReplacing) {
         NSString *target_path = self.dmgPath;
         NSFileManager *file_manager = [NSFileManager defaultManager];
         if ([file_manager fileExistsAtPath:target_path]) {
