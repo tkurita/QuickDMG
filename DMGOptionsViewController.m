@@ -3,11 +3,21 @@
 
 #define useLog 0
 
+#ifdef SANDBOX
+#else
+#define SANDBOX 0
+#endif
+
 @implementation DMGOptionsViewController
 + (void)initialize
 {	
 	NSValueTransformer *transformer = [[LocalizedStringTransformer alloc] init];
 	[NSValueTransformer setValueTransformer:transformer forName:@"LocalizedStringTransformer"];
+}
+
+- (BOOL)inSandbox
+{
+    return SANDBOX;
 }
 
 - (id)initWithNibName:(NSString *)nibName owner:(id)owner

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G21013" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G22010" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
@@ -16,7 +16,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="5" userLabel="View">
             <rect key="frame" x="0.0" y="0.0" width="400" height="185"/>
             <autoresizingMask key="autoresizingMask"/>
@@ -44,8 +44,9 @@
                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                     </buttonCell>
                     <connections>
-                        <binding destination="29" name="enabled" keyPath="selection.canDeleteDSStore" id="112"/>
+                        <binding destination="-2" name="hidden" keyPath="inSandbox" previousBinding="112" id="PWK-Nn-gUp"/>
                         <binding destination="-2" name="value" keyPath="isDeleteDSStore" id="58"/>
+                        <binding destination="29" name="enabled" keyPath="selection.canDeleteDSStore" id="112"/>
                     </connections>
                 </button>
                 <textField verticalHuggingPriority="750" id="22">
@@ -62,7 +63,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="1" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="14" id="140">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="menu"/>
                         <string key="keyEquivalent">l</string>
                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                         <menu key="menu" title="OtherViews" id="12">
@@ -80,14 +81,6 @@
                         </menu>
                     </popUpButtonCell>
                     <connections>
-                        <binding destination="29" name="enabled" keyPath="selection.hasCompressionLevel" id="74">
-                            <dictionary key="options">
-                                <integer key="NSMultipleValuesPlaceholder" value="0"/>
-                                <integer key="NSNoSelectionPlaceholder" value="0"/>
-                                <integer key="NSNotApplicablePlaceholder" value="0"/>
-                                <integer key="NSNullPlaceholder" value="0"/>
-                            </dictionary>
-                        </binding>
                         <binding destination="-2" name="selectedIndex" keyPath="compressionLevel" id="81">
                             <dictionary key="options">
                                 <decimal key="NSMultipleValuesPlaceholder" value="0"/>
@@ -95,6 +88,14 @@
                                 <decimal key="NSNotApplicablePlaceholder" value="0"/>
                                 <decimal key="NSNullPlaceholder" value="0"/>
                                 <bool key="NSValidatesImmediately" value="YES"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="29" name="enabled" keyPath="selection.hasCompressionLevel" id="74">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="0"/>
+                                <integer key="NSNoSelectionPlaceholder" value="0"/>
+                                <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                <integer key="NSNullPlaceholder" value="0"/>
                             </dictionary>
                         </binding>
                     </connections>
@@ -109,14 +110,6 @@
                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                     </buttonCell>
                     <connections>
-                        <binding destination="29" name="enabled" keyPath="selection.canInternetEnable" id="67">
-                            <dictionary key="options">
-                                <integer key="NSMultipleValuesPlaceholder" value="0"/>
-                                <integer key="NSNoSelectionPlaceholder" value="0"/>
-                                <integer key="NSNotApplicablePlaceholder" value="0"/>
-                                <integer key="NSNullPlaceholder" value="0"/>
-                            </dictionary>
-                        </binding>
                         <binding destination="-2" name="value" keyPath="internetEnable" id="57">
                             <dictionary key="options">
                                 <integer key="NSMultipleValuesPlaceholder" value="1"/>
@@ -124,6 +117,14 @@
                                 <integer key="NSNotApplicablePlaceholder" value="0"/>
                                 <integer key="NSNullPlaceholder" value="0"/>
                                 <bool key="NSValidatesImmediately" value="YES"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="29" name="enabled" keyPath="selection.canInternetEnable" id="67">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="0"/>
+                                <integer key="NSNoSelectionPlaceholder" value="0"/>
+                                <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                <integer key="NSNullPlaceholder" value="0"/>
                             </dictionary>
                         </binding>
                     </connections>
@@ -215,14 +216,14 @@
                 <string>canDeleteDSStore</string>
             </declaredKeys>
             <connections>
-                <binding destination="31" name="contentArray" keyPath="values.DmgFormats" id="34">
-                    <dictionary key="options">
-                        <bool key="NSHandlesContentAsCompoundValue" value="YES"/>
-                    </dictionary>
-                </binding>
                 <binding destination="-2" name="selectionIndexes" keyPath="selectedFormatIndexes" id="160">
                     <dictionary key="options">
                         <bool key="NSValidatesImmediately" value="YES"/>
+                    </dictionary>
+                </binding>
+                <binding destination="31" name="contentArray" keyPath="values.DmgFormats" id="34">
+                    <dictionary key="options">
+                        <bool key="NSHandlesContentAsCompoundValue" value="YES"/>
                     </dictionary>
                 </binding>
             </connections>
