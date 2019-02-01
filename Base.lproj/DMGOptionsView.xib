@@ -21,9 +21,9 @@
             <rect key="frame" x="0.0" y="0.0" width="400" height="185"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <button toolTip="⌘T : Move sources into trash after creating a disk image." id="128">
-                    <rect key="frame" x="209" y="5" width="173" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                <button toolTip="⌘T : Move sources into trash after creating a disk image." misplaced="YES" id="128">
+                    <rect key="frame" x="18" y="27" width="173" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="check" title="Put away sources" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="143">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -32,21 +32,6 @@
                     </buttonCell>
                     <connections>
                         <binding destination="-2" name="value" keyPath="putawaySources" id="131"/>
-                    </connections>
-                </button>
-                <button toolTip="⌘K : Delete all .DS_Store in the Disk image." id="23">
-                    <rect key="frame" x="18" y="6" width="131" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <buttonCell key="cell" type="check" title="Delete .DS_Store" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="142">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="system"/>
-                        <string key="keyEquivalent">k</string>
-                        <modifierMask key="keyEquivalentModifierMask" command="YES"/>
-                    </buttonCell>
-                    <connections>
-                        <binding destination="-2" name="hidden" keyPath="inSandbox" previousBinding="112" id="PWK-Nn-gUp"/>
-                        <binding destination="-2" name="value" keyPath="isDeleteDSStore" id="58"/>
-                        <binding destination="29" name="enabled" keyPath="selection.canDeleteDSStore" id="112"/>
                     </connections>
                 </button>
                 <textField verticalHuggingPriority="750" id="22">
@@ -100,8 +85,8 @@
                         </binding>
                     </connections>
                 </popUpButton>
-                <button toolTip="⌘J : When a disk image donwloaded, the contents are automatically copied into same folder." id="10">
-                    <rect key="frame" x="18" y="28" width="190" height="18"/>
+                <button toolTip="⌘J : When a disk image donwloaded, the contents are automatically copied into same folder." misplaced="YES" id="10">
+                    <rect key="frame" x="18" y="5" width="190" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="check" title="Internet Enable" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="139">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -204,6 +189,21 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>
+                <button toolTip="⌘K : Delete all .DS_Store in the Disk image." misplaced="YES" id="23">
+                    <rect key="frame" x="191" y="5" width="131" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                    <buttonCell key="cell" type="check" title="Delete .DS_Store" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="142">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <string key="keyEquivalent">k</string>
+                        <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="-2" name="hidden" keyPath="inSandbox" previousBinding="112" id="PWK-Nn-gUp"/>
+                        <binding destination="-2" name="value" keyPath="isDeleteDSStore" id="58"/>
+                        <binding destination="29" name="enabled" keyPath="selection.canDeleteDSStore" id="112"/>
+                    </connections>
+                </button>
             </subviews>
         </customView>
         <arrayController editable="NO" id="29" userLabel="DmgFormatController">
