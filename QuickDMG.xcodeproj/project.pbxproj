@@ -169,7 +169,7 @@
 		2C7FBDE108194C6D00340E25 /* DMGDocumentController.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = DMGDocumentController.h; sourceTree = "<group>"; };
 		2C7FBE4408196D8300340E25 /* DMGWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGWindowController.h; sourceTree = "<group>"; };
 		2C7FBE4508196D8300340E25 /* DMGWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGWindowController.m; sourceTree = "<group>"; };
-		2C8899CA21F06BE800E5D745 /* QuickDMG-sandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuickDMG-sandbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C8899CA21F06BE800E5D745 /* QuickDMG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickDMG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C8899CB21F06BE800E5D745 /* QuickDMG copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "QuickDMG copy-Info.plist"; path = "/Users/tkurita/Dev/Projects/QuickDMG/QuickDMG/QuickDMG copy-Info.plist"; sourceTree = "<absolute>"; };
 		2C8899CC21F06C0700E5D745 /* QuickDMG-sandbox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "QuickDMG-sandbox.entitlements"; sourceTree = "<group>"; };
 		2C895FA5081C9D2900694C34 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
@@ -272,7 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				8D15AC370486D014006FF6A4 /* QuickDMG.app */,
-				2C8899CA21F06BE800E5D745 /* QuickDMG-sandbox.app */,
+				2C8899CA21F06BE800E5D745 /* QuickDMG.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -454,7 +454,7 @@
 			name = "QuickDMG-sandbox";
 			productInstallPath = "$(HOME)/Applications";
 			productName = docbaseApp;
-			productReference = 2C8899CA21F06BE800E5D745 /* QuickDMG-sandbox.app */;
+			productReference = 2C8899CA21F06BE800E5D745 /* QuickDMG.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8D15AC270486D014006FF6A4 /* QuickDMG */ = {
@@ -924,9 +924,9 @@
 				CODE_SIGN_ENTITLEMENTS = "QuickDMG-sandbox.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				COPYRIGHT = "Copyright 2005-2018, Tetsuro KURITA";
+				COPYRIGHT = "Copyright 2005-2019, Tetsuro KURITA";
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = N3YK2F43T4;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -944,7 +944,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
 				PRODUCT_NAME = QuickDMG;
-				PRODUCT_VERSION = 2.4.1;
+				PRODUCT_VERSION = 2.5;
 				VERSIONING_SYSTEM = "apple generic";
 				WRAPPER_EXTENSION = app;
 			};
@@ -960,7 +960,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPYRIGHT = "Copyright 2005-2018, Tetsuro KURITA";
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = N3YK2F43T4;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -969,7 +969,7 @@
 				INSTALL_PATH = /Applications;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = QuickDMG;
 				PRODUCT_VERSION = 2.4.1;
 				VERSIONING_SYSTEM = "apple generic";
 				WRAPPER_EXTENSION = app;
@@ -986,7 +986,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPYRIGHT = "Copyright 2005-2018, Tetsuro KURITA";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = N3YK2F43T4;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -997,7 +997,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = QuickDMG;
 				PRODUCT_VERSION = 2.4.1;
 				VERSIONING_SYSTEM = "apple generic";
 				WRAPPER_EXTENSION = app;
@@ -1014,7 +1014,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPYRIGHT = "Copyright 2005-2018, Tetsuro KURITA";
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = N3YK2F43T4;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1023,7 +1023,7 @@
 				INSTALL_PATH = /Applications;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = QuickDMG;
 				PRODUCT_VERSION = 2.4.1;
 				VERSIONING_SYSTEM = "apple generic";
 				WRAPPER_EXTENSION = app;
@@ -1039,7 +1039,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPYRIGHT = "Copyright 2005-2018, Tetsuro KURITA";
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = N3YK2F43T4;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1048,7 +1048,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = QuickDMG;
 				PRODUCT_VERSION = 2.4.1;
 				VERSIONING_SYSTEM = "apple generic";
 				WRAPPER_EXTENSION = app;
@@ -1063,9 +1063,9 @@
 				CODE_SIGN_ENTITLEMENTS = "QuickDMG-sandbox.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				COPYRIGHT = "Copyright 2005-2018, Tetsuro KURITA";
+				COPYRIGHT = "Copyright 2005-2019, Tetsuro KURITA";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = N3YK2F43T4;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -1086,7 +1086,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
 				PRODUCT_NAME = QuickDMG;
-				PRODUCT_VERSION = 2.4.1;
+				PRODUCT_VERSION = 2.5;
 				VERSIONING_SYSTEM = "apple generic";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1099,9 +1099,9 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				COPYRIGHT = "Copyright 2005-2018, Tetsuro KURITA";
+				COPYRIGHT = "Copyright 2005-2019, Tetsuro KURITA";
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = N3YK2F43T4;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1111,7 +1111,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
 				PRODUCT_NAME = QuickDMG;
-				PRODUCT_VERSION = 2.4.1;
+				PRODUCT_VERSION = 2.5;
 				VERSIONING_SYSTEM = "apple generic";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1124,8 +1124,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				COPYRIGHT = "Copyright 2005-2018, Tetsuro KURITA";
-				CURRENT_PROJECT_VERSION = 19;
+				COPYRIGHT = "Copyright 2005-2019, Tetsuro KURITA";
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = N3YK2F43T4;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1135,7 +1135,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
 				PRODUCT_NAME = QuickDMG;
-				PRODUCT_VERSION = 2.4.1;
+				PRODUCT_VERSION = 2.5;
 				VERSIONING_SYSTEM = "apple generic";
 				WRAPPER_EXTENSION = app;
 			};
