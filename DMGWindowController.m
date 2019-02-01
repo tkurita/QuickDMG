@@ -49,7 +49,6 @@
                               NSURL *result_url = [savePanel URL];
                               _dmgMaker.workingLocationURL = [result_url URLByDeletingLastPathComponent];
                               [_dmgMaker setCustomDmgName:[result_url lastPathComponent]];
-                              _dmgMaker.outputURL = result_url;
                               [self setTargetPath:[_dmgMaker dmgPath]];
                               if (SANDBOX && okButtonPushed) {
                                   [self makeDiskImage];
