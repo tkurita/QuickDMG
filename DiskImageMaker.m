@@ -7,7 +7,7 @@
 #include <sys/ucred.h>
 #include <sys/mount.h>
 	 
-#define useLog 1
+#define useLog DEBUG
 
 #ifdef SANDBOX
 #else

@@ -2,7 +2,7 @@
 #import "DMGDocumentProtocol.h"
 #import "MDMGWindowController.h"
 
-#define useLog 1
+#define useLog DEBUG
 
 @implementation DMGDocumentController
 

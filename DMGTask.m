@@ -1,7 +1,7 @@
 #import "DMGTask.h"
 #import "DMGDocumentProtocol.h"
 
-#define useLog 1
+#define useLog DEBUG
 
 @implementation DMGTask
 
@@ -143,7 +143,7 @@
                                  @"-udf-version", @"1.0.2",
                                  @"-udf-volume-name",diskName,
                                  @"-o", destination, source];
-    NSLog(@"source: %@\ndestination: %@", source, destination);
+    
     __unsafe_unretained typeof(self) weak_self = self;
     [_currentTask launchWithCompletionHandler:^(int status) {
         weak_self.terminationStatus = _currentTask.terminationStatus;
