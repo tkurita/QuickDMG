@@ -241,7 +241,8 @@
 
 - (void)detachDiskImage
 {
-    [self postStatusNotification:NSLocalizedString(@"Detaching a disk image.","")];
+    [self postStatusNotification:NSLocalizedString(@"Detaching a disk image.","")
+                       increment:1.0];
     self.currentDMGTask = [DMGTask dmgTaskAt:_workingLocationURL.path];
     [_currentDMGTask detachDiskImage:_devEntry
                    completionHandler:^(BOOL result){
@@ -261,7 +262,8 @@
 #if useLog
     NSLog(@"start deleteDSStore");
 #endif
-    [self postStatusNotification:NSLocalizedString(@"Deleting .DS_Store files.","")];
+    [self postStatusNotification:NSLocalizedString(@"Deleting .DS_Store files.","")
+                       increment:1.0];
     DMGTask *task = [DMGTask dmgTaskAt:self.workingLocationURL.path];
     [task deleteDSStore:_mountPoint completionHandler:^(BOOL result) {
         if (result && !aborted) {
@@ -328,7 +330,8 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 #if useLog
     NSLog(@"%@", @"start attachDiskImage");
 #endif
-    [self postStatusNotification: NSLocalizedString(@"Attaching a disk image.","")];
+    [self postStatusNotification: NSLocalizedString(@"Attaching a disk image.","")
+                       increment:1.0];
     NSString *dmg_path = _currentDMGTask.dmgPath;
     self.currentDMGTask = [DMGTask dmgTaskAt:_workingLocationURL.path];
     [_currentDMGTask attachDiskImage:dmg_path
@@ -363,12 +366,40 @@ NSString *mountPointForDevEntry(NSString *devEntry)
                    }];
 }
 
-- (void)postStatusNotification: (NSString *) message
+- (void)postStatusNotificationWithDict:(NSDictionary *)userInfo
 {
-	NSDictionary* notifyInfo = @{@"statusMessage": message};
-	[[NSNotificationCenter defaultCenter] postNotificationName: @"DmgProgressNotification"
-														object:self userInfo:notifyInfo];
+    [[NSNotificationCenter defaultCenter] postNotificationName: @"DmgProgressNotification"
+                                                        object:self userInfo:userInfo];
 }
+
+- (void)postStatusNotification:(NSString *)message
+{
+	NSDictionary* user_info = @{@"statusMessage": message};
+    [self postStatusNotificationWithDict:user_info];
+}
+
+- (void)postStatusNotification:(NSString *)message maxValue:(double)maxValue
+{
+    NSDictionary* user_info = @{@"statusMessage": message,
+                                @"maxValue": [NSNumber numberWithDouble:maxValue]};
+    [self postStatusNotificationWithDict:user_info];
+}
+
+- (void)postStatusNotification:(NSString *)message increment:(double)increment
+{
+    NSDictionary* user_info = @{@"statusMessage": message,
+                                @"increment": [NSNumber numberWithDouble:increment]};
+    [self postStatusNotificationWithDict:user_info];
+}
+
+- (void)postStatusNotification:(NSString *)message maxValue:(double)maxValue increment:(double)increment
+{
+    NSDictionary* user_info = @{@"statusMessage": message,
+                                @"maxValue": [NSNumber numberWithDouble:maxValue],
+                                @"increment": [NSNumber numberWithDouble:increment]};
+    [self postStatusNotificationWithDict:user_info];
+}
+
 
 - (void)makeHybridDiskImageTo:(NSString *)destination
             completionHandler:(void (^)(BOOL))handler
@@ -382,7 +413,8 @@ NSString *mountPointForDevEntry(NSString *devEntry)
                              completionHadler:^(BOOL result) {
                                  handler(result);
                              }];
-        [self postStatusNotification:NSLocalizedString(@"Creating a hybrid disk image.","")];
+        [self postStatusNotification:NSLocalizedString(@"Creating a hybrid disk image.","")
+                            maxValue:2.0];
         return;
         
     } else {
@@ -398,7 +430,8 @@ NSString *mountPointForDevEntry(NSString *devEntry)
                     [self terminatedCurrentDmgTask];
                     return;
                 }
-                [self postStatusNotification:NSLocalizedString(@"Creating a hybrid disk image.","")];
+                [self postStatusNotification:NSLocalizedString(@"Creating a hybrid disk image.","")
+                                   increment:1.0];
                 self.currentDMGTask = [DMGTask dmgTaskAt:_workingLocationURL.path];
                 [_currentDMGTask makeHibridFromSource:tmp_path
                                           destination:destination
@@ -415,7 +448,8 @@ NSString *mountPointForDevEntry(NSString *devEntry)
             [_currentDMGTask cpItems:[_sourceItems objectEnumerator]
                            destination:tmp_path
                      completionHandler:after_copy];
-            [self postStatusNotification: NSLocalizedString(@"Copying source files.","")];
+            [self postStatusNotification: NSLocalizedString(@"Copying source files.","")
+                                maxValue:3.0 increment:1.0];
             return;
         } else {
             NSLog(@"Failed to make directory");
@@ -516,11 +550,24 @@ NSString *mountPointForDevEntry(NSString *devEntry)
         return;
         
     } else {
-        [self postStatusNotification:NSLocalizedString(@"Creating a disk image.",
-                                                        "Status message of creating a disk image.")];
         if (SANDBOX) {
             willBeConverted = YES;
         }
+        double stepnum = 1;
+        if (willBeConverted) stepnum += 1;
+        if (!isOnlyFolder) {
+            stepnum +=1; //copy file
+            if (!SANDBOX) {
+                stepnum +=2; //attach and detach
+            }
+        }
+        if ([_dmgOptions isDeleteDSStore]) stepnum +=1;
+        
+        [self postStatusNotification:NSLocalizedString(@"Creating a disk image.",
+                                                       "Status message of creating a disk image.")
+                            maxValue:stepnum
+                           increment:1.0];
+
         NSString* dmg_target = self.dmgPath;
         if (willBeConverted) {
             NSString *a_suffix = SANDBOX ? @"iso" : @"dmg";
@@ -553,7 +600,8 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 #if useLog
 	NSLog(@"start convertDiskImage");
 #endif
-	[self postStatusNotification: NSLocalizedString(@"Converting a disk image.","")];
+	[self postStatusNotification: NSLocalizedString(@"Converting a disk image.","")
+                       increment:1.0];
 	
     self.currentDMGTask = [DMGTask dmgTaskAt:_workingLocationURL.path];
     [_currentDMGTask convertDiskImage:_sourceDmgPath

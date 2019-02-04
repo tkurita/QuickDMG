@@ -5,7 +5,7 @@
 
 @interface DMGProgressWindowController : NSObject
 {
-    IBOutlet id progressBar;
+    IBOutlet NSProgressIndicator* progressBar;
     IBOutlet id progressText;
 	IBOutlet id window;
 }

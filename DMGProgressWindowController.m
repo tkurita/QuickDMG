@@ -49,7 +49,18 @@
 - (void)showStatusMessage:(NSNotification *)notification
 {
 	NSString* statusMessage = [notification userInfo][@"statusMessage"];
-	[progressText setStringValue: statusMessage];
+    NSNumber* max_value = [notification userInfo][@"maxValue"];
+    NSNumber* increment = [notification userInfo][@"increment"];
+    if (max_value) {
+        progressBar.maxValue = max_value.doubleValue;
+        progressBar.doubleValue = 0;
+    }
+    if (increment) {
+        [progressBar incrementBy:increment.doubleValue];
+    }
+    if (statusMessage) {
+        [progressText setStringValue: statusMessage];
+    }
 }
 
 @end
