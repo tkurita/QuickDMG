@@ -1,0 +1,44 @@
+﻿"Can't progress jobs." ="Can't progress jobs.";
+"No enough free space to create a disk image." ="No enough free space to create a disk image.";
+
+"Error! Can't progress jobs." = "Error! Can't progress jobs.";
+"Checking free space of disks." = "Checking free space of disks.";
+"Detaching a disk image." = "Detaching a disk image.";
+"The file \n %@ could not be removed." = "The file \n %@ could not be removed.";
+"Copying source files." = "Copying source files.";
+"Creating a disk image." = "Creating a disk image.";
+"Attaching a disk image." = "Attaching a disk image.";
+"Converting a disk image." = "Converting a disk image.";
+"Insufficient access right." = "Insufficient access right.";
+"No write permission" = "No write permission to %@.\nPlease choose a new location.";
+"Deleting .DS_Store files." = "Deleting .DS_Store files.";
+"Setting internet-enable option." = "Setting internet-enable option.";
+"Error: Pasteboard doesn't contain file paths." = "Error: Pasteboard doesn't contain file paths.";
+"Preparing." = "Preparing.";
+"Creating a hybrid disk image." = "Creating a hybrid disk image.";
+"Cleaning temporary files." = "Cleaning temporary files.";
+
+/*MDMGWindowController*/
+"No source items." = "No source items.";
+"Add some items into the source table." = "Add some items into the source table.";
+
+/*format descriptions*/
+"UDIF_Compressed" = "UDIF zlib-compressed";
+"UDIF_bzip2" = "UDIF bzip2-compressed";
+"SPARSE" = "SPARSE (size-expandable with content)";
+"UDIF_R/W" = "UDIF read/write";
+"UDIF_R_Only" = "UDIF read only";
+"NDIF_Compressed" = "NDIF compressed";
+"NDIF_R_Only" = "NDIF read only";
+"UDF_ISO" = "ISO image with UDF format";
+
+/*Donation Reminder*/
+"this software" = "QuickDMG";
+
+/* ExpandDMGWindowControoler */
+"Expanding %@" =  "Expanding \"%@\"";
+"Failed copy with error : %@" = "Failed copy with error : %@";
+"Failed attaching with error : %@" = "Failed attaching the disk image with error : %@";
+"Failed detaching with error : %@" = "Failed detaching the disk image with error : %@";
+"Canceling task." = "Canceling task.";
+
