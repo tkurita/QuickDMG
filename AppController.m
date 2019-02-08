@@ -23,29 +23,29 @@ static BOOL AUTO_QUIT = YES;
 	[mdmg_window showWindow:self];
 }
 
-- (void)processFiles:(NSArray *)filenames
+- (void)processFileURLs:(NSArray *)urls
 {
-	if ([filenames count] > 1) {
-		id mdmg_window = [[MDMGWindowController alloc] initWithWindowNibName:@"MDMGWindow"];
-		[mdmg_window showWindow:self withFiles:URLsFromPaths(filenames)];
-	}
-	else {
+    if ([urls count] > 1) {
+        id mdmg_window = [[MDMGWindowController alloc] initWithWindowNibName:@"MDMGWindow"];
+        [mdmg_window showWindow:self withFiles:urls];
+    }
+    else {
         
         [documentController
-            openDocumentWithContentsOfURL:[URLsFromPaths(filenames) lastObject]
-            display:YES
-            completionHandler:^(NSDocument *document, BOOL documentWasAlreadyOpen, NSError *error) {
-                                 if (document) {
-                                     if (![[document windowControllers] count]) {
-                                         [document makeWindowControllers];
-                                     }
-                                     [document showWindows];
-                                     
-                                 } else {
-                                     NSLog(@"%@",[error localizedDescription]);
-                                 }
-                             }];
-	}
+         openDocumentWithContentsOfURL:[urls lastObject]
+         display:YES
+         completionHandler:^(NSDocument *document, BOOL documentWasAlreadyOpen, NSError *error) {
+             if (document) {
+                 if (![[document windowControllers] count]) {
+                     [document makeWindowControllers];
+                 }
+                 [document showWindows];
+                 
+             } else {
+                 NSLog(@"%@",[error localizedDescription]);
+             }
+         }];
+    }
 }
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
@@ -53,7 +53,7 @@ static BOOL AUTO_QUIT = YES;
 #if useLog
 	NSLog(@"start openFiles for :%@",[filenames description]);
 #endif		
-	[self processFiles:filenames];
+	[self processFileURLs:URLsFromPaths(filenames)];
 }
 
 - (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender
@@ -105,7 +105,7 @@ static BOOL AUTO_QUIT = YES;
         return;
     }
 	
-	[self processFiles:filenames];
+	[self processFileURLs:URLsFromPaths(filenames)];
 	[NSApp activateIgnoringOtherApps:YES];
 }
 
@@ -162,7 +162,17 @@ static BOOL AUTO_QUIT = YES;
 		}
 	}
 	else {
-		[documentController openDocument:self];
+        AUTO_QUIT = NO;
+        NSOpenPanel *panel = [NSOpenPanel openPanel];
+        panel.canChooseDirectories = YES;
+        panel.message = NSLocalizedString(@"Choose files or folders for the source of a disk image.",
+                                          @"");
+        [panel beginWithCompletionHandler:^(NSInteger result) {
+            if (NSFileHandlingPanelOKButton == result) {
+                [self processFileURLs:[panel URLs]];
+                AUTO_QUIT = YES;
+            }
+        }];
 	}
 }
 

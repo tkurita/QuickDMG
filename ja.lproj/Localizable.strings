@@ -27,6 +27,7 @@
 "NDIF_R_Only" = "NDIF 読み込み専用";
 "UDF_ISO" = "UDF フォーマットの ISO イメージ";
 "this software" = "QuickDMG";
+"Choose files or folders for the source of a disk image." = "ディスクイメージのソースを選択してください。";
 
 /* ExpandDMGWindowControoler */
 "Expanding %@" =  "\"%@\" を展開しています。";
