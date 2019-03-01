@@ -8,6 +8,13 @@
 
 #define useLog 0
 
+//#ifdef SANDBOX
+//static BOOL IN_SANDBOX = SANDBOX;
+//#else
+//static BOOL IN_SANDBOX = NO;
+////#define SANDBOX 0
+//#endif
+
 #ifdef SANDBOX
 #else
 #define SANDBOX 0

@@ -12,6 +12,8 @@
 - (IBAction)newDiskImage:(id)sender;
 - (void)openFinderSelection;
 
+#if !SANDBOX
 @property (nonatomic ,strong) id updater;
+#endif
 
 @end
