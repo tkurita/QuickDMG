@@ -13,6 +13,10 @@
 #define SANDBOX 0
 #endif
 
+#if SANDBOX
+#import "Sparkle/SUUpdater.h"
+#endif
+
 @implementation AppController
 
 static BOOL AUTO_QUIT = YES;
@@ -240,6 +244,13 @@ static BOOL AUTO_QUIT = YES;
     /* Disable restoring documents.
        Adding "NSQuitAlwaysKeepsWindows" entry in UserDefaults.plist does not work. */
     [userDefaults setBool:NO forKey:@"NSQuitAlwaysKeepsWindows"];
+    
+#if SANDBOX
+    [[checkForUpdatesMenuItem menu] removeItem:checkForUpdatesMenuItem];
+    [[donationMenuItem menu] removeItem:donationMenuItem];
+#else
+    [[SUUpdater alloc] init];
+#endif
 
 }
 

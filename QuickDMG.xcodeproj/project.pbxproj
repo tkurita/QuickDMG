@@ -175,7 +175,7 @@
 		2C8899CB21F06BE800E5D745 /* QuickDMG copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "QuickDMG copy-Info.plist"; path = "/Users/tkurita/Dev/Projects/QuickDMG/QuickDMG/QuickDMG copy-Info.plist"; sourceTree = "<absolute>"; };
 		2C8899CC21F06C0700E5D745 /* QuickDMG-sandbox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "QuickDMG-sandbox.entitlements"; sourceTree = "<group>"; };
 		2C895FA5081C9D2900694C34 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
-		2C895FA6081C9D2900694C34 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		2C895FA6081C9D2900694C34 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		2C895FB4081CCA5E00694C34 /* GetFinderSelection.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = GetFinderSelection.applescript; sourceTree = "<group>"; };
 		2C896425081D105D00694C34 /* DiskImageMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiskImageMaker.h; sourceTree = "<group>"; };
 		2C896426081D105D00694C34 /* DiskImageMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiskImageMaker.m; sourceTree = "<group>"; };
