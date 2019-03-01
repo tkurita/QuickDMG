@@ -3,8 +3,7 @@
 
 #define useLog 0
 
-#ifdef SANDBOX
-#else
+#ifndef SANDBOX
 #define SANDBOX 0
 #endif
 
@@ -13,11 +12,6 @@
 {	
 	NSValueTransformer *transformer = [[LocalizedStringTransformer alloc] init];
 	[NSValueTransformer setValueTransformer:transformer forName:@"LocalizedStringTransformer"];
-}
-
-- (BOOL)inSandbox
-{
-    return SANDBOX;
 }
 
 - (id)initWithNibName:(NSString *)nibName owner:(id)owner
@@ -29,12 +23,22 @@
     NSArray *top_levels;
     [[NSBundle mainBundle] loadNibNamed:nibName owner:self topLevelObjects:&top_levels];
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
-	[self setInternetEnable:[user_defaults boolForKey:@"InternetEnable"]];
+	
 	self.isDeleteDSStore = [user_defaults boolForKey:@"deleteDSStore"];
 	self.selectedFormatIndexes = [NSIndexSet indexSetWithIndex:
 									[user_defaults integerForKey:@"formatIndex"]];
 	self.compressionLevel = [user_defaults integerForKey:@"compressionLevel"];
-	[self setPutawaySources:[user_defaults boolForKey:@"putawaySources"]];
+    
+#if SANDBOX
+    [internetEnableButton removeFromSuperview];
+    [deleteDSStoreButton removeFromSuperview];
+//    NSRect rect = [dmgOptionsView frame]; // does not work
+//    rect.size.height -= 10;
+//    [dmgOptionsView setFrame:rect];
+#else
+	[self setInternetEnable:[user_defaults boolForKey:@"InternetEnable"]];
+    [self setPutawaySources:[user_defaults boolForKey:@"putawaySources"]];
+#endif
 	return self;
 }
 

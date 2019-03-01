@@ -7,6 +7,7 @@
     IBOutlet id dmgFormatTable;
 	IBOutlet id dmgOptionsView;
     IBOutlet id internetEnableButton;
+    IBOutlet id deleteDSStoreButton;
     IBOutlet id zlibLevelButton;
 }
 

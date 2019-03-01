@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DMGOptionsViewController">
             <connections>
+                <outlet property="deleteDSStoreButton" destination="23" id="Rd5-Rf-sIt"/>
                 <outlet property="dmgFormatController" destination="29" id="30"/>
                 <outlet property="dmgFormatTable" destination="7" id="83"/>
                 <outlet property="dmgOptionsView" destination="5" id="55"/>
@@ -199,7 +200,6 @@
                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                     </buttonCell>
                     <connections>
-                        <binding destination="-2" name="hidden" keyPath="inSandbox" previousBinding="112" id="PWK-Nn-gUp"/>
                         <binding destination="-2" name="value" keyPath="isDeleteDSStore" id="58"/>
                         <binding destination="29" name="enabled" keyPath="selection.canDeleteDSStore" id="112"/>
                     </connections>

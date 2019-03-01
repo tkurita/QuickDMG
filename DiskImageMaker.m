@@ -9,8 +9,7 @@
 	 
 #define useLog DEBUG
 
-#ifdef SANDBOX
-#else
+#ifndef SANDBOX
 #define SANDBOX 0
 #endif
 
