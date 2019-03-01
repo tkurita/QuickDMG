@@ -942,6 +942,7 @@
 					"\"${PODS_ROOT}/Headers/Public/Sparkle\"",
 					"-DSANDBOX=1",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
 				PRODUCT_NAME = QuickDMG;
 				PRODUCT_VERSION = 2.5;
@@ -1060,7 +1061,7 @@
 			baseConfigurationReference = 69AB3D777E2C9BB8AB2FB252 /* Pods-QuickDMG.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = "QuickDMG-sandbox.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPYRIGHT = "Copyright 2005-2019, Tetsuro KURITA";
@@ -1081,7 +1082,7 @@
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"-isystem",
 					"\"${PODS_ROOT}/Headers/Public/Sparkle\"",
-					"-DSANDBOX=1",
+					"-DSANDBOX=0",
 					"-DDEBUG=0",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";

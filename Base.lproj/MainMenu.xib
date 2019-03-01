@@ -25,9 +25,6 @@
                             </menuItem>
                             <menuItem title="Check for Updates..." id="221">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="checkForUpdates:" target="220" id="222"/>
-                                </connections>
                             </menuItem>
                             <menuItem title="Make a Donation" id="215">
                                 <connections>
@@ -240,6 +237,5 @@ CA
                 <outlet property="donationMenuItem" destination="215" id="LAM-28-WWi"/>
             </connections>
         </customObject>
-        <customObject id="220" customClass="SUUpdater"/>
     </objects>
 </document>

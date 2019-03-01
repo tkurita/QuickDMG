@@ -13,7 +13,7 @@
 #define SANDBOX 0
 #endif
 
-#if SANDBOX
+#if !SANDBOX
 #import "Sparkle/SUUpdater.h"
 #endif
 
@@ -249,7 +249,9 @@ static BOOL AUTO_QUIT = YES;
     [[checkForUpdatesMenuItem menu] removeItem:checkForUpdatesMenuItem];
     [[donationMenuItem menu] removeItem:donationMenuItem];
 #else
-    [[SUUpdater alloc] init];
+    self.updater = [[SUUpdater alloc] init];
+    checkForUpdatesMenuItem.action = @selector(checkForUpdates:);
+    checkForUpdatesMenuItem.target = _updater;
 #endif
 
 }
