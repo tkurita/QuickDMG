@@ -8,15 +8,7 @@
 
 #define useLog 0
 
-//#ifdef SANDBOX
-//static BOOL IN_SANDBOX = SANDBOX;
-//#else
-//static BOOL IN_SANDBOX = NO;
-////#define SANDBOX 0
-//#endif
-
-#ifdef SANDBOX
-#else
+#ifndef SANDBOX
 #define SANDBOX 0
 #endif
 
@@ -178,6 +170,7 @@ static BOOL AUTO_QUIT = YES;
         panel.canChooseDirectories = YES;
         panel.message = NSLocalizedString(@"Choose files or folders for the source of a disk image.",
                                           @"");
+        panel.allowsMultipleSelection = YES;
         [panel beginWithCompletionHandler:^(NSInteger result) {
             if (NSFileHandlingPanelOKButton == result) {
                 [self processFileURLs:[panel URLs]];
