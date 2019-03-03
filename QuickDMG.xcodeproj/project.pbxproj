@@ -29,7 +29,6 @@
 		2CB8855922291D9A001E49FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
 		2CB8855A22291D9A001E49FC /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C03FBB3088A1353008B7312 /* UserDefaults.plist */; };
 		2CB8855B22291D9A001E49FC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF42622088EB8F1002BBE99 /* Localizable.strings */; };
-		2CB8855C22291D9A001E49FC /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */; };
 		2CB8855D22291D9A001E49FC /* plus.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D0A430CEAC5AF00B59A0E /* plus.tiff */; };
 		2CB8855E22291D9A001E49FC /* minus.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D0A440CEAC5AF00B59A0E /* minus.tiff */; };
 		2CB8855F22291D9A001E49FC /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C97F3390D34E39F008813CF /* ServicesMenu.strings */; };
@@ -65,6 +64,7 @@
 		2CB8857F22291D9A001E49FC /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC915041C7741840054346E /* DonationReminder.framework */; };
 		2CB8858022291D9A001E49FC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
 		2CB8858322291D9A001E49FC /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CC915041C7741840054346E /* DonationReminder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		2CBBC8E4222BDC3C00135009 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */; };
 		2CC2DCFD0CABE945006E7800 /* DMGDocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2DBCD0CABC876006E7800 /* DMGDocumentController.m */; };
 		2CC2E7AD0CE7EB6400653E25 /* KXTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E7AB0CE7EB6400653E25 /* KXTableView.m */; };
 		2CC904150CE877830016E8D7 /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC904130CE877830016E8D7 /* UtilityFunctions.m */; };
@@ -78,7 +78,6 @@
 		2CC915261C7744A60054346E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC9151F1C7744A60054346E /* MainMenu.xib */; };
 		2CC915271C7744A60054346E /* MDMGWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC915211C7744A60054346E /* MDMGWindow.xib */; };
 		2CD8A27C1C7C7F99001800EE /* QuickDMGHelp in Resources */ = {isa = PBXBuildFile; fileRef = 2CD8A27B1C7C7F99001800EE /* QuickDMGHelp */; };
-		2CDD29E40B16DFCE000B3543 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */; };
 		2CF42623088EB8F1002BBE99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF42622088EB8F1002BBE99 /* Localizable.strings */; };
 		2CF840FD1580ED73004E5E20 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2CF840FC1580ED73004E5E20 /* Credits.rtf */; };
 		2CF841E715824F92004E5E20 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CF841E615824F92004E5E20 /* dsa_pub.pem */; };
@@ -354,6 +353,7 @@
 			children = (
 				8D15AC360486D014006FF6A4 /* Info.plist */,
 				2C201CCB2204414C00F331E4 /* Info-sandbox.plist */,
+				2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */,
 				2CD8A27B1C7C7F99001800EE /* QuickDMGHelp */,
 				2CC915191C7744A60054346E /* DMGDocument.xib */,
 				2CC9151B1C7744A60054346E /* DMGOptionsView.xib */,
@@ -365,7 +365,6 @@
 				2CF840FC1580ED73004E5E20 /* Credits.rtf */,
 				2C1D0A430CEAC5AF00B59A0E /* plus.tiff */,
 				2C1D0A440CEAC5AF00B59A0E /* minus.tiff */,
-				2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */,
 				2CA4BEA909E22BAF00D9C9D6 /* QuickDMG.icns */,
 				2CF42622088EB8F1002BBE99 /* Localizable.strings */,
 				2C03FBB3088A1353008B7312 /* UserDefaults.plist */,
@@ -541,7 +540,6 @@
 				2CB8855922291D9A001E49FC /* InfoPlist.strings in Resources */,
 				2CB8855A22291D9A001E49FC /* UserDefaults.plist in Resources */,
 				2CB8855B22291D9A001E49FC /* Localizable.strings in Resources */,
-				2CB8855C22291D9A001E49FC /* HelpSetup.plist in Resources */,
 				2CB8855D22291D9A001E49FC /* plus.tiff in Resources */,
 				2CB8855E22291D9A001E49FC /* minus.tiff in Resources */,
 				2CB8855F22291D9A001E49FC /* ServicesMenu.strings in Resources */,
@@ -565,7 +563,6 @@
 				8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */,
 				2C03FBB4088A1353008B7312 /* UserDefaults.plist in Resources */,
 				2CF42623088EB8F1002BBE99 /* Localizable.strings in Resources */,
-				2CDD29E40B16DFCE000B3543 /* HelpSetup.plist in Resources */,
 				2C1D0A450CEAC5AF00B59A0E /* plus.tiff in Resources */,
 				2C1D0A460CEAC5AF00B59A0E /* minus.tiff in Resources */,
 				2C97F33A0D34E39F008813CF /* ServicesMenu.strings in Resources */,
@@ -575,6 +572,7 @@
 				2CC915231C7744A60054346E /* DMGDocument.xib in Resources */,
 				2CC915241C7744A60054346E /* DMGOptionsView.xib in Resources */,
 				2CC915251C7744A60054346E /* DMGProgressWindow.xib in Resources */,
+				2CBBC8E4222BDC3C00135009 /* HelpSetup.plist in Resources */,
 				2CC915261C7744A60054346E /* MainMenu.xib in Resources */,
 				2CC915271C7744A60054346E /* MDMGWindow.xib in Resources */,
 				2CD8A27C1C7C7F99001800EE /* QuickDMGHelp in Resources */,
@@ -619,16 +617,16 @@
 		};
 		2CB8858422291D9A001E49FC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "if [ ! \"$CONFIGURATION\" = 'Release' ]; then\necho \"HelpBook setup script will run only with Release configuration\";\nexit 0\nfi\necho \"$BUILT_PRODUCTS_DIR\"\ncd \"$BUILT_PRODUCTS_DIR\"\necho \"$FULL_PRODUCT_NAME\"\nSetupHelpBook \"$FULL_PRODUCT_NAME\"\n";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/bash -l";
+			shellScript = "#if [ ! \"$CONFIGURATION\" = 'Release' ]; then\n#echo \"HelpBook setup script will run only with Release configuration\";\n#exit 0\n#fi\necho \"$BUILT_PRODUCTS_DIR\"\ncd \"$BUILT_PRODUCTS_DIR\"\necho \"$FULL_PRODUCT_NAME\"\nsource='/Users/tkurita/Factories/Websites/scriptfactory/web-content/software/misc/QuickDMG/mas/manual';\nSetupHelpBook \"$FULL_PRODUCT_NAME\" --source $source --newlayout --localized\n";
 		};
 		2CB8858522291D9A001E49FC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -999,6 +997,13 @@
 				INFOPLIST_FILE = "Info-sandbox.plist";
 				INSTALL_PATH = /Applications;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-DSANDBOX=1",
+					"-DDEBUG=0",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
 				PRODUCT_NAME = QuickDMG;

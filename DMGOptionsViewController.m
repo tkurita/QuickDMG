@@ -32,9 +32,6 @@
 #if SANDBOX
     [internetEnableButton removeFromSuperview];
     [deleteDSStoreButton removeFromSuperview];
-//    NSRect rect = [dmgOptionsView frame]; // does not work
-//    rect.size.height -= 10;
-//    [dmgOptionsView setFrame:rect];
 #else
 	[self setInternetEnable:[user_defaults boolForKey:@"InternetEnable"]];
     [self setPutawaySources:[user_defaults boolForKey:@"putawaySources"]];
