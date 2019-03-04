@@ -34,7 +34,7 @@
 	<key>CFBundleHelpBookFolder</key>
 	<string>QuickDMGHelp</string>
 	<key>CFBundleHelpBookName</key>
-	<string>Scriptfactory.QuickDMG.help</string>
+	<string>net.script-factory.QuickDMG.help</string>
 	<key>CFBundleIconFile</key>
 	<string>QuickDMG</string>
 	<key>CFBundleIdentifier</key>

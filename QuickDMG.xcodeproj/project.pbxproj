@@ -150,7 +150,7 @@
 		2C7FBDE108194C6D00340E25 /* DMGDocumentController.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = DMGDocumentController.h; sourceTree = "<group>"; };
 		2C7FBE4408196D8300340E25 /* DMGWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGWindowController.h; sourceTree = "<group>"; };
 		2C7FBE4508196D8300340E25 /* DMGWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGWindowController.m; sourceTree = "<group>"; };
-		2C8899CC21F06C0700E5D745 /* QuickDMG-sandbox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "QuickDMG-sandbox.entitlements"; sourceTree = "<group>"; };
+		2C8899CC21F06C0700E5D745 /* QuickDMG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickDMG.entitlements; sourceTree = "<group>"; };
 		2C895FA5081C9D2900694C34 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		2C895FA6081C9D2900694C34 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		2C895FB4081CCA5E00694C34 /* GetFinderSelection.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = GetFinderSelection.applescript; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 		2A37F4AAFDCFA73011CA2CEA /* docbaseApp */ = {
 			isa = PBXGroup;
 			children = (
-				2C8899CC21F06C0700E5D745 /* QuickDMG-sandbox.entitlements */,
+				2C8899CC21F06C0700E5D745 /* QuickDMG.entitlements */,
 				2CC914F11C7740120054346E /* History.rtf */,
 				2CC914FB1C77416E0054346E /* StringExtra */,
 				2CC914F31C77414F0054346E /* PathExtra */,
@@ -462,6 +462,13 @@
 			attributes = {
 				LastUpgradeCheck = 0820;
 				TargetAttributes = {
+					2CB8855322291D9A001E49FC = {
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
 					8D15AC270486D014006FF6A4 = {
 						ProvisioningStyle = Automatic;
 					};
@@ -881,7 +888,7 @@
 			baseConfigurationReference = 832E13A62A4332903944BD6A /* Pods-QuickDMG.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = "QuickDMG-sandbox.entitlements";
+				CODE_SIGN_ENTITLEMENTS = QuickDMG.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPYRIGHT = "Copyright 2005-2019, Tetsuro KURITA";
@@ -916,7 +923,7 @@
 			baseConfigurationReference = 69AB3D777E2C9BB8AB2FB252 /* Pods-QuickDMG.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = "QuickDMG-sandbox.entitlements";
+				CODE_SIGN_ENTITLEMENTS = QuickDMG.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPYRIGHT = "Copyright 2005-2019, Tetsuro KURITA";
@@ -954,6 +961,7 @@
 			baseConfigurationReference = 832E13A62A4332903944BD6A /* Pods-QuickDMG.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = QuickDMG.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPYRIGHT = "Copyright 2005-2019, Tetsuro KURITA";
@@ -987,7 +995,7 @@
 			baseConfigurationReference = 832E13A62A4332903944BD6A /* Pods-QuickDMG.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = "QuickDMG-sandbox.entitlements";
+				CODE_SIGN_ENTITLEMENTS = QuickDMG.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPYRIGHT = "Copyright 2005-2019, Tetsuro KURITA";
@@ -1022,6 +1030,7 @@
 			baseConfigurationReference = 0EB89CFD04B020FA92985426 /* Pods-QuickDMG.default.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = QuickDMG.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPYRIGHT = "Copyright 2005-2019, Tetsuro KURITA";
@@ -1047,7 +1056,6 @@
 			baseConfigurationReference = 69AB3D777E2C9BB8AB2FB252 /* Pods-QuickDMG.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPYRIGHT = "Copyright 2005-2019, Tetsuro KURITA";
