@@ -1,7 +1,6 @@
 #import <Cocoa/Cocoa.h>
 #import "AppController.h"
 #import "MDMGWindowController.h"
-#import "DonationReminder/DonationReminder.h"
 #import "UtilityFunctions.h"
 #import "DMGDocumentController.h"
 #import "ExpandDMGWindowController.h"
@@ -14,6 +13,7 @@
 
 #if !SANDBOX
 #import "Sparkle/SUUpdater.h"
+#import "DonationReminder/DonationReminder.h"
 #endif
 
 @implementation AppController
@@ -73,10 +73,14 @@ static BOOL AUTO_QUIT = YES;
 	return YES;
 }
 
+
 - (IBAction)makeDonation:(id)sender
 {
+    #if !SANDBOX
 	[DonationReminder goToDonation];
+    #endif
 }
+
 
 - (void)expandDmgFromPasteboard:(NSPasteboard *)pboard userData:(NSString *)data error:(NSString **)error
 {
@@ -226,8 +230,9 @@ static BOOL AUTO_QUIT = YES;
 			break;
 	}
 	
-    if (!SANDBOX)
+#if !SANDBOX
         [DonationReminder remindDonation];
+#endif
     
 #if useLog
 	NSLog(@"end applicationDidFinishLaunching");

@@ -61,9 +61,7 @@
 		2CB8857B22291D9A001E49FC /* DMGHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1452A115E751CB00481DE3 /* DMGHandler.m */; };
 		2CB8857C22291D9A001E49FC /* PathExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC914F81C77414F0054346E /* PathExtra.m */; };
 		2CB8857D22291D9A001E49FC /* StringExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC914FD1C77416E0054346E /* StringExtra.m */; };
-		2CB8857F22291D9A001E49FC /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC915041C7741840054346E /* DonationReminder.framework */; };
 		2CB8858022291D9A001E49FC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
-		2CB8858322291D9A001E49FC /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CC915041C7741840054346E /* DonationReminder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		2CBBC8E4222BDC3C00135009 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CDD29E30B16DFCE000B3543 /* HelpSetup.plist */; };
 		2CC2DCFD0CABE945006E7800 /* DMGDocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2DBCD0CABC876006E7800 /* DMGDocumentController.m */; };
 		2CC2E7AD0CE7EB6400653E25 /* KXTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E7AB0CE7EB6400653E25 /* KXTableView.m */; };
@@ -90,13 +88,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2CB8855522291D9A001E49FC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2CC914FF1C7741840054346E /* DonationReminder.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 2C4A363119E61FC40031E521;
-			remoteInfo = DonationReminder;
-		};
 		2CC915031C7741840054346E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2CC914FF1C7741840054346E /* DonationReminder.xcodeproj */;
@@ -114,16 +105,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		2CB8858222291D9A001E49FC /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				2CB8858322291D9A001E49FC /* DonationReminder.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2CF1C0A40B413AA600EAB8DD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -169,7 +150,6 @@
 		2C7FBDE108194C6D00340E25 /* DMGDocumentController.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = DMGDocumentController.h; sourceTree = "<group>"; };
 		2C7FBE4408196D8300340E25 /* DMGWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGWindowController.h; sourceTree = "<group>"; };
 		2C7FBE4508196D8300340E25 /* DMGWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGWindowController.m; sourceTree = "<group>"; };
-		2C8899CB21F06BE800E5D745 /* QuickDMG copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "QuickDMG copy-Info.plist"; path = "/Users/tkurita/Dev/Projects/QuickDMG/QuickDMG/QuickDMG copy-Info.plist"; sourceTree = "<absolute>"; };
 		2C8899CC21F06C0700E5D745 /* QuickDMG-sandbox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "QuickDMG-sandbox.entitlements"; sourceTree = "<group>"; };
 		2C895FA5081C9D2900694C34 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		2C895FA6081C9D2900694C34 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
@@ -180,7 +160,6 @@
 		2CB60F6E0BCB9D56009F39D7 /* PipingTask.m */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.objc; path = PipingTask.m; sourceTree = "<group>"; };
 		2CB60F6F0BCB9D56009F39D7 /* LocalizedStringTransformer.m */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.objc; path = LocalizedStringTransformer.m; sourceTree = "<group>"; };
 		2CB8858C22291D9A001E49FC /* QuickDMG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickDMG.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CB8858D22291D9A001E49FC /* QuickDMG copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "QuickDMG copy2-Info.plist"; path = "/Users/tkurita/Dev/Projects/QuickDMG/QuickDMG/QuickDMG copy2-Info.plist"; sourceTree = "<absolute>"; };
 		2CC2DB5A0CABC1BF006E7800 /* DMGDocumentProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGDocumentProtocol.h; sourceTree = "<group>"; };
 		2CC2DBAF0CABC56C006E7800 /* DMGOptionsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGOptionsProtocol.h; sourceTree = "<group>"; };
 		2CC2DBCD0CABC876006E7800 /* DMGDocumentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGDocumentController.m; sourceTree = "<group>"; };
@@ -231,7 +210,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CB8857F22291D9A001E49FC /* DonationReminder.framework in Frameworks */,
 				2CB8858022291D9A001E49FC /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,8 +268,6 @@
 				19C28FB0FE9D524F11CA2CBB /* Products */,
 				2CC914FF1C7741840054346E /* DonationReminder.xcodeproj */,
 				9295F088CE3057F52CAE8809 /* Pods */,
-				2C8899CB21F06BE800E5D745 /* QuickDMG copy-Info.plist */,
-				2CB8858D22291D9A001E49FC /* QuickDMG copy2-Info.plist */,
 			);
 			name = docbaseApp;
 			sourceTree = "<group>";
@@ -440,7 +416,6 @@
 				2CB8855722291D9A001E49FC /* Resources */,
 				2CB8856922291D9A001E49FC /* Sources */,
 				2CB8857E22291D9A001E49FC /* Frameworks */,
-				2CB8858222291D9A001E49FC /* CopyFiles */,
 				2CB8858422291D9A001E49FC /* ShellScript */,
 				2CB8858522291D9A001E49FC /* [CP] Embed Pods Frameworks */,
 				2CB8858622291D9A001E49FC /* [CP] Copy Pods Resources */,
@@ -448,7 +423,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				2CB8855422291D9A001E49FC /* PBXTargetDependency */,
 			);
 			name = "QuickDMG-sandbox";
 			productInstallPath = "$(HOME)/Applications";
@@ -774,11 +748,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2CB8855422291D9A001E49FC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DonationReminder;
-			targetProxy = 2CB8855522291D9A001E49FC /* PBXContainerItemProxy */;
-		};
 		2CC915081C7741DD0054346E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DonationReminder;
@@ -953,7 +922,7 @@
 				COPYRIGHT = "Copyright 2005-2019, Tetsuro KURITA";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 20;
-				DEVELOPMENT_TEAM = N3YK2F43T4;
+				DEVELOPMENT_TEAM = 5VBC6385DN;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -990,7 +959,7 @@
 				COPYRIGHT = "Copyright 2005-2019, Tetsuro KURITA";
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 20;
-				DEVELOPMENT_TEAM = N3YK2F43T4;
+				DEVELOPMENT_TEAM = 5VBC6385DN;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = QuickDMG_Prefix.pch;
@@ -1024,7 +993,7 @@
 				COPYRIGHT = "Copyright 2005-2019, Tetsuro KURITA";
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 20;
-				DEVELOPMENT_TEAM = N3YK2F43T4;
+				DEVELOPMENT_TEAM = 5VBC6385DN;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = QuickDMG_Prefix.pch;
@@ -1057,7 +1026,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPYRIGHT = "Copyright 2005-2019, Tetsuro KURITA";
 				CURRENT_PROJECT_VERSION = 20;
-				DEVELOPMENT_TEAM = N3YK2F43T4;
+				DEVELOPMENT_TEAM = 5VBC6385DN;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = QuickDMG_Prefix.pch;

@@ -8,8 +8,8 @@
 }
 
 @property (nonatomic ,strong) id mdmgWindow;
-- (IBAction)makeDonation:(id)sender;
 - (IBAction)newDiskImage:(id)sender;
+- (IBAction)makeDonation:(id)sender;
 - (void)openFinderSelection;
 
 #if !SANDBOX
