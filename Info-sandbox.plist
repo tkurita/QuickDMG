@@ -93,30 +93,6 @@
 				<string>NSFilenamesPboardType</string>
 			</array>
 		</dict>
-		<dict>
-			<key>NSMenuItem</key>
-			<dict>
-				<key>default</key>
-				<string>Expand Disk Image</string>
-			</dict>
-			<key>NSMessage</key>
-			<string>expandDmgFromPasteboard</string>
-			<key>NSPortName</key>
-			<string>QuickDMGService</string>
-			<key>NSRequiredContext</key>
-			<dict>
-				<key>NSTextContent</key>
-				<string>FilePath</string>
-			</dict>
-			<key>NSSendFileTypes</key>
-			<array>
-				<string>com.apple.disk-image</string>
-			</array>
-		</dict>
 	</array>
-	<key>SUFeedURL</key>
-	<string>http://www.script-factory.net/appcast/QuickDMG.xml</string>
-	<key>SUPublicDSAKeyFile</key>
-	<string>dsa_pub.pem</string>
 </dict>
 </plist>
