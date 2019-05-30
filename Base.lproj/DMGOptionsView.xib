@@ -191,7 +191,7 @@
                     </tableHeaderView>
                 </scrollView>
                 <button toolTip="⌘K : Delete all .DS_Store in the Disk image." misplaced="YES" id="23">
-                    <rect key="frame" x="191" y="5" width="131" height="18"/>
+                    <rect key="frame" x="230" y="5" width="131" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="check" title="Delete .DS_Store" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="142">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
