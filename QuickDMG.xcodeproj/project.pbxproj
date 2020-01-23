@@ -655,6 +655,7 @@
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "if [ ! \"$CONFIGURATION\" = 'Release' ]; then\necho \"HelpBook setup script will run only with Release configuration\";\nexit 0\nfi\necho \"$BUILT_PRODUCTS_DIR\"\ncd \"$BUILT_PRODUCTS_DIR\"\necho \"$FULL_PRODUCT_NAME\"\nSetupHelpBook \"$FULL_PRODUCT_NAME\"\n";
+			showEnvVarsInLog = 0;
 		};
 		81AF875326A79260CBA0EAC8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
