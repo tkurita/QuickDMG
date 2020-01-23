@@ -1,6 +1,10 @@
 #import "DMGTask.h"
 #import "DMGDocumentProtocol.h"
 
+#ifndef DEBUG
+#define DEBUG 0
+#endif
+
 #define useLog DEBUG
 
 @implementation DMGTask
@@ -292,12 +296,18 @@ completionHandler:(void(^)(BOOL)) handler
 - (void)deleteDSStore:(NSString *)path
     completionHandler:(void (^)(BOOL))handler
 {
+#if useLog
+    NSLog(@"start deleteDSStore:completionHandler:");
+#endif
     self.currentTask = [[PipingTask alloc] init];
     [_currentTask setLaunchPath:@"/usr/bin/find"];
-    [_currentTask setArguments:@[_mountPoint, @"-name", @".DS_Store",
+    [_currentTask setArguments:@[path, @"-name", @".DS_Store",
                                  @"-delete"]];
     __unsafe_unretained typeof(self) weak_self = self;
     [_currentTask launchWithCompletionHandler:^(int result) {
+        #if useLog
+            NSLog(@"start completionHandler in deleteDSStore:completionHandler:");
+        #endif
         weak_self.terminationStatus = _currentTask.terminationStatus;
         if (0 == result) {
             handler(YES);

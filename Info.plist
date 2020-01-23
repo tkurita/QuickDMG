@@ -120,5 +120,7 @@
 	<string>dsa_pub.pem</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>QuickDMG require to control Finder via AppleScript to run.</string>
 </dict>
 </plist>

@@ -1,6 +1,10 @@
 #import "PipingTask.h"
 
-#define useLog 0
+#ifndef DEBUG
+#define DEBUG 0
+#endif
+
+#define useLog DEBUG
 
 @implementation PipingTask
 
@@ -44,6 +48,9 @@
 
 - (void)launchWithCompletionHandler:(void(^)(int))handler
 {
+#if useLog
+    NSLog(@"start launchWithCompletionHandler");
+#endif
     self.stdoutData = nil;
     self.stdoutData = [NSMutableData new];
     self.stderrData = nil;

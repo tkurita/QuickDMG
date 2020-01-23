@@ -6,7 +6,11 @@
 #include <sys/param.h>
 #include <sys/ucred.h>
 #include <sys/mount.h>
-	 
+
+#ifndef DEBUG
+#define DEBUG 0
+#endif
+
 #define useLog DEBUG
 
 #ifndef SANDBOX
@@ -259,12 +263,14 @@
 - (void)deleteDSStore
 {
 #if useLog
-    NSLog(@"start deleteDSStore");
+    NSLog(@"start deleteDSStore in DiskImageMaker");
 #endif
+    
     [self postStatusNotification:NSLocalizedString(@"Deleting .DS_Store files.","")
-                       increment:1.0];
+                           increment:1.0];
+
     DMGTask *task = [DMGTask dmgTaskAt:self.workingLocationURL.path];
-    [task deleteDSStore:_mountPoint completionHandler:^(BOOL result) {
+    [_currentDMGTask deleteDSStore:_mountPoint completionHandler:^(BOOL result) {
         if (result && !aborted) {
             [self detachDiskImage];
         } else {
@@ -367,8 +373,11 @@ NSString *mountPointForDevEntry(NSString *devEntry)
 
 - (void)postStatusNotificationWithDict:(NSDictionary *)userInfo
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName: @"DmgProgressNotification"
-                                                        object:self userInfo:userInfo];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter]
+                        postNotificationName: @"DmgProgressNotification"
+                                    object:self userInfo:userInfo];
+    });
 }
 
 - (void)postStatusNotification:(NSString *)message

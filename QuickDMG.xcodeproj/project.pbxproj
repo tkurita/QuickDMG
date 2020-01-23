@@ -478,6 +478,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
+				English,
 				en,
 				ja,
 				French,
@@ -1069,8 +1070,8 @@
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"-isystem",
 					"\"${PODS_ROOT}/Headers/Public/Sparkle\"",
-					"-DSANDBOX=1",
-					"-DDEBUG=0",
+					"-DSANDBOX=0",
+					"-DDEBUG=1",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
 				PRODUCT_NAME = QuickDMG;
