@@ -117,7 +117,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0EB89CFD04B020FA92985426 /* Pods-QuickDMG.default.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickDMG.default.xcconfig"; path = "Pods/Target Support Files/Pods-QuickDMG/Pods-QuickDMG.default.xcconfig"; sourceTree = "<group>"; };
 		1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		2A37F4ACFDCFA73011CA2CEA /* DMGDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGDocument.m; sourceTree = "<group>"; };
 		2A37F4AEFDCFA73011CA2CEA /* DMGDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGDocument.h; sourceTree = "<group>"; };
@@ -198,10 +197,12 @@
 		2CFAE2550CE848E70070AEF4 /* FileTableController.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = FileTableController.h; sourceTree = "<group>"; };
 		2CFAE2560CE848E70070AEF4 /* FileTableController.m */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.objc; path = FileTableController.m; sourceTree = "<group>"; };
 		32DBCF750370BD2300C91783 /* QuickDMG_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickDMG_Prefix.pch; sourceTree = "<group>"; };
-		69AB3D777E2C9BB8AB2FB252 /* Pods-QuickDMG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickDMG.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuickDMG/Pods-QuickDMG.debug.xcconfig"; sourceTree = "<group>"; };
-		832E13A62A4332903944BD6A /* Pods-QuickDMG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickDMG.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickDMG/Pods-QuickDMG.release.xcconfig"; sourceTree = "<group>"; };
+		6D711B8BDF2B8888320C0FFE /* Pods-QuickDMG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickDMG.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickDMG/Pods-QuickDMG.release.xcconfig"; sourceTree = "<group>"; };
+		6F9A3337B301B514C41E5DBC /* Pods-QuickDMG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickDMG.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuickDMG/Pods-QuickDMG.debug.xcconfig"; sourceTree = "<group>"; };
+		799412315726E8F0F6B6E3ED /* Pods-QuickDMG.default.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickDMG.default.xcconfig"; path = "Pods/Target Support Files/Pods-QuickDMG/Pods-QuickDMG.default.xcconfig"; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; lineEnding = 0; path = Info.plist; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* QuickDMG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickDMG.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		98B82C91D13915A94B337D2A /* Pods-QuickDMG.macappstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickDMG.macappstore.xcconfig"; path = "Pods/Target Support Files/Pods-QuickDMG/Pods-QuickDMG.macappstore.xcconfig"; sourceTree = "<group>"; };
 		A69856CDE58ED685A6759F27 /* libPods-QuickDMG.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuickDMG.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -253,7 +254,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2A37F4AAFDCFA73011CA2CEA /* docbaseApp */ = {
+		2A37F4AAFDCFA73011CA2CEA = {
 			isa = PBXGroup;
 			children = (
 				2CCCC76623D935700053BC1D /* QuickDMGRelease.entitlements */,
@@ -399,9 +400,10 @@
 		9295F088CE3057F52CAE8809 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				69AB3D777E2C9BB8AB2FB252 /* Pods-QuickDMG.debug.xcconfig */,
-				832E13A62A4332903944BD6A /* Pods-QuickDMG.release.xcconfig */,
-				0EB89CFD04B020FA92985426 /* Pods-QuickDMG.default.xcconfig */,
+				6F9A3337B301B514C41E5DBC /* Pods-QuickDMG.debug.xcconfig */,
+				6D711B8BDF2B8888320C0FFE /* Pods-QuickDMG.release.xcconfig */,
+				98B82C91D13915A94B337D2A /* Pods-QuickDMG.macappstore.xcconfig */,
+				799412315726E8F0F6B6E3ED /* Pods-QuickDMG.default.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -413,13 +415,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CB8858722291D9A001E49FC /* Build configuration list for PBXNativeTarget "QuickDMG-sandbox" */;
 			buildPhases = (
-				2CB8855622291D9A001E49FC /* [CP] Check Pods Manifest.lock */,
 				2CB8855722291D9A001E49FC /* Resources */,
 				2CB8856922291D9A001E49FC /* Sources */,
 				2CB8857E22291D9A001E49FC /* Frameworks */,
 				2CB8858422291D9A001E49FC /* ShellScript */,
-				2CB8858522291D9A001E49FC /* [CP] Embed Pods Frameworks */,
-				2CB8858622291D9A001E49FC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -442,7 +441,6 @@
 				2CF1C0A40B413AA600EAB8DD /* CopyFiles */,
 				2CF840A11580AFD8004E5E20 /* ShellScript */,
 				81AF875326A79260CBA0EAC8 /* [CP] Embed Pods Frameworks */,
-				066848FBE47C4138F1196DF5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -487,7 +485,7 @@
 				German,
 				Base,
 			);
-			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* docbaseApp */;
+			mainGroup = 2A37F4AAFDCFA73011CA2CEA;
 			productRefGroup = 19C28FB0FE9D524F11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -564,39 +562,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		066848FBE47C4138F1196DF5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickDMG/Pods-QuickDMG-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2CB8855622291D9A001E49FC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-QuickDMG-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2CB8858422291D9A001E49FC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
@@ -610,41 +575,6 @@
 			shellPath = "/bin/bash -l";
 			shellScript = "#if [ ! \"$CONFIGURATION\" = 'Release' ]; then\n#echo \"HelpBook setup script will run only with Release configuration\";\n#exit 0\n#fi\necho \"$BUILT_PRODUCTS_DIR\"\ncd \"$BUILT_PRODUCTS_DIR\"\necho \"$FULL_PRODUCT_NAME\"\nsource='/Users/tkurita/Factories/Websites/scriptfactory/web-content/software/misc/QuickDMG/mas/manual';\nSetupHelpBook \"$FULL_PRODUCT_NAME\" --source $source --newlayout --localized\n";
 		};
-		2CB8858522291D9A001E49FC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-QuickDMG/Pods-QuickDMG-frameworks.sh",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Sparkle.framework.dSYM",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "exit 0\n\"${SRCROOT}/Pods/Target Support Files/Pods-QuickDMG/Pods-QuickDMG-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2CB8858622291D9A001E49FC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickDMG/Pods-QuickDMG-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2CF840A11580AFD8004E5E20 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
@@ -655,7 +585,7 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
+			shellPath = "/bin/zsh -l";
 			shellScript = "if [ ! \"$CONFIGURATION\" = 'Release' ]; then\necho \"HelpBook setup script will run only with Release configuration\";\nexit 0\nfi\necho \"$BUILT_PRODUCTS_DIR\"\ncd \"$BUILT_PRODUCTS_DIR\"\necho \"$FULL_PRODUCT_NAME\"\nSetupHelpBook \"$FULL_PRODUCT_NAME\"\n";
 			showEnvVarsInLog = 0;
 		};
@@ -676,7 +606,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"$CONFIGURATION\" = 'MacAppStore' ]; then\nexit 0\nfi\n\"${SRCROOT}/Pods/Target Support Files/Pods-QuickDMG/Pods-QuickDMG-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickDMG/Pods-QuickDMG-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F700EAF7BEF40303CC8AE27D /* [CP] Check Pods Manifest.lock */ = {
@@ -889,7 +819,7 @@
 		};
 		2C72D73721F07AE500811DDF /* MacAppStore */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 832E13A62A4332903944BD6A /* Pods-QuickDMG.release.xcconfig */;
+			baseConfigurationReference = 98B82C91D13915A94B337D2A /* Pods-QuickDMG.macappstore.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = QuickDMG.entitlements;
@@ -904,6 +834,7 @@
 				INFOPLIST_FILE = "Info-sandbox.plist";
 				INSTALL_PATH = /Applications;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MARKETING_VERSION = 2.5.2;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-isystem",
@@ -922,7 +853,6 @@
 		};
 		2CB8858822291D9A001E49FC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69AB3D777E2C9BB8AB2FB252 /* Pods-QuickDMG.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = QuickDMG.entitlements;
@@ -959,7 +889,6 @@
 		};
 		2CB8858922291D9A001E49FC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 832E13A62A4332903944BD6A /* Pods-QuickDMG.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = QuickDMG.entitlements;
@@ -992,7 +921,6 @@
 		};
 		2CB8858A22291D9A001E49FC /* MacAppStore */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 832E13A62A4332903944BD6A /* Pods-QuickDMG.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = QuickDMG.entitlements;
@@ -1026,7 +954,6 @@
 		};
 		2CB8858B22291D9A001E49FC /* Default */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0EB89CFD04B020FA92985426 /* Pods-QuickDMG.default.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = QuickDMG.entitlements;
@@ -1051,9 +978,10 @@
 		};
 		2CC63DFE09377A2500503C26 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69AB3D777E2C9BB8AB2FB252 /* Pods-QuickDMG.debug.xcconfig */;
+			baseConfigurationReference = 6F9A3337B301B514C41E5DBC /* Pods-QuickDMG.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = QuickDMGRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -1067,6 +995,7 @@
 				INFOPLIST_FILE = "Info-sandbox.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MARKETING_VERSION = 2.5.2;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-isystem",
@@ -1074,7 +1003,7 @@
 					"-isystem",
 					"\"${PODS_ROOT}/Headers/Public/Sparkle\"",
 					"-DSANDBOX=0",
-					"-DDEBUG=1",
+					"-DDEBUG=0",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
 				PRODUCT_NAME = QuickDMG;
@@ -1085,7 +1014,7 @@
 		};
 		2CC63DFF09377A2500503C26 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 832E13A62A4332903944BD6A /* Pods-QuickDMG.release.xcconfig */;
+			baseConfigurationReference = 6D711B8BDF2B8888320C0FFE /* Pods-QuickDMG.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = QuickDMGRelease.entitlements;
@@ -1101,6 +1030,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Applications;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MARKETING_VERSION = 2.5.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
 				PRODUCT_NAME = QuickDMG;
 				VERSIONING_SYSTEM = "apple generic";
@@ -1110,7 +1040,7 @@
 		};
 		2CC63E0009377A2500503C26 /* Default */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0EB89CFD04B020FA92985426 /* Pods-QuickDMG.default.xcconfig */;
+			baseConfigurationReference = 799412315726E8F0F6B6E3ED /* Pods-QuickDMG.default.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -1123,6 +1053,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MARKETING_VERSION = 2.5.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.QuickDMG";
 				PRODUCT_NAME = QuickDMG;
 				VERSIONING_SYSTEM = "apple generic";
